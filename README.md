@@ -1,3 +1,3 @@
 # mruv-pb-docs
 
-[docs.md](Generated MruV API documentation)
+[Generated MruV API documentation](docs.md)
