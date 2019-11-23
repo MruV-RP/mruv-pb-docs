@@ -60,6 +60,7 @@
 
 - [items/items.proto](#items/items.proto)
     - [GetContainerItemsResponse](#mruv.GetContainerItemsResponse)
+    - [GetContainerTypesRequest](#mruv.GetContainerTypesRequest)
     - [GetContainersRequest](#mruv.GetContainersRequest)
     - [GetContainersResponse](#mruv.GetContainersResponse)
     - [GetItemTypesRequest](#mruv.GetItemTypesRequest)
@@ -86,6 +87,7 @@
     - [Container](#mruv.Container)
     - [ContainerID](#mruv.ContainerID)
     - [ContainerType](#mruv.ContainerType)
+    - [ContainerTypeID](#mruv.ContainerTypeID)
     - [InsideItem](#mruv.InsideItem)
     - [Item](#mruv.Item)
     - [ItemID](#mruv.ItemID)
@@ -511,6 +513,21 @@ requests &amp; response messages
 
 
 
+<a name="mruv.GetContainerTypesRequest"></a>
+
+### GetContainerTypesRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| limit | [int32](#int32) |  |  |
+
+
+
+
+
+
 <a name="mruv.GetContainersRequest"></a>
 
 ### GetContainersRequest
@@ -771,19 +788,20 @@ Requests messages
 | ----------- | ------------ | ------------- | ------------|
 | CreateItem | [Item](#mruv.Item) | [ItemID](#mruv.ItemID) | CRUD items |
 | GetItem | [ItemID](#mruv.ItemID) | [Item](#mruv.Item) |  |
-| UpdateItem | [Item](#mruv.Item) | [ItemID](#mruv.ItemID) |  |
 | DeleteItem | [ItemID](#mruv.ItemID) | [ItemID](#mruv.ItemID) |  |
 | GetItems | [GetItemsRequest](#mruv.GetItemsRequest) | [GetItemsResponse](#mruv.GetItemsResponse) |  |
 | CreateItemType | [ItemType](#mruv.ItemType) | [ItemTypeID](#mruv.ItemTypeID) | CRUD itemsTypes |
 | GetItemType | [ItemTypeID](#mruv.ItemTypeID) | [ItemType](#mruv.ItemType) |  |
-| UpdateItemType | [ItemType](#mruv.ItemType) | [ItemTypeID](#mruv.ItemTypeID) |  |
 | DeleteItemType | [ItemTypeID](#mruv.ItemTypeID) | [ItemTypeID](#mruv.ItemTypeID) |  |
 | GetItemTypes | [GetItemTypesRequest](#mruv.GetItemTypesRequest) | [GetItemTypesResponse](#mruv.GetItemTypesResponse) |  |
 | CreateContainer | [Container](#mruv.Container) | [ContainerID](#mruv.ContainerID) | CRUD containers |
 | GetContainer | [ContainerID](#mruv.ContainerID) | [Container](#mruv.Container) |  |
-| UpdateContainer | [Container](#mruv.Container) | [ContainerID](#mruv.ContainerID) |  |
 | DeleteContainer | [ContainerID](#mruv.ContainerID) | [ContainerID](#mruv.ContainerID) |  |
 | GetContainers | [GetContainersRequest](#mruv.GetContainersRequest) | [GetContainersResponse](#mruv.GetContainersResponse) |  |
+| CreateContainerType | [ContainerType](#mruv.ContainerType) | [ContainerTypeID](#mruv.ContainerTypeID) | CRUD container types |
+| GetContainerType | [ContainerTypeID](#mruv.ContainerTypeID) | [ContainerType](#mruv.ContainerType) |  |
+| DeleteContainerType | [ContainerTypeID](#mruv.ContainerTypeID) | [ContainerID](#mruv.ContainerID) |  |
+| GetContainerTypes | [GetContainerTypesRequest](#mruv.GetContainerTypesRequest) | [ContainerType](#mruv.ContainerType) stream |  |
 | GetContainerItems | [ContainerID](#mruv.ContainerID) | [GetContainerItemsResponse](#mruv.GetContainerItemsResponse) | Container Methods |
 | RemoveContainerItem | [RemoveItemRequest](#mruv.RemoveItemRequest) | [Item](#mruv.Item) |  |
 | PutItem | [PutItemRequest](#mruv.PutItemRequest) | [ItemID](#mruv.ItemID) |  |
@@ -852,6 +870,21 @@ Requests messages
 | max_volume | [float](#float) |  |  |
 | max_weight | [float](#float) |  |  |
 | valid_item_types | [int32](#int32) | repeated |  |
+
+
+
+
+
+
+<a name="mruv.ContainerTypeID"></a>
+
+### ContainerTypeID
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [int32](#int32) |  |  |
 
 
 
