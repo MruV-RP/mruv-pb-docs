@@ -800,7 +800,7 @@ Requests messages
 | GetContainers | [GetContainersRequest](#mruv.GetContainersRequest) | [GetContainersResponse](#mruv.GetContainersResponse) |  |
 | CreateContainerType | [ContainerType](#mruv.ContainerType) | [ContainerTypeID](#mruv.ContainerTypeID) | CRUD container types |
 | GetContainerType | [ContainerTypeID](#mruv.ContainerTypeID) | [ContainerType](#mruv.ContainerType) |  |
-| DeleteContainerType | [ContainerTypeID](#mruv.ContainerTypeID) | [ContainerID](#mruv.ContainerID) |  |
+| DeleteContainerType | [ContainerTypeID](#mruv.ContainerTypeID) | [ContainerTypeID](#mruv.ContainerTypeID) |  |
 | GetContainerTypes | [GetContainerTypesRequest](#mruv.GetContainerTypesRequest) | [ContainerType](#mruv.ContainerType) stream |  |
 | GetContainerItems | [ContainerID](#mruv.ContainerID) | [GetContainerItemsResponse](#mruv.GetContainerItemsResponse) | Container Methods |
 | RemoveContainerItem | [RemoveItemRequest](#mruv.RemoveItemRequest) | [Item](#mruv.Item) |  |
