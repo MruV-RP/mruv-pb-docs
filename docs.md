@@ -61,6 +61,7 @@
 - [items/items.proto](#items/items.proto)
     - [GetContainerItemsResponse](#mruv.GetContainerItemsResponse)
     - [GetContainerTypesRequest](#mruv.GetContainerTypesRequest)
+    - [GetContainerTypesResponse](#mruv.GetContainerTypesResponse)
     - [GetContainersRequest](#mruv.GetContainersRequest)
     - [GetContainersResponse](#mruv.GetContainersResponse)
     - [GetItemTypesRequest](#mruv.GetItemTypesRequest)
@@ -528,6 +529,21 @@ requests &amp; response messages
 
 
 
+<a name="mruv.GetContainerTypesResponse"></a>
+
+### GetContainerTypesResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| container_types | [ContainerType](#mruv.ContainerType) | repeated |  |
+
+
+
+
+
+
 <a name="mruv.GetContainersRequest"></a>
 
 ### GetContainersRequest
@@ -801,7 +817,7 @@ Requests messages
 | CreateContainerType | [ContainerType](#mruv.ContainerType) | [ContainerTypeID](#mruv.ContainerTypeID) | CRUD container types |
 | GetContainerType | [ContainerTypeID](#mruv.ContainerTypeID) | [ContainerType](#mruv.ContainerType) |  |
 | DeleteContainerType | [ContainerTypeID](#mruv.ContainerTypeID) | [ContainerTypeID](#mruv.ContainerTypeID) |  |
-| GetContainerTypes | [GetContainerTypesRequest](#mruv.GetContainerTypesRequest) | [ContainerType](#mruv.ContainerType) stream |  |
+| GetContainerTypes | [GetContainerTypesRequest](#mruv.GetContainerTypesRequest) | [GetContainerTypesResponse](#mruv.GetContainerTypesResponse) |  |
 | GetContainerItems | [ContainerID](#mruv.ContainerID) | [GetContainerItemsResponse](#mruv.GetContainerItemsResponse) | Container Methods |
 | RemoveContainerItem | [RemoveItemRequest](#mruv.RemoveItemRequest) | [Item](#mruv.Item) |  |
 | PutItem | [PutItemRequest](#mruv.PutItemRequest) | [ItemID](#mruv.ItemID) |  |
