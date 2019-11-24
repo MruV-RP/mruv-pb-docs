@@ -59,6 +59,7 @@
   
 
 - [items/items.proto](#items/items.proto)
+    - [GetContainerItemsRequest](#mruv.GetContainerItemsRequest)
     - [GetContainerItemsResponse](#mruv.GetContainerItemsResponse)
     - [GetContainerTypesRequest](#mruv.GetContainerTypesRequest)
     - [GetContainerTypesResponse](#mruv.GetContainerTypesResponse)
@@ -499,6 +500,22 @@ requests &amp; response messages
 
 
 
+<a name="mruv.GetContainerItemsRequest"></a>
+
+### GetContainerItemsRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| container_id | [ContainerID](#mruv.ContainerID) |  |  |
+| limit | [int32](#int32) |  |  |
+
+
+
+
+
+
 <a name="mruv.GetContainerItemsResponse"></a>
 
 ### GetContainerItemsResponse
@@ -507,7 +524,7 @@ requests &amp; response messages
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| items | [Item](#mruv.Item) | repeated |  |
+| items | [InsideItem](#mruv.InsideItem) | repeated |  |
 
 
 
@@ -818,7 +835,7 @@ Requests messages
 | GetContainerType | [ContainerTypeID](#mruv.ContainerTypeID) | [ContainerType](#mruv.ContainerType) |  |
 | DeleteContainerType | [ContainerTypeID](#mruv.ContainerTypeID) | [ContainerTypeID](#mruv.ContainerTypeID) |  |
 | GetContainerTypes | [GetContainerTypesRequest](#mruv.GetContainerTypesRequest) | [GetContainerTypesResponse](#mruv.GetContainerTypesResponse) |  |
-| GetContainerItems | [ContainerID](#mruv.ContainerID) | [GetContainerItemsResponse](#mruv.GetContainerItemsResponse) | Container Methods |
+| GetContainerItems | [GetContainerItemsRequest](#mruv.GetContainerItemsRequest) | [GetContainerItemsResponse](#mruv.GetContainerItemsResponse) | Container Methods |
 | RemoveContainerItem | [RemoveItemRequest](#mruv.RemoveItemRequest) | [Item](#mruv.Item) |  |
 | PutItem | [PutItemRequest](#mruv.PutItemRequest) | [ItemID](#mruv.ItemID) |  |
 | SortItems | [SortItemsRequest](#mruv.SortItemsRequest) | [SortItemsResponse](#mruv.SortItemsResponse) | TODO: SortItemsStream |
@@ -916,9 +933,9 @@ Requests messages
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | container_id | [int32](#int32) |  |  |
-| item_id | [int64](#int64) |  |  |
-| position | [Position](#mruv.Position) |  |  |
-| rotation | [Rotation](#mruv.Rotation) |  |  |
+| item_id | [ItemID](#mruv.ItemID) |  |  |
+| item | [Item](#mruv.Item) |  |  |
+| position | [int32](#int32) |  |  |
 
 
 
