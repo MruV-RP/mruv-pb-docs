@@ -71,12 +71,10 @@
     - [GetItemsResponse](#mruv.GetItemsResponse)
     - [GetNearestItemsRequest](#mruv.GetNearestItemsRequest)
     - [GetNearestItemsResponse](#mruv.GetNearestItemsResponse)
+    - [PullItemRequest](#mruv.PullItemRequest)
     - [PutItemRequest](#mruv.PutItemRequest)
-    - [RemoveItemRequest](#mruv.RemoveItemRequest)
     - [SortItemsRequest](#mruv.SortItemsRequest)
     - [SortItemsResponse](#mruv.SortItemsResponse)
-    - [TakeItemRequest](#mruv.TakeItemRequest)
-    - [TakeItemResponse](#mruv.TakeItemResponse)
     - [UseItemRequest](#mruv.UseItemRequest)
     - [UseItemResponse](#mruv.UseItemResponse)
   
@@ -159,7 +157,7 @@ requests &amp; response messages
 | Get | [CharacterID](#mruv.CharacterID) | [Character](#mruv.Character) |  |
 | Update | [Character](#mruv.Character) | [CharacterID](#mruv.CharacterID) |  |
 | Remove | [CharacterID](#mruv.CharacterID) | [CharacterID](#mruv.CharacterID) |  |
-| KillCharacter | [CharacterID](#mruv.CharacterID) | [CharacterID](#mruv.CharacterID) | Deaths |
+| PermanentCharacterKill | [CharacterID](#mruv.CharacterID) | [CharacterID](#mruv.CharacterID) | Deaths |
 | DeathsStream | [DeathStreamRequest](#mruv.DeathStreamRequest) | [DeathStreamResponse](#mruv.DeathStreamResponse) stream |  |
 | GetServiceStatus | [ServiceStatusRequest](#mruv.ServiceStatusRequest) | [ServiceStatusResponse](#mruv.ServiceStatusResponse) | Service status |
 | GetServiceVersion | [VersionRequest](#mruv.VersionRequest) | [VersionResponse](#mruv.VersionResponse) |  |
@@ -444,6 +442,8 @@ requests &amp; response messages
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | id | [int32](#int32) |  |  |
+| name | [string](#string) |  |  |
+| description | [string](#string) |  |  |
 | permissions | [Permission](#mruv.Permission) | repeated |  |
 | users | [User](#mruv.User) | repeated |  |
 
@@ -503,13 +503,13 @@ requests &amp; response messages
 <a name="mruv.GetContainerItemsRequest"></a>
 
 ### GetContainerItemsRequest
-
+Request message for `MruVItemsService.GetContainerItems`.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| container_id | [ContainerID](#mruv.ContainerID) |  |  |
-| limit | [int32](#int32) |  |  |
+| container_id | [ContainerID](#mruv.ContainerID) |  | ID of container with items. |
+| limit | [uint32](#uint32) |  | Limit of the returned items. |
 
 
 
@@ -519,12 +519,12 @@ requests &amp; response messages
 <a name="mruv.GetContainerItemsResponse"></a>
 
 ### GetContainerItemsResponse
-
+Request message for `MruVItemsService.GetContainerItems`.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| items | [InsideItem](#mruv.InsideItem) | repeated |  |
+| items | [InsideItem](#mruv.InsideItem) | repeated | List of items inside containers. |
 
 
 
@@ -534,12 +534,12 @@ requests &amp; response messages
 <a name="mruv.GetContainerTypesRequest"></a>
 
 ### GetContainerTypesRequest
-
+Request message for `MruVItemsService.GetContainerTypes`.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| limit | [int32](#int32) |  |  |
+| limit | [uint32](#uint32) |  | Limit of the returned container types. |
 
 
 
@@ -549,12 +549,12 @@ requests &amp; response messages
 <a name="mruv.GetContainerTypesResponse"></a>
 
 ### GetContainerTypesResponse
-
+Response message for `MruVItemsService.GetContainers`.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| container_types | [ContainerType](#mruv.ContainerType) | repeated |  |
+| container_types | [ContainerType](#mruv.ContainerType) | repeated | List of container types. |
 
 
 
@@ -564,12 +564,12 @@ requests &amp; response messages
 <a name="mruv.GetContainersRequest"></a>
 
 ### GetContainersRequest
-
+Request message for `MruVItemsService.GetContainers`.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| limit | [int32](#int32) |  |  |
+| limit | [uint32](#uint32) |  | Limit of the returned containers. |
 
 
 
@@ -579,12 +579,12 @@ requests &amp; response messages
 <a name="mruv.GetContainersResponse"></a>
 
 ### GetContainersResponse
-
+Response message for `MruVItemsService.GetContainers`.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| containers | [Container](#mruv.Container) | repeated |  |
+| containers | [Container](#mruv.Container) | repeated | List of containers. |
 
 
 
@@ -594,12 +594,12 @@ requests &amp; response messages
 <a name="mruv.GetItemTypesRequest"></a>
 
 ### GetItemTypesRequest
-
+Request message for `MruVItemsService.GetItemTypes`.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| limit | [int32](#int32) |  |  |
+| limit | [uint32](#uint32) |  | Limit of the returned item types. |
 
 
 
@@ -609,12 +609,12 @@ requests &amp; response messages
 <a name="mruv.GetItemTypesResponse"></a>
 
 ### GetItemTypesResponse
-
+Response message for `MruVItemsService.GetItemTypes`.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| item_types | [ItemType](#mruv.ItemType) | repeated |  |
+| item_types | [ItemType](#mruv.ItemType) | repeated | List of item types. |
 
 
 
@@ -624,12 +624,12 @@ requests &amp; response messages
 <a name="mruv.GetItemsRequest"></a>
 
 ### GetItemsRequest
-Requests messages
+Request message for `MruVItemsService.GetItems`.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| limit | [int32](#int32) |  |  |
+| limit | [uint32](#uint32) |  | Limit of the returned items. |
 
 
 
@@ -639,12 +639,12 @@ Requests messages
 <a name="mruv.GetItemsResponse"></a>
 
 ### GetItemsResponse
-
+Response message for `MruVItemsService.GetItems`.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| items | [Item](#mruv.Item) | repeated |  |
+| items | [Item](#mruv.Item) | repeated | List of items. |
 
 
 
@@ -654,13 +654,14 @@ Requests messages
 <a name="mruv.GetNearestItemsRequest"></a>
 
 ### GetNearestItemsRequest
-
+Request message for `MruVItemsService.GetNearestItems`.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| player_position | [Position](#mruv.Position) |  |  |
-| container_id | [ContainerID](#mruv.ContainerID) |  |  |
+| position | [Position](#mruv.Position) |  | Position from which to calculate the distance |
+| container_id | [ContainerID](#mruv.ContainerID) |  | ID of container that contains items. |
+| distance_limit | [double](#double) |  | The distance over which the items are ignored. |
 
 
 
@@ -670,12 +671,28 @@ Requests messages
 <a name="mruv.GetNearestItemsResponse"></a>
 
 ### GetNearestItemsResponse
-
+Response message for `MruVItemsService.GetNearestItems`.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| item | [InsideItem](#mruv.InsideItem) | repeated |  |
+| item | [InsideItem](#mruv.InsideItem) | repeated | List of items sorted from nearest to farthest. |
+
+
+
+
+
+
+<a name="mruv.PullItemRequest"></a>
+
+### PullItemRequest
+Request message for `MruVItemsService.PullItem`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| container_id | [ContainerID](#mruv.ContainerID) |  | ID of the container from which we pull out a item. |
+| item_id | [ItemID](#mruv.ItemID) |  | ID of the item we want to pull out. |
 
 
 
@@ -685,30 +702,14 @@ Requests messages
 <a name="mruv.PutItemRequest"></a>
 
 ### PutItemRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| container_id | [ContainerID](#mruv.ContainerID) |  |  |
-| item_id | [ItemID](#mruv.ItemID) |  |  |
-| slot | [int32](#int32) |  |  |
-
-
-
-
-
-
-<a name="mruv.RemoveItemRequest"></a>
-
-### RemoveItemRequest
-
+Request message for `MruVItemsService.PutItem`.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| container_id | [ContainerID](#mruv.ContainerID) |  |  |
-| item_id | [ItemID](#mruv.ItemID) |  |  |
+| container_id | [ContainerID](#mruv.ContainerID) |  | ID of container where to put item. |
+| item_id | [ItemID](#mruv.ItemID) |  | ID of item we wan to put in. |
+| slot | [int32](#int32) |  | Position used for sorting items |
 
 
 
@@ -718,13 +719,13 @@ Requests messages
 <a name="mruv.SortItemsRequest"></a>
 
 ### SortItemsRequest
-
+Request message for `MruVItemsService.SortItems`.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| container_id | [ContainerID](#mruv.ContainerID) |  |  |
-| sort_by | [string](#string) |  |  |
+| container_id | [ContainerID](#mruv.ContainerID) |  | ID of the container which contain items. |
+| sort_by | [string](#string) |  | Sorting mode. TODO. |
 
 
 
@@ -734,42 +735,12 @@ Requests messages
 <a name="mruv.SortItemsResponse"></a>
 
 ### SortItemsResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| items | [Item](#mruv.Item) | repeated |  |
-
-
-
-
-
-
-<a name="mruv.TakeItemRequest"></a>
-
-### TakeItemRequest
-
+Response message for `MruVItemsService.SortItems`.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [ItemID](#mruv.ItemID) |  |  |
-
-
-
-
-
-
-<a name="mruv.TakeItemResponse"></a>
-
-### TakeItemResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| item | [Item](#mruv.Item) |  |  |
+| items | [Item](#mruv.Item) | repeated | List of items in given order. |
 
 
 
@@ -779,7 +750,7 @@ Requests messages
 <a name="mruv.UseItemRequest"></a>
 
 ### UseItemRequest
-
+Request message for `MruVItemsService.UseItem`.
 
 
 | Field | Type | Label | Description |
@@ -794,12 +765,12 @@ Requests messages
 <a name="mruv.UseItemResponse"></a>
 
 ### UseItemResponse
-
+Response message for `MruVItemsService.UseItem`.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| success | [bool](#bool) |  |  |
+| success | [bool](#bool) |  | Is item usage was successful. |
 
 
 
@@ -815,34 +786,34 @@ Requests messages
 <a name="mruv.MruVItemService"></a>
 
 ### MruVItemService
-
+The MruV items service provides procedures for managing items and containers
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| CreateItem | [Item](#mruv.Item) | [ItemID](#mruv.ItemID) | CRUD items |
-| GetItem | [ItemID](#mruv.ItemID) | [Item](#mruv.Item) |  |
-| DeleteItem | [ItemID](#mruv.ItemID) | [ItemID](#mruv.ItemID) |  |
-| GetItems | [GetItemsRequest](#mruv.GetItemsRequest) | [GetItemsResponse](#mruv.GetItemsResponse) |  |
-| CreateItemType | [ItemType](#mruv.ItemType) | [ItemTypeID](#mruv.ItemTypeID) | CRUD itemsTypes |
-| GetItemType | [ItemTypeID](#mruv.ItemTypeID) | [ItemType](#mruv.ItemType) |  |
-| DeleteItemType | [ItemTypeID](#mruv.ItemTypeID) | [ItemTypeID](#mruv.ItemTypeID) |  |
-| GetItemTypes | [GetItemTypesRequest](#mruv.GetItemTypesRequest) | [GetItemTypesResponse](#mruv.GetItemTypesResponse) |  |
-| CreateContainer | [Container](#mruv.Container) | [ContainerID](#mruv.ContainerID) | CRUD containers |
-| GetContainer | [ContainerID](#mruv.ContainerID) | [Container](#mruv.Container) |  |
-| DeleteContainer | [ContainerID](#mruv.ContainerID) | [ContainerID](#mruv.ContainerID) |  |
-| GetContainers | [GetContainersRequest](#mruv.GetContainersRequest) | [GetContainersResponse](#mruv.GetContainersResponse) |  |
-| CreateContainerType | [ContainerType](#mruv.ContainerType) | [ContainerTypeID](#mruv.ContainerTypeID) | CRUD container types |
-| GetContainerType | [ContainerTypeID](#mruv.ContainerTypeID) | [ContainerType](#mruv.ContainerType) |  |
-| DeleteContainerType | [ContainerTypeID](#mruv.ContainerTypeID) | [ContainerTypeID](#mruv.ContainerTypeID) |  |
-| GetContainerTypes | [GetContainerTypesRequest](#mruv.GetContainerTypesRequest) | [GetContainerTypesResponse](#mruv.GetContainerTypesResponse) |  |
-| GetContainerItems | [GetContainerItemsRequest](#mruv.GetContainerItemsRequest) | [GetContainerItemsResponse](#mruv.GetContainerItemsResponse) | Container Methods |
-| RemoveContainerItem | [RemoveItemRequest](#mruv.RemoveItemRequest) | [Item](#mruv.Item) |  |
-| PutItem | [PutItemRequest](#mruv.PutItemRequest) | [ItemID](#mruv.ItemID) |  |
-| SortItems | [SortItemsRequest](#mruv.SortItemsRequest) | [SortItemsResponse](#mruv.SortItemsResponse) | TODO: SortItemsStream |
-| GetNearestItems | [GetNearestItemsRequest](#mruv.GetNearestItemsRequest) | [GetNearestItemsResponse](#mruv.GetNearestItemsResponse) | TODO: GetNearestItemsStream |
-| UseItem | [UseItemRequest](#mruv.UseItemRequest) | [UseItemResponse](#mruv.UseItemResponse) |  |
-| GetServiceStatus | [ServiceStatusRequest](#mruv.ServiceStatusRequest) | [ServiceStatusResponse](#mruv.ServiceStatusResponse) | Service status |
-| GetServiceVersion | [VersionRequest](#mruv.VersionRequest) | [VersionResponse](#mruv.VersionResponse) |  |
+| CreateItem | [Item](#mruv.Item) | [ItemID](#mruv.ItemID) | Create new item. |
+| GetItem | [ItemID](#mruv.ItemID) | [Item](#mruv.Item) | Get item by id. |
+| DeleteItem | [ItemID](#mruv.ItemID) | [ItemID](#mruv.ItemID) | Delete item by id. |
+| GetItems | [GetItemsRequest](#mruv.GetItemsRequest) | [GetItemsResponse](#mruv.GetItemsResponse) | Gets all items. |
+| CreateItemType | [ItemType](#mruv.ItemType) | [ItemTypeID](#mruv.ItemTypeID) | Create item type. |
+| GetItemType | [ItemTypeID](#mruv.ItemTypeID) | [ItemType](#mruv.ItemType) | Get item type by id. |
+| DeleteItemType | [ItemTypeID](#mruv.ItemTypeID) | [ItemTypeID](#mruv.ItemTypeID) | Delete item type by id. |
+| GetItemTypes | [GetItemTypesRequest](#mruv.GetItemTypesRequest) | [GetItemTypesResponse](#mruv.GetItemTypesResponse) | Gets all item types. |
+| CreateContainer | [Container](#mruv.Container) | [ContainerID](#mruv.ContainerID) | Create container. |
+| GetContainer | [ContainerID](#mruv.ContainerID) | [Container](#mruv.Container) | Get container by id. |
+| DeleteContainer | [ContainerID](#mruv.ContainerID) | [ContainerID](#mruv.ContainerID) | Delete container by id. |
+| GetContainers | [GetContainersRequest](#mruv.GetContainersRequest) | [GetContainersResponse](#mruv.GetContainersResponse) | Get all containers. |
+| CreateContainerType | [ContainerType](#mruv.ContainerType) | [ContainerTypeID](#mruv.ContainerTypeID) | Create container type. |
+| GetContainerType | [ContainerTypeID](#mruv.ContainerTypeID) | [ContainerType](#mruv.ContainerType) | Get container type by id. |
+| DeleteContainerType | [ContainerTypeID](#mruv.ContainerTypeID) | [ContainerTypeID](#mruv.ContainerTypeID) | Detele container type by id. |
+| GetContainerTypes | [GetContainerTypesRequest](#mruv.GetContainerTypesRequest) | [GetContainerTypesResponse](#mruv.GetContainerTypesResponse) | Get all container types. |
+| GetContainerItems | [GetContainerItemsRequest](#mruv.GetContainerItemsRequest) | [GetContainerItemsResponse](#mruv.GetContainerItemsResponse) | Get items inside a container. |
+| PullItem | [PullItemRequest](#mruv.PullItemRequest) | [Item](#mruv.Item) | Pull item from container. |
+| PutItem | [PutItemRequest](#mruv.PutItemRequest) | [ItemID](#mruv.ItemID) | Put item into container. |
+| SortItems | [SortItemsRequest](#mruv.SortItemsRequest) | [SortItemsResponse](#mruv.SortItemsResponse) | Sort items inside container. This procedure change order of items inside container. |
+| GetNearestItems | [GetNearestItemsRequest](#mruv.GetNearestItemsRequest) | [GetNearestItemsResponse](#mruv.GetNearestItemsResponse) | Retrieves from the container the list of items nearest to the given position. |
+| UseItem | [UseItemRequest](#mruv.UseItemRequest) | [UseItemResponse](#mruv.UseItemResponse) | Trigger action associated with the item usage. |
+| GetServiceStatus | [ServiceStatusRequest](#mruv.ServiceStatusRequest) | [ServiceStatusResponse](#mruv.ServiceStatusResponse) | Get service health status. |
+| GetServiceVersion | [VersionRequest](#mruv.VersionRequest) | [VersionResponse](#mruv.VersionResponse) | Get service current version. |
 
  
 
@@ -858,16 +829,16 @@ Requests messages
 <a name="mruv.Container"></a>
 
 ### Container
-
+Container data structure.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [int32](#int32) |  |  |
-| type_id | [int32](#int32) |  |  |
-| item_id | [int64](#int64) |  |  |
-| items_inside | [int32](#int32) |  |  |
-| items | [InsideItem](#mruv.InsideItem) | repeated |  |
+| id | [ContainerID](#mruv.ContainerID) |  |  |
+| type_id | [ContainerTypeID](#mruv.ContainerTypeID) |  | ID of an container type. |
+| item_id | [ItemID](#mruv.ItemID) |  | ID of container item representing container. |
+| items_inside | [uint32](#uint32) |  | Number of items inside container. |
+| items | [InsideItem](#mruv.InsideItem) | repeated | List of items inside container. |
 
 
 
@@ -877,12 +848,12 @@ Requests messages
 <a name="mruv.ContainerID"></a>
 
 ### ContainerID
-
+Container ID.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [int32](#int32) |  |  |
+| id | [uint32](#uint32) |  |  |
 
 
 
@@ -892,17 +863,17 @@ Requests messages
 <a name="mruv.ContainerType"></a>
 
 ### ContainerType
-
+Container type data structure.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [int32](#int32) |  |  |
-| container_item_type_id | [int32](#int32) |  |  |
-| max_number | [int32](#int32) |  |  |
-| max_volume | [float](#float) |  |  |
-| max_weight | [float](#float) |  |  |
-| valid_item_types | [int32](#int32) | repeated |  |
+| id | [ContainerTypeID](#mruv.ContainerTypeID) |  |  |
+| container_item_type_id | [ItemTypeID](#mruv.ItemTypeID) |  | ID of an item type. |
+| max_number | [uint32](#uint32) |  | Max items in the container. |
+| max_volume | [float](#float) |  | Max volume of items in the container. |
+| max_weight | [float](#float) |  | Max weight of items in the container. |
+| valid_item_types | [ItemTypeID](#mruv.ItemTypeID) | repeated |  |
 
 
 
@@ -912,12 +883,12 @@ Requests messages
 <a name="mruv.ContainerTypeID"></a>
 
 ### ContainerTypeID
-
+Container type ID.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [int32](#int32) |  |  |
+| id | [uint32](#uint32) |  |  |
 
 
 
@@ -927,15 +898,15 @@ Requests messages
 <a name="mruv.InsideItem"></a>
 
 ### InsideItem
-
+Item inside container data structure.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| container_id | [int32](#int32) |  |  |
+| container_id | [ContainerID](#mruv.ContainerID) |  | ID of container containing the item. |
 | item_id | [ItemID](#mruv.ItemID) |  |  |
 | item | [Item](#mruv.Item) |  |  |
-| position | [int32](#int32) |  |  |
+| position | [int32](#int32) |  | Position representing order in container. In ascending manner. |
 
 
 
@@ -945,15 +916,15 @@ Requests messages
 <a name="mruv.Item"></a>
 
 ### Item
-
+Item data structure.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [int64](#int64) |  |  |
-| item_type_id | [int32](#int32) |  |  |
-| weight | [float](#float) |  |  |
-| volume | [float](#float) |  |  |
+| id | [ItemID](#mruv.ItemID) |  |  |
+| item_type_id | [ItemTypeID](#mruv.ItemTypeID) |  | ID of an item type. |
+| weight | [float](#float) |  | Current weight of the item. |
+| volume | [float](#float) |  | Current volume of the item. |
 
 
 
@@ -963,12 +934,12 @@ Requests messages
 <a name="mruv.ItemID"></a>
 
 ### ItemID
-
+Item ID.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [int64](#int64) |  |  |
+| id | [uint64](#uint64) |  |  |
 
 
 
@@ -978,18 +949,18 @@ Requests messages
 <a name="mruv.ItemType"></a>
 
 ### ItemType
-
+Item type data structure
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [int32](#int32) |  |  |
-| name | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| base_weight | [float](#float) |  |  |
-| base_volume | [float](#float) |  |  |
-| model_name | [string](#string) |  |  |
-| model_hash | [int32](#int32) |  |  |
+| id | [ItemTypeID](#mruv.ItemTypeID) |  |  |
+| name | [string](#string) |  | Short name of item type. |
+| description | [string](#string) |  | Description of item type. |
+| base_weight | [float](#float) |  | Default weight of items created with that item type. |
+| base_volume | [float](#float) |  | Default volume of items created with that item type. |
+| model_name | [string](#string) |  | GTA V model name. |
+| model_hash | [int32](#int32) |  | GTA V model hash. |
 
 
 
@@ -999,12 +970,12 @@ Requests messages
 <a name="mruv.ItemTypeID"></a>
 
 ### ItemTypeID
-
+Item type ID.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [int32](#int32) |  |  |
+| id | [uint32](#uint32) |  |  |
 
 
 
