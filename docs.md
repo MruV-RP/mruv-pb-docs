@@ -73,6 +73,7 @@
     - [GetNearestItemsResponse](#mruv.GetNearestItemsResponse)
     - [PullItemRequest](#mruv.PullItemRequest)
     - [PutItemRequest](#mruv.PutItemRequest)
+    - [PutItemResponse](#mruv.PutItemResponse)
     - [SortItemsRequest](#mruv.SortItemsRequest)
     - [SortItemsResponse](#mruv.SortItemsResponse)
     - [UseItemRequest](#mruv.UseItemRequest)
@@ -94,6 +95,7 @@
     - [ItemType](#mruv.ItemType)
     - [ItemTypeID](#mruv.ItemTypeID)
   
+    - [SortingMode](#mruv.SortingMode)
   
   
   
@@ -692,7 +694,7 @@ Request message for `MruVItemsService.PullItem`.
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | container_id | [ContainerID](#mruv.ContainerID) |  | ID of the container from which we pull out a item. |
-| item_id | [ItemID](#mruv.ItemID) |  | ID of the item we want to pull out. |
+| item_id | [ItemID](#mruv.ItemID) |  | ID of the item we want to pull out. That item must be inside the container. |
 
 
 
@@ -716,6 +718,21 @@ Request message for `MruVItemsService.PutItem`.
 
 
 
+<a name="mruv.PutItemResponse"></a>
+
+### PutItemResponse
+Response message for `MruVItemsService.PutItem`
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| inside_item | [InsideItem](#mruv.InsideItem) |  | Container with items inside. |
+
+
+
+
+
+
 <a name="mruv.SortItemsRequest"></a>
 
 ### SortItemsRequest
@@ -725,7 +742,7 @@ Request message for `MruVItemsService.SortItems`.
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | container_id | [ContainerID](#mruv.ContainerID) |  | ID of the container which contain items. |
-| sort_by | [string](#string) |  | Sorting mode. TODO. |
+| sort_by | [SortingMode](#mruv.SortingMode) |  | Sorting mode. |
 
 
 
@@ -740,7 +757,7 @@ Response message for `MruVItemsService.SortItems`.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| items | [Item](#mruv.Item) | repeated | List of items in given order. |
+| container | [Container](#mruv.Container) |  | Container with sorted items inside. |
 
 
 
@@ -808,7 +825,7 @@ The MruV items service provides procedures for managing items and containers
 | GetContainerTypes | [GetContainerTypesRequest](#mruv.GetContainerTypesRequest) | [GetContainerTypesResponse](#mruv.GetContainerTypesResponse) | Get all container types. |
 | GetContainerItems | [GetContainerItemsRequest](#mruv.GetContainerItemsRequest) | [GetContainerItemsResponse](#mruv.GetContainerItemsResponse) | Get items inside a container. |
 | PullItem | [PullItemRequest](#mruv.PullItemRequest) | [Item](#mruv.Item) | Pull item from container. |
-| PutItem | [PutItemRequest](#mruv.PutItemRequest) | [ItemID](#mruv.ItemID) | Put item into container. |
+| PutItem | [PutItemRequest](#mruv.PutItemRequest) | [PutItemResponse](#mruv.PutItemResponse) | Put item into container. |
 | SortItems | [SortItemsRequest](#mruv.SortItemsRequest) | [SortItemsResponse](#mruv.SortItemsResponse) | Sort items inside container. This procedure change order of items inside container. |
 | GetNearestItems | [GetNearestItemsRequest](#mruv.GetNearestItemsRequest) | [GetNearestItemsResponse](#mruv.GetNearestItemsResponse) | Retrieves from the container the list of items nearest to the given position. |
 | UseItem | [UseItemRequest](#mruv.UseItemRequest) | [UseItemResponse](#mruv.UseItemResponse) | Trigger action associated with the item usage. |
@@ -982,6 +999,21 @@ Item type ID.
 
 
  
+
+
+<a name="mruv.SortingMode"></a>
+
+### SortingMode
+Sorting modes for container items.
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| UNKNOWN | 0 | undefined behaviour |
+| WEIGHT_DESC | 1 | sort by weight descending |
+| WEIGHT_ASC | 2 | sort by weight ascending |
+| VOLUME_DESC | 3 | sort by volume descending |
+| VOLUME_ASC | 4 | sort by volume ascending |
+
 
  
 
