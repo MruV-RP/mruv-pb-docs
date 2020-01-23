@@ -3,6 +3,25 @@
 
 ## Table of Contents
 
+- [accounts/accounts.proto](#accounts/accounts.proto)
+    - [LogInRequest](#mruv.LogInRequest)
+    - [LogInResponse](#mruv.LogInResponse)
+    - [RegisterAccountRequest](#mruv.RegisterAccountRequest)
+    - [RegisterAccountResponse](#mruv.RegisterAccountResponse)
+  
+  
+  
+    - [MruVAccountsService](#mruv.MruVAccountsService)
+  
+
+- [accounts/accounts_model.proto](#accounts/accounts_model.proto)
+    - [Account](#mruv.Account)
+    - [AccountID](#mruv.AccountID)
+  
+  
+  
+  
+
 - [characters/characters.proto](#characters/characters.proto)
     - [DeathStreamRequest](#mruv.DeathStreamRequest)
     - [DeathStreamResponse](#mruv.DeathStreamResponse)
@@ -42,7 +61,6 @@
 - [groups/groups.proto](#groups/groups.proto)
     - [GetGroupsRequest](#mruv.GetGroupsRequest)
     - [GetGroupsResponse](#mruv.GetGroupsResponse)
-    - [GroupID](#mruv.GroupID)
   
   
   
@@ -51,8 +69,9 @@
 
 - [groups/groups_model.proto](#groups/groups_model.proto)
     - [Group](#mruv.Group)
+    - [GroupID](#mruv.GroupID)
     - [Permission](#mruv.Permission)
-    - [User](#mruv.User)
+    - [PermissionID](#mruv.PermissionID)
   
   
   
@@ -100,7 +119,166 @@
   
   
 
+- [server/server.proto](#server/server.proto)
+    - [RegisterServerRequest](#mruv.RegisterServerRequest)
+    - [RegisterServerResponse](#mruv.RegisterServerResponse)
+  
+  
+  
+    - [MruVServerService](#mruv.MruVServerService)
+  
+
+- [server/server_model.proto](#server/server_model.proto)
+    - [ServerID](#mruv.ServerID)
+    - [ServerInfo](#mruv.ServerInfo)
+    - [ServerStatus](#mruv.ServerStatus)
+  
+  
+  
+  
+
 - [Scalar Value Types](#scalar-value-types)
+
+
+
+<a name="accounts/accounts.proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## accounts/accounts.proto
+
+
+
+<a name="mruv.LogInRequest"></a>
+
+### LogInRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| login | [string](#string) |  |  |
+| password | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="mruv.LogInResponse"></a>
+
+### LogInResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| success | [bool](#bool) |  |  |
+| id | [AccountID](#mruv.AccountID) |  |  |
+
+
+
+
+
+
+<a name="mruv.RegisterAccountRequest"></a>
+
+### RegisterAccountRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| account | [Account](#mruv.Account) |  |  |
+| password | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="mruv.RegisterAccountResponse"></a>
+
+### RegisterAccountResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| success | [bool](#bool) |  |  |
+| id | [AccountID](#mruv.AccountID) |  |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+
+<a name="mruv.MruVAccountsService"></a>
+
+### MruVAccountsService
+
+
+| Method Name | Request Type | Response Type | Description |
+| ----------- | ------------ | ------------- | ------------|
+| RegisterAccount | [RegisterAccountRequest](#mruv.RegisterAccountRequest) | [RegisterAccountResponse](#mruv.RegisterAccountResponse) |  |
+| LogIn | [LogInRequest](#mruv.LogInRequest) | [LogInResponse](#mruv.LogInResponse) |  |
+| GetAccount | [AccountID](#mruv.AccountID) | [Account](#mruv.Account) |  |
+
+ 
+
+
+
+<a name="accounts/accounts_model.proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## accounts/accounts_model.proto
+
+
+
+<a name="mruv.Account"></a>
+
+### Account
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [AccountID](#mruv.AccountID) |  |  |
+| login | [string](#string) |  |  |
+| nick | [string](#string) |  |  |
+| email | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="mruv.AccountID"></a>
+
+### AccountID
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [int64](#int64) |  |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
 
 
 
@@ -155,10 +333,9 @@ requests &amp; response messages
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| Create | [Character](#mruv.Character) | [CharacterID](#mruv.CharacterID) | CRUD |
-| Get | [CharacterID](#mruv.CharacterID) | [Character](#mruv.Character) |  |
-| Update | [Character](#mruv.Character) | [CharacterID](#mruv.CharacterID) |  |
-| Remove | [CharacterID](#mruv.CharacterID) | [CharacterID](#mruv.CharacterID) |  |
+| CreateCharacter | [Character](#mruv.Character) | [CharacterID](#mruv.CharacterID) | CRUD |
+| GetCharacter | [CharacterID](#mruv.CharacterID) | [Character](#mruv.Character) |  |
+| RemoveCharacter | [CharacterID](#mruv.CharacterID) | [CharacterID](#mruv.CharacterID) |  |
 | PermanentCharacterKill | [CharacterID](#mruv.CharacterID) | [CharacterID](#mruv.CharacterID) | Deaths |
 | DeathsStream | [DeathStreamRequest](#mruv.DeathStreamRequest) | [DeathStreamResponse](#mruv.DeathStreamResponse) stream |  |
 | GetServiceStatus | [ServiceStatusRequest](#mruv.ServiceStatusRequest) | [ServiceStatusResponse](#mruv.ServiceStatusResponse) | Service status |
@@ -183,11 +360,13 @@ requests &amp; response messages
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [int32](#int32) |  |  |
+| id | [CharacterID](#mruv.CharacterID) |  |  |
+| owner_id | [AccountID](#mruv.AccountID) |  |  |
 | first_name | [string](#string) |  |  |
 | second_name | [string](#string) |  |  |
 | age | [uint32](#uint32) |  |  |
 | sex | [uint32](#uint32) |  |  |
+| position | [Position](#mruv.Position) |  |  |
 
 
 
@@ -202,7 +381,7 @@ requests &amp; response messages
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [int32](#int32) |  |  |
+| id | [int64](#int64) |  |  |
 
 
 
@@ -387,21 +566,6 @@ requests &amp; response messages
 
 
 
-
-<a name="mruv.GroupID"></a>
-
-### GroupID
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [int32](#int32) |  |  |
-
-
-
-
-
  
 
  
@@ -416,7 +580,7 @@ requests &amp; response messages
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| CreateGroup | [Group](#mruv.Group) | [GroupID](#mruv.GroupID) | CRUD items |
+| CreateGroup | [Group](#mruv.Group) | [GroupID](#mruv.GroupID) | CRUD |
 | GetGroup | [GroupID](#mruv.GroupID) | [Group](#mruv.Group) |  |
 | UpdateGroup | [Group](#mruv.Group) | [GroupID](#mruv.GroupID) |  |
 | DeleteGroup | [GroupID](#mruv.GroupID) | [GroupID](#mruv.GroupID) |  |
@@ -443,11 +607,26 @@ requests &amp; response messages
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [int32](#int32) |  |  |
+| id | [GroupID](#mruv.GroupID) |  |  |
 | name | [string](#string) |  |  |
 | description | [string](#string) |  |  |
 | permissions | [Permission](#mruv.Permission) | repeated |  |
-| users | [User](#mruv.User) | repeated |  |
+| members | [AccountID](#mruv.AccountID) | repeated |  |
+
+
+
+
+
+
+<a name="mruv.GroupID"></a>
+
+### GroupID
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [int32](#int32) |  |  |
 
 
 
@@ -462,6 +641,7 @@ requests &amp; response messages
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| id | [PermissionID](#mruv.PermissionID) |  |  |
 | name | [string](#string) |  |  |
 | role | [string](#string) |  |  |
 
@@ -470,16 +650,15 @@ requests &amp; response messages
 
 
 
-<a name="mruv.User"></a>
+<a name="mruv.PermissionID"></a>
 
-### User
+### PermissionID
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [int32](#int32) |  |  |
-| name | [string](#string) |  |  |
+| id | [int64](#int64) |  |  |
 
 
 
@@ -1014,6 +1193,118 @@ Sorting modes for container items.
 | VOLUME_DESC | 3 | sort by volume descending |
 | VOLUME_ASC | 4 | sort by volume ascending |
 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="server/server.proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## server/server.proto
+
+
+
+<a name="mruv.RegisterServerRequest"></a>
+
+### RegisterServerRequest
+Request message for `MruVServerService`
+
+
+
+
+
+
+<a name="mruv.RegisterServerResponse"></a>
+
+### RegisterServerResponse
+Response message for `MruVServerService`
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+
+<a name="mruv.MruVServerService"></a>
+
+### MruVServerService
+The MruV server service provides procedures for managing game platform server actions
+
+| Method Name | Request Type | Response Type | Description |
+| ----------- | ------------ | ------------- | ------------|
+| RegisterServer | [RegisterServerRequest](#mruv.RegisterServerRequest) | [RegisterServerResponse](#mruv.RegisterServerResponse) | Register instance of server for further managing |
+| GetServerStatus | [ServerID](#mruv.ServerID) | [ServerStatus](#mruv.ServerStatus) | Get game server status |
+
+ 
+
+
+
+<a name="server/server_model.proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## server/server_model.proto
+
+
+
+<a name="mruv.ServerID"></a>
+
+### ServerID
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [int32](#int32) |  |  |
+
+
+
+
+
+
+<a name="mruv.ServerInfo"></a>
+
+### ServerInfo
+Data that describe server
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  | Short name of the server |
+| host | [string](#string) |  | Host (ip) of the server |
+| port | [string](#string) |  | Port of the server |
+| platform | [string](#string) |  | Platform, on which server is running |
+
+
+
+
+
+
+<a name="mruv.ServerStatus"></a>
+
+### ServerStatus
+State of the server
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| active | [bool](#bool) |  | Is server active and working |
+| players | [int32](#int32) |  | How many players are registered on that server |
+
+
+
+
+
+ 
 
  
 
