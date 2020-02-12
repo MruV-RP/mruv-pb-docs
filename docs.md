@@ -4,6 +4,7 @@
 ## Table of Contents
 
 - [accounts/accounts.proto](#accounts/accounts.proto)
+    - [GetAccountCharactersResponse](#mruv.GetAccountCharactersResponse)
     - [LogInRequest](#mruv.LogInRequest)
     - [LogInResponse](#mruv.LogInResponse)
     - [RegisterAccountRequest](#mruv.RegisterAccountRequest)
@@ -59,8 +60,12 @@
   
 
 - [groups/groups.proto](#groups/groups.proto)
+    - [AddGroupMemberRequest](#mruv.AddGroupMemberRequest)
+    - [AddGroupMemberResponse](#mruv.AddGroupMemberResponse)
     - [GetGroupsRequest](#mruv.GetGroupsRequest)
     - [GetGroupsResponse](#mruv.GetGroupsResponse)
+    - [RemoveGroupMemberRequest](#mruv.RemoveGroupMemberRequest)
+    - [RemoveGroupMemberResponse](#mruv.RemoveGroupMemberResponse)
   
   
   
@@ -148,6 +153,21 @@
 
 
 
+<a name="mruv.GetAccountCharactersResponse"></a>
+
+### GetAccountCharactersResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| characters | [Character](#mruv.Character) | repeated |  |
+
+
+
+
+
+
 <a name="mruv.LogInRequest"></a>
 
 ### LogInRequest
@@ -228,6 +248,7 @@
 | RegisterAccount | [RegisterAccountRequest](#mruv.RegisterAccountRequest) | [RegisterAccountResponse](#mruv.RegisterAccountResponse) |  |
 | LogIn | [LogInRequest](#mruv.LogInRequest) | [LogInResponse](#mruv.LogInResponse) |  |
 | GetAccount | [AccountID](#mruv.AccountID) | [Account](#mruv.Account) |  |
+| GetAccountCharacters | [AccountID](#mruv.AccountID) | [GetAccountCharactersResponse](#mruv.GetAccountCharactersResponse) |  |
 
  
 
@@ -537,6 +558,26 @@ requests &amp; response messages
 
 
 
+<a name="mruv.AddGroupMemberRequest"></a>
+
+### AddGroupMemberRequest
+
+
+
+
+
+
+
+<a name="mruv.AddGroupMemberResponse"></a>
+
+### AddGroupMemberResponse
+
+
+
+
+
+
+
 <a name="mruv.GetGroupsRequest"></a>
 
 ### GetGroupsRequest
@@ -566,6 +607,26 @@ requests &amp; response messages
 
 
 
+
+<a name="mruv.RemoveGroupMemberRequest"></a>
+
+### RemoveGroupMemberRequest
+
+
+
+
+
+
+
+<a name="mruv.RemoveGroupMemberResponse"></a>
+
+### RemoveGroupMemberResponse
+
+
+
+
+
+
  
 
  
@@ -582,9 +643,10 @@ requests &amp; response messages
 | ----------- | ------------ | ------------- | ------------|
 | CreateGroup | [Group](#mruv.Group) | [GroupID](#mruv.GroupID) | CRUD |
 | GetGroup | [GroupID](#mruv.GroupID) | [Group](#mruv.Group) |  |
-| UpdateGroup | [Group](#mruv.Group) | [GroupID](#mruv.GroupID) |  |
 | DeleteGroup | [GroupID](#mruv.GroupID) | [GroupID](#mruv.GroupID) |  |
 | GetGroups | [GetGroupsRequest](#mruv.GetGroupsRequest) | [GetGroupsResponse](#mruv.GetGroupsResponse) |  |
+| AddGroupMember | [AddGroupMemberRequest](#mruv.AddGroupMemberRequest) | [AddGroupMemberResponse](#mruv.AddGroupMemberResponse) |  |
+| RemoveGroupMember | [RemoveGroupMemberRequest](#mruv.RemoveGroupMemberRequest) | [RemoveGroupMemberResponse](#mruv.RemoveGroupMemberResponse) |  |
 | GetServiceStatus | [ServiceStatusRequest](#mruv.ServiceStatusRequest) | [ServiceStatusResponse](#mruv.ServiceStatusResponse) | Service status |
 | GetServiceVersion | [VersionRequest](#mruv.VersionRequest) | [VersionResponse](#mruv.VersionResponse) |  |
 
