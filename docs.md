@@ -59,6 +59,42 @@
   
   
 
+- [devtools/devtools.proto](#devtools/devtools.proto)
+    - [DeletePositionRequest](#mruv.devtools.DeletePositionRequest)
+    - [DeletePositionResponse](#mruv.devtools.DeletePositionResponse)
+    - [GetAnimationRequest](#mruv.devtools.GetAnimationRequest)
+    - [GetAnimationResponse](#mruv.devtools.GetAnimationResponse)
+    - [GetAnimationsRequest](#mruv.devtools.GetAnimationsRequest)
+    - [GetAnimationsResponse](#mruv.devtools.GetAnimationsResponse)
+    - [GetAnimationsResponse.Row](#mruv.devtools.GetAnimationsResponse.Row)
+    - [GetOutfitsRequest](#mruv.devtools.GetOutfitsRequest)
+    - [GetOutfitsResponse](#mruv.devtools.GetOutfitsResponse)
+    - [GetOutfitsResponse.Row](#mruv.devtools.GetOutfitsResponse.Row)
+    - [GetPositionsRequest](#mruv.devtools.GetPositionsRequest)
+    - [GetPositionsResponse](#mruv.devtools.GetPositionsResponse)
+    - [GetPositionsResponse.Row](#mruv.devtools.GetPositionsResponse.Row)
+    - [SaveAnimationRequest](#mruv.devtools.SaveAnimationRequest)
+    - [SaveAnimationResponse](#mruv.devtools.SaveAnimationResponse)
+    - [SaveOutfitRequest](#mruv.devtools.SaveOutfitRequest)
+    - [SaveOutfitResponse](#mruv.devtools.SaveOutfitResponse)
+    - [SavePositionRequest](#mruv.devtools.SavePositionRequest)
+    - [SavePositionResponse](#mruv.devtools.SavePositionResponse)
+  
+  
+  
+    - [MruVDevToolsService](#mruv.devtools.MruVDevToolsService)
+  
+
+- [devtools/devtools_model.proto](#devtools/devtools_model.proto)
+    - [Animation](#mruv.devtools.Animation)
+    - [Outfit](#mruv.devtools.Outfit)
+    - [Player](#mruv.devtools.Player)
+    - [Position](#mruv.devtools.Position)
+  
+  
+  
+  
+
 - [groups/groups.proto](#groups/groups.proto)
     - [AddGroupMemberRequest](#mruv.AddGroupMemberRequest)
     - [AddGroupMemberResponse](#mruv.AddGroupMemberResponse)
@@ -536,6 +572,425 @@ requests &amp; response messages
 | rx | [double](#double) |  |  |
 | ry | [double](#double) |  |  |
 | rz | [double](#double) |  |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="devtools/devtools.proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## devtools/devtools.proto
+
+
+
+<a name="mruv.devtools.DeletePositionRequest"></a>
+
+### DeletePositionRequest
+Delete position request message.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| position | [Position](#mruv.devtools.Position) |  |  |
+
+
+
+
+
+
+<a name="mruv.devtools.DeletePositionResponse"></a>
+
+### DeletePositionResponse
+Delete position response message.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| success | [bool](#bool) |  |  |
+
+
+
+
+
+
+<a name="mruv.devtools.GetAnimationRequest"></a>
+
+### GetAnimationRequest
+Get animations request message.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| dict | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="mruv.devtools.GetAnimationResponse"></a>
+
+### GetAnimationResponse
+Get animation response message.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| animation | [Animation](#mruv.devtools.Animation) |  |  |
+| author | [Player](#mruv.devtools.Player) |  |  |
+
+
+
+
+
+
+<a name="mruv.devtools.GetAnimationsRequest"></a>
+
+### GetAnimationsRequest
+Get animations request message.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| limit | [uint32](#uint32) |  |  |
+| dict | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="mruv.devtools.GetAnimationsResponse"></a>
+
+### GetAnimationsResponse
+Get animations response message.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| animations | [GetAnimationsResponse.Row](#mruv.devtools.GetAnimationsResponse.Row) | repeated |  |
+
+
+
+
+
+
+<a name="mruv.devtools.GetAnimationsResponse.Row"></a>
+
+### GetAnimationsResponse.Row
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| animation | [Animation](#mruv.devtools.Animation) |  |  |
+| author | [Player](#mruv.devtools.Player) |  |  |
+
+
+
+
+
+
+<a name="mruv.devtools.GetOutfitsRequest"></a>
+
+### GetOutfitsRequest
+Get outgits request message.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  |  |
+| category | [string](#string) |  |  |
+| author | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="mruv.devtools.GetOutfitsResponse"></a>
+
+### GetOutfitsResponse
+Get outfits response message.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| outfits | [GetOutfitsResponse.Row](#mruv.devtools.GetOutfitsResponse.Row) | repeated |  |
+
+
+
+
+
+
+<a name="mruv.devtools.GetOutfitsResponse.Row"></a>
+
+### GetOutfitsResponse.Row
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| outfit | [Outfit](#mruv.devtools.Outfit) |  |  |
+| author | [Player](#mruv.devtools.Player) |  |  |
+
+
+
+
+
+
+<a name="mruv.devtools.GetPositionsRequest"></a>
+
+### GetPositionsRequest
+Get position request message.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| limit | [uint32](#uint32) |  |  |
+| category | [string](#string) |  |  |
+| author | [Player](#mruv.devtools.Player) |  |  |
+
+
+
+
+
+
+<a name="mruv.devtools.GetPositionsResponse"></a>
+
+### GetPositionsResponse
+Get position response message.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| positions | [GetPositionsResponse.Row](#mruv.devtools.GetPositionsResponse.Row) | repeated |  |
+
+
+
+
+
+
+<a name="mruv.devtools.GetPositionsResponse.Row"></a>
+
+### GetPositionsResponse.Row
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| position | [Position](#mruv.devtools.Position) |  |  |
+| author | [Player](#mruv.devtools.Player) |  |  |
+
+
+
+
+
+
+<a name="mruv.devtools.SaveAnimationRequest"></a>
+
+### SaveAnimationRequest
+Save animation request message.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| animation | [Animation](#mruv.devtools.Animation) |  |  |
+
+
+
+
+
+
+<a name="mruv.devtools.SaveAnimationResponse"></a>
+
+### SaveAnimationResponse
+Save animation response message.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| success | [bool](#bool) |  |  |
+
+
+
+
+
+
+<a name="mruv.devtools.SaveOutfitRequest"></a>
+
+### SaveOutfitRequest
+Save outfit request message.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| outfit | [Outfit](#mruv.devtools.Outfit) |  |  |
+
+
+
+
+
+
+<a name="mruv.devtools.SaveOutfitResponse"></a>
+
+### SaveOutfitResponse
+Save outfit response message.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| success | [bool](#bool) |  |  |
+
+
+
+
+
+
+<a name="mruv.devtools.SavePositionRequest"></a>
+
+### SavePositionRequest
+Save position request message.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| position | [Position](#mruv.devtools.Position) |  |  |
+
+
+
+
+
+
+<a name="mruv.devtools.SavePositionResponse"></a>
+
+### SavePositionResponse
+Save position response message.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| success | [bool](#bool) |  |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+
+<a name="mruv.devtools.MruVDevToolsService"></a>
+
+### MruVDevToolsService
+The MruV developer tools service for mruv-devtools package.
+
+| Method Name | Request Type | Response Type | Description |
+| ----------- | ------------ | ------------- | ------------|
+| GetPositions | [GetPositionsRequest](#mruv.devtools.GetPositionsRequest) | [GetPositionsResponse](#mruv.devtools.GetPositionsResponse) | Get saved positions. |
+| SavePosition | [SavePositionRequest](#mruv.devtools.SavePositionRequest) | [SavePositionResponse](#mruv.devtools.SavePositionResponse) | Save position. |
+| DeletePosition | [DeletePositionRequest](#mruv.devtools.DeletePositionRequest) | [DeletePositionResponse](#mruv.devtools.DeletePositionResponse) | Delete position. |
+| GetOutfits | [GetOutfitsRequest](#mruv.devtools.GetOutfitsRequest) | [GetOutfitsResponse](#mruv.devtools.GetOutfitsResponse) | Get saved outfit. |
+| SaveOutfit | [SaveOutfitRequest](#mruv.devtools.SaveOutfitRequest) | [SaveOutfitResponse](#mruv.devtools.SaveOutfitResponse) | Save outfit. |
+| GetAnimations | [GetAnimationsRequest](#mruv.devtools.GetAnimationsRequest) | [GetAnimationsResponse](#mruv.devtools.GetAnimationsResponse) | Get all saved animations. |
+| GetAnimation | [GetAnimationRequest](#mruv.devtools.GetAnimationRequest) | [GetAnimationResponse](#mruv.devtools.GetAnimationResponse) | Get saved animation by name. |
+| SaveAnimation | [SaveAnimationRequest](#mruv.devtools.SaveAnimationRequest) | [SaveAnimationResponse](#mruv.devtools.SaveAnimationResponse) | Save animation. |
+| GetServiceStatus | [.mruv.ServiceStatusRequest](#mruv.ServiceStatusRequest) | [.mruv.ServiceStatusResponse](#mruv.ServiceStatusResponse) | Get service status. |
+| GetServiceVersion | [.mruv.VersionRequest](#mruv.VersionRequest) | [.mruv.VersionResponse](#mruv.VersionResponse) | Get service version. |
+
+ 
+
+
+
+<a name="devtools/devtools_model.proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## devtools/devtools_model.proto
+
+
+
+<a name="mruv.devtools.Animation"></a>
+
+### Animation
+GTA V animation structure.
+You can find more information about RageMP outfits [here](https://wiki.rage.mp/index.php?title=Animations &#34;RageMP Animations&#34;)
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| dict | [string](#string) |  | Animation dictionary name. |
+| name | [string](#string) |  | Animation name. |
+| readable_category | [string](#string) |  | Animation category, specified by author. |
+| category | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="mruv.devtools.Outfit"></a>
+
+### Outfit
+GTA V player outfit structure.
+You can find more information about RageMP outfits [here](https://wiki.rage.mp/index.php?title=Clothes &#34;RageMP Clothes&#34;)
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  | Name of the outfit. |
+| category | [string](#string) |  | Category of the outfit. |
+
+
+
+
+
+
+<a name="mruv.devtools.Player"></a>
+
+### Player
+Player structure for storing authors of devtools saved records.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [int32](#int32) |  | Unique id. |
+| name | [string](#string) |  | Unique name. |
+| hash | [string](#string) |  | Password hash. |
+
+
+
+
+
+
+<a name="mruv.devtools.Position"></a>
+
+### Position
+Position structure.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| x | [double](#double) |  |  |
+| y | [double](#double) |  |  |
+| z | [double](#double) |  |  |
+| name | [string](#string) |  | Short position name. |
+| description | [string](#string) |  | Description of the place which the position indicates. |
 
 
 
