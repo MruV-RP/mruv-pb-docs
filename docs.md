@@ -1617,7 +1617,7 @@ Item inside container data structure.
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | container_id | [uint32](#uint32) |  | ID of container containing the item. |
-| item_id | [int64](#int64) |  |  |
+| item_id | [uint32](#uint32) |  |  |
 | item | [Item](#mruv.Item) |  |  |
 | position | [int32](#int32) |  | Position representing order in container. In ascending manner. |
 
