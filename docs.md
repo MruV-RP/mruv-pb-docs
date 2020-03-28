@@ -229,7 +229,7 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | success | [bool](#bool) |  |  |
-| id | [AccountID](#mruv.AccountID) |  |  |
+| account_id | [uint32](#uint32) |  |  |
 
 
 
@@ -261,7 +261,7 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | success | [bool](#bool) |  |  |
-| id | [AccountID](#mruv.AccountID) |  |  |
+| account_id | [uint32](#uint32) |  |  |
 
 
 
@@ -305,7 +305,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [AccountID](#mruv.AccountID) |  |  |
+| id | [uint32](#uint32) |  |  |
 | login | [string](#string) |  |  |
 | nick | [string](#string) |  |  |
 | email | [string](#string) |  |  |
@@ -323,7 +323,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [int64](#int64) |  |  |
+| id | [uint32](#uint32) |  |  |
 
 
 
@@ -417,8 +417,8 @@ requests &amp; response messages
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [CharacterID](#mruv.CharacterID) |  |  |
-| owner_id | [AccountID](#mruv.AccountID) |  |  |
+| id | [uint32](#uint32) |  |  |
+| owner_id | [uint32](#uint32) |  |  |
 | first_name | [string](#string) |  |  |
 | second_name | [string](#string) |  |  |
 | age | [uint32](#uint32) |  |  |
@@ -438,7 +438,7 @@ requests &amp; response messages
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [int64](#int64) |  |  |
+| id | [uint32](#uint32) |  |  |
 
 
 
@@ -969,7 +969,7 @@ Player structure for storing authors of devtools saved records.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [int32](#int32) |  | Unique id. |
+| id | [uint32](#uint32) |  | Unique id. |
 | name | [string](#string) |  | Unique name. |
 | hash | [string](#string) |  | Password hash. |
 
@@ -1124,11 +1124,11 @@ Position structure.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [GroupID](#mruv.GroupID) |  |  |
+| id | [uint32](#uint32) |  |  |
 | name | [string](#string) |  |  |
 | description | [string](#string) |  |  |
 | permissions | [Permission](#mruv.Permission) | repeated |  |
-| members | [AccountID](#mruv.AccountID) | repeated |  |
+| members | [uint32](#uint32) | repeated |  |
 
 
 
@@ -1143,7 +1143,7 @@ Position structure.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [int32](#int32) |  |  |
+| id | [uint32](#uint32) |  |  |
 
 
 
@@ -1158,7 +1158,7 @@ Position structure.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [PermissionID](#mruv.PermissionID) |  |  |
+| id | [uint32](#uint32) |  |  |
 | name | [string](#string) |  |  |
 | role | [string](#string) |  |  |
 
@@ -1175,7 +1175,7 @@ Position structure.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [int64](#int64) |  |  |
+| id | [uint32](#uint32) |  |  |
 
 
 
@@ -1206,7 +1206,7 @@ Request message for `MruVItemsService.GetContainerItems`.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| container_id | [ContainerID](#mruv.ContainerID) |  | ID of container with items. |
+| container_id | [uint32](#uint32) |  | ID of container with items. |
 | limit | [uint32](#uint32) |  | Limit of the returned items. |
 
 
@@ -1358,7 +1358,7 @@ Request message for `MruVItemsService.GetNearestItems`.
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | position | [Position](#mruv.Position) |  | Position from which to calculate the distance |
-| container_id | [ContainerID](#mruv.ContainerID) |  | ID of container that contains items. |
+| container_id | [uint32](#uint32) |  | ID of container that contains items. |
 | distance_limit | [double](#double) |  | The distance over which the items are ignored. |
 
 
@@ -1389,8 +1389,8 @@ Request message for `MruVItemsService.PullItem`.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| container_id | [ContainerID](#mruv.ContainerID) |  | ID of the container from which we pull out a item. |
-| item_id | [ItemID](#mruv.ItemID) |  | ID of the item we want to pull out. That item must be inside the container. |
+| container_id | [uint32](#uint32) |  | ID of the container from which we pull out a item. |
+| item_id | [uint32](#uint32) |  | ID of the item we want to pull out. That item must be inside the container. |
 
 
 
@@ -1405,8 +1405,8 @@ Request message for `MruVItemsService.PutItem`.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| container_id | [ContainerID](#mruv.ContainerID) |  | ID of container where to put item. |
-| item_id | [ItemID](#mruv.ItemID) |  | ID of item we wan to put in. |
+| container_id | [uint32](#uint32) |  | ID of container where to put item. |
+| item_id | [uint32](#uint32) |  | ID of item we wan to put in. |
 | slot | [int32](#int32) |  | Position used for sorting items |
 
 
@@ -1437,7 +1437,7 @@ Request message for `MruVItemsService.SortItems`.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| container_id | [ContainerID](#mruv.ContainerID) |  | ID of the container which contain items. |
+| container_id | [uint32](#uint32) |  | ID of the container which contain items. |
 | sort_by | [SortingMode](#mruv.SortingMode) |  | Sorting mode. |
 
 
@@ -1468,7 +1468,7 @@ Request message for `MruVItemsService.UseItem`.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| item_id | [ItemID](#mruv.ItemID) |  |  |
+| item_id | [uint32](#uint32) |  |  |
 
 
 
@@ -1547,9 +1547,9 @@ Container data structure.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [ContainerID](#mruv.ContainerID) |  |  |
-| type_id | [ContainerTypeID](#mruv.ContainerTypeID) |  | ID of an container type. |
-| item_id | [ItemID](#mruv.ItemID) |  | ID of container item representing container. |
+| id | [uint32](#uint32) |  |  |
+| type_id | [uint32](#uint32) |  | ID of an container type. |
+| item_id | [uint32](#uint32) |  | ID of container item representing container. |
 | items_inside | [uint32](#uint32) |  | Number of items inside container. |
 | items | [InsideItem](#mruv.InsideItem) | repeated | List of items inside container. |
 
@@ -1581,12 +1581,12 @@ Container type data structure.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [ContainerTypeID](#mruv.ContainerTypeID) |  |  |
-| container_item_type_id | [ItemTypeID](#mruv.ItemTypeID) |  | ID of an item type. |
+| id | [uint32](#uint32) |  |  |
+| container_item_type_id | [uint32](#uint32) |  | ID of an item type. |
 | max_number | [uint32](#uint32) |  | Max items in the container. |
 | max_volume | [float](#float) |  | Max volume of items in the container. |
 | max_weight | [float](#float) |  | Max weight of items in the container. |
-| valid_item_types | [ItemTypeID](#mruv.ItemTypeID) | repeated |  |
+| valid_item_types | [int64](#int64) | repeated |  |
 
 
 
@@ -1616,8 +1616,8 @@ Item inside container data structure.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| container_id | [ContainerID](#mruv.ContainerID) |  | ID of container containing the item. |
-| item_id | [ItemID](#mruv.ItemID) |  |  |
+| container_id | [uint32](#uint32) |  | ID of container containing the item. |
+| item_id | [int64](#int64) |  |  |
 | item | [Item](#mruv.Item) |  |  |
 | position | [int32](#int32) |  | Position representing order in container. In ascending manner. |
 
@@ -1634,8 +1634,8 @@ Item data structure.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [ItemID](#mruv.ItemID) |  |  |
-| item_type_id | [ItemTypeID](#mruv.ItemTypeID) |  | ID of an item type. |
+| id | [uint32](#uint32) |  |  |
+| item_type_id | [uint32](#uint32) |  | ID of an item type. |
 | weight | [float](#float) |  | Current weight of the item. |
 | volume | [float](#float) |  | Current volume of the item. |
 
@@ -1652,7 +1652,7 @@ Item ID.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [uint64](#uint64) |  |  |
+| id | [uint32](#uint32) |  |  |
 
 
 
@@ -1667,7 +1667,7 @@ Item type data structure
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [ItemTypeID](#mruv.ItemTypeID) |  |  |
+| id | [uint32](#uint32) |  |  |
 | name | [string](#string) |  | Short name of item type. |
 | description | [string](#string) |  | Description of item type. |
 | base_weight | [float](#float) |  | Default weight of items created with that item type. |
@@ -1781,7 +1781,7 @@ The MruV server service provides procedures for managing game platform server ac
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [int32](#int32) |  |  |
+| id | [int64](#int64) |  |  |
 
 
 
