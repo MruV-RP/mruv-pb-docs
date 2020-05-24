@@ -161,19 +161,24 @@
   
 
 - [server/server.proto](#server/server.proto)
-    - [RegisterServerRequest](#mruv.RegisterServerRequest)
-    - [RegisterServerResponse](#mruv.RegisterServerResponse)
+    - [GetRegisteredServersRequest](#mruv.server.GetRegisteredServersRequest)
+    - [GetRegisteredServersResponse](#mruv.server.GetRegisteredServersResponse)
+    - [ServerEvent](#mruv.server.ServerEvent)
+    - [ServerEventsStreamRequest](#mruv.server.ServerEventsStreamRequest)
+    - [UpdateServerStatusRequest](#mruv.server.UpdateServerStatusRequest)
+    - [UpdateServerStatusResponse](#mruv.server.UpdateServerStatusResponse)
+  
+    - [ServerEvent.ServerEventType](#mruv.server.ServerEvent.ServerEventType)
   
   
-  
-    - [MruVServerService](#mruv.MruVServerService)
+    - [MruVServerService](#mruv.server.MruVServerService)
   
 
 - [server/server_model.proto](#server/server_model.proto)
-    - [ServerID](#mruv.ServerID)
-    - [ServerInfo](#mruv.ServerInfo)
-    - [ServerStatus](#mruv.ServerStatus)
+    - [ServerID](#mruv.server.ServerID)
+    - [ServerInfo](#mruv.server.ServerInfo)
   
+    - [ServerStatus](#mruv.server.ServerStatus)
   
   
   
@@ -1726,20 +1731,83 @@ Sorting modes for container items.
 
 
 
-<a name="mruv.RegisterServerRequest"></a>
+<a name="mruv.server.GetRegisteredServersRequest"></a>
 
-### RegisterServerRequest
-Request message for `MruVServerService`
-
-
+### GetRegisteredServersRequest
+Request message for `MruVServerService.GetRegisteredServers`.
 
 
 
 
-<a name="mruv.RegisterServerResponse"></a>
 
-### RegisterServerResponse
-Response message for `MruVServerService`
+
+<a name="mruv.server.GetRegisteredServersResponse"></a>
+
+### GetRegisteredServersResponse
+Response message for `MruVServerService.GetRegisteredServers`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| servers | [ServerInfo](#mruv.server.ServerInfo) | repeated |  |
+
+
+
+
+
+
+<a name="mruv.server.ServerEvent"></a>
+
+### ServerEvent
+Server event.
+Response message for `MruVServerService.ServerEventsStream`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| type | [ServerEvent.ServerEventType](#mruv.server.ServerEvent.ServerEventType) |  | Type of a server event. |
+
+
+
+
+
+
+<a name="mruv.server.ServerEventsStreamRequest"></a>
+
+### ServerEventsStreamRequest
+Request message for `MruVServerService.ServerEventsStream`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [int64](#int64) |  | The ID of the server from which we want to receive events. |
+
+
+
+
+
+
+<a name="mruv.server.UpdateServerStatusRequest"></a>
+
+### UpdateServerStatusRequest
+Request message for `MruVServerService.UpdateServerStatus`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [int64](#int64) |  | Id of the server. |
+| status | [ServerStatus](#mruv.server.ServerStatus) |  | Status of the server. |
+| players | [int32](#int32) |  | How many players are registered on that server. |
+
+
+
+
+
+
+<a name="mruv.server.UpdateServerStatusResponse"></a>
+
+### UpdateServerStatusResponse
+Response message for `MruVServerService.UpdateServerStatus`.
 
 
 
@@ -1747,20 +1815,38 @@ Response message for `MruVServerService`
 
  
 
- 
+
+<a name="mruv.server.ServerEvent.ServerEventType"></a>
+
+### ServerEvent.ServerEventType
+Types of server events.
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| UNKNOWN | 0 |  |
+| REGISTERED | 1 |  |
+| SERVER_DOWN | 2 |  |
+| SERVER_UP | 3 |  |
+| PLAYERS_CHANGED | 4 |  |
+
 
  
 
+ 
 
-<a name="mruv.MruVServerService"></a>
+
+<a name="mruv.server.MruVServerService"></a>
 
 ### MruVServerService
-The MruV server service provides procedures for managing game platform server actions
+The MruV server service provides procedures for managing game platform server actions.
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| RegisterServer | [RegisterServerRequest](#mruv.RegisterServerRequest) | [RegisterServerResponse](#mruv.RegisterServerResponse) | Register instance of server for further managing |
-| GetServerStatus | [ServerID](#mruv.ServerID) | [ServerStatus](#mruv.ServerStatus) | Get game server status |
+| RegisterServer | [ServerInfo](#mruv.server.ServerInfo) | [ServerID](#mruv.server.ServerID) | Register instance of server for further managing. |
+| GetRegisteredServers | [GetRegisteredServersRequest](#mruv.server.GetRegisteredServersRequest) | [GetRegisteredServersResponse](#mruv.server.GetRegisteredServersResponse) | Get all registered servers. |
+| GetServerInfo | [ServerID](#mruv.server.ServerID) | [ServerInfo](#mruv.server.ServerInfo) | Get game server status. |
+| UpdateServerStatus | [UpdateServerStatusRequest](#mruv.server.UpdateServerStatusRequest) | [UpdateServerStatusResponse](#mruv.server.UpdateServerStatusResponse) | Update game server status. |
+| ServerEventsStream | [ServerEventsStreamRequest](#mruv.server.ServerEventsStreamRequest) | [ServerEvent](#mruv.server.ServerEvent) stream | Stream of server events. Events are streamed back in real-time for chosen server. |
 
  
 
@@ -1773,7 +1859,7 @@ The MruV server service provides procedures for managing game platform server ac
 
 
 
-<a name="mruv.ServerID"></a>
+<a name="mruv.server.ServerID"></a>
 
 ### ServerID
 
@@ -1788,40 +1874,40 @@ The MruV server service provides procedures for managing game platform server ac
 
 
 
-<a name="mruv.ServerInfo"></a>
+<a name="mruv.server.ServerInfo"></a>
 
 ### ServerInfo
-Data that describe server
+Data that describe server.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  | Short name of the server |
-| host | [string](#string) |  | Host (ip) of the server |
-| port | [string](#string) |  | Port of the server |
-| platform | [string](#string) |  | Platform, on which server is running |
-
-
-
-
-
-
-<a name="mruv.ServerStatus"></a>
-
-### ServerStatus
-State of the server
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| active | [bool](#bool) |  | Is server active and working |
-| players | [int32](#int32) |  | How many players are registered on that server |
+| id | [int64](#int64) |  | Id of the server. |
+| name | [string](#string) |  | Short name of the server. |
+| host | [string](#string) |  | Host (ip) of the server. |
+| port | [string](#string) |  | Port of the server. |
+| platform | [string](#string) |  | Platform of the server. |
+| status | [ServerStatus](#mruv.server.ServerStatus) |  | Status of the server. |
+| players | [int32](#int32) |  | How many players are playing on the server. |
 
 
 
 
 
  
+
+
+<a name="mruv.server.ServerStatus"></a>
+
+### ServerStatus
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| UNKNOWN | 0 |  |
+| ON | 1 |  |
+| OFF | 2 |  |
+
 
  
 
