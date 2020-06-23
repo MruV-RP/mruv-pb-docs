@@ -1027,6 +1027,11 @@ Request message for rpc `CreateCharacter`.
 Response message for rpc `CreateCharacter`.
 
 
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
 
 
 
@@ -1106,6 +1111,17 @@ Request message for rpc `GetCharacter`.
 
 ### GetCharacterResponse
 Response message for rpc `GetCharacter`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+| owner_id | [uint32](#uint32) |  |  |
+| first_name | [string](#string) |  |  |
+| second_name | [string](#string) |  |  |
+| age | [uint32](#uint32) |  |  |
+| sex | [uint32](#uint32) |  |  |
+| position | [Position](#mruv.Position) |  |  |
 
 
 
