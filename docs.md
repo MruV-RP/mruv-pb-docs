@@ -4,6 +4,8 @@
 ## Table of Contents
 
 - [accounts/accounts.proto](#accounts/accounts.proto)
+    - [Account](#mruv.Account)
+    - [AccountID](#mruv.AccountID)
     - [GetAccountCharactersResponse](#mruv.GetAccountCharactersResponse)
     - [LogInRequest](#mruv.LogInRequest)
     - [LogInResponse](#mruv.LogInResponse)
@@ -15,30 +17,53 @@
     - [MruVAccountsService](#mruv.MruVAccountsService)
   
 
-- [accounts/accounts_model.proto](#accounts/accounts_model.proto)
-    - [Account](#mruv.Account)
-    - [AccountID](#mruv.AccountID)
+- [business/business.proto](#business/business.proto)
+    - [AssignEstateRequest](#mruv.business.AssignEstateRequest)
+    - [AssignEstateResponse](#mruv.business.AssignEstateResponse)
+    - [AssignOwnerRequest](#mruv.business.AssignOwnerRequest)
+    - [AssignOwnerResponse](#mruv.business.AssignOwnerResponse)
+    - [Business](#mruv.business.Business)
+    - [BuyBusinessRequest](#mruv.business.BuyBusinessRequest)
+    - [BuyBusinessResponse](#mruv.business.BuyBusinessResponse)
+    - [CreateBusinessRequest](#mruv.business.CreateBusinessRequest)
+    - [CreateBusinessResponse](#mruv.business.CreateBusinessResponse)
+    - [DeleteBusinessRequest](#mruv.business.DeleteBusinessRequest)
+    - [DeleteBusinessResponse](#mruv.business.DeleteBusinessResponse)
+    - [GetBusinessRequest](#mruv.business.GetBusinessRequest)
+    - [GetBusinessResponse](#mruv.business.GetBusinessResponse)
+    - [UnassignEstateRequest](#mruv.business.UnassignEstateRequest)
+    - [UnassignEstateResponse](#mruv.business.UnassignEstateResponse)
+    - [UpdateBusinessRequest](#mruv.business.UpdateBusinessRequest)
+    - [UpdateBusinessResponse](#mruv.business.UpdateBusinessResponse)
+    - [WatchBusinessRequest](#mruv.business.WatchBusinessRequest)
+    - [WatchBusinessResponse](#mruv.business.WatchBusinessResponse)
+    - [WatchBusinessesRequest](#mruv.business.WatchBusinessesRequest)
+    - [WatchBusinessesResponse](#mruv.business.WatchBusinessesResponse)
+  
+    - [OwnerType](#mruv.business.OwnerType)
   
   
-  
+    - [MruVBusinessService](#mruv.business.MruVBusinessService)
   
 
 - [characters/characters.proto](#characters/characters.proto)
-    - [DeathStreamRequest](#mruv.DeathStreamRequest)
-    - [DeathStreamResponse](#mruv.DeathStreamResponse)
-  
-  
-  
-    - [MruVCharactersService](#mruv.MruVCharactersService)
-  
-
-- [characters/characters_model.proto](#characters/characters_model.proto)
     - [Character](#mruv.Character)
     - [CharacterID](#mruv.CharacterID)
+    - [CreateCharacterRequest](#mruv.CreateCharacterRequest)
+    - [CreateCharacterResponse](#mruv.CreateCharacterResponse)
+    - [DeathStreamRequest](#mruv.DeathStreamRequest)
+    - [DeathStreamResponse](#mruv.DeathStreamResponse)
+    - [DeleteCharacterRequest](#mruv.DeleteCharacterRequest)
+    - [DeleteCharacterResponse](#mruv.DeleteCharacterResponse)
+    - [GetCharacterRequest](#mruv.GetCharacterRequest)
+    - [GetCharacterResponse](#mruv.GetCharacterResponse)
+    - [UpdateCharacterRequest](#mruv.UpdateCharacterRequest)
+    - [UpdateCharacterResponse](#mruv.UpdateCharacterResponse)
   
     - [DeathType](#mruv.DeathType)
   
   
+    - [MruVCharactersService](#mruv.MruVCharactersService)
   
 
 - [common/health.proto](#common/health.proto)
@@ -95,11 +120,138 @@
   
   
 
+- [economy/economy.proto](#economy/economy.proto)
+    - [BuyProductRequest](#mruv.economy.BuyProductRequest)
+    - [BuyProductResponse](#mruv.economy.BuyProductResponse)
+    - [DeleteProductRequest](#mruv.economy.DeleteProductRequest)
+    - [DeleteProductResponse](#mruv.economy.DeleteProductResponse)
+    - [GetPriceRequest](#mruv.economy.GetPriceRequest)
+    - [GetPriceResponse](#mruv.economy.GetPriceResponse)
+    - [GetProductRequest](#mruv.economy.GetProductRequest)
+    - [GetProductResponse](#mruv.economy.GetProductResponse)
+    - [RegisterProductRequest](#mruv.economy.RegisterProductRequest)
+    - [RegisterProductResponse](#mruv.economy.RegisterProductResponse)
+    - [UpdatePriceRequest](#mruv.economy.UpdatePriceRequest)
+    - [UpdatePriceResponse](#mruv.economy.UpdatePriceResponse)
+    - [UpdateProductRequest](#mruv.economy.UpdateProductRequest)
+    - [UpdateProductResponse](#mruv.economy.UpdateProductResponse)
+    - [WatchPriceRequest](#mruv.economy.WatchPriceRequest)
+    - [WatchPriceResponse](#mruv.economy.WatchPriceResponse)
+    - [WatchProductRequest](#mruv.economy.WatchProductRequest)
+    - [WatchProductResponse](#mruv.economy.WatchProductResponse)
+  
+    - [WatchProductResponse.ProductEvent](#mruv.economy.WatchProductResponse.ProductEvent)
+  
+  
+    - [MruVEconomyService](#mruv.economy.MruVEconomyService)
+  
+
+- [estates/elevators.proto](#estates/elevators.proto)
+    - [CreateElevatorRequest](#mruv.elevators.CreateElevatorRequest)
+    - [CreateElevatorResponse](#mruv.elevators.CreateElevatorResponse)
+    - [DeleteElevatorRequest](#mruv.elevators.DeleteElevatorRequest)
+    - [DeleteElevatorResponse](#mruv.elevators.DeleteElevatorResponse)
+    - [GetElevatorFloorsRequest](#mruv.elevators.GetElevatorFloorsRequest)
+    - [GetElevatorFloorsResponse](#mruv.elevators.GetElevatorFloorsResponse)
+    - [GetElevatorRequest](#mruv.elevators.GetElevatorRequest)
+    - [GetElevatorResponse](#mruv.elevators.GetElevatorResponse)
+    - [UpdateElevatorRequest](#mruv.elevators.UpdateElevatorRequest)
+    - [UpdateElevatorResponse](#mruv.elevators.UpdateElevatorResponse)
+  
+  
+  
+    - [MruVElevatorsService](#mruv.elevators.MruVElevatorsService)
+  
+
+- [estates/entrances.proto](#estates/entrances.proto)
+    - [CreateEntranceRequest](#mruv.entrances.CreateEntranceRequest)
+    - [CreateEntranceResponse](#mruv.entrances.CreateEntranceResponse)
+    - [DeleteEntranceRequest](#mruv.entrances.DeleteEntranceRequest)
+    - [DeleteEntranceResponse](#mruv.entrances.DeleteEntranceResponse)
+    - [EnterRequest](#mruv.entrances.EnterRequest)
+    - [EnterResponse](#mruv.entrances.EnterResponse)
+    - [Entrance](#mruv.entrances.Entrance)
+    - [Entrance.EntranceDoor](#mruv.entrances.Entrance.EntranceDoor)
+    - [FindNearestEntranceRequest](#mruv.entrances.FindNearestEntranceRequest)
+    - [FindNearestEntranceResponse](#mruv.entrances.FindNearestEntranceResponse)
+    - [GetEntranceRequest](#mruv.entrances.GetEntranceRequest)
+    - [GetEntranceResponse](#mruv.entrances.GetEntranceResponse)
+    - [LockRequest](#mruv.entrances.LockRequest)
+    - [LockResponse](#mruv.entrances.LockResponse)
+    - [UnlockRequest](#mruv.entrances.UnlockRequest)
+    - [UnlockResponse](#mruv.entrances.UnlockResponse)
+    - [UpdateEntranceRequest](#mruv.entrances.UpdateEntranceRequest)
+    - [UpdateEntranceResponse](#mruv.entrances.UpdateEntranceResponse)
+  
+  
+  
+    - [MruVEntrancesService](#mruv.entrances.MruVEntrancesService)
+  
+
+- [estates/estates.proto](#estates/estates.proto)
+    - [AddEntranceRequest](#mruv.estates.AddEntranceRequest)
+    - [AddEntranceResponse](#mruv.estates.AddEntranceResponse)
+    - [AddGateRequest](#mruv.estates.AddGateRequest)
+    - [AddGateResponse](#mruv.estates.AddGateResponse)
+    - [CreateEstateRequest](#mruv.estates.CreateEstateRequest)
+    - [CreateEstateResponse](#mruv.estates.CreateEstateResponse)
+    - [DeleteEstateRequest](#mruv.estates.DeleteEstateRequest)
+    - [DeleteEstateResponse](#mruv.estates.DeleteEstateResponse)
+    - [DeleteGateRequest](#mruv.estates.DeleteGateRequest)
+    - [DeleteGateResponse](#mruv.estates.DeleteGateResponse)
+    - [Estate](#mruv.estates.Estate)
+    - [GetEstateEntrancesRequest](#mruv.estates.GetEstateEntrancesRequest)
+    - [GetEstateEntrancesResponse](#mruv.estates.GetEstateEntrancesResponse)
+    - [GetEstateGatesRequest](#mruv.estates.GetEstateGatesRequest)
+    - [GetEstateGatesResponse](#mruv.estates.GetEstateGatesResponse)
+    - [GetEstateRequest](#mruv.estates.GetEstateRequest)
+    - [GetEstatesRequest](#mruv.estates.GetEstatesRequest)
+    - [GetEstatesResponse](#mruv.estates.GetEstatesResponse)
+    - [RemoveEntranceRequest](#mruv.estates.RemoveEntranceRequest)
+    - [RemoveEntranceResponse](#mruv.estates.RemoveEntranceResponse)
+    - [UpdateEstateRequest](#mruv.estates.UpdateEstateRequest)
+    - [UpdateEstateResponse](#mruv.estates.UpdateEstateResponse)
+  
+  
+  
+    - [MruVEstateService](#mruv.estates.MruVEstateService)
+  
+
+- [estates/gates.proto](#estates/gates.proto)
+    - [CloseRequest](#mruv.gates.CloseRequest)
+    - [CloseResponse](#mruv.gates.CloseResponse)
+    - [CreateGateRequest](#mruv.gates.CreateGateRequest)
+    - [CreateGateResponse](#mruv.gates.CreateGateResponse)
+    - [DeleteGateRequest](#mruv.gates.DeleteGateRequest)
+    - [DeleteGateResponse](#mruv.gates.DeleteGateResponse)
+    - [FindNearestGateRequest](#mruv.gates.FindNearestGateRequest)
+    - [FindNearestGateResponse](#mruv.gates.FindNearestGateResponse)
+    - [Gate](#mruv.gates.Gate)
+    - [GetGateRequest](#mruv.gates.GetGateRequest)
+    - [GetGateResponse](#mruv.gates.GetGateResponse)
+    - [LockRequest](#mruv.gates.LockRequest)
+    - [LockResponse](#mruv.gates.LockResponse)
+    - [OpenRequest](#mruv.gates.OpenRequest)
+    - [OpenResponse](#mruv.gates.OpenResponse)
+    - [UnlockRequest](#mruv.gates.UnlockRequest)
+    - [UnlockResponse](#mruv.gates.UnlockResponse)
+    - [UpdateGateRequest](#mruv.gates.UpdateGateRequest)
+    - [UpdateGateResponse](#mruv.gates.UpdateGateResponse)
+  
+  
+  
+    - [MruVGatesService](#mruv.gates.MruVGatesService)
+  
+
 - [groups/groups.proto](#groups/groups.proto)
     - [AddGroupMemberRequest](#mruv.AddGroupMemberRequest)
     - [AddGroupMemberResponse](#mruv.AddGroupMemberResponse)
     - [GetGroupsRequest](#mruv.GetGroupsRequest)
     - [GetGroupsResponse](#mruv.GetGroupsResponse)
+    - [Group](#mruv.Group)
+    - [GroupID](#mruv.GroupID)
+    - [Permission](#mruv.Permission)
+    - [PermissionID](#mruv.PermissionID)
     - [RemoveGroupMemberRequest](#mruv.RemoveGroupMemberRequest)
     - [RemoveGroupMemberResponse](#mruv.RemoveGroupMemberResponse)
   
@@ -108,14 +260,19 @@
     - [MruVGroupsService](#mruv.MruVGroupsService)
   
 
-- [groups/groups_model.proto](#groups/groups_model.proto)
-    - [Group](#mruv.Group)
-    - [GroupID](#mruv.GroupID)
-    - [Permission](#mruv.Permission)
-    - [PermissionID](#mruv.PermissionID)
+- [houses/houses.proto](#houses/houses.proto)
+    - [CreateHouseRequest](#mruv.houses.CreateHouseRequest)
+    - [CreateHouseResponse](#mruv.houses.CreateHouseResponse)
+    - [DeleteHouseRequest](#mruv.houses.DeleteHouseRequest)
+    - [DeleteHouseResponse](#mruv.houses.DeleteHouseResponse)
+    - [GetHouseRequest](#mruv.houses.GetHouseRequest)
+    - [GetHouseResponse](#mruv.houses.GetHouseResponse)
+    - [UpdateHouseRequest](#mruv.houses.UpdateHouseRequest)
+    - [UpdateHouseResponse](#mruv.houses.UpdateHouseResponse)
   
   
   
+    - [MruVHousesService](#mruv.houses.MruVHousesService)
   
 
 - [items/items.proto](#items/items.proto)
@@ -160,6 +317,122 @@
   
   
 
+- [jobs/jobs.proto](#jobs/jobs.proto)
+    - [CreateJobRequest](#mruv.jobs.CreateJobRequest)
+    - [CreateJobResponse](#mruv.jobs.CreateJobResponse)
+    - [DeleteJobRequest](#mruv.jobs.DeleteJobRequest)
+    - [DeleteJobResponse](#mruv.jobs.DeleteJobResponse)
+    - [GetJobRequest](#mruv.jobs.GetJobRequest)
+    - [GetJobResponse](#mruv.jobs.GetJobResponse)
+    - [UpdateJobRequest](#mruv.jobs.UpdateJobRequest)
+    - [UpdateJobResponse](#mruv.jobs.UpdateJobResponse)
+  
+  
+  
+    - [MruVJobsService](#mruv.jobs.MruVJobsService)
+  
+
+- [offers/offers.proto](#offers/offers.proto)
+    - [AcceptOfferRequest](#mruv.offers.AcceptOfferRequest)
+    - [AcceptOfferResponse](#mruv.offers.AcceptOfferResponse)
+    - [CreateOfferRequest](#mruv.offers.CreateOfferRequest)
+    - [CreateOfferResponse](#mruv.offers.CreateOfferResponse)
+    - [DeleteOfferRequest](#mruv.offers.DeleteOfferRequest)
+    - [DeleteOfferResponse](#mruv.offers.DeleteOfferResponse)
+    - [GetOfferRequest](#mruv.offers.GetOfferRequest)
+    - [GetOfferResponse](#mruv.offers.GetOfferResponse)
+    - [UpdateOfferRequest](#mruv.offers.UpdateOfferRequest)
+    - [UpdateOfferResponse](#mruv.offers.UpdateOfferResponse)
+  
+    - [OfferType](#mruv.offers.OfferType)
+  
+  
+    - [MruVOffersService](#mruv.offers.MruVOffersService)
+  
+
+- [organizations/organizations.proto](#organizations/organizations.proto)
+    - [AssignLeaderRequest](#mruv.organizations.AssignLeaderRequest)
+    - [AssignLeaderResponse](#mruv.organizations.AssignLeaderResponse)
+    - [CreateOrganizationRequest](#mruv.organizations.CreateOrganizationRequest)
+    - [CreateOrganizationResponse](#mruv.organizations.CreateOrganizationResponse)
+    - [DeleteOrganizationRequest](#mruv.organizations.DeleteOrganizationRequest)
+    - [DeleteOrganizationResponse](#mruv.organizations.DeleteOrganizationResponse)
+    - [GetOrganizationRequest](#mruv.organizations.GetOrganizationRequest)
+    - [GetOrganizationResponse](#mruv.organizations.GetOrganizationResponse)
+    - [UnassignLeaderRequest](#mruv.organizations.UnassignLeaderRequest)
+    - [UnassignLeaderResponse](#mruv.organizations.UnassignLeaderResponse)
+    - [UpdateOrganizationRequest](#mruv.organizations.UpdateOrganizationRequest)
+    - [UpdateOrganizationResponse](#mruv.organizations.UpdateOrganizationResponse)
+  
+  
+  
+    - [MruVOrganizationsService](#mruv.organizations.MruVOrganizationsService)
+  
+
+- [punishments/punishments.proto](#punishments/punishments.proto)
+    - [AdminJailMessage](#mruv.economy.AdminJailMessage)
+    - [AdminJailRequest](#mruv.economy.AdminJailRequest)
+    - [AdminJailResponse](#mruv.economy.AdminJailResponse)
+    - [BanMessage](#mruv.economy.BanMessage)
+    - [BanRequest](#mruv.economy.BanRequest)
+    - [BanResponse](#mruv.economy.BanResponse)
+    - [BlockMessage](#mruv.economy.BlockMessage)
+    - [BlockRequest](#mruv.economy.BlockRequest)
+    - [BlockResponse](#mruv.economy.BlockResponse)
+    - [GetBanRequest](#mruv.economy.GetBanRequest)
+    - [GetBlockRequest](#mruv.economy.GetBlockRequest)
+    - [GetPlayerAdminJailRequest](#mruv.economy.GetPlayerAdminJailRequest)
+    - [GetPlayerAdminJailResponse](#mruv.economy.GetPlayerAdminJailResponse)
+    - [GetPlayerBansRequest](#mruv.economy.GetPlayerBansRequest)
+    - [GetPlayerBansResponse](#mruv.economy.GetPlayerBansResponse)
+    - [GetPlayerWarnsRequest](#mruv.economy.GetPlayerWarnsRequest)
+    - [GetPlayerWarnsResponse](#mruv.economy.GetPlayerWarnsResponse)
+    - [GetWarnRequest](#mruv.economy.GetWarnRequest)
+    - [IsCharacterBlockedRequest](#mruv.economy.IsCharacterBlockedRequest)
+    - [IsCharacterBlockedResponse](#mruv.economy.IsCharacterBlockedResponse)
+    - [IsCharacterJailedRequest](#mruv.economy.IsCharacterJailedRequest)
+    - [IsCharacterJailedResponse](#mruv.economy.IsCharacterJailedResponse)
+    - [IsPlayerBannedRequest](#mruv.economy.IsPlayerBannedRequest)
+    - [IsPlayerBannedResponse](#mruv.economy.IsPlayerBannedResponse)
+    - [MuteGlobalChatsRequest](#mruv.economy.MuteGlobalChatsRequest)
+    - [MuteGlobalChatsResponse](#mruv.economy.MuteGlobalChatsResponse)
+    - [UnAdminJailMessage](#mruv.economy.UnAdminJailMessage)
+    - [UnAdminJailRequest](#mruv.economy.UnAdminJailRequest)
+    - [UnAdminJailResponse](#mruv.economy.UnAdminJailResponse)
+    - [UnBanMessage](#mruv.economy.UnBanMessage)
+    - [UnBanRequest](#mruv.economy.UnBanRequest)
+    - [UnBanResponse](#mruv.economy.UnBanResponse)
+    - [UnBlockMessage](#mruv.economy.UnBlockMessage)
+    - [UnMuteGlobalChatsRequest](#mruv.economy.UnMuteGlobalChatsRequest)
+    - [UnMuteGlobalChatsResponse](#mruv.economy.UnMuteGlobalChatsResponse)
+    - [UnWarnMessage](#mruv.economy.UnWarnMessage)
+    - [UnWarnRequest](#mruv.economy.UnWarnRequest)
+    - [UnWarnResponse](#mruv.economy.UnWarnResponse)
+    - [WarnMessage](#mruv.economy.WarnMessage)
+    - [WarnRequest](#mruv.economy.WarnRequest)
+    - [WarnResponse](#mruv.economy.WarnResponse)
+    - [WatchAdminJailsRequest](#mruv.economy.WatchAdminJailsRequest)
+    - [WatchBansRequest](#mruv.economy.WatchBansRequest)
+    - [WatchBlocksRequest](#mruv.economy.WatchBlocksRequest)
+    - [WatchPlayerAcquittalsRequest](#mruv.economy.WatchPlayerAcquittalsRequest)
+    - [WatchPlayerAcquittalsResponse](#mruv.economy.WatchPlayerAcquittalsResponse)
+    - [WatchPlayerPunishmentsRequest](#mruv.economy.WatchPlayerPunishmentsRequest)
+    - [WatchPlayerPunishmentsResponse](#mruv.economy.WatchPlayerPunishmentsResponse)
+    - [WatchPunishmentsRequest](#mruv.economy.WatchPunishmentsRequest)
+    - [WatchPunishmentsResponse](#mruv.economy.WatchPunishmentsResponse)
+    - [WatchUnAdminJailsRequest](#mruv.economy.WatchUnAdminJailsRequest)
+    - [WatchUnBansRequest](#mruv.economy.WatchUnBansRequest)
+    - [WatchUnBlocksRequest](#mruv.economy.WatchUnBlocksRequest)
+    - [WatchUnWarnsRequest](#mruv.economy.WatchUnWarnsRequest)
+    - [WatchWarnsRequest](#mruv.economy.WatchWarnsRequest)
+  
+    - [AcquittalsType](#mruv.economy.AcquittalsType)
+    - [PunishmentType](#mruv.economy.PunishmentType)
+  
+  
+    - [MruVPunishmentsService](#mruv.economy.MruVPunishmentsService)
+  
+
 - [server/server.proto](#server/server.proto)
     - [GetRegisteredServersRequest](#mruv.server.GetRegisteredServersRequest)
     - [GetRegisteredServersResponse](#mruv.server.GetRegisteredServersResponse)
@@ -183,6 +456,21 @@
   
   
 
+- [vehicles/vehicles.proto](#vehicles/vehicles.proto)
+    - [CreateVehicleRequest](#mruv.vehicles.CreateVehicleRequest)
+    - [CreateVehicleResponse](#mruv.vehicles.CreateVehicleResponse)
+    - [DeleteVehicleRequest](#mruv.vehicles.DeleteVehicleRequest)
+    - [DeleteVehicleResponse](#mruv.vehicles.DeleteVehicleResponse)
+    - [GetVehicleRequest](#mruv.vehicles.GetVehicleRequest)
+    - [GetVehicleResponse](#mruv.vehicles.GetVehicleResponse)
+    - [UpdateVehicleRequest](#mruv.vehicles.UpdateVehicleRequest)
+    - [UpdateVehicleResponse](#mruv.vehicles.UpdateVehicleResponse)
+  
+  
+  
+    - [MruVVehiclesService](#mruv.vehicles.MruVVehiclesService)
+  
+
 - [Scalar Value Types](#scalar-value-types)
 
 
@@ -191,6 +479,39 @@
 <p align="right"><a href="#top">Top</a></p>
 
 ## accounts/accounts.proto
+
+
+
+<a name="mruv.Account"></a>
+
+### Account
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+| login | [string](#string) |  |  |
+| nick | [string](#string) |  |  |
+| email | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="mruv.AccountID"></a>
+
+### AccountID
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
+
 
 
 
@@ -282,7 +603,8 @@
 <a name="mruv.MruVAccountsService"></a>
 
 ### MruVAccountsService
-
+The MruV accounts service provides procedures for managing players accounts.
+This service is an additional/intermediary service between the ORY Kratos &amp; ORY Hydra service.
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
@@ -295,35 +617,145 @@
 
 
 
-<a name="accounts/accounts_model.proto"></a>
+<a name="business/business.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## accounts/accounts_model.proto
+## business/business.proto
 
 
 
-<a name="mruv.Account"></a>
+<a name="mruv.business.AssignEstateRequest"></a>
 
-### Account
+### AssignEstateRequest
+Request message for rpc `AssignEstate`.
 
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| business_id | [uint32](#uint32) |  |  |
+| estate_id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.business.AssignEstateResponse"></a>
+
+### AssignEstateResponse
+Response message for rpc `AssignEstate`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| estate_count | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.business.AssignOwnerRequest"></a>
+
+### AssignOwnerRequest
+Request message for rpc `AssignOwner`.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | id | [uint32](#uint32) |  |  |
-| login | [string](#string) |  |  |
-| nick | [string](#string) |  |  |
-| email | [string](#string) |  |  |
 
 
 
 
 
 
-<a name="mruv.AccountID"></a>
+<a name="mruv.business.AssignOwnerResponse"></a>
 
-### AccountID
+### AssignOwnerResponse
+Response message for rpc `AssignOwner`.
 
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| owner_type | [OwnerType](#mruv.business.OwnerType) |  |  |
+| owner_id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.business.Business"></a>
+
+### Business
+Business data structure.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| estate_ids | [int64](#int64) | repeated | Estates that belongs to a business. |
+| product_id | [uint32](#uint32) |  | Purchase price in economy system. |
+| owner_type | [OwnerType](#mruv.business.OwnerType) |  | Owner type of the business. |
+| owner_id | [uint32](#uint32) |  | Owner of the business. |
+| business_items | [uint32](#uint32) | repeated | Items that belongs to business. |
+| business_group | [uint32](#uint32) |  | Business group |
+
+
+
+
+
+
+<a name="mruv.business.BuyBusinessRequest"></a>
+
+### BuyBusinessRequest
+Request message for rpc `BuyBusiness`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+| buyer_type | [OwnerType](#mruv.business.OwnerType) |  |  |
+| buyer_id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.business.BuyBusinessResponse"></a>
+
+### BuyBusinessResponse
+Response message for rpc `BuyBusiness`.
+
+
+
+
+
+
+<a name="mruv.business.CreateBusinessRequest"></a>
+
+### CreateBusinessRequest
+Request message for rpc `CreateBusiness`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| product_id | [uint32](#uint32) |  | Purchase price in economy system. |
+
+
+
+
+
+
+<a name="mruv.business.CreateBusinessResponse"></a>
+
+### CreateBusinessResponse
+Response message for rpc `CreateBusiness`.
 
 
 | Field | Type | Label | Description |
@@ -334,11 +766,193 @@
 
 
 
+
+<a name="mruv.business.DeleteBusinessRequest"></a>
+
+### DeleteBusinessRequest
+Request message for rpc `DeleteBusiness`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.business.DeleteBusinessResponse"></a>
+
+### DeleteBusinessResponse
+Response message for rpc `DeleteBusiness`.
+
+
+
+
+
+
+<a name="mruv.business.GetBusinessRequest"></a>
+
+### GetBusinessRequest
+Request message for rpc `GetBusiness`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.business.GetBusinessResponse"></a>
+
+### GetBusinessResponse
+Response message for rpc `GetBusiness`.
+
+
+
+
+
+
+<a name="mruv.business.UnassignEstateRequest"></a>
+
+### UnassignEstateRequest
+Request message for rpc `UnassignEstate`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| business_id | [uint32](#uint32) |  |  |
+| estate_id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.business.UnassignEstateResponse"></a>
+
+### UnassignEstateResponse
+Response message for rpc `UnassignEstate`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| estate_count | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.business.UpdateBusinessRequest"></a>
+
+### UpdateBusinessRequest
+Request message for rpc `UpdateBusiness`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.business.UpdateBusinessResponse"></a>
+
+### UpdateBusinessResponse
+Response message for rpc `UpdateBusiness`.
+
+
+
+
+
+
+<a name="mruv.business.WatchBusinessRequest"></a>
+
+### WatchBusinessRequest
+Request message for rpc `WatchBusiness`.
+
+
+
+
+
+
+<a name="mruv.business.WatchBusinessResponse"></a>
+
+### WatchBusinessResponse
+Response message for rpc `WatchBusiness`.
+
+
+
+
+
+
+<a name="mruv.business.WatchBusinessesRequest"></a>
+
+### WatchBusinessesRequest
+Request message for rpc `WatchBusinesses`.
+
+
+
+
+
+
+<a name="mruv.business.WatchBusinessesResponse"></a>
+
+### WatchBusinessesResponse
+Response message for rpc `WatchBusinesses`.
+
+
+
+
+
  
+
+
+<a name="mruv.business.OwnerType"></a>
+
+### OwnerType
+Owner type.
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| UNKNOWN | 0 |  |
+| PLAYER | 1 |  |
+| GROUP | 2 |  |
+| SYSTEM | 3 |  |
+
 
  
 
  
+
+
+<a name="mruv.business.MruVBusinessService"></a>
+
+### MruVBusinessService
+The MruV business service provides procedures for managing businesses.
+Business can be owned by a player or organisation. Every business have it&#39;s own group and products to sell.
+Business can have rights to an estates.
+Every business has its own type and depends on it, business provides different services.
+
+| Method Name | Request Type | Response Type | Description |
+| ----------- | ------------ | ------------- | ------------|
+| CreateBusiness | [CreateBusinessRequest](#mruv.business.CreateBusinessRequest) | [CreateBusinessResponse](#mruv.business.CreateBusinessResponse) | Create a business. |
+| GetBusiness | [GetBusinessRequest](#mruv.business.GetBusinessRequest) | [Business](#mruv.business.Business) | Get a business. |
+| UpdateBusiness | [UpdateBusinessRequest](#mruv.business.UpdateBusinessRequest) | [Business](#mruv.business.Business) | Update a business. |
+| DeleteBusiness | [DeleteBusinessRequest](#mruv.business.DeleteBusinessRequest) | [DeleteBusinessResponse](#mruv.business.DeleteBusinessResponse) | Delete a business. |
+| AssignOwner | [AssignOwnerRequest](#mruv.business.AssignOwnerRequest) | [AssignOwnerResponse](#mruv.business.AssignOwnerResponse) | Assign a business owner. |
+| AssignEstate | [AssignEstateRequest](#mruv.business.AssignEstateRequest) | [AssignEstateResponse](#mruv.business.AssignEstateResponse) | Assign an estate to a business. |
+| UnassignEstate | [UnassignEstateRequest](#mruv.business.UnassignEstateRequest) | [UnassignEstateResponse](#mruv.business.UnassignEstateResponse) |  |
+| BuyBusiness | [BuyBusinessRequest](#mruv.business.BuyBusinessRequest) | [BuyBusinessResponse](#mruv.business.BuyBusinessResponse) | Buy a business. |
+| WatchBusiness | [WatchBusinessRequest](#mruv.business.WatchBusinessRequest) | [WatchBusinessResponse](#mruv.business.WatchBusinessResponse) stream | Subscribe to business events. |
+| WatchBusinesses | [WatchBusinessesRequest](#mruv.business.WatchBusinessesRequest) | [WatchBusinessesResponse](#mruv.business.WatchBusinessesResponse) stream | Subscribe to all businesses events. |
 
  
 
@@ -348,69 +962,6 @@
 <p align="right"><a href="#top">Top</a></p>
 
 ## characters/characters.proto
-
-
-
-<a name="mruv.DeathStreamRequest"></a>
-
-### DeathStreamRequest
-requests &amp; response messages
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| death_types | [DeathType](#mruv.DeathType) | repeated |  |
-
-
-
-
-
-
-<a name="mruv.DeathStreamResponse"></a>
-
-### DeathStreamResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| character | [Character](#mruv.Character) |  |  |
-| death_type | [DeathType](#mruv.DeathType) |  |  |
-
-
-
-
-
- 
-
- 
-
- 
-
-
-<a name="mruv.MruVCharactersService"></a>
-
-### MruVCharactersService
-
-
-| Method Name | Request Type | Response Type | Description |
-| ----------- | ------------ | ------------- | ------------|
-| CreateCharacter | [Character](#mruv.Character) | [CharacterID](#mruv.CharacterID) | CRUD |
-| GetCharacter | [CharacterID](#mruv.CharacterID) | [Character](#mruv.Character) |  |
-| RemoveCharacter | [CharacterID](#mruv.CharacterID) | [CharacterID](#mruv.CharacterID) |  |
-| PermanentCharacterKill | [CharacterID](#mruv.CharacterID) | [CharacterID](#mruv.CharacterID) | Deaths |
-| DeathsStream | [DeathStreamRequest](#mruv.DeathStreamRequest) | [DeathStreamResponse](#mruv.DeathStreamResponse) stream |  |
-| GetServiceStatus | [ServiceStatusRequest](#mruv.ServiceStatusRequest) | [ServiceStatusResponse](#mruv.ServiceStatusResponse) | Service status |
-| GetServiceVersion | [VersionRequest](#mruv.VersionRequest) | [VersionResponse](#mruv.VersionResponse) |  |
-
- 
-
-
-
-<a name="characters/characters_model.proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## characters/characters_model.proto
 
 
 
@@ -449,6 +1000,142 @@ requests &amp; response messages
 
 
 
+
+<a name="mruv.CreateCharacterRequest"></a>
+
+### CreateCharacterRequest
+Request message for rpc `CreateCharacter`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+| owner_id | [uint32](#uint32) |  |  |
+| first_name | [string](#string) |  |  |
+| second_name | [string](#string) |  |  |
+| age | [uint32](#uint32) |  |  |
+| sex | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.CreateCharacterResponse"></a>
+
+### CreateCharacterResponse
+Response message for rpc `CreateCharacter`.
+
+
+
+
+
+
+<a name="mruv.DeathStreamRequest"></a>
+
+### DeathStreamRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| death_types | [DeathType](#mruv.DeathType) | repeated |  |
+
+
+
+
+
+
+<a name="mruv.DeathStreamResponse"></a>
+
+### DeathStreamResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| character | [Character](#mruv.Character) |  |  |
+| death_type | [DeathType](#mruv.DeathType) |  |  |
+
+
+
+
+
+
+<a name="mruv.DeleteCharacterRequest"></a>
+
+### DeleteCharacterRequest
+Request message for rpc `DeleteCharacter`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.DeleteCharacterResponse"></a>
+
+### DeleteCharacterResponse
+Response message for rpc `DeleteCharacter`.
+
+
+
+
+
+
+<a name="mruv.GetCharacterRequest"></a>
+
+### GetCharacterRequest
+Request message for rpc `GetCharacter`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.GetCharacterResponse"></a>
+
+### GetCharacterResponse
+Response message for rpc `GetCharacter`.
+
+
+
+
+
+
+<a name="mruv.UpdateCharacterRequest"></a>
+
+### UpdateCharacterRequest
+Request message for rpc `UpdateCharacter`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.UpdateCharacterResponse"></a>
+
+### UpdateCharacterResponse
+Response message for rpc `UpdateCharacter`.
+
+
+
+
+
  
 
 
@@ -468,6 +1155,23 @@ requests &amp; response messages
  
 
  
+
+
+<a name="mruv.MruVCharactersService"></a>
+
+### MruVCharactersService
+
+
+| Method Name | Request Type | Response Type | Description |
+| ----------- | ------------ | ------------- | ------------|
+| CreateCharacter | [CreateCharacterRequest](#mruv.CreateCharacterRequest) | [CreateCharacterResponse](#mruv.CreateCharacterResponse) | Create a character. |
+| GetCharacter | [GetCharacterRequest](#mruv.GetCharacterRequest) | [GetCharacterResponse](#mruv.GetCharacterResponse) | Get a character. |
+| UpdateCharacter | [UpdateCharacterRequest](#mruv.UpdateCharacterRequest) | [UpdateCharacterResponse](#mruv.UpdateCharacterResponse) | Update a character. |
+| DeleteCharacter | [DeleteCharacterRequest](#mruv.DeleteCharacterRequest) | [DeleteCharacterResponse](#mruv.DeleteCharacterResponse) | Delete a character. |
+| PermanentCharacterKill | [CharacterID](#mruv.CharacterID) | [CharacterID](#mruv.CharacterID) | Kill a character. A character that is killed cannot be played anymore. |
+| DeathsStream | [DeathStreamRequest](#mruv.DeathStreamRequest) | [DeathStreamResponse](#mruv.DeathStreamResponse) stream | Stream of deaths. |
+| GetServiceStatus | [ServiceStatusRequest](#mruv.ServiceStatusRequest) | [ServiceStatusResponse](#mruv.ServiceStatusResponse) | Service status |
+| GetServiceVersion | [VersionRequest](#mruv.VersionRequest) | [VersionResponse](#mruv.VersionResponse) |  |
 
  
 
@@ -712,7 +1416,7 @@ Get animations response message.
 <a name="mruv.devtools.GetOutfitsRequest"></a>
 
 ### GetOutfitsRequest
-Get outgits request message.
+Get outfits request message.
 
 
 | Field | Type | Label | Description |
@@ -1011,6 +1715,1411 @@ Position structure.
 
 
 
+<a name="economy/economy.proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## economy/economy.proto
+
+
+
+<a name="mruv.economy.BuyProductRequest"></a>
+
+### BuyProductRequest
+Request message for rpc `BuyProduct`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+| name | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="mruv.economy.BuyProductResponse"></a>
+
+### BuyProductResponse
+Response message for rpc `BuyProduct`.
+
+
+
+
+
+
+<a name="mruv.economy.DeleteProductRequest"></a>
+
+### DeleteProductRequest
+Request message for rpc `DeleteProduct`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+| name | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="mruv.economy.DeleteProductResponse"></a>
+
+### DeleteProductResponse
+Response message for rpc `DeleteProduct`.
+
+
+
+
+
+
+<a name="mruv.economy.GetPriceRequest"></a>
+
+### GetPriceRequest
+Request message for rpc `GetPrice`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+| name | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="mruv.economy.GetPriceResponse"></a>
+
+### GetPriceResponse
+Response message for rpc `GetPrice`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| price | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.economy.GetProductRequest"></a>
+
+### GetProductRequest
+Request message for rpc `GetProduct`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+| name | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="mruv.economy.GetProductResponse"></a>
+
+### GetProductResponse
+Response message for rpc `GetProduct`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  |  |
+| full_name | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| price_class | [uint32](#uint32) |  |  |
+| price_ratio | [float](#float) |  |  |
+| starting_price | [uint32](#uint32) |  |  |
+| price | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.economy.RegisterProductRequest"></a>
+
+### RegisterProductRequest
+Request message for rpc `RegisterProduct`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  |  |
+| full_name | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| price_class | [uint32](#uint32) |  |  |
+| price_ratio | [float](#float) |  |  |
+| starting_price | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.economy.RegisterProductResponse"></a>
+
+### RegisterProductResponse
+Response message for rpc `RegisterProduct`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.economy.UpdatePriceRequest"></a>
+
+### UpdatePriceRequest
+Request message for rpc `UpdatePrice`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+| name | [string](#string) |  |  |
+| new_price | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.economy.UpdatePriceResponse"></a>
+
+### UpdatePriceResponse
+Response message for rpc `UpdatePrice`.
+
+
+
+
+
+
+<a name="mruv.economy.UpdateProductRequest"></a>
+
+### UpdateProductRequest
+Request message for rpc `UpdateProduct`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+| name | [string](#string) |  |  |
+| full_name | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| price_class | [uint32](#uint32) |  |  |
+| price_ratio | [float](#float) |  |  |
+
+
+
+
+
+
+<a name="mruv.economy.UpdateProductResponse"></a>
+
+### UpdateProductResponse
+Response message for rpc `UpdateProduct`.
+
+
+
+
+
+
+<a name="mruv.economy.WatchPriceRequest"></a>
+
+### WatchPriceRequest
+Request message for rpc `WatchPrice`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+| name | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="mruv.economy.WatchPriceResponse"></a>
+
+### WatchPriceResponse
+Response message for rpc `WatchPrice`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| price | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.economy.WatchProductRequest"></a>
+
+### WatchProductRequest
+Request message for rpc `WatchProduct`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+| name | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="mruv.economy.WatchProductResponse"></a>
+
+### WatchProductResponse
+Response message for rpc `WatchProduct`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| event | [WatchProductResponse.ProductEvent](#mruv.economy.WatchProductResponse.ProductEvent) |  |  |
+
+
+
+
+
+ 
+
+
+<a name="mruv.economy.WatchProductResponse.ProductEvent"></a>
+
+### WatchProductResponse.ProductEvent
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| UNKNOWN | 0 |  |
+| PRICE_CHANGED | 1 |  |
+| PRODUCT_BOUGHT | 2 |  |
+| PRODUCT_INFO_UPDATED | 3 |  |
+| PRODUCT_DELETED | 4 |  |
+
+
+ 
+
+ 
+
+
+<a name="mruv.economy.MruVEconomyService"></a>
+
+### MruVEconomyService
+The MruV economy service provides procedures for managing prices and economy.
+
+| Method Name | Request Type | Response Type | Description |
+| ----------- | ------------ | ------------- | ------------|
+| RegisterProduct | [RegisterProductRequest](#mruv.economy.RegisterProductRequest) | [RegisterProductResponse](#mruv.economy.RegisterProductResponse) | Register price in economy system. |
+| GetProduct | [GetProductRequest](#mruv.economy.GetProductRequest) | [GetProductResponse](#mruv.economy.GetProductResponse) | Get product information. |
+| UpdateProduct | [UpdateProductRequest](#mruv.economy.UpdateProductRequest) | [UpdateProductResponse](#mruv.economy.UpdateProductResponse) | Update product information. |
+| DeleteProduct | [DeleteProductRequest](#mruv.economy.DeleteProductRequest) | [DeleteProductResponse](#mruv.economy.DeleteProductResponse) |  |
+| UpdatePrice | [UpdatePriceRequest](#mruv.economy.UpdatePriceRequest) | [UpdatePriceResponse](#mruv.economy.UpdatePriceResponse) | Update product price. |
+| GetPrice | [GetPriceRequest](#mruv.economy.GetPriceRequest) | [GetPriceResponse](#mruv.economy.GetPriceResponse) | Get current value for registered price. |
+| BuyProduct | [BuyProductRequest](#mruv.economy.BuyProductRequest) | [BuyProductResponse](#mruv.economy.BuyProductResponse) | Send information to the system, that the product has been purchased. This rpc call can affect a product price. |
+| WatchProduct | [WatchProductRequest](#mruv.economy.WatchProductRequest) | [WatchProductResponse](#mruv.economy.WatchProductResponse) stream | Subscribe to events related to a product. |
+| WatchPrice | [WatchPriceRequest](#mruv.economy.WatchPriceRequest) | [WatchPriceResponse](#mruv.economy.WatchPriceResponse) stream | Subscribe to product price changes. |
+
+ 
+
+
+
+<a name="estates/elevators.proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## estates/elevators.proto
+
+
+
+<a name="mruv.elevators.CreateElevatorRequest"></a>
+
+### CreateElevatorRequest
+Request message for rpc `CreateElevator`.
+
+
+
+
+
+
+<a name="mruv.elevators.CreateElevatorResponse"></a>
+
+### CreateElevatorResponse
+Response message for rpc `CreateElevator`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.elevators.DeleteElevatorRequest"></a>
+
+### DeleteElevatorRequest
+Request message for rpc `DeleteElevator`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.elevators.DeleteElevatorResponse"></a>
+
+### DeleteElevatorResponse
+Response message for rpc `DeleteElevator`.
+
+
+
+
+
+
+<a name="mruv.elevators.GetElevatorFloorsRequest"></a>
+
+### GetElevatorFloorsRequest
+Request message for rpc `GetElevatorFloors`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.elevators.GetElevatorFloorsResponse"></a>
+
+### GetElevatorFloorsResponse
+Response message for rpc `GetElevatorFloors`.
+
+
+
+
+
+
+<a name="mruv.elevators.GetElevatorRequest"></a>
+
+### GetElevatorRequest
+Request message for rpc `GetElevator`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.elevators.GetElevatorResponse"></a>
+
+### GetElevatorResponse
+Response message for rpc `GetElevator`.
+
+
+
+
+
+
+<a name="mruv.elevators.UpdateElevatorRequest"></a>
+
+### UpdateElevatorRequest
+Request message for rpc `UpdateElevator`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.elevators.UpdateElevatorResponse"></a>
+
+### UpdateElevatorResponse
+Response message for rpc `UpdateElevator`.
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+
+<a name="mruv.elevators.MruVElevatorsService"></a>
+
+### MruVElevatorsService
+The MruV entrances service provides procedures for managing an elevators.
+Elevators allow all players in the elevator area to move between building floors.
+Floor change is processed in following steps:
+1. Someone chooses a floor
+1. Doors closing event is fired
+2. Doors closed event is fired.
+3. Everyone in a elevator are registered as players, that will be teleported to chosen floor.
+4. X seconds delay (elevator is moving)
+5. Teleport players to other floor elevator
+6. Doors opening
+7. Doors opened - end
+You can define a one-man pseudo-elevator where only point 5 is executed.
+
+| Method Name | Request Type | Response Type | Description |
+| ----------- | ------------ | ------------- | ------------|
+| CreateElevator | [CreateElevatorRequest](#mruv.elevators.CreateElevatorRequest) | [CreateElevatorResponse](#mruv.elevators.CreateElevatorResponse) | Create an elevator. |
+| GetElevator | [GetElevatorRequest](#mruv.elevators.GetElevatorRequest) | [GetElevatorResponse](#mruv.elevators.GetElevatorResponse) | Get an elevator. |
+| UpdateElevator | [UpdateElevatorRequest](#mruv.elevators.UpdateElevatorRequest) | [UpdateElevatorResponse](#mruv.elevators.UpdateElevatorResponse) | Update an elevator. |
+| DeleteElevator | [DeleteElevatorRequest](#mruv.elevators.DeleteElevatorRequest) | [DeleteElevatorResponse](#mruv.elevators.DeleteElevatorResponse) | Delete an elevator. |
+| GetElevatorFloors | [GetElevatorFloorsRequest](#mruv.elevators.GetElevatorFloorsRequest) | [GetElevatorFloorsResponse](#mruv.elevators.GetElevatorFloorsResponse) | Get available elevator floors. |
+
+ 
+
+
+
+<a name="estates/entrances.proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## estates/entrances.proto
+
+
+
+<a name="mruv.entrances.CreateEntranceRequest"></a>
+
+### CreateEntranceRequest
+Request message for rpc `CreateEntrance`.
+
+
+
+
+
+
+<a name="mruv.entrances.CreateEntranceResponse"></a>
+
+### CreateEntranceResponse
+Response message for rpc `CreateEntrance`.
+
+
+
+
+
+
+<a name="mruv.entrances.DeleteEntranceRequest"></a>
+
+### DeleteEntranceRequest
+Request message for rpc `DeleteEntrance`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.entrances.DeleteEntranceResponse"></a>
+
+### DeleteEntranceResponse
+Response message for rpc `DeleteEntrance`.
+
+
+
+
+
+
+<a name="mruv.entrances.EnterRequest"></a>
+
+### EnterRequest
+Request message for rpc `Enter`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.entrances.EnterResponse"></a>
+
+### EnterResponse
+Response message for rpc `Enter`.
+
+
+
+
+
+
+<a name="mruv.entrances.Entrance"></a>
+
+### Entrance
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+| estate_id | [uint32](#uint32) |  |  |
+| out | [Entrance.EntranceDoor](#mruv.entrances.Entrance.EntranceDoor) |  |  |
+| in | [Entrance.EntranceDoor](#mruv.entrances.Entrance.EntranceDoor) |  |  |
+
+
+
+
+
+
+<a name="mruv.entrances.Entrance.EntranceDoor"></a>
+
+### Entrance.EntranceDoor
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  |  |
+| message | [string](#string) |  |  |
+| icon | [int32](#int32) |  |  |
+| marker | [int32](#int32) |  |  |
+| x | [float](#float) |  |  |
+| y | [float](#float) |  |  |
+| z | [float](#float) |  |  |
+| vw | [int32](#int32) |  |  |
+| int | [int32](#int32) |  |  |
+| estate_id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.entrances.FindNearestEntranceRequest"></a>
+
+### FindNearestEntranceRequest
+Request message for rpc `FindNearestEntrance`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| x | [float](#float) |  |  |
+| y | [float](#float) |  |  |
+| z | [float](#float) |  |  |
+| max_distance | [float](#float) |  |  |
+
+
+
+
+
+
+<a name="mruv.entrances.FindNearestEntranceResponse"></a>
+
+### FindNearestEntranceResponse
+Response message for rpc `FindNearestEntrance`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+| distance | [float](#float) |  |  |
+
+
+
+
+
+
+<a name="mruv.entrances.GetEntranceRequest"></a>
+
+### GetEntranceRequest
+Request message for rpc `GetEntrance`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.entrances.GetEntranceResponse"></a>
+
+### GetEntranceResponse
+Response message for rpc `GetEntrance`.
+
+
+
+
+
+
+<a name="mruv.entrances.LockRequest"></a>
+
+### LockRequest
+Request message for rpc `Lock`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.entrances.LockResponse"></a>
+
+### LockResponse
+Response message for rpc `Lock`.
+
+
+
+
+
+
+<a name="mruv.entrances.UnlockRequest"></a>
+
+### UnlockRequest
+Request message for rpc `Unlock`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.entrances.UnlockResponse"></a>
+
+### UnlockResponse
+Response message for rpc `Unlock`.
+
+
+
+
+
+
+<a name="mruv.entrances.UpdateEntranceRequest"></a>
+
+### UpdateEntranceRequest
+Request message for rpc `UpdateEntrance`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.entrances.UpdateEntranceResponse"></a>
+
+### UpdateEntranceResponse
+Response message for rpc `UpdateEntrance`.
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+
+<a name="mruv.entrances.MruVEntrancesService"></a>
+
+### MruVEntrancesService
+The MruV entrances service provides procedures for managing an entrances to estates and teleportation to locations.
+
+| Method Name | Request Type | Response Type | Description |
+| ----------- | ------------ | ------------- | ------------|
+| CreateEntrance | [CreateEntranceRequest](#mruv.entrances.CreateEntranceRequest) | [CreateEntranceResponse](#mruv.entrances.CreateEntranceResponse) | Create an entrance to building or teleport to location. |
+| GetEntrance | [GetEntranceRequest](#mruv.entrances.GetEntranceRequest) | [GetEntranceResponse](#mruv.entrances.GetEntranceResponse) | Get an entrance to building or a teleport to location. |
+| UpdateEntrance | [UpdateEntranceRequest](#mruv.entrances.UpdateEntranceRequest) | [UpdateEntranceResponse](#mruv.entrances.UpdateEntranceResponse) | Update an entrance to building or a teleport to location. |
+| DeleteEntrance | [DeleteEntranceRequest](#mruv.entrances.DeleteEntranceRequest) | [DeleteEntranceResponse](#mruv.entrances.DeleteEntranceResponse) | Delete an entrance to building or a teleport to location. |
+| Lock | [LockRequest](#mruv.entrances.LockRequest) | [LockResponse](#mruv.entrances.LockResponse) | Lock entrance. |
+| Unlock | [UnlockRequest](#mruv.entrances.UnlockRequest) | [UnlockResponse](#mruv.entrances.UnlockResponse) | Unload entrance. |
+| FindNearestEntrance | [FindNearestEntranceRequest](#mruv.entrances.FindNearestEntranceRequest) | [FindNearestEntranceResponse](#mruv.entrances.FindNearestEntranceResponse) | Find gate that is closest to a specific position. |
+| Enter | [EnterRequest](#mruv.entrances.EnterRequest) | [EnterResponse](#mruv.entrances.EnterResponse) | Enter an entrance |
+
+ 
+
+
+
+<a name="estates/estates.proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## estates/estates.proto
+
+
+
+<a name="mruv.estates.AddEntranceRequest"></a>
+
+### AddEntranceRequest
+Request message for rpc `AddEntrance`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| estate_id | [uint32](#uint32) |  |  |
+| entrance_id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.estates.AddEntranceResponse"></a>
+
+### AddEntranceResponse
+Response message for rpc `AddEntrance`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| entrance_count | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.estates.AddGateRequest"></a>
+
+### AddGateRequest
+Request message for rpc `AddGate`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| estate_id | [uint32](#uint32) |  |  |
+| gate_id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.estates.AddGateResponse"></a>
+
+### AddGateResponse
+Response message for rpc `AddGate`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| gate_count | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.estates.CreateEstateRequest"></a>
+
+### CreateEstateRequest
+Request message for rpc `CreateEstate`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="mruv.estates.CreateEstateResponse"></a>
+
+### CreateEstateResponse
+Response message for rpc `CreateEstate`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.estates.DeleteEstateRequest"></a>
+
+### DeleteEstateRequest
+Request message for rpc `DeleteEstate`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.estates.DeleteEstateResponse"></a>
+
+### DeleteEstateResponse
+Response message for rpc `DeleteEstate`.
+
+
+
+
+
+
+<a name="mruv.estates.DeleteGateRequest"></a>
+
+### DeleteGateRequest
+Request message for rpc `DeleteGate`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| estate_id | [uint32](#uint32) |  |  |
+| gate_id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.estates.DeleteGateResponse"></a>
+
+### DeleteGateResponse
+Response message for rpc `DeleteGate`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| gate_count | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.estates.Estate"></a>
+
+### Estate
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+| name | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| entrances | [uint32](#uint32) | repeated |  |
+| gates | [uint32](#uint32) | repeated |  |
+| rooms | [uint32](#uint32) | repeated |  |
+
+
+
+
+
+
+<a name="mruv.estates.GetEstateEntrancesRequest"></a>
+
+### GetEstateEntrancesRequest
+Request message for rpc `GetEstateEntrances`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| estate_id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.estates.GetEstateEntrancesResponse"></a>
+
+### GetEstateEntrancesResponse
+Response message for rpc `GetEstateEntrances`.
+
+
+
+
+
+
+<a name="mruv.estates.GetEstateGatesRequest"></a>
+
+### GetEstateGatesRequest
+Request message for rpc `GetEstateGates`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| estate_id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.estates.GetEstateGatesResponse"></a>
+
+### GetEstateGatesResponse
+Response message for rpc `GetEstateGates`.
+
+
+
+
+
+
+<a name="mruv.estates.GetEstateRequest"></a>
+
+### GetEstateRequest
+Request message for rpc `GetEstate`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.estates.GetEstatesRequest"></a>
+
+### GetEstatesRequest
+Request message for rpc `GetEstates`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.estates.GetEstatesResponse"></a>
+
+### GetEstatesResponse
+Response message for rpc `GetEstates`.
+
+
+
+
+
+
+<a name="mruv.estates.RemoveEntranceRequest"></a>
+
+### RemoveEntranceRequest
+Request message for rpc `RemoveEntrance`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| estate_id | [uint32](#uint32) |  |  |
+| entrance_id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.estates.RemoveEntranceResponse"></a>
+
+### RemoveEntranceResponse
+Response message for rpc `RemoveEntrance`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| entrance_count | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.estates.UpdateEstateRequest"></a>
+
+### UpdateEstateRequest
+Request message for rpc `UpdateEstate`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+| name | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="mruv.estates.UpdateEstateResponse"></a>
+
+### UpdateEstateResponse
+Response message for rpc `UpdateEstate`.
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+
+<a name="mruv.estates.MruVEstateService"></a>
+
+### MruVEstateService
+The MruV estate service provides procedures for managing buildings and other estates.
+
+| Method Name | Request Type | Response Type | Description |
+| ----------- | ------------ | ------------- | ------------|
+| CreateEstate | [CreateEstateRequest](#mruv.estates.CreateEstateRequest) | [CreateEstateResponse](#mruv.estates.CreateEstateResponse) | Create real estate. |
+| GetEstate | [GetEstateRequest](#mruv.estates.GetEstateRequest) | [Estate](#mruv.estates.Estate) | Get real estate. |
+| UpdateEstate | [UpdateEstateRequest](#mruv.estates.UpdateEstateRequest) | [UpdateEstateResponse](#mruv.estates.UpdateEstateResponse) | Update real estate. |
+| DeleteEstate | [DeleteEstateRequest](#mruv.estates.DeleteEstateRequest) | [DeleteEstateResponse](#mruv.estates.DeleteEstateResponse) | Delete real estate. |
+| GetEstates | [GetEstatesRequest](#mruv.estates.GetEstatesRequest) | [GetEstatesResponse](#mruv.estates.GetEstatesResponse) | Get all created real estates. |
+| AddGate | [AddGateRequest](#mruv.estates.AddGateRequest) | [AddGateResponse](#mruv.estates.AddGateResponse) | Add a gate to an estate. |
+| DeleteGate | [DeleteGateRequest](#mruv.estates.DeleteGateRequest) | [DeleteGateResponse](#mruv.estates.DeleteGateResponse) | Delete a gate from estate. |
+| GetEstateGates | [GetEstateGatesRequest](#mruv.estates.GetEstateGatesRequest) | [GetEstateGatesResponse](#mruv.estates.GetEstateGatesResponse) | Get all estate gates. |
+| AddEntrance | [AddEntranceRequest](#mruv.estates.AddEntranceRequest) | [AddEntranceResponse](#mruv.estates.AddEntranceResponse) | Add an entrance to estate. |
+| RemoveEntrance | [RemoveEntranceRequest](#mruv.estates.RemoveEntranceRequest) | [RemoveEntranceResponse](#mruv.estates.RemoveEntranceResponse) | Remove an entrance from estate. |
+| GetEstateEntrances | [GetEstateEntrancesRequest](#mruv.estates.GetEstateEntrancesRequest) | [GetEstateEntrancesResponse](#mruv.estates.GetEstateEntrancesResponse) | Get all estate entrances. |
+
+ 
+
+
+
+<a name="estates/gates.proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## estates/gates.proto
+
+
+
+<a name="mruv.gates.CloseRequest"></a>
+
+### CloseRequest
+Request message for rpc `Close`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.gates.CloseResponse"></a>
+
+### CloseResponse
+Response message for rpc `Close`.
+
+
+
+
+
+
+<a name="mruv.gates.CreateGateRequest"></a>
+
+### CreateGateRequest
+Request message for rpc `CreateGate`.
+
+
+
+
+
+
+<a name="mruv.gates.CreateGateResponse"></a>
+
+### CreateGateResponse
+Response message for rpc `CreateGate`.
+
+
+
+
+
+
+<a name="mruv.gates.DeleteGateRequest"></a>
+
+### DeleteGateRequest
+Request message for rpc `DeleteGate`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.gates.DeleteGateResponse"></a>
+
+### DeleteGateResponse
+Response message for rpc `DeleteGate`.
+
+
+
+
+
+
+<a name="mruv.gates.FindNearestGateRequest"></a>
+
+### FindNearestGateRequest
+Request message for rpc `FindNearestGate`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| x | [float](#float) |  |  |
+| y | [float](#float) |  |  |
+| z | [float](#float) |  |  |
+| max_distance | [float](#float) |  |  |
+
+
+
+
+
+
+<a name="mruv.gates.FindNearestGateResponse"></a>
+
+### FindNearestGateResponse
+Response message for rpc `FindNearestGate`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+| distance | [float](#float) |  |  |
+
+
+
+
+
+
+<a name="mruv.gates.Gate"></a>
+
+### Gate
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+| estate_id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.gates.GetGateRequest"></a>
+
+### GetGateRequest
+Request message for rpc `GetGate`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.gates.GetGateResponse"></a>
+
+### GetGateResponse
+Response message for rpc `GetGate`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.gates.LockRequest"></a>
+
+### LockRequest
+Request message for rpc `Lock`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.gates.LockResponse"></a>
+
+### LockResponse
+Response message for rpc `Lock`.
+
+
+
+
+
+
+<a name="mruv.gates.OpenRequest"></a>
+
+### OpenRequest
+Request message for rpc `Open`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.gates.OpenResponse"></a>
+
+### OpenResponse
+Response message for rpc `Open`.
+
+
+
+
+
+
+<a name="mruv.gates.UnlockRequest"></a>
+
+### UnlockRequest
+Request message for rpc `Unlock`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.gates.UnlockResponse"></a>
+
+### UnlockResponse
+Response message for rpc `Unlock`.
+
+
+
+
+
+
+<a name="mruv.gates.UpdateGateRequest"></a>
+
+### UpdateGateRequest
+Request message for rpc `UpdateGate`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.gates.UpdateGateResponse"></a>
+
+### UpdateGateResponse
+Response message for rpc `UpdateGate`.
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+
+<a name="mruv.gates.MruVGatesService"></a>
+
+### MruVGatesService
+The MruV gates service provides procedures for managing gates and moving objects groups.
+
+| Method Name | Request Type | Response Type | Description |
+| ----------- | ------------ | ------------- | ------------|
+| CreateGate | [CreateGateRequest](#mruv.gates.CreateGateRequest) | [CreateGateResponse](#mruv.gates.CreateGateResponse) | Create a gate or a moving objects objects group. |
+| GetGate | [GetGateRequest](#mruv.gates.GetGateRequest) | [GetGateResponse](#mruv.gates.GetGateResponse) | Get a gate or a moving objects objects group. |
+| UpdateGate | [UpdateGateRequest](#mruv.gates.UpdateGateRequest) | [UpdateGateResponse](#mruv.gates.UpdateGateResponse) | Update a gate or a moving objects objects group. |
+| DeleteGate | [DeleteGateRequest](#mruv.gates.DeleteGateRequest) | [DeleteGateResponse](#mruv.gates.DeleteGateResponse) | Delete a gate or a moving objects objects group. |
+| Lock | [LockRequest](#mruv.gates.LockRequest) | [LockResponse](#mruv.gates.LockResponse) | Lock a gate. Locked gate cannot be opened. |
+| Unlock | [UnlockRequest](#mruv.gates.UnlockRequest) | [UnlockResponse](#mruv.gates.UnlockResponse) | Unload a gate, so it can be open. |
+| Open | [OpenRequest](#mruv.gates.OpenRequest) | [OpenResponse](#mruv.gates.OpenResponse) | Opens a gate. |
+| Close | [CloseRequest](#mruv.gates.CloseRequest) | [CloseResponse](#mruv.gates.CloseResponse) | Close a gate. |
+| FindNearestGate | [FindNearestGateRequest](#mruv.gates.FindNearestGateRequest) | [FindNearestGateResponse](#mruv.gates.FindNearestGateResponse) | Find gate that is closest to a specific position. |
+
+ 
+
+
+
 <a name="groups/groups.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -1046,7 +3155,7 @@ Position structure.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| limit | [int32](#int32) |  |  |
+| limit | [uint32](#uint32) |  |  |
 
 
 
@@ -1065,59 +3174,6 @@ Position structure.
 
 
 
-
-
-
-<a name="mruv.RemoveGroupMemberRequest"></a>
-
-### RemoveGroupMemberRequest
-
-
-
-
-
-
-
-<a name="mruv.RemoveGroupMemberResponse"></a>
-
-### RemoveGroupMemberResponse
-
-
-
-
-
-
- 
-
- 
-
- 
-
-
-<a name="mruv.MruVGroupsService"></a>
-
-### MruVGroupsService
-
-
-| Method Name | Request Type | Response Type | Description |
-| ----------- | ------------ | ------------- | ------------|
-| CreateGroup | [Group](#mruv.Group) | [GroupID](#mruv.GroupID) | CRUD |
-| GetGroup | [GroupID](#mruv.GroupID) | [Group](#mruv.Group) |  |
-| DeleteGroup | [GroupID](#mruv.GroupID) | [GroupID](#mruv.GroupID) |  |
-| GetGroups | [GetGroupsRequest](#mruv.GetGroupsRequest) | [GetGroupsResponse](#mruv.GetGroupsResponse) |  |
-| AddGroupMember | [AddGroupMemberRequest](#mruv.AddGroupMemberRequest) | [AddGroupMemberResponse](#mruv.AddGroupMemberResponse) |  |
-| RemoveGroupMember | [RemoveGroupMemberRequest](#mruv.RemoveGroupMemberRequest) | [RemoveGroupMemberResponse](#mruv.RemoveGroupMemberResponse) |  |
-| GetServiceStatus | [ServiceStatusRequest](#mruv.ServiceStatusRequest) | [ServiceStatusResponse](#mruv.ServiceStatusResponse) | Service status |
-| GetServiceVersion | [VersionRequest](#mruv.VersionRequest) | [VersionResponse](#mruv.VersionResponse) |  |
-
- 
-
-
-
-<a name="groups/groups_model.proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## groups/groups_model.proto
 
 
 
@@ -1186,11 +3242,172 @@ Position structure.
 
 
 
- 
+
+<a name="mruv.RemoveGroupMemberRequest"></a>
+
+### RemoveGroupMemberRequest
+
+
+
+
+
+
+
+<a name="mruv.RemoveGroupMemberResponse"></a>
+
+### RemoveGroupMemberResponse
+
+
+
+
+
 
  
 
  
+
+ 
+
+
+<a name="mruv.MruVGroupsService"></a>
+
+### MruVGroupsService
+The MruV groups service provides procedures for managing groups.
+
+| Method Name | Request Type | Response Type | Description |
+| ----------- | ------------ | ------------- | ------------|
+| CreateGroup | [Group](#mruv.Group) | [GroupID](#mruv.GroupID) | CRUD |
+| GetGroup | [GroupID](#mruv.GroupID) | [Group](#mruv.Group) |  |
+| DeleteGroup | [GroupID](#mruv.GroupID) | [GroupID](#mruv.GroupID) |  |
+| GetGroups | [GetGroupsRequest](#mruv.GetGroupsRequest) | [GetGroupsResponse](#mruv.GetGroupsResponse) |  |
+| AddGroupMember | [AddGroupMemberRequest](#mruv.AddGroupMemberRequest) | [AddGroupMemberResponse](#mruv.AddGroupMemberResponse) |  |
+| RemoveGroupMember | [RemoveGroupMemberRequest](#mruv.RemoveGroupMemberRequest) | [RemoveGroupMemberResponse](#mruv.RemoveGroupMemberResponse) |  |
+| GetServiceStatus | [ServiceStatusRequest](#mruv.ServiceStatusRequest) | [ServiceStatusResponse](#mruv.ServiceStatusResponse) | Service status |
+| GetServiceVersion | [VersionRequest](#mruv.VersionRequest) | [VersionResponse](#mruv.VersionResponse) |  |
+
+ 
+
+
+
+<a name="houses/houses.proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## houses/houses.proto
+
+
+
+<a name="mruv.houses.CreateHouseRequest"></a>
+
+### CreateHouseRequest
+Request message for rpc `CreateHouse`.
+
+
+
+
+
+
+<a name="mruv.houses.CreateHouseResponse"></a>
+
+### CreateHouseResponse
+Response message for rpc `CreateHouse`.
+
+
+
+
+
+
+<a name="mruv.houses.DeleteHouseRequest"></a>
+
+### DeleteHouseRequest
+Request message for rpc `DeleteHouse`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.houses.DeleteHouseResponse"></a>
+
+### DeleteHouseResponse
+Response message for rpc `DeleteHouse`.
+
+
+
+
+
+
+<a name="mruv.houses.GetHouseRequest"></a>
+
+### GetHouseRequest
+Request message for rpc `GetHouse`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.houses.GetHouseResponse"></a>
+
+### GetHouseResponse
+Response message for rpc `GetHouse`.
+
+
+
+
+
+
+<a name="mruv.houses.UpdateHouseRequest"></a>
+
+### UpdateHouseRequest
+Request message for rpc `UpdateHouse`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.houses.UpdateHouseResponse"></a>
+
+### UpdateHouseResponse
+Response message for rpc `UpdateHouse`.
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+
+<a name="mruv.houses.MruVHousesService"></a>
+
+### MruVHousesService
+The MruV houses service provides procedures for managing houses.
+
+| Method Name | Request Type | Response Type | Description |
+| ----------- | ------------ | ------------- | ------------|
+| CreateHouse | [CreateHouseRequest](#mruv.houses.CreateHouseRequest) | [CreateHouseResponse](#mruv.houses.CreateHouseResponse) | Create a house. |
+| GetHouse | [GetHouseRequest](#mruv.houses.GetHouseRequest) | [GetHouseResponse](#mruv.houses.GetHouseResponse) | Get a house. |
+| UpdateHouse | [UpdateHouseRequest](#mruv.houses.UpdateHouseRequest) | [UpdateHouseResponse](#mruv.houses.UpdateHouseResponse) | Update a house. |
+| DeleteHouse | [DeleteHouseRequest](#mruv.houses.DeleteHouseRequest) | [DeleteHouseResponse](#mruv.houses.DeleteHouseResponse) | Delete a house. |
 
  
 
@@ -1520,13 +3737,13 @@ The MruV items service provides procedures for managing items and containers
 | GetContainer | [ContainerID](#mruv.ContainerID) | [Container](#mruv.Container) | Get container by id. |
 | DeleteContainer | [ContainerID](#mruv.ContainerID) | [ContainerID](#mruv.ContainerID) | Delete container by id. |
 | GetContainers | [GetContainersRequest](#mruv.GetContainersRequest) | [GetContainersResponse](#mruv.GetContainersResponse) | Get all containers. |
-| CreateContainerType | [ContainerType](#mruv.ContainerType) | [ContainerTypeID](#mruv.ContainerTypeID) | Create container type. |
-| GetContainerType | [ContainerTypeID](#mruv.ContainerTypeID) | [ContainerType](#mruv.ContainerType) | Get container type by id. |
-| DeleteContainerType | [ContainerTypeID](#mruv.ContainerTypeID) | [ContainerTypeID](#mruv.ContainerTypeID) | Detele container type by id. |
+| CreateContainerType | [ContainerType](#mruv.ContainerType) | [ContainerTypeID](#mruv.ContainerTypeID) | Create a container type. |
+| GetContainerType | [ContainerTypeID](#mruv.ContainerTypeID) | [ContainerType](#mruv.ContainerType) | Get a container type by id. |
+| DeleteContainerType | [ContainerTypeID](#mruv.ContainerTypeID) | [ContainerTypeID](#mruv.ContainerTypeID) | Delete a container type by id. |
 | GetContainerTypes | [GetContainerTypesRequest](#mruv.GetContainerTypesRequest) | [GetContainerTypesResponse](#mruv.GetContainerTypesResponse) | Get all container types. |
 | GetContainerItems | [GetContainerItemsRequest](#mruv.GetContainerItemsRequest) | [GetContainerItemsResponse](#mruv.GetContainerItemsResponse) | Get items inside a container. |
-| PullItem | [PullItemRequest](#mruv.PullItemRequest) | [Item](#mruv.Item) | Pull item from container. |
-| PutItem | [PutItemRequest](#mruv.PutItemRequest) | [PutItemResponse](#mruv.PutItemResponse) | Put item into container. |
+| PullItem | [PullItemRequest](#mruv.PullItemRequest) | [Item](#mruv.Item) | Pull an item from container. |
+| PutItem | [PutItemRequest](#mruv.PutItemRequest) | [PutItemResponse](#mruv.PutItemResponse) | Put an item into container. |
 | SortItems | [SortItemsRequest](#mruv.SortItemsRequest) | [SortItemsResponse](#mruv.SortItemsResponse) | Sort items inside container. This procedure change order of items inside container. |
 | GetNearestItems | [GetNearestItemsRequest](#mruv.GetNearestItemsRequest) | [GetNearestItemsResponse](#mruv.GetNearestItemsResponse) | Retrieves from the container the list of items nearest to the given position. |
 | UseItem | [UseItemRequest](#mruv.UseItemRequest) | [UseItemResponse](#mruv.UseItemResponse) | Trigger action associated with the item usage. |
@@ -1724,6 +3941,1361 @@ Sorting modes for container items.
 
 
 
+<a name="jobs/jobs.proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## jobs/jobs.proto
+
+
+
+<a name="mruv.jobs.CreateJobRequest"></a>
+
+### CreateJobRequest
+Request message for rpc `CreateJob`.
+
+
+
+
+
+
+<a name="mruv.jobs.CreateJobResponse"></a>
+
+### CreateJobResponse
+Response message for rpc `CreateJob`.
+
+
+
+
+
+
+<a name="mruv.jobs.DeleteJobRequest"></a>
+
+### DeleteJobRequest
+Request message for rpc `DeleteJob`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.jobs.DeleteJobResponse"></a>
+
+### DeleteJobResponse
+Response message for rpc `DeleteJob`.
+
+
+
+
+
+
+<a name="mruv.jobs.GetJobRequest"></a>
+
+### GetJobRequest
+Request message for rpc `GetJob`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.jobs.GetJobResponse"></a>
+
+### GetJobResponse
+Response message for rpc `GetJob`.
+
+
+
+
+
+
+<a name="mruv.jobs.UpdateJobRequest"></a>
+
+### UpdateJobRequest
+Request message for rpc `UpdateJob`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.jobs.UpdateJobResponse"></a>
+
+### UpdateJobResponse
+Response message for rpc `UpdateJob`.
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+
+<a name="mruv.jobs.MruVJobsService"></a>
+
+### MruVJobsService
+The MruV jobs service provides procedures for managing jobs.
+
+| Method Name | Request Type | Response Type | Description |
+| ----------- | ------------ | ------------- | ------------|
+| CreateJob | [CreateJobRequest](#mruv.jobs.CreateJobRequest) | [CreateJobResponse](#mruv.jobs.CreateJobResponse) | Create a job. |
+| GetJob | [GetJobRequest](#mruv.jobs.GetJobRequest) | [GetJobResponse](#mruv.jobs.GetJobResponse) | Get a job. |
+| UpdateJob | [UpdateJobRequest](#mruv.jobs.UpdateJobRequest) | [UpdateJobResponse](#mruv.jobs.UpdateJobResponse) | Update a job. |
+| DeleteJob | [DeleteJobRequest](#mruv.jobs.DeleteJobRequest) | [DeleteJobResponse](#mruv.jobs.DeleteJobResponse) | Delete a job. |
+
+ 
+
+
+
+<a name="offers/offers.proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## offers/offers.proto
+
+
+
+<a name="mruv.offers.AcceptOfferRequest"></a>
+
+### AcceptOfferRequest
+Request message for rpc `AcceptOffer`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.offers.AcceptOfferResponse"></a>
+
+### AcceptOfferResponse
+Response message for rpc `AcceptOffer`.
+
+
+
+
+
+
+<a name="mruv.offers.CreateOfferRequest"></a>
+
+### CreateOfferRequest
+Request message for rpc `CreateOffer`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| offer | [string](#string) |  |  |
+| end_date | [int64](#int64) |  |  |
+| price | [uint32](#uint32) |  |  |
+| offer_type | [OfferType](#mruv.offers.OfferType) |  |  |
+| offer_entity_id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.offers.CreateOfferResponse"></a>
+
+### CreateOfferResponse
+Response message for rpc `CreateOffer`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.offers.DeleteOfferRequest"></a>
+
+### DeleteOfferRequest
+Request message for rpc `DeleteOffer`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.offers.DeleteOfferResponse"></a>
+
+### DeleteOfferResponse
+Response message for rpc `DeleteOffer`.
+
+
+
+
+
+
+<a name="mruv.offers.GetOfferRequest"></a>
+
+### GetOfferRequest
+Request message for rpc `GetOffer`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.offers.GetOfferResponse"></a>
+
+### GetOfferResponse
+Response message for rpc `GetOffer`.
+
+
+
+
+
+
+<a name="mruv.offers.UpdateOfferRequest"></a>
+
+### UpdateOfferRequest
+Request message for rpc `UpdateOffer`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.offers.UpdateOfferResponse"></a>
+
+### UpdateOfferResponse
+Response message for rpc `UpdateOffer`.
+
+
+
+
+
+ 
+
+
+<a name="mruv.offers.OfferType"></a>
+
+### OfferType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| UNKNOWN | 0 |  |
+
+
+ 
+
+ 
+
+
+<a name="mruv.offers.MruVOffersService"></a>
+
+### MruVOffersService
+The MruV offers service.
+
+| Method Name | Request Type | Response Type | Description |
+| ----------- | ------------ | ------------- | ------------|
+| CreateOffer | [CreateOfferRequest](#mruv.offers.CreateOfferRequest) | [CreateOfferResponse](#mruv.offers.CreateOfferResponse) | Create an offer. |
+| GetOffer | [GetOfferRequest](#mruv.offers.GetOfferRequest) | [GetOfferResponse](#mruv.offers.GetOfferResponse) | Get an offer. |
+| UpdateOffer | [UpdateOfferRequest](#mruv.offers.UpdateOfferRequest) | [UpdateOfferResponse](#mruv.offers.UpdateOfferResponse) | Update an offer. |
+| DeleteOffer | [DeleteOfferRequest](#mruv.offers.DeleteOfferRequest) | [DeleteOfferResponse](#mruv.offers.DeleteOfferResponse) | Delete an offer. |
+| AcceptOffer | [AcceptOfferRequest](#mruv.offers.AcceptOfferRequest) | [AcceptOfferResponse](#mruv.offers.AcceptOfferResponse) | Accept an offer and proceed transaction. |
+
+ 
+
+
+
+<a name="organizations/organizations.proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## organizations/organizations.proto
+
+
+
+<a name="mruv.organizations.AssignLeaderRequest"></a>
+
+### AssignLeaderRequest
+Request message for rpc `AssignLeader`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.organizations.AssignLeaderResponse"></a>
+
+### AssignLeaderResponse
+Response message for rpc `AssignLeader`.
+
+
+
+
+
+
+<a name="mruv.organizations.CreateOrganizationRequest"></a>
+
+### CreateOrganizationRequest
+Request message for rpc `CreateOrganization`.
+
+
+
+
+
+
+<a name="mruv.organizations.CreateOrganizationResponse"></a>
+
+### CreateOrganizationResponse
+Response message for rpc `CreateOrganization`.
+
+
+
+
+
+
+<a name="mruv.organizations.DeleteOrganizationRequest"></a>
+
+### DeleteOrganizationRequest
+Request message for rpc `DeleteOrganization`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.organizations.DeleteOrganizationResponse"></a>
+
+### DeleteOrganizationResponse
+Response message for rpc `DeleteOrganization`.
+
+
+
+
+
+
+<a name="mruv.organizations.GetOrganizationRequest"></a>
+
+### GetOrganizationRequest
+Request message for rpc `GetOrganization`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.organizations.GetOrganizationResponse"></a>
+
+### GetOrganizationResponse
+Response message for rpc `GetOrganization`.
+
+
+
+
+
+
+<a name="mruv.organizations.UnassignLeaderRequest"></a>
+
+### UnassignLeaderRequest
+Request message for rpc `UnassignLeader`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.organizations.UnassignLeaderResponse"></a>
+
+### UnassignLeaderResponse
+Response message for rpc `UnassignLeader`.
+
+
+
+
+
+
+<a name="mruv.organizations.UpdateOrganizationRequest"></a>
+
+### UpdateOrganizationRequest
+Request message for rpc `UpdateOrganization`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.organizations.UpdateOrganizationResponse"></a>
+
+### UpdateOrganizationResponse
+Response message for rpc `UpdateOrganization`.
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+
+<a name="mruv.organizations.MruVOrganizationsService"></a>
+
+### MruVOrganizationsService
+The MruV jobs service provides procedures for managing organizations and fractions.
+
+| Method Name | Request Type | Response Type | Description |
+| ----------- | ------------ | ------------- | ------------|
+| CreateOrganization | [CreateOrganizationRequest](#mruv.organizations.CreateOrganizationRequest) | [CreateOrganizationResponse](#mruv.organizations.CreateOrganizationResponse) | Create a organization. |
+| GetOrganization | [GetOrganizationRequest](#mruv.organizations.GetOrganizationRequest) | [GetOrganizationResponse](#mruv.organizations.GetOrganizationResponse) | Get organization. |
+| UpdateOrganization | [UpdateOrganizationRequest](#mruv.organizations.UpdateOrganizationRequest) | [UpdateOrganizationResponse](#mruv.organizations.UpdateOrganizationResponse) | Update organization. |
+| DeleteOrganization | [DeleteOrganizationRequest](#mruv.organizations.DeleteOrganizationRequest) | [DeleteOrganizationResponse](#mruv.organizations.DeleteOrganizationResponse) | Delete organization. |
+| AssignLeader | [AssignLeaderRequest](#mruv.organizations.AssignLeaderRequest) | [AssignLeaderResponse](#mruv.organizations.AssignLeaderResponse) | Assign an organization leader. Leader is a main administrator of a organization, have all rights to manage organization. If the organization leader already exists, the leader will be overwritten. |
+| UnassignLeader | [UnassignLeaderRequest](#mruv.organizations.UnassignLeaderRequest) | [UnassignLeaderResponse](#mruv.organizations.UnassignLeaderResponse) |  |
+
+ 
+
+
+
+<a name="punishments/punishments.proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## punishments/punishments.proto
+
+
+
+<a name="mruv.economy.AdminJailMessage"></a>
+
+### AdminJailMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| player | [uint32](#uint32) |  | A player, that owns a jailed character. |
+| character | [uint32](#uint32) |  | Character that has been jailed. |
+| reason | [string](#string) |  | An admin jail reason. |
+| admin | [uint32](#uint32) |  | Admin that jail a player. 0 = system jail. |
+| aj_date | [int64](#int64) |  | Date on which an admin jail was issued in Unix time. |
+| jail_time | [uint32](#uint32) |  | Time of admin jail in seconds. |
+
+
+
+
+
+
+<a name="mruv.economy.AdminJailRequest"></a>
+
+### AdminJailRequest
+Request message for rpc `AdminJail`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| character | [uint32](#uint32) |  |  |
+| time | [uint32](#uint32) |  | Admin jail time. |
+| reason | [string](#string) |  | Admin jail reason. |
+| admin | [uint32](#uint32) |  | Admin that gave an admin jail to a player. |
+
+
+
+
+
+
+<a name="mruv.economy.AdminJailResponse"></a>
+
+### AdminJailResponse
+Response message for rpc `AdminJail`.
+
+
+
+
+
+
+<a name="mruv.economy.BanMessage"></a>
+
+### BanMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| player | [uint32](#uint32) |  |  |
+| character | [uint32](#uint32) |  |  |
+| ip | [string](#string) |  |  |
+| expiration_date | [int64](#int64) |  | Expiration date in Unix time. |
+| reason | [string](#string) |  | A ban reason. |
+| admin | [uint32](#uint32) |  | Admin that banned a player. 0 = system ban. |
+| ban_date | [int64](#int64) |  | Date on which a ban was issued in Unix time. |
+| active | [bool](#bool) |  | Ban status. True = active, false = deactivated. |
+| unban_date | [int64](#int64) |  | Date of unban in Unix time. This field is set only when ban was deactivated. |
+| unban_admin | [uint32](#uint32) |  | Admin that deactivated this ban. This field is set only when ban was deactivated. |
+
+
+
+
+
+
+<a name="mruv.economy.BanRequest"></a>
+
+### BanRequest
+Request message for rpc `Ban`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| player | [uint32](#uint32) |  |  |
+| character | [uint32](#uint32) |  | Player character that was accused. Optional. |
+| ip | [string](#string) |  |  |
+| time | [uint32](#uint32) |  | Ban expiration time in days. 0 = permanent ban. |
+| reason | [string](#string) |  | Ban reason. |
+| admin | [uint32](#uint32) |  | Admin that banned a player. 0 = system ban. |
+
+
+
+
+
+
+<a name="mruv.economy.BanResponse"></a>
+
+### BanResponse
+Response message for rpc `Ban`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ban_id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.economy.BlockMessage"></a>
+
+### BlockMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| player | [uint32](#uint32) |  | A player, that owns a blocked character. |
+| character | [uint32](#uint32) |  | Blocked character. |
+| reason | [string](#string) |  | A block reason. |
+| admin | [uint32](#uint32) |  | Admin that blocked a player. 0 = system block. |
+| block_date | [int64](#int64) |  | Date on which a block was issued in Unix time. |
+| active | [bool](#bool) |  |  |
+| unblock_date | [int64](#int64) |  | Date of unblock in Unix time. This field is set only when a block was deactivated. |
+| unblock_admin | [uint32](#uint32) |  | An admin that unblocked a player. This field is set only when a block was deactivated. |
+
+
+
+
+
+
+<a name="mruv.economy.BlockRequest"></a>
+
+### BlockRequest
+Request message for rpc `Block`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| character | [uint32](#uint32) |  |  |
+| reason | [string](#string) |  | Block reason. |
+| admin | [uint32](#uint32) |  | Admin that blocked a player. 0 = system ban. |
+
+
+
+
+
+
+<a name="mruv.economy.BlockResponse"></a>
+
+### BlockResponse
+Response message for rpc `Block`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| block_id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.economy.GetBanRequest"></a>
+
+### GetBanRequest
+Request message for rpc `GetBan`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.economy.GetBlockRequest"></a>
+
+### GetBlockRequest
+Request message for rpc `GetBlock`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.economy.GetPlayerAdminJailRequest"></a>
+
+### GetPlayerAdminJailRequest
+Request message for rpc `GetPlayerAdminJail`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| character | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.economy.GetPlayerAdminJailResponse"></a>
+
+### GetPlayerAdminJailResponse
+Response message for rpc `GetPlayerAdminJail`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| jail_time | [uint32](#uint32) |  | Time of admin jail in seconds. |
+| reason | [string](#string) |  | Admin jail reason. |
+| admin | [uint32](#uint32) |  | An admin that put a player in the admin jail. |
+| date | [int64](#int64) |  | Date when the player was thrown into admin jail in Unix time. |
+
+
+
+
+
+
+<a name="mruv.economy.GetPlayerBansRequest"></a>
+
+### GetPlayerBansRequest
+Request message for rpc `GetPlayerBans`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| player | [uint32](#uint32) |  |  |
+| ip | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="mruv.economy.GetPlayerBansResponse"></a>
+
+### GetPlayerBansResponse
+Response message for rpc `GetPlayerBans`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| bans | [BanMessage](#mruv.economy.BanMessage) | repeated |  |
+
+
+
+
+
+
+<a name="mruv.economy.GetPlayerWarnsRequest"></a>
+
+### GetPlayerWarnsRequest
+Request message for rpc `GetPlayerWarns`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| player | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.economy.GetPlayerWarnsResponse"></a>
+
+### GetPlayerWarnsResponse
+Response message for rpc `GetPlayerWarns`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| warns | [WarnMessage](#mruv.economy.WarnMessage) | repeated |  |
+
+
+
+
+
+
+<a name="mruv.economy.GetWarnRequest"></a>
+
+### GetWarnRequest
+Request message for rpc `GetWarn`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.economy.IsCharacterBlockedRequest"></a>
+
+### IsCharacterBlockedRequest
+Request message for rpc `IsCharacterBlocked`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| character | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.economy.IsCharacterBlockedResponse"></a>
+
+### IsCharacterBlockedResponse
+Response message for rpc `IsCharacterBlocked`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| blocked | [bool](#bool) |  |  |
+| block_id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.economy.IsCharacterJailedRequest"></a>
+
+### IsCharacterJailedRequest
+Request message for rpc `IsCharacterJailed`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| character | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.economy.IsCharacterJailedResponse"></a>
+
+### IsCharacterJailedResponse
+Response message for rpc `IsCharacterJailed`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| jailed | [bool](#bool) |  |  |
+| jail_time | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.economy.IsPlayerBannedRequest"></a>
+
+### IsPlayerBannedRequest
+Request message for rpc `IsPlayerBanned`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| player | [uint32](#uint32) |  |  |
+| ip | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="mruv.economy.IsPlayerBannedResponse"></a>
+
+### IsPlayerBannedResponse
+Response message for rpc `IsPlayerBanned`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| banned | [bool](#bool) |  |  |
+| ban_id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.economy.MuteGlobalChatsRequest"></a>
+
+### MuteGlobalChatsRequest
+Request message for rpc `MuteGlobalChats`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| account | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.economy.MuteGlobalChatsResponse"></a>
+
+### MuteGlobalChatsResponse
+Response message for rpc `MuteGlobalChats`.
+
+
+
+
+
+
+<a name="mruv.economy.UnAdminJailMessage"></a>
+
+### UnAdminJailMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| player | [uint32](#uint32) |  |  |
+| character | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.economy.UnAdminJailRequest"></a>
+
+### UnAdminJailRequest
+Request message for rpc `UnAdminJail`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| character | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.economy.UnAdminJailResponse"></a>
+
+### UnAdminJailResponse
+Response message for rpc `UnAdminJail`.
+
+
+
+
+
+
+<a name="mruv.economy.UnBanMessage"></a>
+
+### UnBanMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| player | [uint32](#uint32) |  |  |
+| ban_id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.economy.UnBanRequest"></a>
+
+### UnBanRequest
+Request message for rpc `UnBan`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ban_id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.economy.UnBanResponse"></a>
+
+### UnBanResponse
+Response message for rpc `UnBan`.
+
+
+
+
+
+
+<a name="mruv.economy.UnBlockMessage"></a>
+
+### UnBlockMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| player | [uint32](#uint32) |  |  |
+| block_id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.economy.UnMuteGlobalChatsRequest"></a>
+
+### UnMuteGlobalChatsRequest
+Request message for rpc `UnMuteGlobalChats`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| account | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.economy.UnMuteGlobalChatsResponse"></a>
+
+### UnMuteGlobalChatsResponse
+Response message for rpc `UnMuteGlobalChats`.
+
+
+
+
+
+
+<a name="mruv.economy.UnWarnMessage"></a>
+
+### UnWarnMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| player | [uint32](#uint32) |  |  |
+| warn_id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.economy.UnWarnRequest"></a>
+
+### UnWarnRequest
+Request message for rpc `UnWarn`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| warn_id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.economy.UnWarnResponse"></a>
+
+### UnWarnResponse
+Response message for rpc `UnWarn`.
+
+
+
+
+
+
+<a name="mruv.economy.WarnMessage"></a>
+
+### WarnMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| player | [uint32](#uint32) |  |  |
+| character | [uint32](#uint32) |  | A character, that was given a warning. |
+| expiration_date | [int64](#int64) |  | Expiration date in Unix time. |
+| reason | [string](#string) |  | A warn reason. |
+| admin | [uint32](#uint32) |  | Admin that warned a player. 0 = system warn. |
+| warn_date | [int64](#int64) |  | Date on which a warn was issued in Unix time. |
+| active | [bool](#bool) |  | Warn status. True = active, false = deactivated. |
+| unwarn_date | [int64](#int64) |  | Date of unwarn in Unix time. This field is set only when warn was deactivated. |
+| unwarn_admin | [uint32](#uint32) |  | Admin that deactivated a warn. This field is set only when warn was deactivated. |
+
+
+
+
+
+
+<a name="mruv.economy.WarnRequest"></a>
+
+### WarnRequest
+Request message for rpc `Warn`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| player | [uint32](#uint32) |  |  |
+| character | [uint32](#uint32) |  | Player character that was accused. Optional. |
+| time | [uint32](#uint32) |  | Warn expiration time in days. 0 = permanent warn. |
+| reason | [string](#string) |  | Warn reason. |
+| admin | [uint32](#uint32) |  | Admin that warned player. 0 = system warn. |
+
+
+
+
+
+
+<a name="mruv.economy.WarnResponse"></a>
+
+### WarnResponse
+Response message for rpc `Warn`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| warn_id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.economy.WatchAdminJailsRequest"></a>
+
+### WatchAdminJailsRequest
+Request message for rpc `WatchAdminJails`.
+
+
+
+
+
+
+<a name="mruv.economy.WatchBansRequest"></a>
+
+### WatchBansRequest
+Request message for rpc `WatchBans`.
+
+
+
+
+
+
+<a name="mruv.economy.WatchBlocksRequest"></a>
+
+### WatchBlocksRequest
+Request message for rpc `WatchBlocks`.
+
+
+
+
+
+
+<a name="mruv.economy.WatchPlayerAcquittalsRequest"></a>
+
+### WatchPlayerAcquittalsRequest
+Request message for rpc `WatchPlayerAcquittals`.
+
+
+
+
+
+
+<a name="mruv.economy.WatchPlayerAcquittalsResponse"></a>
+
+### WatchPlayerAcquittalsResponse
+Response message for rpc `WatchPlayerAcquittals`.
+
+
+
+
+
+
+<a name="mruv.economy.WatchPlayerPunishmentsRequest"></a>
+
+### WatchPlayerPunishmentsRequest
+Request message for rpc `WatchPlayerPunishments`.
+
+
+
+
+
+
+<a name="mruv.economy.WatchPlayerPunishmentsResponse"></a>
+
+### WatchPlayerPunishmentsResponse
+Response message for rpc `WatchPlayerPunishments`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| type | [PunishmentType](#mruv.economy.PunishmentType) |  |  |
+| punishment_id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.economy.WatchPunishmentsRequest"></a>
+
+### WatchPunishmentsRequest
+Request message for rpc `WatchPunishments`.
+
+
+
+
+
+
+<a name="mruv.economy.WatchPunishmentsResponse"></a>
+
+### WatchPunishmentsResponse
+Response message for rpc `WatchPunishments`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| type | [PunishmentType](#mruv.economy.PunishmentType) |  |  |
+| punishment_id | [uint32](#uint32) |  |  |
+| player | [uint32](#uint32) |  |  |
+| character | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.economy.WatchUnAdminJailsRequest"></a>
+
+### WatchUnAdminJailsRequest
+Request message for rpc `WatchUnAdminJails`.
+
+
+
+
+
+
+<a name="mruv.economy.WatchUnBansRequest"></a>
+
+### WatchUnBansRequest
+Request message for rpc `WatchUnBans`.
+
+
+
+
+
+
+<a name="mruv.economy.WatchUnBlocksRequest"></a>
+
+### WatchUnBlocksRequest
+Request message for rpc `WatchUnBlocks`.
+
+
+
+
+
+
+<a name="mruv.economy.WatchUnWarnsRequest"></a>
+
+### WatchUnWarnsRequest
+Request message for rpc `WatchUnWarns`.
+
+
+
+
+
+
+<a name="mruv.economy.WatchWarnsRequest"></a>
+
+### WatchWarnsRequest
+Request message for rpc `WatchWarns`.
+
+
+
+
+
+ 
+
+
+<a name="mruv.economy.AcquittalsType"></a>
+
+### AcquittalsType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| UNKNOWN_ACQUITAL | 0 |  |
+| UNBAN | 1 |  |
+| UNBLOCK | 2 |  |
+| UNWARN | 3 |  |
+| UN_ADMIN_JAIL | 4 |  |
+
+
+
+<a name="mruv.economy.PunishmentType"></a>
+
+### PunishmentType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| UNKNOWN_PUNISHMENT | 0 |  |
+| BAN | 1 |  |
+| BLOCK | 2 |  |
+| WARN | 3 |  |
+| ADMIN_JAIL | 4 |  |
+
+
+ 
+
+ 
+
+
+<a name="mruv.economy.MruVPunishmentsService"></a>
+
+### MruVPunishmentsService
+This service provides interface for managing punishments for players.
+
+| Method Name | Request Type | Response Type | Description |
+| ----------- | ------------ | ------------- | ------------|
+| Ban | [BanRequest](#mruv.economy.BanRequest) | [BanResponse](#mruv.economy.BanResponse) | Ban player on account and/or ip. If ban_time is 0, ban will never expire. |
+| Block | [BlockRequest](#mruv.economy.BlockRequest) | [BlockResponse](#mruv.economy.BlockResponse) | Block player character. |
+| Warn | [WarnRequest](#mruv.economy.WarnRequest) | [WarnResponse](#mruv.economy.WarnResponse) | Warn player. If warn_time is 0, warn will never expire. |
+| AdminJail | [AdminJailRequest](#mruv.economy.AdminJailRequest) | [AdminJailResponse](#mruv.economy.AdminJailResponse) | Put player in an admin jail. |
+| MuteGlobalChats | [MuteGlobalChatsRequest](#mruv.economy.MuteGlobalChatsRequest) | [MuteGlobalChatsResponse](#mruv.economy.MuteGlobalChatsResponse) | Mute player global chats. |
+| UnBan | [UnBanRequest](#mruv.economy.UnBanRequest) | [UnBanResponse](#mruv.economy.UnBanResponse) | Deactivate a specific player ban. |
+| UnWarn | [UnWarnRequest](#mruv.economy.UnWarnRequest) | [UnWarnResponse](#mruv.economy.UnWarnResponse) | Deactivate a specific player warning. If a player was banned by reaching the warning limit, a player will be unbanned. |
+| UnAdminJail | [UnAdminJailRequest](#mruv.economy.UnAdminJailRequest) | [UnAdminJailResponse](#mruv.economy.UnAdminJailResponse) | Remove player from admin jail. |
+| UnMuteGlobalChats | [UnMuteGlobalChatsRequest](#mruv.economy.UnMuteGlobalChatsRequest) | [UnMuteGlobalChatsResponse](#mruv.economy.UnMuteGlobalChatsResponse) |  |
+| GetPlayerBans | [GetPlayerBansRequest](#mruv.economy.GetPlayerBansRequest) | [GetPlayerBansResponse](#mruv.economy.GetPlayerBansResponse) | Get all player bans. |
+| GetPlayerWarns | [GetPlayerWarnsRequest](#mruv.economy.GetPlayerWarnsRequest) | [GetPlayerWarnsResponse](#mruv.economy.GetPlayerWarnsResponse) | Get all player warns. |
+| GetPlayerAdminJail | [GetPlayerAdminJailRequest](#mruv.economy.GetPlayerAdminJailRequest) | [GetPlayerAdminJailResponse](#mruv.economy.GetPlayerAdminJailResponse) | Get player admin jail time. |
+| GetBan | [GetBanRequest](#mruv.economy.GetBanRequest) | [BanMessage](#mruv.economy.BanMessage) | Get ban info. |
+| GetWarn | [GetWarnRequest](#mruv.economy.GetWarnRequest) | [WarnMessage](#mruv.economy.WarnMessage) | Get warn info. |
+| GetBlock | [GetBlockRequest](#mruv.economy.GetBlockRequest) | [BlockMessage](#mruv.economy.BlockMessage) | Get block info. |
+| IsPlayerBanned | [IsPlayerBannedRequest](#mruv.economy.IsPlayerBannedRequest) | [IsPlayerBannedResponse](#mruv.economy.IsPlayerBannedResponse) | Check is player or ip banned. |
+| IsCharacterBlocked | [IsCharacterBlockedRequest](#mruv.economy.IsCharacterBlockedRequest) | [IsCharacterBlockedResponse](#mruv.economy.IsCharacterBlockedResponse) | Check is character is blocked. |
+| IsCharacterJailed | [IsCharacterJailedRequest](#mruv.economy.IsCharacterJailedRequest) | [IsCharacterJailedResponse](#mruv.economy.IsCharacterJailedResponse) |  |
+| WatchBans | [WatchBansRequest](#mruv.economy.WatchBansRequest) | [BanMessage](#mruv.economy.BanMessage) stream | Subscribe to ban events. |
+| WatchBlocks | [WatchBlocksRequest](#mruv.economy.WatchBlocksRequest) | [BlockMessage](#mruv.economy.BlockMessage) stream | Subscribe to block events. |
+| WatchWarns | [WatchWarnsRequest](#mruv.economy.WatchWarnsRequest) | [WarnMessage](#mruv.economy.WarnMessage) stream | Subscribe to warn events. |
+| WatchAdminJails | [WatchAdminJailsRequest](#mruv.economy.WatchAdminJailsRequest) | [AdminJailMessage](#mruv.economy.AdminJailMessage) stream | Subscribe to admin jail events. |
+| WatchUnBans | [WatchUnBansRequest](#mruv.economy.WatchUnBansRequest) | [UnBanMessage](#mruv.economy.UnBanMessage) stream | Subscribe to unban events. |
+| WatchUnBlocks | [WatchUnBlocksRequest](#mruv.economy.WatchUnBlocksRequest) | [UnBlockMessage](#mruv.economy.UnBlockMessage) stream | Subscribe to unblock events. |
+| WatchUnWarns | [WatchUnWarnsRequest](#mruv.economy.WatchUnWarnsRequest) | [UnWarnMessage](#mruv.economy.UnWarnMessage) stream | Subscribe to unwarn events. |
+| WatchUnAdminJails | [WatchUnAdminJailsRequest](#mruv.economy.WatchUnAdminJailsRequest) | [UnAdminJailMessage](#mruv.economy.UnAdminJailMessage) stream | Subscribe to admin jail release events. |
+| WatchPlayerPunishments | [WatchPlayerPunishmentsRequest](#mruv.economy.WatchPlayerPunishmentsRequest) | [WatchPlayerPunishmentsResponse](#mruv.economy.WatchPlayerPunishmentsResponse) stream | Subscribe to player punishments. |
+| WatchPlayerAcquittals | [WatchPlayerAcquittalsRequest](#mruv.economy.WatchPlayerAcquittalsRequest) | [WatchPlayerAcquittalsResponse](#mruv.economy.WatchPlayerAcquittalsResponse) stream | Subscribe to player acquittals. |
+| WatchPunishments | [WatchPunishmentsRequest](#mruv.economy.WatchPunishmentsRequest) | [WatchPunishmentsResponse](#mruv.economy.WatchPunishmentsResponse) stream | Subscribe to all punishments and acquittals events. |
+
+ 
+
+
+
 <a name="server/server.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -1780,7 +5352,7 @@ Request message for `MruVServerService.ServerEventsStream`.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [int64](#int64) |  | The ID of the server from which we want to receive events. |
+| id | [uint32](#uint32) |  | The ID of the server from which we want to receive events. |
 
 
 
@@ -1795,9 +5367,9 @@ Request message for `MruVServerService.UpdateServerStatus`.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [int64](#int64) |  | Id of the server. |
+| id | [uint32](#uint32) |  | Id of the server. |
 | status | [ServerStatus](#mruv.server.ServerStatus) |  | Status of the server. |
-| players | [int32](#int32) |  | How many players are registered on that server. |
+| players | [uint32](#uint32) |  | How many players are registered on that server. |
 
 
 
@@ -1846,7 +5418,7 @@ The MruV server service provides procedures for managing game platform server ac
 | GetRegisteredServers | [GetRegisteredServersRequest](#mruv.server.GetRegisteredServersRequest) | [GetRegisteredServersResponse](#mruv.server.GetRegisteredServersResponse) | Get all registered servers. |
 | GetServerInfo | [ServerID](#mruv.server.ServerID) | [ServerInfo](#mruv.server.ServerInfo) | Get game server status. |
 | UpdateServerStatus | [UpdateServerStatusRequest](#mruv.server.UpdateServerStatusRequest) | [UpdateServerStatusResponse](#mruv.server.UpdateServerStatusResponse) | Update game server status. |
-| ServerEventsStream | [ServerEventsStreamRequest](#mruv.server.ServerEventsStreamRequest) | [ServerEvent](#mruv.server.ServerEvent) stream | Stream of server events. Events are streamed back in real-time for chosen server. |
+| ServerEventsStream | [ServerEventsStreamRequest](#mruv.server.ServerEventsStreamRequest) | [ServerEvent](#mruv.server.ServerEvent) stream | Stream of server events. Events are streamed back in real-time for chosen server. TODO: Change name to: SubscribeServerEvents |
 
  
 
@@ -1867,7 +5439,7 @@ The MruV server service provides procedures for managing game platform server ac
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [int64](#int64) |  |  |
+| id | [uint32](#uint32) |  |  |
 
 
 
@@ -1882,13 +5454,13 @@ Data that describe server.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [int64](#int64) |  | Id of the server. |
+| id | [uint32](#uint32) |  | Id of the server. |
 | name | [string](#string) |  | Short name of the server. |
 | host | [string](#string) |  | Host (ip) of the server. |
 | port | [string](#string) |  | Port of the server. |
 | platform | [string](#string) |  | Platform of the server. |
 | status | [ServerStatus](#mruv.server.ServerStatus) |  | Status of the server. |
-| players | [int32](#int32) |  | How many players are playing on the server. |
+| players | [uint32](#uint32) |  | How many players are playing on the server. |
 
 
 
@@ -1912,6 +5484,130 @@ Data that describe server.
  
 
  
+
+ 
+
+
+
+<a name="vehicles/vehicles.proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## vehicles/vehicles.proto
+
+
+
+<a name="mruv.vehicles.CreateVehicleRequest"></a>
+
+### CreateVehicleRequest
+Request message for rpc `CreateVehicle`.
+
+
+
+
+
+
+<a name="mruv.vehicles.CreateVehicleResponse"></a>
+
+### CreateVehicleResponse
+Response message for rpc `CreateVehicle`.
+
+
+
+
+
+
+<a name="mruv.vehicles.DeleteVehicleRequest"></a>
+
+### DeleteVehicleRequest
+Request message for rpc `DeleteVehicle`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.vehicles.DeleteVehicleResponse"></a>
+
+### DeleteVehicleResponse
+Response message for rpc `DeleteVehicle`.
+
+
+
+
+
+
+<a name="mruv.vehicles.GetVehicleRequest"></a>
+
+### GetVehicleRequest
+Request message for rpc `GetVehicle`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.vehicles.GetVehicleResponse"></a>
+
+### GetVehicleResponse
+Response message for rpc `GetVehicle`.
+
+
+
+
+
+
+<a name="mruv.vehicles.UpdateVehicleRequest"></a>
+
+### UpdateVehicleRequest
+Request message for rpc `UpdateVehicle`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.vehicles.UpdateVehicleResponse"></a>
+
+### UpdateVehicleResponse
+Response message for rpc `UpdateVehicle`.
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+
+<a name="mruv.vehicles.MruVVehiclesService"></a>
+
+### MruVVehiclesService
+The MruV vehicles service provides procedures for managing vehicles.
+
+| Method Name | Request Type | Response Type | Description |
+| ----------- | ------------ | ------------- | ------------|
+| CreateVehicle | [CreateVehicleRequest](#mruv.vehicles.CreateVehicleRequest) | [CreateVehicleResponse](#mruv.vehicles.CreateVehicleResponse) | Create a vehicle. |
+| GetVehicle | [GetVehicleRequest](#mruv.vehicles.GetVehicleRequest) | [GetVehicleResponse](#mruv.vehicles.GetVehicleResponse) | Get a vehicle. |
+| UpdateVehicle | [UpdateVehicleRequest](#mruv.vehicles.UpdateVehicleRequest) | [UpdateVehicleResponse](#mruv.vehicles.UpdateVehicleResponse) | Update a vehicle. |
+| DeleteVehicle | [DeleteVehicleRequest](#mruv.vehicles.DeleteVehicleRequest) | [DeleteVehicleResponse](#mruv.vehicles.DeleteVehicleResponse) | Delete a vehicle. |
 
  
 
