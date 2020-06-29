@@ -7,6 +7,8 @@
     - [Account](#mruv.Account)
     - [AccountID](#mruv.AccountID)
     - [GetAccountCharactersResponse](#mruv.GetAccountCharactersResponse)
+    - [IsAccountExistsRequest](#mruv.IsAccountExistsRequest)
+    - [IsAccountExistsResponse](#mruv.IsAccountExistsResponse)
     - [LogInRequest](#mruv.LogInRequest)
     - [LogInResponse](#mruv.LogInResponse)
     - [RegisterAccountRequest](#mruv.RegisterAccountRequest)
@@ -146,7 +148,7 @@
     - [MruVEconomyService](#mruv.economy.MruVEconomyService)
   
 
-- [estates/elevators.proto](#estates/elevators.proto)
+- [elevators/elevators.proto](#elevators/elevators.proto)
     - [CreateElevatorRequest](#mruv.elevators.CreateElevatorRequest)
     - [CreateElevatorResponse](#mruv.elevators.CreateElevatorResponse)
     - [DeleteElevatorRequest](#mruv.elevators.DeleteElevatorRequest)
@@ -163,7 +165,7 @@
     - [MruVElevatorsService](#mruv.elevators.MruVElevatorsService)
   
 
-- [estates/entrances.proto](#estates/entrances.proto)
+- [entrances/entrances.proto](#entrances/entrances.proto)
     - [CreateEntranceRequest](#mruv.entrances.CreateEntranceRequest)
     - [CreateEntranceResponse](#mruv.entrances.CreateEntranceResponse)
     - [DeleteEntranceRequest](#mruv.entrances.DeleteEntranceRequest)
@@ -217,7 +219,7 @@
     - [MruVEstateService](#mruv.estates.MruVEstateService)
   
 
-- [estates/gates.proto](#estates/gates.proto)
+- [gates/gates.proto](#gates/gates.proto)
     - [CloseRequest](#mruv.gates.CloseRequest)
     - [CloseResponse](#mruv.gates.CloseResponse)
     - [CreateGateRequest](#mruv.gates.CreateGateRequest)
@@ -530,6 +532,37 @@
 
 
 
+<a name="mruv.IsAccountExistsRequest"></a>
+
+### IsAccountExistsRequest
+Request message for rpc `IsAccountExists`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| login | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="mruv.IsAccountExistsResponse"></a>
+
+### IsAccountExistsResponse
+Response message for rpc `IsAccountExists`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| exists | [bool](#bool) |  |  |
+| id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
 <a name="mruv.LogInRequest"></a>
 
 ### LogInRequest
@@ -610,6 +643,7 @@ This service is an additional/intermediary service between the ORY Kratos &amp; 
 | ----------- | ------------ | ------------- | ------------|
 | RegisterAccount | [RegisterAccountRequest](#mruv.RegisterAccountRequest) | [RegisterAccountResponse](#mruv.RegisterAccountResponse) |  |
 | LogIn | [LogInRequest](#mruv.LogInRequest) | [LogInResponse](#mruv.LogInResponse) |  |
+| IsAccountExists | [IsAccountExistsRequest](#mruv.IsAccountExistsRequest) | [IsAccountExistsResponse](#mruv.IsAccountExistsResponse) | Check, is account with specified login exists. If yes, it returns account id. |
 | GetAccount | [AccountID](#mruv.AccountID) | [Account](#mruv.Account) |  |
 | GetAccountCharacters | [AccountID](#mruv.AccountID) | [GetAccountCharactersResponse](#mruv.GetAccountCharactersResponse) |  |
 
@@ -2054,10 +2088,10 @@ The MruV economy service provides procedures for managing prices and economy.
 
 
 
-<a name="estates/elevators.proto"></a>
+<a name="elevators/elevators.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## estates/elevators.proto
+## elevators/elevators.proto
 
 
 
@@ -2220,10 +2254,10 @@ You can define a one-man pseudo-elevator where only point 5 is executed.
 
 
 
-<a name="estates/entrances.proto"></a>
+<a name="entrances/entrances.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## estates/entrances.proto
+## entrances/entrances.proto
 
 
 
@@ -2852,10 +2886,10 @@ The MruV estate service provides procedures for managing buildings and other est
 
 
 
-<a name="estates/gates.proto"></a>
+<a name="gates/gates.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## estates/gates.proto
+## gates/gates.proto
 
 
 
