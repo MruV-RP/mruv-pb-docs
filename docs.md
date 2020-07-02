@@ -4,11 +4,12 @@
 ## Table of Contents
 
 - [accounts/accounts.proto](#accounts/accounts.proto)
-    - [Account](#mruv.Account)
-    - [AccountID](#mruv.AccountID)
+    - [GetAccountCharactersRequest](#mruv.GetAccountCharactersRequest)
     - [GetAccountCharactersResponse](#mruv.GetAccountCharactersResponse)
-    - [IsAccountExistsRequest](#mruv.IsAccountExistsRequest)
-    - [IsAccountExistsResponse](#mruv.IsAccountExistsResponse)
+    - [GetAccountRequest](#mruv.GetAccountRequest)
+    - [GetAccountResponse](#mruv.GetAccountResponse)
+    - [IsAccountExistRequest](#mruv.IsAccountExistRequest)
+    - [IsAccountExistResponse](#mruv.IsAccountExistResponse)
     - [LogInRequest](#mruv.LogInRequest)
     - [LogInResponse](#mruv.LogInResponse)
     - [RegisterAccountRequest](#mruv.RegisterAccountRequest)
@@ -484,33 +485,15 @@
 
 
 
-<a name="mruv.Account"></a>
+<a name="mruv.GetAccountCharactersRequest"></a>
 
-### Account
-
+### GetAccountCharactersRequest
+Request message for rpc `GetAccountCharacters`.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [uint32](#uint32) |  |  |
 | login | [string](#string) |  |  |
-| nick | [string](#string) |  |  |
-| email | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="mruv.AccountID"></a>
-
-### AccountID
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [uint32](#uint32) |  |  |
 
 
 
@@ -520,22 +503,22 @@
 <a name="mruv.GetAccountCharactersResponse"></a>
 
 ### GetAccountCharactersResponse
-
+Response message for rpc `GetAccountCharacters`.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| characters | [Character](#mruv.Character) | repeated |  |
+| character_ids | [uint32](#uint32) | repeated |  |
 
 
 
 
 
 
-<a name="mruv.IsAccountExistsRequest"></a>
+<a name="mruv.GetAccountRequest"></a>
 
-### IsAccountExistsRequest
-Request message for rpc `IsAccountExists`.
+### GetAccountRequest
+Request message for rpc `GetAccount`.
 
 
 | Field | Type | Label | Description |
@@ -547,10 +530,41 @@ Request message for rpc `IsAccountExists`.
 
 
 
-<a name="mruv.IsAccountExistsResponse"></a>
+<a name="mruv.GetAccountResponse"></a>
 
-### IsAccountExistsResponse
-Response message for rpc `IsAccountExists`.
+### GetAccountResponse
+Response message for rpc `GetAccount`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| login | [string](#string) |  |  |
+| email | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="mruv.IsAccountExistRequest"></a>
+
+### IsAccountExistRequest
+Request message for rpc `IsAccountExist`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| login | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="mruv.IsAccountExistResponse"></a>
+
+### IsAccountExistResponse
+Response message for rpc `IsAccountExist`.
 
 
 | Field | Type | Label | Description |
@@ -566,7 +580,7 @@ Response message for rpc `IsAccountExists`.
 <a name="mruv.LogInRequest"></a>
 
 ### LogInRequest
-
+Request message for rpc `LogIn`.
 
 
 | Field | Type | Label | Description |
@@ -582,7 +596,7 @@ Response message for rpc `IsAccountExists`.
 <a name="mruv.LogInResponse"></a>
 
 ### LogInResponse
-
+Response message for rpc `LogIn`.
 
 
 | Field | Type | Label | Description |
@@ -598,13 +612,14 @@ Response message for rpc `IsAccountExists`.
 <a name="mruv.RegisterAccountRequest"></a>
 
 ### RegisterAccountRequest
-
+Request message for rpc `RegisterAccount`.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| account | [Account](#mruv.Account) |  |  |
+| login | [string](#string) |  |  |
 | password | [string](#string) |  |  |
+| email | [string](#string) |  |  |
 
 
 
@@ -614,7 +629,7 @@ Response message for rpc `IsAccountExists`.
 <a name="mruv.RegisterAccountResponse"></a>
 
 ### RegisterAccountResponse
-
+Response message for rpc `RegisterAccount`.
 
 
 | Field | Type | Label | Description |
@@ -641,11 +656,11 @@ This service is an additional/intermediary service between the ORY Kratos &amp; 
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| RegisterAccount | [RegisterAccountRequest](#mruv.RegisterAccountRequest) | [RegisterAccountResponse](#mruv.RegisterAccountResponse) |  |
-| LogIn | [LogInRequest](#mruv.LogInRequest) | [LogInResponse](#mruv.LogInResponse) |  |
-| IsAccountExists | [IsAccountExistsRequest](#mruv.IsAccountExistsRequest) | [IsAccountExistsResponse](#mruv.IsAccountExistsResponse) | Check, is account with specified login exists. If yes, it returns account id. |
-| GetAccount | [AccountID](#mruv.AccountID) | [Account](#mruv.Account) |  |
-| GetAccountCharacters | [AccountID](#mruv.AccountID) | [GetAccountCharactersResponse](#mruv.GetAccountCharactersResponse) |  |
+| RegisterAccount | [RegisterAccountRequest](#mruv.RegisterAccountRequest) | [RegisterAccountResponse](#mruv.RegisterAccountResponse) | Register a new account. |
+| LogIn | [LogInRequest](#mruv.LogInRequest) | [LogInResponse](#mruv.LogInResponse) | Sign into an existing account. |
+| IsAccountExist | [IsAccountExistRequest](#mruv.IsAccountExistRequest) | [IsAccountExistResponse](#mruv.IsAccountExistResponse) | Check, is account with specified login exist. If yes, it returns account id. |
+| GetAccount | [GetAccountRequest](#mruv.GetAccountRequest) | [GetAccountResponse](#mruv.GetAccountResponse) | Get an account. |
+| GetAccountCharacters | [GetAccountCharactersRequest](#mruv.GetAccountCharactersRequest) | [GetAccountCharactersResponse](#mruv.GetAccountCharactersResponse) | Get an account characters. |
 
  
 
