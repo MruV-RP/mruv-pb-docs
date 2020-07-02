@@ -50,6 +50,8 @@
   
 
 - [characters/characters.proto](#characters/characters.proto)
+    - [ChangeClothesRequest](#mruv.ChangeClothesRequest)
+    - [ChangeClothesResponse](#mruv.ChangeClothesResponse)
     - [Character](#mruv.Character)
     - [CharacterID](#mruv.CharacterID)
     - [CreateCharacterRequest](#mruv.CreateCharacterRequest)
@@ -247,17 +249,44 @@
   
 
 - [groups/groups.proto](#groups/groups.proto)
-    - [AddGroupMemberRequest](#mruv.AddGroupMemberRequest)
-    - [AddGroupMemberResponse](#mruv.AddGroupMemberResponse)
+    - [AddMemberRequest](#mruv.AddMemberRequest)
+    - [AddMemberResponse](#mruv.AddMemberResponse)
+    - [AddPermissionRequest](#mruv.AddPermissionRequest)
+    - [AddPermissionResponse](#mruv.AddPermissionResponse)
+    - [AddSubgroupRequest](#mruv.AddSubgroupRequest)
+    - [AddSubgroupResponse](#mruv.AddSubgroupResponse)
+    - [AssignOwnerRequest](#mruv.AssignOwnerRequest)
+    - [AssignOwnerResponse](#mruv.AssignOwnerResponse)
+    - [CreateGroupRequest](#mruv.CreateGroupRequest)
+    - [CreateGroupResponse](#mruv.CreateGroupResponse)
+    - [DeleteGroupRequest](#mruv.DeleteGroupRequest)
+    - [DeleteGroupResponse](#mruv.DeleteGroupResponse)
+    - [GetGroupRequest](#mruv.GetGroupRequest)
+    - [GetGroupResponse](#mruv.GetGroupResponse)
     - [GetGroupsRequest](#mruv.GetGroupsRequest)
     - [GetGroupsResponse](#mruv.GetGroupsResponse)
-    - [Group](#mruv.Group)
-    - [GroupID](#mruv.GroupID)
-    - [Permission](#mruv.Permission)
-    - [PermissionID](#mruv.PermissionID)
-    - [RemoveGroupMemberRequest](#mruv.RemoveGroupMemberRequest)
-    - [RemoveGroupMemberResponse](#mruv.RemoveGroupMemberResponse)
+    - [GetMembersRequest](#mruv.GetMembersRequest)
+    - [GetMembersResponse](#mruv.GetMembersResponse)
+    - [GetOwnerRequest](#mruv.GetOwnerRequest)
+    - [GetOwnerResponse](#mruv.GetOwnerResponse)
+    - [GetPermissionsRequest](#mruv.GetPermissionsRequest)
+    - [GetPermissionsResponse](#mruv.GetPermissionsResponse)
+    - [GetPermissionsResponse.Permission](#mruv.GetPermissionsResponse.Permission)
+    - [GetSubgroupsRequest](#mruv.GetSubgroupsRequest)
+    - [GetSubgroupsResponse](#mruv.GetSubgroupsResponse)
+    - [IsPermittedRequest](#mruv.IsPermittedRequest)
+    - [IsPermittedResponse](#mruv.IsPermittedResponse)
+    - [RemoveMemberRequest](#mruv.RemoveMemberRequest)
+    - [RemoveMemberResponse](#mruv.RemoveMemberResponse)
+    - [RemovePermissionRequest](#mruv.RemovePermissionRequest)
+    - [RemovePermissionResponse](#mruv.RemovePermissionResponse)
+    - [RemoveSubgroupRequest](#mruv.RemoveSubgroupRequest)
+    - [RemoveSubgroupResponse](#mruv.RemoveSubgroupResponse)
+    - [UpdateGroupRequest](#mruv.UpdateGroupRequest)
+    - [UpdateGroupResponse](#mruv.UpdateGroupResponse)
   
+    - [MemberType](#mruv.MemberType)
+    - [OwnerType](#mruv.OwnerType)
   
   
     - [MruVGroupsService](#mruv.MruVGroupsService)
@@ -1014,6 +1043,32 @@ Every business has its own type and depends on it, business provides different s
 
 
 
+<a name="mruv.ChangeClothesRequest"></a>
+
+### ChangeClothesRequest
+Request message for rpc `ChangeClothes`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+| clothes_id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.ChangeClothesResponse"></a>
+
+### ChangeClothesResponse
+Response message for rpc `ChangeClothes`.
+
+
+
+
+
+
 <a name="mruv.Character"></a>
 
 ### Character
@@ -1028,7 +1083,10 @@ Every business has its own type and depends on it, business provides different s
 | second_name | [string](#string) |  |  |
 | age | [uint32](#uint32) |  |  |
 | sex | [uint32](#uint32) |  |  |
-| position | [Position](#mruv.Position) |  |  |
+| clothes_id | [uint32](#uint32) |  | TODO: create clothes api |
+| x | [float](#float) |  |  |
+| y | [float](#float) |  |  |
+| z | [float](#float) |  |  |
 
 
 
@@ -1170,7 +1228,10 @@ Response message for rpc `GetCharacter`.
 | second_name | [string](#string) |  |  |
 | age | [uint32](#uint32) |  |  |
 | sex | [uint32](#uint32) |  |  |
-| position | [Position](#mruv.Position) |  |  |
+| clothes_id | [uint32](#uint32) |  |  |
+| x | [float](#float) |  |  |
+| y | [float](#float) |  |  |
+| z | [float](#float) |  |  |
 
 
 
@@ -1234,6 +1295,7 @@ Response message for rpc `UpdateCharacter`.
 | UpdateCharacter | [UpdateCharacterRequest](#mruv.UpdateCharacterRequest) | [UpdateCharacterResponse](#mruv.UpdateCharacterResponse) | Update a character. |
 | DeleteCharacter | [DeleteCharacterRequest](#mruv.DeleteCharacterRequest) | [DeleteCharacterResponse](#mruv.DeleteCharacterResponse) | Delete a character. |
 | PermanentCharacterKill | [CharacterID](#mruv.CharacterID) | [CharacterID](#mruv.CharacterID) | Kill a character. A character that is killed cannot be played anymore. |
+| ChangeClothes | [ChangeClothesRequest](#mruv.ChangeClothesRequest) | [ChangeClothesResponse](#mruv.ChangeClothesResponse) | Change player clothes. |
 | DeathsStream | [DeathStreamRequest](#mruv.DeathStreamRequest) | [DeathStreamResponse](#mruv.DeathStreamResponse) stream | Stream of deaths. |
 | GetServiceStatus | [ServiceStatusRequest](#mruv.ServiceStatusRequest) | [ServiceStatusResponse](#mruv.ServiceStatusResponse) | Service status |
 | GetServiceVersion | [VersionRequest](#mruv.VersionRequest) | [VersionResponse](#mruv.VersionResponse) |  |
@@ -3192,20 +3254,196 @@ The MruV gates service provides procedures for managing gates and moving objects
 
 
 
-<a name="mruv.AddGroupMemberRequest"></a>
+<a name="mruv.AddMemberRequest"></a>
 
-### AddGroupMemberRequest
-
-
-
+### AddMemberRequest
+Request message for rpc `AddMember`.
 
 
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| group_id | [uint32](#uint32) |  |  |
+| member_id | [uint32](#uint32) |  |  |
 
 
-<a name="mruv.AddGroupMemberResponse"></a>
 
-### AddGroupMemberResponse
 
+
+
+<a name="mruv.AddMemberResponse"></a>
+
+### AddMemberResponse
+Response message for rpc `AddMember`.
+
+
+
+
+
+
+<a name="mruv.AddPermissionRequest"></a>
+
+### AddPermissionRequest
+Request message for rpc `AddPermission`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| group_id | [uint32](#uint32) |  |  |
+| name | [string](#string) |  |  |
+| definition | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="mruv.AddPermissionResponse"></a>
+
+### AddPermissionResponse
+Response message for rpc `AddPermission`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| permission_id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.AddSubgroupRequest"></a>
+
+### AddSubgroupRequest
+Request message for rpc `AddSubgroup`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| group_id | [uint32](#uint32) |  |  |
+| subgroup_id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.AddSubgroupResponse"></a>
+
+### AddSubgroupResponse
+Response message for rpc `AddSubgroup`.
+
+
+
+
+
+
+<a name="mruv.AssignOwnerRequest"></a>
+
+### AssignOwnerRequest
+Request message for rpc `AssignOwner`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| group_id | [uint32](#uint32) |  |  |
+| owner_type | [OwnerType](#mruv.OwnerType) |  |  |
+| owner_id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.AssignOwnerResponse"></a>
+
+### AssignOwnerResponse
+Response message for rpc `AssignOwner`.
+
+
+
+
+
+
+<a name="mruv.CreateGroupRequest"></a>
+
+### CreateGroupRequest
+Request message for rpc `CreateGroup`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="mruv.CreateGroupResponse"></a>
+
+### CreateGroupResponse
+Response message for rpc `CreateGroup`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| group_id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.DeleteGroupRequest"></a>
+
+### DeleteGroupRequest
+Request message for rpc `DeleteGroup`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| group_id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.DeleteGroupResponse"></a>
+
+### DeleteGroupResponse
+Response message for rpc `DeleteGroup`.
+
+
+
+
+
+
+<a name="mruv.GetGroupRequest"></a>
+
+### GetGroupRequest
+Request message for rpc `GetGroup`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| group_id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.GetGroupResponse"></a>
+
+### GetGroupResponse
+Response message for rpc `GetGroup`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  |  |
 
 
 
@@ -3215,12 +3453,7 @@ The MruV gates service provides procedures for managing gates and moving objects
 <a name="mruv.GetGroupsRequest"></a>
 
 ### GetGroupsRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| limit | [uint32](#uint32) |  |  |
+Request message for rpc `GetGroups`.
 
 
 
@@ -3230,21 +3463,113 @@ The MruV gates service provides procedures for managing gates and moving objects
 <a name="mruv.GetGroupsResponse"></a>
 
 ### GetGroupsResponse
-
+Response message for rpc `GetGroups`.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| groups | [Group](#mruv.Group) | repeated |  |
+| groups | [GetGroupResponse](#mruv.GetGroupResponse) | repeated |  |
 
 
 
 
 
 
-<a name="mruv.Group"></a>
+<a name="mruv.GetMembersRequest"></a>
 
-### Group
+### GetMembersRequest
+Request message for rpc `GetMembers`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| group_id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.GetMembersResponse"></a>
+
+### GetMembersResponse
+Response message for rpc `GetMembers`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| member_type | [MemberType](#mruv.MemberType) |  |  |
+| member_ids | [uint32](#uint32) | repeated |  |
+
+
+
+
+
+
+<a name="mruv.GetOwnerRequest"></a>
+
+### GetOwnerRequest
+Request message for rpc `GetOwner`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| group_id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.GetOwnerResponse"></a>
+
+### GetOwnerResponse
+Response message for rpc `GetOwner`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| owner_id | [uint32](#uint32) |  |  |
+| owner_type | [OwnerType](#mruv.OwnerType) |  |  |
+
+
+
+
+
+
+<a name="mruv.GetPermissionsRequest"></a>
+
+### GetPermissionsRequest
+Request message for rpc `GetPermissions`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| group_id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.GetPermissionsResponse"></a>
+
+### GetPermissionsResponse
+Response message for rpc `GetPermissions`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| permissions | [GetPermissionsResponse.Permission](#mruv.GetPermissionsResponse.Permission) | repeated |  |
+
+
+
+
+
+
+<a name="mruv.GetPermissionsResponse.Permission"></a>
+
+### GetPermissionsResponse.Permission
 
 
 
@@ -3252,82 +3577,206 @@ The MruV gates service provides procedures for managing gates and moving objects
 | ----- | ---- | ----- | ----------- |
 | id | [uint32](#uint32) |  |  |
 | name | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| permissions | [Permission](#mruv.Permission) | repeated |  |
-| members | [uint32](#uint32) | repeated |  |
+| definition | [string](#string) |  |  |
 
 
 
 
 
 
-<a name="mruv.GroupID"></a>
+<a name="mruv.GetSubgroupsRequest"></a>
 
-### GroupID
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [uint32](#uint32) |  |  |
-
-
-
-
-
-
-<a name="mruv.Permission"></a>
-
-### Permission
-
+### GetSubgroupsRequest
+Request message for rpc `GetSubgroups`.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [uint32](#uint32) |  |  |
+| group_id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.GetSubgroupsResponse"></a>
+
+### GetSubgroupsResponse
+Response message for rpc `GetSubgroups`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| subgroup_ids | [uint32](#uint32) | repeated |  |
+
+
+
+
+
+
+<a name="mruv.IsPermittedRequest"></a>
+
+### IsPermittedRequest
+Request message for rpc `IsPermitted`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| member_id | [uint32](#uint32) |  |  |
+| member_type | [MemberType](#mruv.MemberType) |  |  |
+| action | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="mruv.IsPermittedResponse"></a>
+
+### IsPermittedResponse
+Response message for rpc `IsPermitted`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| permitted | [bool](#bool) |  |  |
+
+
+
+
+
+
+<a name="mruv.RemoveMemberRequest"></a>
+
+### RemoveMemberRequest
+Request message for rpc `RemoveMember`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| group_id | [uint32](#uint32) |  |  |
+| member_id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.RemoveMemberResponse"></a>
+
+### RemoveMemberResponse
+Response message for rpc `RemoveMember`.
+
+
+
+
+
+
+<a name="mruv.RemovePermissionRequest"></a>
+
+### RemovePermissionRequest
+Request message for rpc `RemovePermission`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| group_id | [uint32](#uint32) |  |  |
+| permission_id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.RemovePermissionResponse"></a>
+
+### RemovePermissionResponse
+Response message for rpc `RemovePermission`.
+
+
+
+
+
+
+<a name="mruv.RemoveSubgroupRequest"></a>
+
+### RemoveSubgroupRequest
+Request message for rpc `RemoveSubgroup`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| group_id | [uint32](#uint32) |  |  |
+| subgroup_id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.RemoveSubgroupResponse"></a>
+
+### RemoveSubgroupResponse
+Response message for rpc `RemoveSubgroup`.
+
+
+
+
+
+
+<a name="mruv.UpdateGroupRequest"></a>
+
+### UpdateGroupRequest
+Request message for rpc `UpdateGroup`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| group_id | [uint32](#uint32) |  |  |
 | name | [string](#string) |  |  |
-| role | [string](#string) |  |  |
 
 
 
 
 
 
-<a name="mruv.PermissionID"></a>
+<a name="mruv.UpdateGroupResponse"></a>
 
-### PermissionID
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [uint32](#uint32) |  |  |
-
-
-
-
-
-
-<a name="mruv.RemoveGroupMemberRequest"></a>
-
-### RemoveGroupMemberRequest
-
-
-
-
-
-
-
-<a name="mruv.RemoveGroupMemberResponse"></a>
-
-### RemoveGroupMemberResponse
-
+### UpdateGroupResponse
+Response message for rpc `UpdateGroup`.
 
 
 
 
 
  
+
+
+<a name="mruv.MemberType"></a>
+
+### MemberType
+Member type.
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| MEMBER_TYPE_UNKNOWN | 0 |  |
+| MEMBER_TYPE_ACCOUNT | 1 |  |
+| MEMBER_TYPE_CHARACTER | 2 |  |
+
+
+
+<a name="mruv.OwnerType"></a>
+
+### OwnerType
+Owner types.
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| OWNER_TYPE_UNKNOWN | 0 |  |
+| OWNER_TYPE_ACCOUNT | 1 |  |
+| OWNER_TYPE_CHARACTER | 2 |  |
+| OWNER_TYPE_GROUP | 3 |  |
+
 
  
 
@@ -3341,12 +3790,23 @@ The MruV groups service provides procedures for managing groups.
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| CreateGroup | [Group](#mruv.Group) | [GroupID](#mruv.GroupID) | CRUD |
-| GetGroup | [GroupID](#mruv.GroupID) | [Group](#mruv.Group) |  |
-| DeleteGroup | [GroupID](#mruv.GroupID) | [GroupID](#mruv.GroupID) |  |
-| GetGroups | [GetGroupsRequest](#mruv.GetGroupsRequest) | [GetGroupsResponse](#mruv.GetGroupsResponse) |  |
-| AddGroupMember | [AddGroupMemberRequest](#mruv.AddGroupMemberRequest) | [AddGroupMemberResponse](#mruv.AddGroupMemberResponse) |  |
-| RemoveGroupMember | [RemoveGroupMemberRequest](#mruv.RemoveGroupMemberRequest) | [RemoveGroupMemberResponse](#mruv.RemoveGroupMemberResponse) |  |
+| CreateGroup | [CreateGroupRequest](#mruv.CreateGroupRequest) | [CreateGroupResponse](#mruv.CreateGroupResponse) | Create a group. |
+| GetGroup | [GetGroupRequest](#mruv.GetGroupRequest) | [GetGroupResponse](#mruv.GetGroupResponse) | Get a group. |
+| UpdateGroup | [UpdateGroupRequest](#mruv.UpdateGroupRequest) | [UpdateGroupResponse](#mruv.UpdateGroupResponse) | Update a group. |
+| DeleteGroup | [DeleteGroupRequest](#mruv.DeleteGroupRequest) | [DeleteGroupResponse](#mruv.DeleteGroupResponse) | Delete a group. |
+| GetGroups | [GetGroupsRequest](#mruv.GetGroupsRequest) | [GetGroupsResponse](#mruv.GetGroupsResponse) | Get all groups. |
+| AssignOwner | [AssignOwnerRequest](#mruv.AssignOwnerRequest) | [AssignOwnerResponse](#mruv.AssignOwnerResponse) | Assign an owner. Group can have only one owner. Owner can be a player, a group or an account. |
+| GetOwner | [GetOwnerRequest](#mruv.GetOwnerRequest) | [GetOwnerResponse](#mruv.GetOwnerResponse) | Get group owner. |
+| AddMember | [AddMemberRequest](#mruv.AddMemberRequest) | [AddMemberResponse](#mruv.AddMemberResponse) | Add a group member. |
+| GetMembers | [GetMembersRequest](#mruv.GetMembersRequest) | [GetMembersResponse](#mruv.GetMembersResponse) | Get a group member. |
+| RemoveMember | [RemoveMemberRequest](#mruv.RemoveMemberRequest) | [RemoveMemberResponse](#mruv.RemoveMemberResponse) | Remove a group member. |
+| AddPermission | [AddPermissionRequest](#mruv.AddPermissionRequest) | [AddPermissionResponse](#mruv.AddPermissionResponse) | Add a permission to a group. |
+| GetPermissions | [GetPermissionsRequest](#mruv.GetPermissionsRequest) | [GetPermissionsResponse](#mruv.GetPermissionsResponse) | Get all group permissions. |
+| RemovePermission | [RemovePermissionRequest](#mruv.RemovePermissionRequest) | [RemovePermissionResponse](#mruv.RemovePermissionResponse) | Remove group permission. |
+| AddSubgroup | [AddSubgroupRequest](#mruv.AddSubgroupRequest) | [AddSubgroupResponse](#mruv.AddSubgroupResponse) | Add a subgroup to a group. |
+| GetSubgroups | [GetSubgroupsRequest](#mruv.GetSubgroupsRequest) | [GetSubgroupsResponse](#mruv.GetSubgroupsResponse) | Get all subgroups. |
+| RemoveSubgroup | [RemoveSubgroupRequest](#mruv.RemoveSubgroupRequest) | [RemoveSubgroupResponse](#mruv.RemoveSubgroupResponse) | Remove a subgroup from group. |
+| IsPermitted | [IsPermittedRequest](#mruv.IsPermittedRequest) | [IsPermittedResponse](#mruv.IsPermittedResponse) | Check is member of a group is permitted to do specific action. |
 | GetServiceStatus | [ServiceStatusRequest](#mruv.ServiceStatusRequest) | [ServiceStatusResponse](#mruv.ServiceStatusResponse) | Service status |
 | GetServiceVersion | [VersionRequest](#mruv.VersionRequest) | [VersionResponse](#mruv.VersionResponse) |  |
 
