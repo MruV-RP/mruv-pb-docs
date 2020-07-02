@@ -265,6 +265,7 @@
     - [GetGroupResponse](#mruv.GetGroupResponse)
     - [GetGroupsRequest](#mruv.GetGroupsRequest)
     - [GetGroupsResponse](#mruv.GetGroupsResponse)
+    - [GetGroupsResponse.Group](#mruv.GetGroupsResponse.Group)
     - [GetMembersRequest](#mruv.GetMembersRequest)
     - [GetMembersResponse](#mruv.GetMembersResponse)
     - [GetOwnerRequest](#mruv.GetOwnerRequest)
@@ -3374,6 +3375,7 @@ Request message for rpc `CreateGroup`.
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | name | [string](#string) |  |  |
+| description | [string](#string) |  |  |
 
 
 
@@ -3444,6 +3446,7 @@ Response message for rpc `GetGroup`.
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | name | [string](#string) |  |  |
+| description | [string](#string) |  |  |
 
 
 
@@ -3454,6 +3457,12 @@ Response message for rpc `GetGroup`.
 
 ### GetGroupsRequest
 Request message for rpc `GetGroups`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| limit | [uint32](#uint32) |  |  |
+| begin_from | [uint32](#uint32) |  |  |
 
 
 
@@ -3468,7 +3477,24 @@ Response message for rpc `GetGroups`.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| groups | [GetGroupResponse](#mruv.GetGroupResponse) | repeated |  |
+| groups | [GetGroupsResponse.Group](#mruv.GetGroupsResponse.Group) | repeated |  |
+
+
+
+
+
+
+<a name="mruv.GetGroupsResponse.Group"></a>
+
+### GetGroupsResponse.Group
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+| name | [string](#string) |  |  |
+| description | [string](#string) |  |  |
 
 
 
@@ -3734,6 +3760,7 @@ Request message for rpc `UpdateGroup`.
 | ----- | ---- | ----- | ----------- |
 | group_id | [uint32](#uint32) |  |  |
 | name | [string](#string) |  |  |
+| description | [string](#string) |  |  |
 
 
 
