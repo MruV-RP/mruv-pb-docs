@@ -365,6 +365,31 @@
     - [MruVJobsService](#mruv.jobs.MruVJobsService)
   
 
+- [objects/objects.proto](#objects/objects.proto)
+    - [CreateObjectModelRequest](#mruv.gates.CreateObjectModelRequest)
+    - [CreateObjectModelResponse](#mruv.gates.CreateObjectModelResponse)
+    - [CreateObjectRequest](#mruv.gates.CreateObjectRequest)
+    - [CreateObjectResponse](#mruv.gates.CreateObjectResponse)
+    - [DeleteObjectModelRequest](#mruv.gates.DeleteObjectModelRequest)
+    - [DeleteObjectModelResponse](#mruv.gates.DeleteObjectModelResponse)
+    - [DeleteObjectRequest](#mruv.gates.DeleteObjectRequest)
+    - [DeleteObjectResponse](#mruv.gates.DeleteObjectResponse)
+    - [GetObjectModelRequest](#mruv.gates.GetObjectModelRequest)
+    - [GetObjectModelResponse](#mruv.gates.GetObjectModelResponse)
+    - [GetObjectRequest](#mruv.gates.GetObjectRequest)
+    - [GetObjectResponse](#mruv.gates.GetObjectResponse)
+    - [Object](#mruv.gates.Object)
+    - [ObjectModel](#mruv.gates.ObjectModel)
+    - [UpdateObjectModelRequest](#mruv.gates.UpdateObjectModelRequest)
+    - [UpdateObjectModelResponse](#mruv.gates.UpdateObjectModelResponse)
+    - [UpdateObjectRequest](#mruv.gates.UpdateObjectRequest)
+    - [UpdateObjectResponse](#mruv.gates.UpdateObjectResponse)
+  
+  
+  
+    - [MruVObjectsService](#mruv.gates.MruVObjectsService)
+  
+
 - [offers/offers.proto](#offers/offers.proto)
     - [AcceptOfferRequest](#mruv.offers.AcceptOfferRequest)
     - [AcceptOfferResponse](#mruv.offers.AcceptOfferResponse)
@@ -2345,6 +2370,11 @@ You can define a one-man pseudo-elevator where only point 5 is executed.
 Request message for rpc `CreateEntrance`.
 
 
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| entrance | [Entrance](#mruv.entrances.Entrance) |  |  |
+
+
 
 
 
@@ -2781,6 +2811,7 @@ Response message for rpc `DeleteGate`.
 | entrances | [uint32](#uint32) | repeated |  |
 | gates | [uint32](#uint32) | repeated |  |
 | rooms | [uint32](#uint32) | repeated |  |
+| product_id | [uint32](#uint32) |  |  |
 
 
 
@@ -4612,6 +4643,321 @@ The MruV jobs service provides procedures for managing jobs.
 | GetJob | [GetJobRequest](#mruv.jobs.GetJobRequest) | [GetJobResponse](#mruv.jobs.GetJobResponse) | Get a job. |
 | UpdateJob | [UpdateJobRequest](#mruv.jobs.UpdateJobRequest) | [UpdateJobResponse](#mruv.jobs.UpdateJobResponse) | Update a job. |
 | DeleteJob | [DeleteJobRequest](#mruv.jobs.DeleteJobRequest) | [DeleteJobResponse](#mruv.jobs.DeleteJobResponse) | Delete a job. |
+
+ 
+
+
+
+<a name="objects/objects.proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## objects/objects.proto
+
+
+
+<a name="mruv.gates.CreateObjectModelRequest"></a>
+
+### CreateObjectModelRequest
+Request message for rpc `CreateObjectModel`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| object_type | [ObjectModel](#mruv.gates.ObjectModel) |  |  |
+
+
+
+
+
+
+<a name="mruv.gates.CreateObjectModelResponse"></a>
+
+### CreateObjectModelResponse
+Response message for rpc `CreateObjectModel`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.gates.CreateObjectRequest"></a>
+
+### CreateObjectRequest
+Request message for rpc `CreateObject`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| object | [Object](#mruv.gates.Object) |  |  |
+
+
+
+
+
+
+<a name="mruv.gates.CreateObjectResponse"></a>
+
+### CreateObjectResponse
+Response message for rpc `CreateObject`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.gates.DeleteObjectModelRequest"></a>
+
+### DeleteObjectModelRequest
+Request message for rpc `DeleteObjectModel`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| model | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.gates.DeleteObjectModelResponse"></a>
+
+### DeleteObjectModelResponse
+Response message for rpc `DeleteObjectModel`.
+
+
+
+
+
+
+<a name="mruv.gates.DeleteObjectRequest"></a>
+
+### DeleteObjectRequest
+Request message for rpc `DeleteObject`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.gates.DeleteObjectResponse"></a>
+
+### DeleteObjectResponse
+Response message for rpc `DeleteObject`.
+
+
+
+
+
+
+<a name="mruv.gates.GetObjectModelRequest"></a>
+
+### GetObjectModelRequest
+Request message for rpc `GetObjectModel`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| model | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.gates.GetObjectModelResponse"></a>
+
+### GetObjectModelResponse
+Response message for rpc `GetObjectModel`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| object_type | [ObjectModel](#mruv.gates.ObjectModel) |  |  |
+
+
+
+
+
+
+<a name="mruv.gates.GetObjectRequest"></a>
+
+### GetObjectRequest
+Request message for rpc `GetObject`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.gates.GetObjectResponse"></a>
+
+### GetObjectResponse
+Response message for rpc `GetObject`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| object | [Object](#mruv.gates.Object) |  |  |
+
+
+
+
+
+
+<a name="mruv.gates.Object"></a>
+
+### Object
+SA-MP Dynamic object data structure.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| model | [uint32](#uint32) |  |  |
+| estate_id | [uint32](#uint32) |  |  |
+| x | [float](#float) |  |  |
+| y | [float](#float) |  |  |
+| z | [float](#float) |  |  |
+| rx | [float](#float) |  |  |
+| ry | [float](#float) |  |  |
+| rz | [float](#float) |  |  |
+| world_id | [int32](#int32) |  | Virtual world id for which object will be visible. Set -1 to be visible for all. |
+| interior_id | [int32](#int32) |  | Interior id for which object will be visible. Set -1 to be visible for all. |
+| player_id | [int32](#int32) |  | SA-MP player id for which object will be visible. Set -1 to be visible for all.
+
+TODO: change to character_id/account_id ? |
+| area_id | [int32](#int32) |  | Dynamic area id for which object will be visible. Set -1 to be visible for all. |
+| stream_distance | [float](#float) |  | Default streamer setting is 300.0 |
+| draw_distance | [float](#float) |  | Default streamer setting is 0.0 = default game draw distance |
+| priority | [int32](#int32) |  |  |
+
+
+
+
+
+
+<a name="mruv.gates.ObjectModel"></a>
+
+### ObjectModel
+SA-MP Object type data structure.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| model | [uint32](#uint32) |  |  |
+| model_name | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| category | [string](#string) |  |  |
+| product_id | [uint32](#uint32) |  |  |
+| length | [double](#double) |  |  |
+| width | [double](#double) |  |  |
+| height | [double](#double) |  |  |
+| size | [double](#double) |  |  |
+| tags | [string](#string) | repeated |  |
+| has_collision | [bool](#bool) |  |  |
+| breaks_on_hit | [bool](#bool) |  |  |
+| has_animation | [bool](#bool) |  |  |
+| visible_by_time | [bool](#bool) |  |  |
+| visible_from | [uint32](#uint32) |  |  |
+| visible_to | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.gates.UpdateObjectModelRequest"></a>
+
+### UpdateObjectModelRequest
+Request message for rpc `UpdateObjectModel`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| object_type | [ObjectModel](#mruv.gates.ObjectModel) |  |  |
+
+
+
+
+
+
+<a name="mruv.gates.UpdateObjectModelResponse"></a>
+
+### UpdateObjectModelResponse
+Response message for rpc `UpdateObjectModel`.
+
+
+
+
+
+
+<a name="mruv.gates.UpdateObjectRequest"></a>
+
+### UpdateObjectRequest
+Request message for rpc `UpdateObject`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+| object | [Object](#mruv.gates.Object) |  |  |
+
+
+
+
+
+
+<a name="mruv.gates.UpdateObjectResponse"></a>
+
+### UpdateObjectResponse
+Response message for rpc `UpdateObject`.
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+
+<a name="mruv.gates.MruVObjectsService"></a>
+
+### MruVObjectsService
+The MruV objects service provides procedures for game objects.
+
+| Method Name | Request Type | Response Type | Description |
+| ----------- | ------------ | ------------- | ------------|
+| CreateObjectModel | [CreateObjectModelRequest](#mruv.gates.CreateObjectModelRequest) | [CreateObjectModelResponse](#mruv.gates.CreateObjectModelResponse) | Create an object model. |
+| GetObjectModel | [GetObjectModelRequest](#mruv.gates.GetObjectModelRequest) | [GetObjectModelResponse](#mruv.gates.GetObjectModelResponse) | Get an object model. |
+| UpdateObjectModel | [UpdateObjectModelRequest](#mruv.gates.UpdateObjectModelRequest) | [UpdateObjectModelResponse](#mruv.gates.UpdateObjectModelResponse) | Update an object model. |
+| DeleteObjectModel | [DeleteObjectModelRequest](#mruv.gates.DeleteObjectModelRequest) | [DeleteObjectModelResponse](#mruv.gates.DeleteObjectModelResponse) | Delete an object model. |
+| CreateObject | [CreateObjectRequest](#mruv.gates.CreateObjectRequest) | [CreateObjectResponse](#mruv.gates.CreateObjectResponse) | Create an object. |
+| GetObject | [GetObjectRequest](#mruv.gates.GetObjectRequest) | [GetObjectResponse](#mruv.gates.GetObjectResponse) | Get an object. |
+| UpdateObject | [UpdateObjectRequest](#mruv.gates.UpdateObjectRequest) | [UpdateObjectResponse](#mruv.gates.UpdateObjectResponse) | Update an object. |
+| DeleteObject | [DeleteObjectRequest](#mruv.gates.DeleteObjectRequest) | [DeleteObjectResponse](#mruv.gates.DeleteObjectResponse) | Delete an object. |
 
  
 
