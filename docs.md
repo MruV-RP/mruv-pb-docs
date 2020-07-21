@@ -175,8 +175,6 @@
     - [DeleteEntranceResponse](#mruv.entrances.DeleteEntranceResponse)
     - [EnterRequest](#mruv.entrances.EnterRequest)
     - [EnterResponse](#mruv.entrances.EnterResponse)
-    - [Entrance](#mruv.entrances.Entrance)
-    - [Entrance.EntranceDoor](#mruv.entrances.Entrance.EntranceDoor)
     - [FindNearestEntranceRequest](#mruv.entrances.FindNearestEntranceRequest)
     - [FindNearestEntranceResponse](#mruv.entrances.FindNearestEntranceResponse)
     - [GetEntranceRequest](#mruv.entrances.GetEntranceRequest)
@@ -427,7 +425,7 @@
     - [MruVOrganizationsService](#mruv.organizations.MruVOrganizationsService)
   
 
-- [plot/plots.proto](#plot/plots.proto)
+- [plots/plots.proto](#plots/plots.proto)
     - [CreatePlotRequest](#mruv.plots.CreatePlotRequest)
     - [CreatePlotResponse](#mruv.plots.CreatePlotResponse)
     - [DeletePlotRequest](#mruv.plots.DeletePlotRequest)
@@ -536,6 +534,7 @@
     - [DeleteSpotResponse](#mruv.spots.DeleteSpotResponse)
     - [GetSpotRequest](#mruv.spots.GetSpotRequest)
     - [GetSpotResponse](#mruv.spots.GetSpotResponse)
+    - [Spot](#mruv.spots.Spot)
     - [UpdateSpotRequest](#mruv.spots.UpdateSpotRequest)
     - [UpdateSpotResponse](#mruv.spots.UpdateSpotResponse)
   
@@ -2402,7 +2401,9 @@ Request message for rpc `CreateEntrance`.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| entrance | [Entrance](#mruv.entrances.Entrance) |  |  |
+| name | [string](#string) |  |  |
+| out | [mruv.spots.Spot](#mruv.spots.Spot) |  |  |
+| in | [mruv.spots.Spot](#mruv.spots.Spot) |  |  |
 
 
 
@@ -2474,48 +2475,6 @@ Response message for rpc `Enter`.
 
 
 
-<a name="mruv.entrances.Entrance"></a>
-
-### Entrance
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [uint32](#uint32) |  |  |
-| estate_id | [uint32](#uint32) |  |  |
-| out | [Entrance.EntranceDoor](#mruv.entrances.Entrance.EntranceDoor) |  |  |
-| in | [Entrance.EntranceDoor](#mruv.entrances.Entrance.EntranceDoor) |  |  |
-
-
-
-
-
-
-<a name="mruv.entrances.Entrance.EntranceDoor"></a>
-
-### Entrance.EntranceDoor
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
-| message | [string](#string) |  |  |
-| icon | [int32](#int32) |  |  |
-| marker | [int32](#int32) |  |  |
-| x | [float](#float) |  |  |
-| y | [float](#float) |  |  |
-| z | [float](#float) |  |  |
-| vw | [int32](#int32) |  |  |
-| int | [int32](#int32) |  |  |
-| estate_id | [uint32](#uint32) |  |  |
-
-
-
-
-
-
 <a name="mruv.entrances.FindNearestEntranceRequest"></a>
 
 ### FindNearestEntranceRequest
@@ -2569,6 +2528,13 @@ Request message for rpc `GetEntrance`.
 
 ### GetEntranceResponse
 Response message for rpc `GetEntrance`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  |  |
+| in_spot_id | [uint32](#uint32) |  |  |
+| out_spot_id | [uint32](#uint32) |  |  |
 
 
 
@@ -2634,6 +2600,8 @@ Request message for rpc `UpdateEntrance`.
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | id | [uint32](#uint32) |  |  |
+| in_spot_id | [uint32](#uint32) |  |  |
+| out_spot_id | [uint32](#uint32) |  |  |
 
 
 
@@ -5357,10 +5325,10 @@ The MruV jobs service provides procedures for managing organizations and fractio
 
 
 
-<a name="plot/plots.proto"></a>
+<a name="plots/plots.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## plot/plots.proto
+## plots/plots.proto
 
 
 
@@ -6588,15 +6556,7 @@ Request message for rpc `CreateSpot`.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
-| message | [string](#string) |  |  |
-| icon | [int32](#int32) |  |  |
-| marker | [int32](#int32) |  |  |
-| x | [float](#float) |  |  |
-| y | [float](#float) |  |  |
-| z | [float](#float) |  |  |
-| vw | [int32](#int32) |  |  |
-| int | [int32](#int32) |  |  |
+| spot | [Spot](#mruv.spots.Spot) |  |  |
 
 
 
@@ -6666,6 +6626,21 @@ Response message for rpc `GetSpot`.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| spot | [Spot](#mruv.spots.Spot) |  |  |
+
+
+
+
+
+
+<a name="mruv.spots.Spot"></a>
+
+### Spot
+Spot.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
 | name | [string](#string) |  |  |
 | message | [string](#string) |  |  |
 | icon | [int32](#int32) |  |  |
@@ -6690,15 +6665,7 @@ Request message for rpc `UpdateSpot`.
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | id | [uint32](#uint32) |  |  |
-| name | [string](#string) |  |  |
-| message | [string](#string) |  |  |
-| icon | [int32](#int32) |  |  |
-| marker | [int32](#int32) |  |  |
-| x | [float](#float) |  |  |
-| y | [float](#float) |  |  |
-| z | [float](#float) |  |  |
-| vw | [int32](#int32) |  |  |
-| int | [int32](#int32) |  |  |
+| spot | [Spot](#mruv.spots.Spot) |  |  |
 
 
 
