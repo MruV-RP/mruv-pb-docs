@@ -427,6 +427,21 @@
     - [MruVOrganizationsService](#mruv.organizations.MruVOrganizationsService)
   
 
+- [plot/plots.proto](#plot/plots.proto)
+    - [CreatePlotRequest](#mruv.plots.CreatePlotRequest)
+    - [CreatePlotResponse](#mruv.plots.CreatePlotResponse)
+    - [DeletePlotRequest](#mruv.plots.DeletePlotRequest)
+    - [DeletePlotResponse](#mruv.plots.DeletePlotResponse)
+    - [GetPlotRequest](#mruv.plots.GetPlotRequest)
+    - [GetPlotResponse](#mruv.plots.GetPlotResponse)
+    - [UpdatePlotRequest](#mruv.plots.UpdatePlotRequest)
+    - [UpdatePlotResponse](#mruv.plots.UpdatePlotResponse)
+  
+  
+  
+    - [MruVPlotsService](#mruv.plots.MruVPlotsService)
+  
+
 - [punishments/punishments.proto](#punishments/punishments.proto)
     - [AdminJailMessage](#mruv.economy.AdminJailMessage)
     - [AdminJailRequest](#mruv.economy.AdminJailRequest)
@@ -512,6 +527,21 @@
     - [ServerStatus](#mruv.server.ServerStatus)
   
   
+  
+
+- [spots/spots.proto](#spots/spots.proto)
+    - [CreateSpotRequest](#mruv.spots.CreateSpotRequest)
+    - [CreateSpotResponse](#mruv.spots.CreateSpotResponse)
+    - [DeleteSpotRequest](#mruv.spots.DeleteSpotRequest)
+    - [DeleteSpotResponse](#mruv.spots.DeleteSpotResponse)
+    - [GetSpotRequest](#mruv.spots.GetSpotRequest)
+    - [GetSpotResponse](#mruv.spots.GetSpotResponse)
+    - [UpdateSpotRequest](#mruv.spots.UpdateSpotRequest)
+    - [UpdateSpotResponse](#mruv.spots.UpdateSpotResponse)
+  
+  
+  
+    - [MruVSpotsService](#mruv.spots.MruVSpotsService)
   
 
 - [vehicles/vehicles.proto](#vehicles/vehicles.proto)
@@ -2385,6 +2415,11 @@ Request message for rpc `CreateEntrance`.
 Response message for rpc `CreateEntrance`.
 
 
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
 
 
 
@@ -2864,6 +2899,11 @@ Request message for rpc `GetEstateGates`.
 Response message for rpc `GetEstateGates`.
 
 
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| estates | [Estate](#mruv.estates.Estate) | repeated |  |
+
+
 
 
 
@@ -2891,7 +2931,8 @@ Request message for rpc `GetEstates`.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [uint32](#uint32) |  |  |
+| from | [uint32](#uint32) |  |  |
+| limit | [uint32](#uint32) |  |  |
 
 
 
@@ -5316,6 +5357,151 @@ The MruV jobs service provides procedures for managing organizations and fractio
 
 
 
+<a name="plot/plots.proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## plot/plots.proto
+
+
+
+<a name="mruv.plots.CreatePlotRequest"></a>
+
+### CreatePlotRequest
+Request message for rpc `CreatePlot`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| points | [mruv.Position](#mruv.Position) | repeated |  |
+
+
+
+
+
+
+<a name="mruv.plots.CreatePlotResponse"></a>
+
+### CreatePlotResponse
+Response message for rpc `CreatePlot`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.plots.DeletePlotRequest"></a>
+
+### DeletePlotRequest
+Request message for rpc `DeletePlot`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.plots.DeletePlotResponse"></a>
+
+### DeletePlotResponse
+Response message for rpc `DeletePlot`.
+
+
+
+
+
+
+<a name="mruv.plots.GetPlotRequest"></a>
+
+### GetPlotRequest
+Request message for rpc `GetPlot`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.plots.GetPlotResponse"></a>
+
+### GetPlotResponse
+Response message for rpc `GetPlot`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| points | [mruv.Position](#mruv.Position) | repeated |  |
+
+
+
+
+
+
+<a name="mruv.plots.UpdatePlotRequest"></a>
+
+### UpdatePlotRequest
+Request message for rpc `UpdatePlot`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+| name | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="mruv.plots.UpdatePlotResponse"></a>
+
+### UpdatePlotResponse
+Response message for rpc `UpdatePlot`.
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+
+<a name="mruv.plots.MruVPlotsService"></a>
+
+### MruVPlotsService
+The MruV plots service provides procedures for managing buildings plots and other areas.
+
+| Method Name | Request Type | Response Type | Description |
+| ----------- | ------------ | ------------- | ------------|
+| CreatePlot | [CreatePlotRequest](#mruv.plots.CreatePlotRequest) | [CreatePlotResponse](#mruv.plots.CreatePlotResponse) | Create a plot. |
+| GetPlot | [GetPlotRequest](#mruv.plots.GetPlotRequest) | [GetPlotResponse](#mruv.plots.GetPlotResponse) | Get a plot. |
+| UpdatePlot | [UpdatePlotRequest](#mruv.plots.UpdatePlotRequest) | [UpdatePlotResponse](#mruv.plots.UpdatePlotResponse) | Update a plot. |
+| DeletePlot | [DeletePlotRequest](#mruv.plots.DeletePlotRequest) | [DeletePlotResponse](#mruv.plots.DeletePlotResponse) | Delete a plot. |
+
+ 
+
+
+
 <a name="punishments/punishments.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -6382,6 +6568,170 @@ Data that describe server.
  
 
  
+
+ 
+
+
+
+<a name="spots/spots.proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## spots/spots.proto
+
+
+
+<a name="mruv.spots.CreateSpotRequest"></a>
+
+### CreateSpotRequest
+Request message for rpc `CreateSpot`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  |  |
+| message | [string](#string) |  |  |
+| icon | [int32](#int32) |  |  |
+| marker | [int32](#int32) |  |  |
+| x | [float](#float) |  |  |
+| y | [float](#float) |  |  |
+| z | [float](#float) |  |  |
+| vw | [int32](#int32) |  |  |
+| int | [int32](#int32) |  |  |
+
+
+
+
+
+
+<a name="mruv.spots.CreateSpotResponse"></a>
+
+### CreateSpotResponse
+Response message for rpc `CreateSpot`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.spots.DeleteSpotRequest"></a>
+
+### DeleteSpotRequest
+Request message for rpc `DeleteSpot`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.spots.DeleteSpotResponse"></a>
+
+### DeleteSpotResponse
+Response message for rpc `DeleteSpot`.
+
+
+
+
+
+
+<a name="mruv.spots.GetSpotRequest"></a>
+
+### GetSpotRequest
+Request message for rpc `GetSpot`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.spots.GetSpotResponse"></a>
+
+### GetSpotResponse
+Response message for rpc `GetSpot`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  |  |
+| message | [string](#string) |  |  |
+| icon | [int32](#int32) |  |  |
+| marker | [int32](#int32) |  |  |
+| x | [float](#float) |  |  |
+| y | [float](#float) |  |  |
+| z | [float](#float) |  |  |
+| vw | [int32](#int32) |  |  |
+| int | [int32](#int32) |  |  |
+
+
+
+
+
+
+<a name="mruv.spots.UpdateSpotRequest"></a>
+
+### UpdateSpotRequest
+Request message for rpc `UpdateSpot`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+| name | [string](#string) |  |  |
+| message | [string](#string) |  |  |
+| icon | [int32](#int32) |  |  |
+| marker | [int32](#int32) |  |  |
+| x | [float](#float) |  |  |
+| y | [float](#float) |  |  |
+| z | [float](#float) |  |  |
+| vw | [int32](#int32) |  |  |
+| int | [int32](#int32) |  |  |
+
+
+
+
+
+
+<a name="mruv.spots.UpdateSpotResponse"></a>
+
+### UpdateSpotResponse
+Response message for rpc `UpdateSpot`.
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+
+<a name="mruv.spots.MruVSpotsService"></a>
+
+### MruVSpotsService
+The MruV spots service provides procedures for managing spots.
+
+| Method Name | Request Type | Response Type | Description |
+| ----------- | ------------ | ------------- | ------------|
+| CreateSpot | [CreateSpotRequest](#mruv.spots.CreateSpotRequest) | [CreateSpotResponse](#mruv.spots.CreateSpotResponse) | Create a spot. |
+| GetSpot | [GetSpotRequest](#mruv.spots.GetSpotRequest) | [GetSpotResponse](#mruv.spots.GetSpotResponse) | Get a spot. |
+| UpdateSpot | [UpdateSpotRequest](#mruv.spots.UpdateSpotRequest) | [UpdateSpotResponse](#mruv.spots.UpdateSpotResponse) | Update a spot. |
+| DeleteSpot | [DeleteSpotRequest](#mruv.spots.DeleteSpotRequest) | [DeleteSpotResponse](#mruv.spots.DeleteSpotResponse) | Delete a spot. |
 
  
 
