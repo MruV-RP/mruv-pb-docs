@@ -175,6 +175,7 @@
     - [DeleteEntranceResponse](#mruv.entrances.DeleteEntranceResponse)
     - [EnterRequest](#mruv.entrances.EnterRequest)
     - [EnterResponse](#mruv.entrances.EnterResponse)
+    - [Entrance](#mruv.entrances.Entrance)
     - [FindNearestEntranceRequest](#mruv.entrances.FindNearestEntranceRequest)
     - [FindNearestEntranceResponse](#mruv.entrances.FindNearestEntranceResponse)
     - [GetEntranceRequest](#mruv.entrances.GetEntranceRequest)
@@ -200,8 +201,6 @@
     - [CreateEstateResponse](#mruv.estates.CreateEstateResponse)
     - [DeleteEstateRequest](#mruv.estates.DeleteEstateRequest)
     - [DeleteEstateResponse](#mruv.estates.DeleteEstateResponse)
-    - [DeleteGateRequest](#mruv.estates.DeleteGateRequest)
-    - [DeleteGateResponse](#mruv.estates.DeleteGateResponse)
     - [Estate](#mruv.estates.Estate)
     - [GetEstateEntrancesRequest](#mruv.estates.GetEstateEntrancesRequest)
     - [GetEstateEntrancesResponse](#mruv.estates.GetEstateEntrancesResponse)
@@ -212,6 +211,8 @@
     - [GetEstatesResponse](#mruv.estates.GetEstatesResponse)
     - [RemoveEntranceRequest](#mruv.estates.RemoveEntranceRequest)
     - [RemoveEntranceResponse](#mruv.estates.RemoveEntranceResponse)
+    - [RemoveGateRequest](#mruv.estates.RemoveGateRequest)
+    - [RemoveGateResponse](#mruv.estates.RemoveGateResponse)
     - [UpdateEstateRequest](#mruv.estates.UpdateEstateRequest)
     - [UpdateEstateResponse](#mruv.estates.UpdateEstateResponse)
   
@@ -2475,6 +2476,23 @@ Response message for rpc `Enter`.
 
 
 
+<a name="mruv.entrances.Entrance"></a>
+
+### Entrance
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  |  |
+| out | [mruv.spots.Spot](#mruv.spots.Spot) |  |  |
+| in | [mruv.spots.Spot](#mruv.spots.Spot) |  |  |
+
+
+
+
+
+
 <a name="mruv.entrances.FindNearestEntranceRequest"></a>
 
 ### FindNearestEntranceRequest
@@ -2533,8 +2551,8 @@ Response message for rpc `GetEntrance`.
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | name | [string](#string) |  |  |
-| in_spot_id | [uint32](#uint32) |  |  |
-| out_spot_id | [uint32](#uint32) |  |  |
+| in_spot | [mruv.spots.Spot](#mruv.spots.Spot) |  |  |
+| out_spot | [mruv.spots.Spot](#mruv.spots.Spot) |  |  |
 
 
 
@@ -2673,11 +2691,6 @@ Request message for rpc `AddEntrance`.
 Response message for rpc `AddEntrance`.
 
 
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| entrance_count | [uint32](#uint32) |  |  |
-
-
 
 
 
@@ -2702,11 +2715,6 @@ Request message for rpc `AddGate`.
 
 ### AddGateResponse
 Response message for rpc `AddGate`.
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| gate_count | [uint32](#uint32) |  |  |
 
 
 
@@ -2769,37 +2777,6 @@ Response message for rpc `DeleteEstate`.
 
 
 
-<a name="mruv.estates.DeleteGateRequest"></a>
-
-### DeleteGateRequest
-Request message for rpc `DeleteGate`.
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| estate_id | [uint32](#uint32) |  |  |
-| gate_id | [uint32](#uint32) |  |  |
-
-
-
-
-
-
-<a name="mruv.estates.DeleteGateResponse"></a>
-
-### DeleteGateResponse
-Response message for rpc `DeleteGate`.
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| gate_count | [uint32](#uint32) |  |  |
-
-
-
-
-
-
 <a name="mruv.estates.Estate"></a>
 
 ### Estate
@@ -2842,6 +2819,11 @@ Request message for rpc `GetEstateEntrances`.
 Response message for rpc `GetEstateEntrances`.
 
 
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| entrances | [mruv.entrances.Entrance](#mruv.entrances.Entrance) | repeated |  |
+
+
 
 
 
@@ -2869,7 +2851,7 @@ Response message for rpc `GetEstateGates`.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| estates | [Estate](#mruv.estates.Estate) | repeated |  |
+| gates | [mruv.gates.Gate](#mruv.gates.Gate) | repeated |  |
 
 
 
@@ -2913,6 +2895,11 @@ Request message for rpc `GetEstates`.
 Response message for rpc `GetEstates`.
 
 
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| estates | [Estate](#mruv.estates.Estate) | repeated |  |
+
+
 
 
 
@@ -2939,9 +2926,30 @@ Request message for rpc `RemoveEntrance`.
 Response message for rpc `RemoveEntrance`.
 
 
+
+
+
+
+<a name="mruv.estates.RemoveGateRequest"></a>
+
+### RemoveGateRequest
+Request message for rpc `RemoveGate`.
+
+
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| entrance_count | [uint32](#uint32) |  |  |
+| estate_id | [uint32](#uint32) |  |  |
+| gate_id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.estates.RemoveGateResponse"></a>
+
+### RemoveGateResponse
+Response message for rpc `RemoveGate`.
 
 
 
@@ -2994,7 +3002,7 @@ The MruV estate service provides procedures for managing buildings and other est
 | DeleteEstate | [DeleteEstateRequest](#mruv.estates.DeleteEstateRequest) | [DeleteEstateResponse](#mruv.estates.DeleteEstateResponse) | Delete real estate. |
 | GetEstates | [GetEstatesRequest](#mruv.estates.GetEstatesRequest) | [GetEstatesResponse](#mruv.estates.GetEstatesResponse) | Get all created real estates. |
 | AddGate | [AddGateRequest](#mruv.estates.AddGateRequest) | [AddGateResponse](#mruv.estates.AddGateResponse) | Add a gate to an estate. |
-| DeleteGate | [DeleteGateRequest](#mruv.estates.DeleteGateRequest) | [DeleteGateResponse](#mruv.estates.DeleteGateResponse) | Delete a gate from estate. |
+| RemoveGate | [RemoveGateRequest](#mruv.estates.RemoveGateRequest) | [RemoveGateResponse](#mruv.estates.RemoveGateResponse) | Delete a gate from estate. |
 | GetEstateGates | [GetEstateGatesRequest](#mruv.estates.GetEstateGatesRequest) | [GetEstateGatesResponse](#mruv.estates.GetEstateGatesResponse) | Get all estate gates. |
 | AddEntrance | [AddEntranceRequest](#mruv.estates.AddEntranceRequest) | [AddEntranceResponse](#mruv.estates.AddEntranceResponse) | Add an entrance to estate. |
 | RemoveEntrance | [RemoveEntranceRequest](#mruv.estates.RemoveEntranceRequest) | [RemoveEntranceResponse](#mruv.estates.RemoveEntranceResponse) | Remove an entrance from estate. |
