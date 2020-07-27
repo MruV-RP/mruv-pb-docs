@@ -544,6 +544,37 @@
     - [MruVSpotsService](#mruv.spots.MruVSpotsService)
   
 
+- [texturestudio/texturestudio.proto](#texturestudio/texturestudio.proto)
+    - [CreateServerRequest](#texture_studio.CreateServerRequest)
+    - [CreateServerResponse](#texture_studio.CreateServerResponse)
+    - [DeleteServerRequest](#texture_studio.DeleteServerRequest)
+    - [DeleteServerResponse](#texture_studio.DeleteServerResponse)
+    - [GetProjectRequest](#texture_studio.GetProjectRequest)
+    - [GetProjectResponse](#texture_studio.GetProjectResponse)
+    - [GetProjectsRequest](#texture_studio.GetProjectsRequest)
+    - [GetProjectsResponse](#texture_studio.GetProjectsResponse)
+    - [MyServerRequest](#texture_studio.MyServerRequest)
+    - [MyServerResponse](#texture_studio.MyServerResponse)
+    - [RestartServerRequest](#texture_studio.RestartServerRequest)
+    - [RestartServerResponse](#texture_studio.RestartServerResponse)
+    - [ServerStatusRequest](#texture_studio.ServerStatusRequest)
+    - [ServerStatusResponse](#texture_studio.ServerStatusResponse)
+    - [StartServerRequest](#texture_studio.StartServerRequest)
+    - [StartServerResponse](#texture_studio.StartServerResponse)
+    - [StopServerRequest](#texture_studio.StopServerRequest)
+    - [StopServerResponse](#texture_studio.StopServerResponse)
+    - [SubscribeToProjectsChangesRequest](#texture_studio.SubscribeToProjectsChangesRequest)
+    - [SubscribeToProjectsChangesResponse](#texture_studio.SubscribeToProjectsChangesResponse)
+    - [UploadProjectRequest](#texture_studio.UploadProjectRequest)
+    - [UploadProjectResponse](#texture_studio.UploadProjectResponse)
+  
+    - [ProjectFormat](#texture_studio.ProjectFormat)
+    - [ServerStatus](#texture_studio.ServerStatus)
+  
+  
+    - [TextureStudioService](#texture_studio.TextureStudioService)
+  
+
 - [vehicles/vehicles.proto](#vehicles/vehicles.proto)
     - [CreateVehicleRequest](#mruv.vehicles.CreateVehicleRequest)
     - [CreateVehicleResponse](#mruv.vehicles.CreateVehicleResponse)
@@ -6707,6 +6738,381 @@ The MruV spots service provides procedures for managing spots.
 | GetSpot | [GetSpotRequest](#mruv.spots.GetSpotRequest) | [GetSpotResponse](#mruv.spots.GetSpotResponse) | Get a spot. |
 | UpdateSpot | [UpdateSpotRequest](#mruv.spots.UpdateSpotRequest) | [UpdateSpotResponse](#mruv.spots.UpdateSpotResponse) | Update a spot. |
 | DeleteSpot | [DeleteSpotRequest](#mruv.spots.DeleteSpotRequest) | [DeleteSpotResponse](#mruv.spots.DeleteSpotResponse) | Delete a spot. |
+
+ 
+
+
+
+<a name="texturestudio/texturestudio.proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## texturestudio/texturestudio.proto
+
+
+
+<a name="texture_studio.CreateServerRequest"></a>
+
+### CreateServerRequest
+Request message for rpc `CreateServer`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| owner_id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="texture_studio.CreateServerResponse"></a>
+
+### CreateServerResponse
+Response message for rpc `CreateServer`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+| port | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="texture_studio.DeleteServerRequest"></a>
+
+### DeleteServerRequest
+Request message for rpc `DeleteServer`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="texture_studio.DeleteServerResponse"></a>
+
+### DeleteServerResponse
+Response message for rpc `DeleteServer`.
+
+
+
+
+
+
+<a name="texture_studio.GetProjectRequest"></a>
+
+### GetProjectRequest
+Request message for rpc `GetProject`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| server_id | [uint32](#uint32) |  |  |
+| name | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="texture_studio.GetProjectResponse"></a>
+
+### GetProjectResponse
+Response message for rpc `GetProject`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| code | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="texture_studio.GetProjectsRequest"></a>
+
+### GetProjectsRequest
+Request message for rpc `GetProjects`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| server_id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="texture_studio.GetProjectsResponse"></a>
+
+### GetProjectsResponse
+Response message for rpc `GetProjects`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| names | [string](#string) | repeated |  |
+
+
+
+
+
+
+<a name="texture_studio.MyServerRequest"></a>
+
+### MyServerRequest
+Request message for rpc `MyServer`.
+
+
+
+
+
+
+<a name="texture_studio.MyServerResponse"></a>
+
+### MyServerResponse
+Response message for rpc `MyServer`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="texture_studio.RestartServerRequest"></a>
+
+### RestartServerRequest
+Request message for rpc `RestartServer`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="texture_studio.RestartServerResponse"></a>
+
+### RestartServerResponse
+Response message for rpc `RestartServer`.
+
+
+
+
+
+
+<a name="texture_studio.ServerStatusRequest"></a>
+
+### ServerStatusRequest
+Request message for rpc `ServerStatus`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="texture_studio.ServerStatusResponse"></a>
+
+### ServerStatusResponse
+Response message for rpc `ServerStatus`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| port | [uint32](#uint32) |  |  |
+| status | [ServerStatus](#texture_studio.ServerStatus) |  |  |
+
+
+
+
+
+
+<a name="texture_studio.StartServerRequest"></a>
+
+### StartServerRequest
+Request message for rpc `StartServer`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="texture_studio.StartServerResponse"></a>
+
+### StartServerResponse
+Response message for rpc `StartServer`.
+
+
+
+
+
+
+<a name="texture_studio.StopServerRequest"></a>
+
+### StopServerRequest
+Request message for rpc `StopServer`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="texture_studio.StopServerResponse"></a>
+
+### StopServerResponse
+Response message for rpc `StopServer`.
+
+
+
+
+
+
+<a name="texture_studio.SubscribeToProjectsChangesRequest"></a>
+
+### SubscribeToProjectsChangesRequest
+Request message for rpc `SubscribeToProjectsChanges`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| server_id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="texture_studio.SubscribeToProjectsChangesResponse"></a>
+
+### SubscribeToProjectsChangesResponse
+Response message for rpc `SubscribeToProjectsChanges`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="texture_studio.UploadProjectRequest"></a>
+
+### UploadProjectRequest
+Request message for rpc `UploadProject`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| server_id | [uint32](#uint32) |  |  |
+| project_name | [string](#string) |  |  |
+| project_format | [ProjectFormat](#texture_studio.ProjectFormat) |  |  |
+| code | [string](#string) |  |  |
+| file | [bytes](#bytes) |  |  |
+
+
+
+
+
+
+<a name="texture_studio.UploadProjectResponse"></a>
+
+### UploadProjectResponse
+Response message for rpc `UploadProject`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| success | [bool](#bool) |  |  |
+
+
+
+
+
+ 
+
+
+<a name="texture_studio.ProjectFormat"></a>
+
+### ProjectFormat
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| UNKNOWN_FORMAT | 0 |  |
+| DB_FILE | 1 |  |
+| CREATE_OBJECT | 2 |  |
+| CREATE_DYNAMIC_OBJECT | 3 |  |
+
+
+
+<a name="texture_studio.ServerStatus"></a>
+
+### ServerStatus
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| UNKNOWN_STATUS | 0 |  |
+| ON | 1 |  |
+| OFF | 2 |  |
+
+
+ 
+
+ 
+
+
+<a name="texture_studio.TextureStudioService"></a>
+
+### TextureStudioService
+Service to manage texture studio servers.
+
+| Method Name | Request Type | Response Type | Description |
+| ----------- | ------------ | ------------- | ------------|
+| CreateServer | [CreateServerRequest](#texture_studio.CreateServerRequest) | [CreateServerResponse](#texture_studio.CreateServerResponse) | Create a new texture studio server. |
+| MyServer | [MyServerRequest](#texture_studio.MyServerRequest) | [MyServerResponse](#texture_studio.MyServerResponse) | Get texture studio server id for current user. |
+| DeleteServer | [DeleteServerRequest](#texture_studio.DeleteServerRequest) | [DeleteServerResponse](#texture_studio.DeleteServerResponse) | Delete a texture studio server. |
+| StartServer | [StartServerRequest](#texture_studio.StartServerRequest) | [StartServerResponse](#texture_studio.StartServerResponse) | Start a texture studio server. |
+| StopServer | [StopServerRequest](#texture_studio.StopServerRequest) | [StopServerResponse](#texture_studio.StopServerResponse) | Stop a texture studio server. |
+| RestartServer | [RestartServerRequest](#texture_studio.RestartServerRequest) | [RestartServerResponse](#texture_studio.RestartServerResponse) | Restart a texture studio server. |
+| ServerStatus | [ServerStatusRequest](#texture_studio.ServerStatusRequest) | [ServerStatusResponse](#texture_studio.ServerStatusResponse) | Get texture studio server status. |
+| UploadProject | [UploadProjectRequest](#texture_studio.UploadProjectRequest) | [UploadProjectResponse](#texture_studio.UploadProjectResponse) | Upload project to texture studio. |
+| GetProject | [GetProjectRequest](#texture_studio.GetProjectRequest) | [GetProjectResponse](#texture_studio.GetProjectResponse) | Get texture-studio objects project. |
+| GetProjects | [GetProjectsRequest](#texture_studio.GetProjectsRequest) | [GetProjectsResponse](#texture_studio.GetProjectsResponse) | Get all projects. |
+| SubscribeToProjectsChanges | [SubscribeToProjectsChangesRequest](#texture_studio.SubscribeToProjectsChangesRequest) | [SubscribeToProjectsChangesResponse](#texture_studio.SubscribeToProjectsChangesResponse) stream | Listen for project changes - if texture studio project has been created or modified, this will trigger an event. |
 
  
 
