@@ -544,17 +544,28 @@
     - [MruVSpotsService](#mruv.spots.MruVSpotsService)
   
 
-- [texturestudio/texturestudio.proto](#texturestudio/texturestudio.proto)
+- [texturestudio/texturestudio_manage.proto](#texturestudio/texturestudio_manage.proto)
     - [CreateServerRequest](#texture_studio.CreateServerRequest)
     - [CreateServerResponse](#texture_studio.CreateServerResponse)
     - [DeleteServerRequest](#texture_studio.DeleteServerRequest)
     - [DeleteServerResponse](#texture_studio.DeleteServerResponse)
+    - [GetServersRequest](#texture_studio.GetServersRequest)
+    - [GetServersResponse](#texture_studio.GetServersResponse)
+    - [MyServerRequest](#texture_studio.MyServerRequest)
+    - [MyServerResponse](#texture_studio.MyServerResponse)
+    - [TransferOwnershipRequest](#texture_studio.TransferOwnershipRequest)
+    - [TransferOwnershipResponse](#texture_studio.TransferOwnershipResponse)
+  
+  
+  
+    - [TextureStudioManagerService](#texture_studio.TextureStudioManagerService)
+  
+
+- [texturestudio/texturestudio_server.proto](#texturestudio/texturestudio_server.proto)
     - [GetProjectRequest](#texture_studio.GetProjectRequest)
     - [GetProjectResponse](#texture_studio.GetProjectResponse)
     - [GetProjectsRequest](#texture_studio.GetProjectsRequest)
     - [GetProjectsResponse](#texture_studio.GetProjectsResponse)
-    - [MyServerRequest](#texture_studio.MyServerRequest)
-    - [MyServerResponse](#texture_studio.MyServerResponse)
     - [RestartServerRequest](#texture_studio.RestartServerRequest)
     - [RestartServerResponse](#texture_studio.RestartServerResponse)
     - [ServerStatusRequest](#texture_studio.ServerStatusRequest)
@@ -568,11 +579,10 @@
     - [UploadProjectRequest](#texture_studio.UploadProjectRequest)
     - [UploadProjectResponse](#texture_studio.UploadProjectResponse)
   
-    - [ProjectFormat](#texture_studio.ProjectFormat)
     - [ServerStatus](#texture_studio.ServerStatus)
   
   
-    - [TextureStudioService](#texture_studio.TextureStudioService)
+    - [TextureStudioServerService](#texture_studio.TextureStudioServerService)
   
 
 - [vehicles/vehicles.proto](#vehicles/vehicles.proto)
@@ -6743,10 +6753,10 @@ The MruV spots service provides procedures for managing spots.
 
 
 
-<a name="texturestudio/texturestudio.proto"></a>
+<a name="texturestudio/texturestudio_manage.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## texturestudio/texturestudio.proto
+## texturestudio/texturestudio_manage.proto
 
 
 
@@ -6806,6 +6816,112 @@ Response message for rpc `DeleteServer`.
 
 
 
+<a name="texture_studio.GetServersRequest"></a>
+
+### GetServersRequest
+Request message for rpc `GetServers`.
+
+
+
+
+
+
+<a name="texture_studio.GetServersResponse"></a>
+
+### GetServersResponse
+Response message for rpc `GetServers`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) | repeated |  |
+
+
+
+
+
+
+<a name="texture_studio.MyServerRequest"></a>
+
+### MyServerRequest
+Request message for rpc `MyServer`.
+
+
+
+
+
+
+<a name="texture_studio.MyServerResponse"></a>
+
+### MyServerResponse
+Response message for rpc `MyServer`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="texture_studio.TransferOwnershipRequest"></a>
+
+### TransferOwnershipRequest
+Request message for rpc `TransferOwnership`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| server_id | [uint32](#uint32) |  |  |
+| owner_id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="texture_studio.TransferOwnershipResponse"></a>
+
+### TransferOwnershipResponse
+Response message for rpc `TransferOwnership`.
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+
+<a name="texture_studio.TextureStudioManagerService"></a>
+
+### TextureStudioManagerService
+Service to manage texture studio servers cluster.
+
+| Method Name | Request Type | Response Type | Description |
+| ----------- | ------------ | ------------- | ------------|
+| CreateServer | [CreateServerRequest](#texture_studio.CreateServerRequest) | [CreateServerResponse](#texture_studio.CreateServerResponse) | Create a new texture studio server. |
+| GetServers | [GetServersRequest](#texture_studio.GetServersRequest) | [GetServersResponse](#texture_studio.GetServersResponse) | Get all existing servers |
+| MyServer | [MyServerRequest](#texture_studio.MyServerRequest) | [MyServerResponse](#texture_studio.MyServerResponse) | Get texture studio server id for current user. |
+| TransferOwnership | [TransferOwnershipRequest](#texture_studio.TransferOwnershipRequest) | [TransferOwnershipResponse](#texture_studio.TransferOwnershipResponse) | Change owner of texture studio server. |
+| DeleteServer | [DeleteServerRequest](#texture_studio.DeleteServerRequest) | [DeleteServerResponse](#texture_studio.DeleteServerResponse) | Delete a texture studio server. |
+
+ 
+
+
+
+<a name="texturestudio/texturestudio_server.proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## texturestudio/texturestudio_server.proto
+
+
+
 <a name="texture_studio.GetProjectRequest"></a>
 
 ### GetProjectRequest
@@ -6861,31 +6977,6 @@ Response message for rpc `GetProjects`.
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | names | [string](#string) | repeated |  |
-
-
-
-
-
-
-<a name="texture_studio.MyServerRequest"></a>
-
-### MyServerRequest
-Request message for rpc `MyServer`.
-
-
-
-
-
-
-<a name="texture_studio.MyServerResponse"></a>
-
-### MyServerResponse
-Response message for rpc `MyServer`.
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [uint32](#uint32) |  |  |
 
 
 
@@ -7038,7 +7129,6 @@ Request message for rpc `UploadProject`.
 | ----- | ---- | ----- | ----------- |
 | server_id | [uint32](#uint32) |  |  |
 | project_name | [string](#string) |  |  |
-| project_format | [ProjectFormat](#texture_studio.ProjectFormat) |  |  |
 | code | [string](#string) |  |  |
 | file | [bytes](#bytes) |  |  |
 
@@ -7053,29 +7143,10 @@ Request message for rpc `UploadProject`.
 Response message for rpc `UploadProject`.
 
 
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| success | [bool](#bool) |  |  |
-
-
 
 
 
  
-
-
-<a name="texture_studio.ProjectFormat"></a>
-
-### ProjectFormat
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| UNKNOWN_FORMAT | 0 |  |
-| DB_FILE | 1 |  |
-| CREATE_OBJECT | 2 |  |
-| CREATE_DYNAMIC_OBJECT | 3 |  |
-
 
 
 <a name="texture_studio.ServerStatus"></a>
@@ -7095,16 +7166,13 @@ Response message for rpc `UploadProject`.
  
 
 
-<a name="texture_studio.TextureStudioService"></a>
+<a name="texture_studio.TextureStudioServerService"></a>
 
-### TextureStudioService
-Service to manage texture studio servers.
+### TextureStudioServerService
+Service to manage texture studio server.
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| CreateServer | [CreateServerRequest](#texture_studio.CreateServerRequest) | [CreateServerResponse](#texture_studio.CreateServerResponse) | Create a new texture studio server. |
-| MyServer | [MyServerRequest](#texture_studio.MyServerRequest) | [MyServerResponse](#texture_studio.MyServerResponse) | Get texture studio server id for current user. |
-| DeleteServer | [DeleteServerRequest](#texture_studio.DeleteServerRequest) | [DeleteServerResponse](#texture_studio.DeleteServerResponse) | Delete a texture studio server. |
 | StartServer | [StartServerRequest](#texture_studio.StartServerRequest) | [StartServerResponse](#texture_studio.StartServerResponse) | Start a texture studio server. |
 | StopServer | [StopServerRequest](#texture_studio.StopServerRequest) | [StopServerResponse](#texture_studio.StopServerResponse) | Stop a texture studio server. |
 | RestartServer | [RestartServerRequest](#texture_studio.RestartServerRequest) | [RestartServerResponse](#texture_studio.RestartServerResponse) | Restart a texture studio server. |
