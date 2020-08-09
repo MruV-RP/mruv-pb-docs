@@ -364,6 +364,22 @@
     - [MruVJobsService](#mruv.jobs.MruVJobsService)
   
 
+- [objects/models.proto](#objects/models.proto)
+    - [CreateObjectModelRequest](#mruv.objects.CreateObjectModelRequest)
+    - [CreateObjectModelResponse](#mruv.objects.CreateObjectModelResponse)
+    - [DeleteObjectModelRequest](#mruv.objects.DeleteObjectModelRequest)
+    - [DeleteObjectModelResponse](#mruv.objects.DeleteObjectModelResponse)
+    - [GetObjectModelRequest](#mruv.objects.GetObjectModelRequest)
+    - [GetObjectModelResponse](#mruv.objects.GetObjectModelResponse)
+    - [ObjectModel](#mruv.objects.ObjectModel)
+    - [UpdateObjectModelRequest](#mruv.objects.UpdateObjectModelRequest)
+    - [UpdateObjectModelResponse](#mruv.objects.UpdateObjectModelResponse)
+  
+  
+  
+    - [MruVObjectModelsService](#mruv.objects.MruVObjectModelsService)
+  
+
 - [objects/movable.proto](#objects/movable.proto)
     - [CreateMovableObjectRequest](#mruv.objects.CreateMovableObjectRequest)
     - [CreateMovableObjectResponse](#mruv.objects.CreateMovableObjectResponse)
@@ -388,22 +404,13 @@
   
 
 - [objects/objects.proto](#objects/objects.proto)
-    - [CreateObjectModelRequest](#mruv.objects.CreateObjectModelRequest)
-    - [CreateObjectModelResponse](#mruv.objects.CreateObjectModelResponse)
     - [CreateObjectRequest](#mruv.objects.CreateObjectRequest)
     - [CreateObjectResponse](#mruv.objects.CreateObjectResponse)
-    - [DeleteObjectModelRequest](#mruv.objects.DeleteObjectModelRequest)
-    - [DeleteObjectModelResponse](#mruv.objects.DeleteObjectModelResponse)
     - [DeleteObjectRequest](#mruv.objects.DeleteObjectRequest)
     - [DeleteObjectResponse](#mruv.objects.DeleteObjectResponse)
-    - [GetObjectModelRequest](#mruv.objects.GetObjectModelRequest)
-    - [GetObjectModelResponse](#mruv.objects.GetObjectModelResponse)
     - [GetObjectRequest](#mruv.objects.GetObjectRequest)
     - [GetObjectResponse](#mruv.objects.GetObjectResponse)
     - [Object](#mruv.objects.Object)
-    - [ObjectModel](#mruv.objects.ObjectModel)
-    - [UpdateObjectModelRequest](#mruv.objects.UpdateObjectModelRequest)
-    - [UpdateObjectModelResponse](#mruv.objects.UpdateObjectModelResponse)
     - [UpdateObjectRequest](#mruv.objects.UpdateObjectRequest)
     - [UpdateObjectResponse](#mruv.objects.UpdateObjectResponse)
   
@@ -4738,6 +4745,174 @@ The MruV jobs service provides procedures for managing jobs.
 
 
 
+<a name="objects/models.proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## objects/models.proto
+
+
+
+<a name="mruv.objects.CreateObjectModelRequest"></a>
+
+### CreateObjectModelRequest
+Request message for rpc `CreateObjectModel`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| object_type | [ObjectModel](#mruv.objects.ObjectModel) |  |  |
+
+
+
+
+
+
+<a name="mruv.objects.CreateObjectModelResponse"></a>
+
+### CreateObjectModelResponse
+Response message for rpc `CreateObjectModel`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.objects.DeleteObjectModelRequest"></a>
+
+### DeleteObjectModelRequest
+Request message for rpc `DeleteObjectModel`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| model | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.objects.DeleteObjectModelResponse"></a>
+
+### DeleteObjectModelResponse
+Response message for rpc `DeleteObjectModel`.
+
+
+
+
+
+
+<a name="mruv.objects.GetObjectModelRequest"></a>
+
+### GetObjectModelRequest
+Request message for rpc `GetObjectModel`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| model | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.objects.GetObjectModelResponse"></a>
+
+### GetObjectModelResponse
+Response message for rpc `GetObjectModel`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| object_type | [ObjectModel](#mruv.objects.ObjectModel) |  |  |
+
+
+
+
+
+
+<a name="mruv.objects.ObjectModel"></a>
+
+### ObjectModel
+SA-MP Object type data structure.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| model | [uint32](#uint32) |  |  |
+| model_name | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| category | [string](#string) |  |  |
+| length | [double](#double) |  |  |
+| width | [double](#double) |  |  |
+| height | [double](#double) |  |  |
+| size | [double](#double) |  | if no size specified, it will be calculated based on length, width and height |
+| tags | [string](#string) | repeated |  |
+| has_collision | [bool](#bool) |  |  |
+| breaks_on_hit | [bool](#bool) |  |  |
+| has_animation | [bool](#bool) |  |  |
+| visible_by_time | [bool](#bool) |  |  |
+| visible_from | [uint32](#uint32) |  |  |
+| visible_to | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.objects.UpdateObjectModelRequest"></a>
+
+### UpdateObjectModelRequest
+Request message for rpc `UpdateObjectModel`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| object_type | [ObjectModel](#mruv.objects.ObjectModel) |  |  |
+
+
+
+
+
+
+<a name="mruv.objects.UpdateObjectModelResponse"></a>
+
+### UpdateObjectModelResponse
+Response message for rpc `UpdateObjectModel`.
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+
+<a name="mruv.objects.MruVObjectModelsService"></a>
+
+### MruVObjectModelsService
+The MruV objects service provides procedures for game object models.
+
+| Method Name | Request Type | Response Type | Description |
+| ----------- | ------------ | ------------- | ------------|
+| CreateObjectModel | [CreateObjectModelRequest](#mruv.objects.CreateObjectModelRequest) | [CreateObjectModelResponse](#mruv.objects.CreateObjectModelResponse) | Create an object model. |
+| GetObjectModel | [GetObjectModelRequest](#mruv.objects.GetObjectModelRequest) | [GetObjectModelResponse](#mruv.objects.GetObjectModelResponse) | Get an object model. |
+| UpdateObjectModel | [UpdateObjectModelRequest](#mruv.objects.UpdateObjectModelRequest) | [UpdateObjectModelResponse](#mruv.objects.UpdateObjectModelResponse) | Update an object model. |
+| DeleteObjectModel | [DeleteObjectModelRequest](#mruv.objects.DeleteObjectModelRequest) | [DeleteObjectModelResponse](#mruv.objects.DeleteObjectModelResponse) | Delete an object model. |
+
+ 
+
+
+
 <a name="objects/movable.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -4952,6 +5127,7 @@ Position and rotation state of moving object.
 | rx | [float](#float) |  |  |
 | ry | [float](#float) |  |  |
 | rz | [float](#float) |  |  |
+| transition_speed | [float](#float) |  |  |
 
 
 
@@ -5017,36 +5193,6 @@ The MruV objects service provides procedures for movable game objects.
 
 
 
-<a name="mruv.objects.CreateObjectModelRequest"></a>
-
-### CreateObjectModelRequest
-Request message for rpc `CreateObjectModel`.
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| object_type | [ObjectModel](#mruv.objects.ObjectModel) |  |  |
-
-
-
-
-
-
-<a name="mruv.objects.CreateObjectModelResponse"></a>
-
-### CreateObjectModelResponse
-Response message for rpc `CreateObjectModel`.
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [uint32](#uint32) |  |  |
-
-
-
-
-
-
 <a name="mruv.objects.CreateObjectRequest"></a>
 
 ### CreateObjectRequest
@@ -5077,31 +5223,6 @@ Response message for rpc `CreateObject`.
 
 
 
-<a name="mruv.objects.DeleteObjectModelRequest"></a>
-
-### DeleteObjectModelRequest
-Request message for rpc `DeleteObjectModel`.
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| model | [uint32](#uint32) |  |  |
-
-
-
-
-
-
-<a name="mruv.objects.DeleteObjectModelResponse"></a>
-
-### DeleteObjectModelResponse
-Response message for rpc `DeleteObjectModel`.
-
-
-
-
-
-
 <a name="mruv.objects.DeleteObjectRequest"></a>
 
 ### DeleteObjectRequest
@@ -5121,36 +5242,6 @@ Request message for rpc `DeleteObject`.
 
 ### DeleteObjectResponse
 Response message for rpc `DeleteObject`.
-
-
-
-
-
-
-<a name="mruv.objects.GetObjectModelRequest"></a>
-
-### GetObjectModelRequest
-Request message for rpc `GetObjectModel`.
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| model | [uint32](#uint32) |  |  |
-
-
-
-
-
-
-<a name="mruv.objects.GetObjectModelResponse"></a>
-
-### GetObjectModelResponse
-Response message for rpc `GetObjectModel`.
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| object_type | [ObjectModel](#mruv.objects.ObjectModel) |  |  |
 
 
 
@@ -5196,7 +5287,6 @@ SA-MP Dynamic object data structure.
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | model | [uint32](#uint32) |  |  |
-| estate_id | [uint32](#uint32) |  |  |
 | x | [float](#float) |  |  |
 | y | [float](#float) |  |  |
 | z | [float](#float) |  |  |
@@ -5205,68 +5295,11 @@ SA-MP Dynamic object data structure.
 | rz | [float](#float) |  |  |
 | world_id | [int32](#int32) |  | Virtual world id for which object will be visible. Set -1 to be visible for all. |
 | interior_id | [int32](#int32) |  | Interior id for which object will be visible. Set -1 to be visible for all. |
-| player_id | [int32](#int32) |  | SA-MP player id for which object will be visible. Set -1 to be visible for all.
-
-TODO: change to character_id/account_id ? |
+| player_id | [int32](#int32) |  | SA-MP player id for which object will be visible. Set -1 to be visible for all. |
 | area_id | [int32](#int32) |  | Dynamic area id for which object will be visible. Set -1 to be visible for all. |
 | stream_distance | [float](#float) |  | Default streamer setting is 300.0 |
 | draw_distance | [float](#float) |  | Default streamer setting is 0.0 = default game draw distance |
 | priority | [int32](#int32) |  |  |
-
-
-
-
-
-
-<a name="mruv.objects.ObjectModel"></a>
-
-### ObjectModel
-SA-MP Object type data structure.
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| model | [uint32](#uint32) |  |  |
-| model_name | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| category | [string](#string) |  |  |
-| product_id | [uint32](#uint32) |  |  |
-| length | [double](#double) |  |  |
-| width | [double](#double) |  |  |
-| height | [double](#double) |  |  |
-| size | [double](#double) |  |  |
-| tags | [string](#string) | repeated |  |
-| has_collision | [bool](#bool) |  |  |
-| breaks_on_hit | [bool](#bool) |  |  |
-| has_animation | [bool](#bool) |  |  |
-| visible_by_time | [bool](#bool) |  |  |
-| visible_from | [uint32](#uint32) |  |  |
-| visible_to | [uint32](#uint32) |  |  |
-
-
-
-
-
-
-<a name="mruv.objects.UpdateObjectModelRequest"></a>
-
-### UpdateObjectModelRequest
-Request message for rpc `UpdateObjectModel`.
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| object_type | [ObjectModel](#mruv.objects.ObjectModel) |  |  |
-
-
-
-
-
-
-<a name="mruv.objects.UpdateObjectModelResponse"></a>
-
-### UpdateObjectModelResponse
-Response message for rpc `UpdateObjectModel`.
 
 
 
@@ -5312,10 +5345,6 @@ The MruV objects service provides procedures for game objects.
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| CreateObjectModel | [CreateObjectModelRequest](#mruv.objects.CreateObjectModelRequest) | [CreateObjectModelResponse](#mruv.objects.CreateObjectModelResponse) | Create an object model. |
-| GetObjectModel | [GetObjectModelRequest](#mruv.objects.GetObjectModelRequest) | [GetObjectModelResponse](#mruv.objects.GetObjectModelResponse) | Get an object model. |
-| UpdateObjectModel | [UpdateObjectModelRequest](#mruv.objects.UpdateObjectModelRequest) | [UpdateObjectModelResponse](#mruv.objects.UpdateObjectModelResponse) | Update an object model. |
-| DeleteObjectModel | [DeleteObjectModelRequest](#mruv.objects.DeleteObjectModelRequest) | [DeleteObjectModelResponse](#mruv.objects.DeleteObjectModelResponse) | Delete an object model. |
 | CreateObject | [CreateObjectRequest](#mruv.objects.CreateObjectRequest) | [CreateObjectResponse](#mruv.objects.CreateObjectResponse) | Create an object. |
 | GetObject | [GetObjectRequest](#mruv.objects.GetObjectRequest) | [GetObjectResponse](#mruv.objects.GetObjectResponse) | Get an object. |
 | UpdateObject | [UpdateObjectRequest](#mruv.objects.UpdateObjectRequest) | [UpdateObjectResponse](#mruv.objects.UpdateObjectResponse) | Update an object. |
