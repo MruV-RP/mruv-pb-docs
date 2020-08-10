@@ -3125,6 +3125,7 @@ Request message for rpc `CreateGate`.
 | ----- | ---- | ----- | ----------- |
 | name | [string](#string) |  |  |
 | gate_objects | [mruv.objects.MovableObject](#mruv.objects.MovableObject) | repeated | List of objects to move on gate close/open. Every object should have only 2 states: opened, closed. |
+| spot | [mruv.spots.Spot](#mruv.spots.Spot) |  | Gate spot. This spot define gate position. |
 
 
 
@@ -3211,6 +3212,15 @@ Response message for rpc `FindNearestGate`.
 
 
 
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  |  |
+| gate_objects | [mruv.objects.MovableObject](#mruv.objects.MovableObject) | repeated |  |
+| spot | [mruv.spots.Spot](#mruv.spots.Spot) |  |  |
+| opened | [bool](#bool) |  |  |
+| locked | [bool](#bool) |  |  |
+
+
 
 
 
@@ -3239,7 +3249,8 @@ Response message for rpc `GetGate`.
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | name | [string](#string) |  |  |
-| gate_objects | [mruv.objects.MovableObject](#mruv.objects.MovableObject) | repeated | List of objects to move on gate close/open. Every object should have only 2 states: opened, closed. |
+| gate_movable_objects | [uint32](#uint32) | repeated | List of objects to move on gate close/open. Every object should have only 2 states: opened, closed. |
+| spot | [mruv.spots.Spot](#mruv.spots.Spot) |  |  |
 | opened | [bool](#bool) |  |  |
 | locked | [bool](#bool) |  |  |
 
@@ -3333,6 +3344,8 @@ Request message for rpc `UpdateGate`.
 | ----- | ---- | ----- | ----------- |
 | id | [uint32](#uint32) |  |  |
 | name | [string](#string) |  |  |
+| spot_id | [uint32](#uint32) |  |  |
+| gate_movable_objects | [uint32](#uint32) | repeated |  |
 
 
 
@@ -5797,6 +5810,7 @@ Response message for rpc `GetPlot`.
 | name | [string](#string) |  |  |
 | description | [string](#string) |  |  |
 | points | [mruv.Position](#mruv.Position) | repeated |  |
+| area | [double](#double) |  |  |
 
 
 
