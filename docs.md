@@ -176,6 +176,8 @@
     - [EnterRequest](#mruv.entrances.EnterRequest)
     - [EnterResponse](#mruv.entrances.EnterResponse)
     - [Entrance](#mruv.entrances.Entrance)
+    - [ExitRequest](#mruv.entrances.ExitRequest)
+    - [ExitResponse](#mruv.entrances.ExitResponse)
     - [FindNearestEntranceRequest](#mruv.entrances.FindNearestEntranceRequest)
     - [FindNearestEntranceResponse](#mruv.entrances.FindNearestEntranceResponse)
     - [GetEntranceRequest](#mruv.entrances.GetEntranceRequest)
@@ -2564,6 +2566,31 @@ Response message for rpc `Enter`.
 
 
 
+<a name="mruv.entrances.ExitRequest"></a>
+
+### ExitRequest
+Request message for rpc `Exit`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.entrances.ExitResponse"></a>
+
+### ExitResponse
+Response message for rpc `Exit`.
+
+
+
+
+
+
 <a name="mruv.entrances.FindNearestEntranceRequest"></a>
 
 ### FindNearestEntranceRequest
@@ -2592,6 +2619,7 @@ Response message for rpc `FindNearestEntrance`.
 | ----- | ---- | ----- | ----------- |
 | id | [uint32](#uint32) |  |  |
 | distance | [float](#float) |  |  |
+| inside | [bool](#bool) |  | Is found entrance position is in spot (out spot otherwise) |
 
 
 
@@ -2727,7 +2755,8 @@ The MruV entrances service provides procedures for managing an entrances to esta
 | Lock | [LockRequest](#mruv.entrances.LockRequest) | [LockResponse](#mruv.entrances.LockResponse) | Lock entrance. |
 | Unlock | [UnlockRequest](#mruv.entrances.UnlockRequest) | [UnlockResponse](#mruv.entrances.UnlockResponse) | Unload entrance. |
 | FindNearestEntrance | [FindNearestEntranceRequest](#mruv.entrances.FindNearestEntranceRequest) | [FindNearestEntranceResponse](#mruv.entrances.FindNearestEntranceResponse) | Find gate that is closest to a specific position. |
-| Enter | [EnterRequest](#mruv.entrances.EnterRequest) | [EnterResponse](#mruv.entrances.EnterResponse) | Enter an entrance |
+| Enter | [EnterRequest](#mruv.entrances.EnterRequest) | [EnterResponse](#mruv.entrances.EnterResponse) | Enter an entrance (player teleport from in spot position to out spot position). |
+| Exit | [ExitRequest](#mruv.entrances.ExitRequest) | [ExitResponse](#mruv.entrances.ExitResponse) | Exit from entrance (player teleport from out spot position to in spot position). |
 
  
 
@@ -3249,7 +3278,7 @@ Response message for rpc `GetGate`.
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | name | [string](#string) |  |  |
-| gate_movable_objects | [uint32](#uint32) | repeated | List of objects to move on gate close/open. Every object should have only 2 states: opened, closed. |
+| movable_objects | [mruv.objects.MovableObject](#mruv.objects.MovableObject) | repeated | List of objects to move on gate close/open. Every object should have only 2 states: opened, closed. |
 | spot | [mruv.spots.Spot](#mruv.spots.Spot) |  |  |
 | opened | [bool](#bool) |  |  |
 | locked | [bool](#bool) |  |  |
