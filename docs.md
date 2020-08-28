@@ -406,16 +406,37 @@
   
 
 - [objects/objects.proto](#objects/objects.proto)
+    - [AddObjectMaterialRequest](#mruv.objects.AddObjectMaterialRequest)
+    - [AddObjectMaterialResponse](#mruv.objects.AddObjectMaterialResponse)
+    - [AddObjectMaterialTextRequest](#mruv.objects.AddObjectMaterialTextRequest)
+    - [AddObjectMaterialTextResponse](#mruv.objects.AddObjectMaterialTextResponse)
     - [CreateObjectRequest](#mruv.objects.CreateObjectRequest)
     - [CreateObjectResponse](#mruv.objects.CreateObjectResponse)
+    - [DeleteObjectMaterialRequest](#mruv.objects.DeleteObjectMaterialRequest)
+    - [DeleteObjectMaterialResponse](#mruv.objects.DeleteObjectMaterialResponse)
+    - [DeleteObjectMaterialTextRequest](#mruv.objects.DeleteObjectMaterialTextRequest)
+    - [DeleteObjectMaterialTextResponse](#mruv.objects.DeleteObjectMaterialTextResponse)
     - [DeleteObjectRequest](#mruv.objects.DeleteObjectRequest)
     - [DeleteObjectResponse](#mruv.objects.DeleteObjectResponse)
+    - [FetchAllRequest](#mruv.objects.FetchAllRequest)
+    - [FetchAllResponse](#mruv.objects.FetchAllResponse)
+    - [GetObjectMaterialTextsRequest](#mruv.objects.GetObjectMaterialTextsRequest)
+    - [GetObjectMaterialTextsResponse](#mruv.objects.GetObjectMaterialTextsResponse)
+    - [GetObjectMaterialTextsResponse.MaterialTextsEntry](#mruv.objects.GetObjectMaterialTextsResponse.MaterialTextsEntry)
+    - [GetObjectMaterialsRequest](#mruv.objects.GetObjectMaterialsRequest)
+    - [GetObjectMaterialsResponse](#mruv.objects.GetObjectMaterialsResponse)
+    - [GetObjectMaterialsResponse.MaterialsEntry](#mruv.objects.GetObjectMaterialsResponse.MaterialsEntry)
     - [GetObjectRequest](#mruv.objects.GetObjectRequest)
     - [GetObjectResponse](#mruv.objects.GetObjectResponse)
+    - [Material](#mruv.objects.Material)
+    - [MaterialText](#mruv.objects.MaterialText)
     - [Object](#mruv.objects.Object)
+    - [Object.MaterialTextsEntry](#mruv.objects.Object.MaterialTextsEntry)
+    - [Object.MaterialsEntry](#mruv.objects.Object.MaterialsEntry)
     - [UpdateObjectRequest](#mruv.objects.UpdateObjectRequest)
     - [UpdateObjectResponse](#mruv.objects.UpdateObjectResponse)
   
+    - [MaterialSize](#mruv.objects.MaterialSize)
   
   
     - [MruVObjectsService](#mruv.objects.MruVObjectsService)
@@ -5237,6 +5258,60 @@ The MruV objects service provides procedures for movable game objects.
 
 
 
+<a name="mruv.objects.AddObjectMaterialRequest"></a>
+
+### AddObjectMaterialRequest
+Request message for rpc `AddObjectMaterial`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| object_id | [uint32](#uint32) |  |  |
+| index | [uint32](#uint32) |  | The material index on the object to change (0 to 15) |
+| material | [Material](#mruv.objects.Material) |  |  |
+
+
+
+
+
+
+<a name="mruv.objects.AddObjectMaterialResponse"></a>
+
+### AddObjectMaterialResponse
+Response message for rpc `AddObjectMaterial`.
+
+
+
+
+
+
+<a name="mruv.objects.AddObjectMaterialTextRequest"></a>
+
+### AddObjectMaterialTextRequest
+Request message for rpc `AddObjectMaterialText`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| object_id | [uint32](#uint32) |  |  |
+| index | [uint32](#uint32) |  | The object&#39;s material index to replace with text (0 to 15). |
+| material_text | [MaterialText](#mruv.objects.MaterialText) |  |  |
+
+
+
+
+
+
+<a name="mruv.objects.AddObjectMaterialTextResponse"></a>
+
+### AddObjectMaterialTextResponse
+Response message for rpc `AddObjectMaterialText`.
+
+
+
+
+
+
 <a name="mruv.objects.CreateObjectRequest"></a>
 
 ### CreateObjectRequest
@@ -5267,6 +5342,58 @@ Response message for rpc `CreateObject`.
 
 
 
+<a name="mruv.objects.DeleteObjectMaterialRequest"></a>
+
+### DeleteObjectMaterialRequest
+Request message for rpc `DeleteObjectMaterial`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| object_id | [uint32](#uint32) |  |  |
+| index | [uint32](#uint32) |  | The material index on the object to delete (0 to 15). |
+
+
+
+
+
+
+<a name="mruv.objects.DeleteObjectMaterialResponse"></a>
+
+### DeleteObjectMaterialResponse
+Response message for rpc `DeleteObjectMaterial`.
+
+
+
+
+
+
+<a name="mruv.objects.DeleteObjectMaterialTextRequest"></a>
+
+### DeleteObjectMaterialTextRequest
+Request message for rpc `DeleteObjectMaterialText`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| object_id | [uint32](#uint32) |  |  |
+| index | [uint32](#uint32) |  | The object&#39;s material index to delete (0 to 15). |
+
+
+
+
+
+
+<a name="mruv.objects.DeleteObjectMaterialTextResponse"></a>
+
+### DeleteObjectMaterialTextResponse
+Response message for rpc `DeleteObjectMaterialText`.
+
+
+
+
+
+
 <a name="mruv.objects.DeleteObjectRequest"></a>
 
 ### DeleteObjectRequest
@@ -5286,6 +5413,123 @@ Request message for rpc `DeleteObject`.
 
 ### DeleteObjectResponse
 Response message for rpc `DeleteObject`.
+
+
+
+
+
+
+<a name="mruv.objects.FetchAllRequest"></a>
+
+### FetchAllRequest
+Request message for rpc `FetchAll`.
+
+
+
+
+
+
+<a name="mruv.objects.FetchAllResponse"></a>
+
+### FetchAllResponse
+Response message for rpc `FetchAll`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| objects | [Object](#mruv.objects.Object) | repeated |  |
+
+
+
+
+
+
+<a name="mruv.objects.GetObjectMaterialTextsRequest"></a>
+
+### GetObjectMaterialTextsRequest
+Request message for rpc `GetObjectMaterialTexts`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| object_id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.objects.GetObjectMaterialTextsResponse"></a>
+
+### GetObjectMaterialTextsResponse
+Response message for rpc `GetObjectMaterialTexts`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| material_texts | [GetObjectMaterialTextsResponse.MaterialTextsEntry](#mruv.objects.GetObjectMaterialTextsResponse.MaterialTextsEntry) | repeated | Map of material texts, key - material index (0-15). |
+
+
+
+
+
+
+<a name="mruv.objects.GetObjectMaterialTextsResponse.MaterialTextsEntry"></a>
+
+### GetObjectMaterialTextsResponse.MaterialTextsEntry
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [uint32](#uint32) |  |  |
+| value | [MaterialText](#mruv.objects.MaterialText) |  |  |
+
+
+
+
+
+
+<a name="mruv.objects.GetObjectMaterialsRequest"></a>
+
+### GetObjectMaterialsRequest
+Request message for rpc `GetObjectMaterials`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| object_id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.objects.GetObjectMaterialsResponse"></a>
+
+### GetObjectMaterialsResponse
+Response message for rpc `GetObjectMaterials`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| materials | [GetObjectMaterialsResponse.MaterialsEntry](#mruv.objects.GetObjectMaterialsResponse.MaterialsEntry) | repeated | Map of materials, key - material index (0-15) |
+
+
+
+
+
+
+<a name="mruv.objects.GetObjectMaterialsResponse.MaterialsEntry"></a>
+
+### GetObjectMaterialsResponse.MaterialsEntry
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [uint32](#uint32) |  |  |
+| value | [Material](#mruv.objects.Material) |  |  |
 
 
 
@@ -5322,6 +5566,46 @@ Response message for rpc `GetObject`.
 
 
 
+<a name="mruv.objects.Material"></a>
+
+### Material
+Replace the texture of an object with the texture from another model in the game.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| model_id | [int32](#int32) |  | The modelid on which the replacement texture is located. Use 0 for alpha. Use -1 to change the material color without altering the texture. |
+| txd_name | [string](#string) |  | The name of the txd file which contains the replacement texture (use &#34;none&#34; if not required) |
+| texture_name | [string](#string) |  | The name of the texture to use as the replacement (use &#34;none&#34; if not required) |
+| material_color | [int32](#int32) |  | The object color to set, as an integer or hex in ARGB color format. Using 0 keeps the existing material color. |
+
+
+
+
+
+
+<a name="mruv.objects.MaterialText"></a>
+
+### MaterialText
+Replace the texture of an object with text.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| text | [string](#string) |  | The text to show on the object (MAX 2048 characters). |
+| material_size | [MaterialSize](#mruv.objects.MaterialSize) |  | The size of the material (default: 256x128). |
+| font_face | [string](#string) |  | The font to use (default: Arial). |
+| font_size | [uint32](#uint32) |  | The size of the text (default: 24) (MAX 255). |
+| bold | [bool](#bool) |  | Bold text. Set to 1 for bold, 0 for not (default: 1). |
+| font_color | [int32](#int32) |  | The color of the text, in ARGB format (default: White). |
+| back_color | [int32](#int32) |  | The background color, in ARGB format (default: None (transparent)). |
+| text_alignment | [int32](#int32) |  | The alignment of the text (default: left). |
+
+
+
+
+
+
 <a name="mruv.objects.Object"></a>
 
 ### Object
@@ -5345,6 +5629,40 @@ SA-MP Dynamic object data structure.
 | draw_distance | [float](#float) |  | Default streamer setting is 0.0 = default game draw distance |
 | priority | [int32](#int32) |  |  |
 | estate_id | [uint32](#uint32) |  |  |
+| materials | [Object.MaterialsEntry](#mruv.objects.Object.MaterialsEntry) | repeated |  |
+| material_texts | [Object.MaterialTextsEntry](#mruv.objects.Object.MaterialTextsEntry) | repeated |  |
+
+
+
+
+
+
+<a name="mruv.objects.Object.MaterialTextsEntry"></a>
+
+### Object.MaterialTextsEntry
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [uint32](#uint32) |  |  |
+| value | [MaterialText](#mruv.objects.MaterialText) |  |  |
+
+
+
+
+
+
+<a name="mruv.objects.Object.MaterialsEntry"></a>
+
+### Object.MaterialsEntry
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [uint32](#uint32) |  |  |
+| value | [Material](#mruv.objects.Material) |  |  |
 
 
 
@@ -5378,6 +5696,31 @@ Response message for rpc `UpdateObject`.
 
  
 
+
+<a name="mruv.objects.MaterialSize"></a>
+
+### MaterialSize
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| OBJECT_MATERIAL_SIZE_0 | 0 |  |
+| OBJECT_MATERIAL_SIZE_32X32 | 10 |  |
+| OBJECT_MATERIAL_SIZE_64X32 | 20 |  |
+| OBJECT_MATERIAL_SIZE_64X64 | 30 |  |
+| OBJECT_MATERIAL_SIZE_128X32 | 40 |  |
+| OBJECT_MATERIAL_SIZE_128X64 | 50 |  |
+| OBJECT_MATERIAL_SIZE_128X128 | 60 |  |
+| OBJECT_MATERIAL_SIZE_256X32 | 70 |  |
+| OBJECT_MATERIAL_SIZE_256X64 | 80 |  |
+| OBJECT_MATERIAL_SIZE_256X128 | 90 |  |
+| OBJECT_MATERIAL_SIZE_256X256 | 100 |  |
+| OBJECT_MATERIAL_SIZE_512X64 | 110 |  |
+| OBJECT_MATERIAL_SIZE_512X128 | 120 |  |
+| OBJECT_MATERIAL_SIZE_512X256 | 130 |  |
+| OBJECT_MATERIAL_SIZE_512X512 | 140 |  |
+
+
  
 
  
@@ -5394,6 +5737,13 @@ The MruV objects service provides procedures for game objects.
 | GetObject | [GetObjectRequest](#mruv.objects.GetObjectRequest) | [GetObjectResponse](#mruv.objects.GetObjectResponse) | Get an object. |
 | UpdateObject | [UpdateObjectRequest](#mruv.objects.UpdateObjectRequest) | [UpdateObjectResponse](#mruv.objects.UpdateObjectResponse) | Update an object. |
 | DeleteObject | [DeleteObjectRequest](#mruv.objects.DeleteObjectRequest) | [DeleteObjectResponse](#mruv.objects.DeleteObjectResponse) | Delete an object. |
+| AddObjectMaterial | [AddObjectMaterialRequest](#mruv.objects.AddObjectMaterialRequest) | [AddObjectMaterialResponse](#mruv.objects.AddObjectMaterialResponse) | Add a material to existing object. |
+| GetObjectMaterials | [GetObjectMaterialsRequest](#mruv.objects.GetObjectMaterialsRequest) | [GetObjectMaterialsResponse](#mruv.objects.GetObjectMaterialsResponse) | Get all object materials. |
+| DeleteObjectMaterial | [DeleteObjectMaterialRequest](#mruv.objects.DeleteObjectMaterialRequest) | [DeleteObjectMaterialResponse](#mruv.objects.DeleteObjectMaterialResponse) | Delete a material assigned to an object. |
+| AddObjectMaterialText | [AddObjectMaterialTextRequest](#mruv.objects.AddObjectMaterialTextRequest) | [AddObjectMaterialTextResponse](#mruv.objects.AddObjectMaterialTextResponse) | Add a material text to existing object. |
+| GetObjectMaterialTexts | [GetObjectMaterialTextsRequest](#mruv.objects.GetObjectMaterialTextsRequest) | [GetObjectMaterialTextsResponse](#mruv.objects.GetObjectMaterialTextsResponse) | Get all object material texts. |
+| DeleteObjectMaterialText | [DeleteObjectMaterialTextRequest](#mruv.objects.DeleteObjectMaterialTextRequest) | [DeleteObjectMaterialTextResponse](#mruv.objects.DeleteObjectMaterialTextResponse) | Delete a material text assigned to an object. |
+| FetchAll | [FetchAllRequest](#mruv.objects.FetchAllRequest) | [FetchAllResponse](#mruv.objects.FetchAllResponse) | Fetch all existing objects. |
 
  
 
