@@ -5670,7 +5670,6 @@ Replace the texture of an object with the texture from another model in the game
 | txd_name | [string](#string) |  | The name of the txd file which contains the replacement texture (use &#34;none&#34; if not required) |
 | texture_name | [string](#string) |  | The name of the texture to use as the replacement (use &#34;none&#34; if not required) |
 | material_color | [int32](#int32) |  | The object color to set, as an integer or hex in ARGB color format. Using 0 keeps the existing material color. |
-| estate_id | [uint32](#uint32) |  | Estate to with removed object belong. |
 
 
 
@@ -5775,6 +5774,7 @@ Removes a standard San Andreas model for a single player within a specified rang
 | y | [float](#float) |  | The Y coordinate around which the objects will be removed. |
 | z | [float](#float) |  | The Z coordinate around which the objects will be removed. |
 | radius | [float](#float) |  | The radius around the specified point to remove objects with the specified model. |
+| estate_id | [uint32](#uint32) |  | Estate to with removed object belong. |
 
 
 
