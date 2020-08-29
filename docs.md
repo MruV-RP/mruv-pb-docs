@@ -410,6 +410,8 @@
     - [AddObjectMaterialResponse](#mruv.objects.AddObjectMaterialResponse)
     - [AddObjectMaterialTextRequest](#mruv.objects.AddObjectMaterialTextRequest)
     - [AddObjectMaterialTextResponse](#mruv.objects.AddObjectMaterialTextResponse)
+    - [AddRemoveBuildingRequest](#mruv.objects.AddRemoveBuildingRequest)
+    - [AddRemoveBuildingResponse](#mruv.objects.AddRemoveBuildingResponse)
     - [CreateObjectRequest](#mruv.objects.CreateObjectRequest)
     - [CreateObjectResponse](#mruv.objects.CreateObjectResponse)
     - [DeleteObjectMaterialRequest](#mruv.objects.DeleteObjectMaterialRequest)
@@ -418,6 +420,8 @@
     - [DeleteObjectMaterialTextResponse](#mruv.objects.DeleteObjectMaterialTextResponse)
     - [DeleteObjectRequest](#mruv.objects.DeleteObjectRequest)
     - [DeleteObjectResponse](#mruv.objects.DeleteObjectResponse)
+    - [DeleteRemoveBuildingRequest](#mruv.objects.DeleteRemoveBuildingRequest)
+    - [DeleteRemoveBuildingResponse](#mruv.objects.DeleteRemoveBuildingResponse)
     - [FetchAllRequest](#mruv.objects.FetchAllRequest)
     - [FetchAllResponse](#mruv.objects.FetchAllResponse)
     - [GetObjectMaterialTextsRequest](#mruv.objects.GetObjectMaterialTextsRequest)
@@ -428,11 +432,14 @@
     - [GetObjectMaterialsResponse.MaterialsEntry](#mruv.objects.GetObjectMaterialsResponse.MaterialsEntry)
     - [GetObjectRequest](#mruv.objects.GetObjectRequest)
     - [GetObjectResponse](#mruv.objects.GetObjectResponse)
+    - [GetRemovedBuildingsRequest](#mruv.objects.GetRemovedBuildingsRequest)
+    - [GetRemovedBuildingsResponse](#mruv.objects.GetRemovedBuildingsResponse)
     - [Material](#mruv.objects.Material)
     - [MaterialText](#mruv.objects.MaterialText)
     - [Object](#mruv.objects.Object)
     - [Object.MaterialTextsEntry](#mruv.objects.Object.MaterialTextsEntry)
     - [Object.MaterialsEntry](#mruv.objects.Object.MaterialsEntry)
+    - [RemovedBuilding](#mruv.objects.RemovedBuilding)
     - [UpdateObjectRequest](#mruv.objects.UpdateObjectRequest)
     - [UpdateObjectResponse](#mruv.objects.UpdateObjectResponse)
   
@@ -5312,6 +5319,36 @@ Response message for rpc `AddObjectMaterialText`.
 
 
 
+<a name="mruv.objects.AddRemoveBuildingRequest"></a>
+
+### AddRemoveBuildingRequest
+Request message for rpc `AddRemoveBuilding`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| removed_building | [RemovedBuilding](#mruv.objects.RemovedBuilding) |  |  |
+
+
+
+
+
+
+<a name="mruv.objects.AddRemoveBuildingResponse"></a>
+
+### AddRemoveBuildingResponse
+Response message for rpc `AddRemoveBuilding`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
 <a name="mruv.objects.CreateObjectRequest"></a>
 
 ### CreateObjectRequest
@@ -5413,6 +5450,31 @@ Request message for rpc `DeleteObject`.
 
 ### DeleteObjectResponse
 Response message for rpc `DeleteObject`.
+
+
+
+
+
+
+<a name="mruv.objects.DeleteRemoveBuildingRequest"></a>
+
+### DeleteRemoveBuildingRequest
+Request message for rpc `DeleteRemoveBuilding`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.objects.DeleteRemoveBuildingResponse"></a>
+
+### DeleteRemoveBuildingResponse
+Response message for rpc `DeleteRemoveBuilding`.
 
 
 
@@ -5566,6 +5628,36 @@ Response message for rpc `GetObject`.
 
 
 
+<a name="mruv.objects.GetRemovedBuildingsRequest"></a>
+
+### GetRemovedBuildingsRequest
+Request message for rpc `GetRemovedBuildings`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| estate_id | [uint32](#uint32) |  | optional filter for estate id |
+
+
+
+
+
+
+<a name="mruv.objects.GetRemovedBuildingsResponse"></a>
+
+### GetRemovedBuildingsResponse
+Response message for rpc `GetRemovedBuildings`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| removed_building | [RemovedBuilding](#mruv.objects.RemovedBuilding) | repeated |  |
+
+
+
+
+
+
 <a name="mruv.objects.Material"></a>
 
 ### Material
@@ -5578,6 +5670,7 @@ Replace the texture of an object with the texture from another model in the game
 | txd_name | [string](#string) |  | The name of the txd file which contains the replacement texture (use &#34;none&#34; if not required) |
 | texture_name | [string](#string) |  | The name of the texture to use as the replacement (use &#34;none&#34; if not required) |
 | material_color | [int32](#int32) |  | The object color to set, as an integer or hex in ARGB color format. Using 0 keeps the existing material color. |
+| estate_id | [uint32](#uint32) |  | Estate to with removed object belong. |
 
 
 
@@ -5669,6 +5762,25 @@ SA-MP Dynamic object data structure.
 
 
 
+<a name="mruv.objects.RemovedBuilding"></a>
+
+### RemovedBuilding
+Removes a standard San Andreas model for a single player within a specified range.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| model | [uint32](#uint32) |  | The model to remove. |
+| x | [float](#float) |  | The X coordinate around which the objects will be removed. |
+| y | [float](#float) |  | The Y coordinate around which the objects will be removed. |
+| z | [float](#float) |  | The Z coordinate around which the objects will be removed. |
+| radius | [float](#float) |  | The radius around the specified point to remove objects with the specified model. |
+
+
+
+
+
+
 <a name="mruv.objects.UpdateObjectRequest"></a>
 
 ### UpdateObjectRequest
@@ -5743,6 +5855,9 @@ The MruV objects service provides procedures for game objects.
 | AddObjectMaterialText | [AddObjectMaterialTextRequest](#mruv.objects.AddObjectMaterialTextRequest) | [AddObjectMaterialTextResponse](#mruv.objects.AddObjectMaterialTextResponse) | Add a material text to existing object. |
 | GetObjectMaterialTexts | [GetObjectMaterialTextsRequest](#mruv.objects.GetObjectMaterialTextsRequest) | [GetObjectMaterialTextsResponse](#mruv.objects.GetObjectMaterialTextsResponse) | Get all object material texts. |
 | DeleteObjectMaterialText | [DeleteObjectMaterialTextRequest](#mruv.objects.DeleteObjectMaterialTextRequest) | [DeleteObjectMaterialTextResponse](#mruv.objects.DeleteObjectMaterialTextResponse) | Delete a material text assigned to an object. |
+| AddRemoveBuilding | [AddRemoveBuildingRequest](#mruv.objects.AddRemoveBuildingRequest) | [AddRemoveBuildingResponse](#mruv.objects.AddRemoveBuildingResponse) | Removes a object from GTA SA map. |
+| GetRemovedBuildings | [GetRemovedBuildingsRequest](#mruv.objects.GetRemovedBuildingsRequest) | [GetRemovedBuildingsResponse](#mruv.objects.GetRemovedBuildingsResponse) | Get all removed objects. |
+| DeleteRemoveBuilding | [DeleteRemoveBuildingRequest](#mruv.objects.DeleteRemoveBuildingRequest) | [DeleteRemoveBuildingResponse](#mruv.objects.DeleteRemoveBuildingResponse) | Delete removed buildings. |
 | FetchAll | [FetchAllRequest](#mruv.objects.FetchAllRequest) | [FetchAllResponse](#mruv.objects.FetchAllResponse) | Fetch all existing objects. |
 
  
