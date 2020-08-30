@@ -424,6 +424,7 @@
     - [DeleteRemoveBuildingResponse](#mruv.objects.DeleteRemoveBuildingResponse)
     - [FetchAllRequest](#mruv.objects.FetchAllRequest)
     - [FetchAllResponse](#mruv.objects.FetchAllResponse)
+    - [FetchAllResponse.ObjectsEntry](#mruv.objects.FetchAllResponse.ObjectsEntry)
     - [GetObjectMaterialTextsRequest](#mruv.objects.GetObjectMaterialTextsRequest)
     - [GetObjectMaterialTextsResponse](#mruv.objects.GetObjectMaterialTextsResponse)
     - [GetObjectMaterialTextsResponse.MaterialTextsEntry](#mruv.objects.GetObjectMaterialTextsResponse.MaterialTextsEntry)
@@ -5487,6 +5488,11 @@ Response message for rpc `DeleteRemoveBuilding`.
 Request message for rpc `FetchAll`.
 
 
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| chunk_size | [uint32](#uint32) |  |  |
+
+
 
 
 
@@ -5499,7 +5505,23 @@ Response message for rpc `FetchAll`.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| objects | [Object](#mruv.objects.Object) | repeated |  |
+| objects | [FetchAllResponse.ObjectsEntry](#mruv.objects.FetchAllResponse.ObjectsEntry) | repeated |  |
+
+
+
+
+
+
+<a name="mruv.objects.FetchAllResponse.ObjectsEntry"></a>
+
+### FetchAllResponse.ObjectsEntry
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [int32](#int32) |  |  |
+| value | [Object](#mruv.objects.Object) |  |  |
 
 
 
@@ -5858,7 +5880,7 @@ The MruV objects service provides procedures for game objects.
 | AddRemoveBuilding | [AddRemoveBuildingRequest](#mruv.objects.AddRemoveBuildingRequest) | [AddRemoveBuildingResponse](#mruv.objects.AddRemoveBuildingResponse) | Removes a object from GTA SA map. |
 | GetRemovedBuildings | [GetRemovedBuildingsRequest](#mruv.objects.GetRemovedBuildingsRequest) | [GetRemovedBuildingsResponse](#mruv.objects.GetRemovedBuildingsResponse) | Get all removed objects. |
 | DeleteRemoveBuilding | [DeleteRemoveBuildingRequest](#mruv.objects.DeleteRemoveBuildingRequest) | [DeleteRemoveBuildingResponse](#mruv.objects.DeleteRemoveBuildingResponse) | Delete removed buildings. |
-| FetchAll | [FetchAllRequest](#mruv.objects.FetchAllRequest) | [FetchAllResponse](#mruv.objects.FetchAllResponse) | Fetch all existing objects. |
+| FetchAll | [FetchAllRequest](#mruv.objects.FetchAllRequest) | [FetchAllResponse](#mruv.objects.FetchAllResponse) stream | Fetch all existing objects. |
 
  
 
