@@ -178,6 +178,9 @@
     - [Entrance](#mruv.entrances.Entrance)
     - [ExitRequest](#mruv.entrances.ExitRequest)
     - [ExitResponse](#mruv.entrances.ExitResponse)
+    - [FetchAllEntrancesRequest](#mruv.entrances.FetchAllEntrancesRequest)
+    - [FetchAllEntrancesResponse](#mruv.entrances.FetchAllEntrancesResponse)
+    - [FetchAllEntrancesResponse.EntrancesEntry](#mruv.entrances.FetchAllEntrancesResponse.EntrancesEntry)
     - [FindNearestEntranceRequest](#mruv.entrances.FindNearestEntranceRequest)
     - [FindNearestEntranceResponse](#mruv.entrances.FindNearestEntranceResponse)
     - [GetEntranceRequest](#mruv.entrances.GetEntranceRequest)
@@ -204,6 +207,13 @@
     - [DeleteEstateRequest](#mruv.estates.DeleteEstateRequest)
     - [DeleteEstateResponse](#mruv.estates.DeleteEstateResponse)
     - [Estate](#mruv.estates.Estate)
+    - [FetchAllEstatesRequest](#mruv.estates.FetchAllEstatesRequest)
+    - [FetchAllEstatesResponse](#mruv.estates.FetchAllEstatesResponse)
+    - [FullEstate](#mruv.estates.FullEstate)
+    - [FullEstate.EntrancesEntry](#mruv.estates.FullEstate.EntrancesEntry)
+    - [FullEstate.GatesEntry](#mruv.estates.FullEstate.GatesEntry)
+    - [FullEstate.ObjectsEntry](#mruv.estates.FullEstate.ObjectsEntry)
+    - [FullEstate.RemovedBuildingsEntry](#mruv.estates.FullEstate.RemovedBuildingsEntry)
     - [GetEstateEntrancesRequest](#mruv.estates.GetEstateEntrancesRequest)
     - [GetEstateEntrancesResponse](#mruv.estates.GetEstateEntrancesResponse)
     - [GetEstateGatesRequest](#mruv.estates.GetEstateGatesRequest)
@@ -230,6 +240,9 @@
     - [CreateGateResponse](#mruv.gates.CreateGateResponse)
     - [DeleteGateRequest](#mruv.gates.DeleteGateRequest)
     - [DeleteGateResponse](#mruv.gates.DeleteGateResponse)
+    - [FetchAllGatesRequest](#mruv.gates.FetchAllGatesRequest)
+    - [FetchAllGatesResponse](#mruv.gates.FetchAllGatesResponse)
+    - [FetchAllGatesResponse.GatesEntry](#mruv.gates.FetchAllGatesResponse.GatesEntry)
     - [FindNearestGateRequest](#mruv.gates.FindNearestGateRequest)
     - [FindNearestGateResponse](#mruv.gates.FindNearestGateResponse)
     - [Gate](#mruv.gates.Gate)
@@ -371,6 +384,9 @@
     - [CreateObjectModelResponse](#mruv.objects.CreateObjectModelResponse)
     - [DeleteObjectModelRequest](#mruv.objects.DeleteObjectModelRequest)
     - [DeleteObjectModelResponse](#mruv.objects.DeleteObjectModelResponse)
+    - [FetchAllModelsRequest](#mruv.objects.FetchAllModelsRequest)
+    - [FetchAllModelsResponse](#mruv.objects.FetchAllModelsResponse)
+    - [FetchAllModelsResponse.ModelsEntry](#mruv.objects.FetchAllModelsResponse.ModelsEntry)
     - [GetObjectModelRequest](#mruv.objects.GetObjectModelRequest)
     - [GetObjectModelResponse](#mruv.objects.GetObjectModelResponse)
     - [ObjectModel](#mruv.objects.ObjectModel)
@@ -387,6 +403,9 @@
     - [CreateMovableObjectResponse](#mruv.objects.CreateMovableObjectResponse)
     - [DeleteMovableObjectRequest](#mruv.objects.DeleteMovableObjectRequest)
     - [DeleteMovableObjectResponse](#mruv.objects.DeleteMovableObjectResponse)
+    - [FetchAllMovableObjectsRequest](#mruv.objects.FetchAllMovableObjectsRequest)
+    - [FetchAllMovableObjectsResponse](#mruv.objects.FetchAllMovableObjectsResponse)
+    - [FetchAllMovableObjectsResponse.MovableObjectsEntry](#mruv.objects.FetchAllMovableObjectsResponse.MovableObjectsEntry)
     - [GetMovableObjectRequest](#mruv.objects.GetMovableObjectRequest)
     - [GetMovableObjectResponse](#mruv.objects.GetMovableObjectResponse)
     - [MovableObject](#mruv.objects.MovableObject)
@@ -422,9 +441,9 @@
     - [DeleteObjectResponse](#mruv.objects.DeleteObjectResponse)
     - [DeleteRemoveBuildingRequest](#mruv.objects.DeleteRemoveBuildingRequest)
     - [DeleteRemoveBuildingResponse](#mruv.objects.DeleteRemoveBuildingResponse)
-    - [FetchAllRequest](#mruv.objects.FetchAllRequest)
-    - [FetchAllResponse](#mruv.objects.FetchAllResponse)
-    - [FetchAllResponse.ObjectsEntry](#mruv.objects.FetchAllResponse.ObjectsEntry)
+    - [FetchAllObjectsRequest](#mruv.objects.FetchAllObjectsRequest)
+    - [FetchAllObjectsResponse](#mruv.objects.FetchAllObjectsResponse)
+    - [FetchAllObjectsResponse.ObjectsEntry](#mruv.objects.FetchAllObjectsResponse.ObjectsEntry)
     - [GetObjectMaterialTextsRequest](#mruv.objects.GetObjectMaterialTextsRequest)
     - [GetObjectMaterialTextsResponse](#mruv.objects.GetObjectMaterialTextsResponse)
     - [GetObjectMaterialTextsResponse.MaterialTextsEntry](#mruv.objects.GetObjectMaterialTextsResponse.MaterialTextsEntry)
@@ -494,6 +513,7 @@
     - [DeletePlotResponse](#mruv.plots.DeletePlotResponse)
     - [GetPlotRequest](#mruv.plots.GetPlotRequest)
     - [GetPlotResponse](#mruv.plots.GetPlotResponse)
+    - [Plot](#mruv.plots.Plot)
     - [UpdatePlotRequest](#mruv.plots.UpdatePlotRequest)
     - [UpdatePlotResponse](#mruv.plots.UpdatePlotResponse)
   
@@ -596,6 +616,9 @@
     - [CreateSpotResponse](#mruv.spots.CreateSpotResponse)
     - [DeleteSpotRequest](#mruv.spots.DeleteSpotRequest)
     - [DeleteSpotResponse](#mruv.spots.DeleteSpotResponse)
+    - [FetchAllSpotsRequest](#mruv.spots.FetchAllSpotsRequest)
+    - [FetchAllSpotsResponse](#mruv.spots.FetchAllSpotsResponse)
+    - [FetchAllSpotsResponse.SpotsEntry](#mruv.spots.FetchAllSpotsResponse.SpotsEntry)
     - [GetSpotRequest](#mruv.spots.GetSpotRequest)
     - [GetSpotResponse](#mruv.spots.GetSpotResponse)
     - [Spot](#mruv.spots.Spot)
@@ -2622,6 +2645,52 @@ Response message for rpc `Exit`.
 
 
 
+<a name="mruv.entrances.FetchAllEntrancesRequest"></a>
+
+### FetchAllEntrancesRequest
+Request message for rpc `FetchAllEntrances`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| chunk_size | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.entrances.FetchAllEntrancesResponse"></a>
+
+### FetchAllEntrancesResponse
+Response message for rpc `FetchAllEntrances`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| entrances | [FetchAllEntrancesResponse.EntrancesEntry](#mruv.entrances.FetchAllEntrancesResponse.EntrancesEntry) | repeated |  |
+
+
+
+
+
+
+<a name="mruv.entrances.FetchAllEntrancesResponse.EntrancesEntry"></a>
+
+### FetchAllEntrancesResponse.EntrancesEntry
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [uint32](#uint32) |  |  |
+| value | [Entrance](#mruv.entrances.Entrance) |  |  |
+
+
+
+
+
+
 <a name="mruv.entrances.FindNearestEntranceRequest"></a>
 
 ### FindNearestEntranceRequest
@@ -2788,6 +2857,7 @@ The MruV entrances service provides procedures for managing an entrances to esta
 | FindNearestEntrance | [FindNearestEntranceRequest](#mruv.entrances.FindNearestEntranceRequest) | [FindNearestEntranceResponse](#mruv.entrances.FindNearestEntranceResponse) | Find gate that is closest to a specific position. |
 | Enter | [EnterRequest](#mruv.entrances.EnterRequest) | [EnterResponse](#mruv.entrances.EnterResponse) | Enter an entrance (player teleport from in spot position to out spot position). |
 | Exit | [ExitRequest](#mruv.entrances.ExitRequest) | [ExitResponse](#mruv.entrances.ExitResponse) | Exit from entrance (player teleport from out spot position to in spot position). |
+| FetchAll | [FetchAllEntrancesRequest](#mruv.entrances.FetchAllEntrancesRequest) | [FetchAllEntrancesResponse](#mruv.entrances.FetchAllEntrancesResponse) stream |  |
 
  
 
@@ -2923,6 +2993,121 @@ Response message for rpc `DeleteEstate`.
 | gates | [uint32](#uint32) | repeated |  |
 | rooms | [uint32](#uint32) | repeated |  |
 | product_id | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.estates.FetchAllEstatesRequest"></a>
+
+### FetchAllEstatesRequest
+Request message for rpc `FetchAll`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| chunk_size | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.estates.FetchAllEstatesResponse"></a>
+
+### FetchAllEstatesResponse
+Response message for rpc `FetchAll`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| estates | [FullEstate](#mruv.estates.FullEstate) | repeated |  |
+
+
+
+
+
+
+<a name="mruv.estates.FullEstate"></a>
+
+### FullEstate
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [uint32](#uint32) |  |  |
+| name | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| objects | [FullEstate.ObjectsEntry](#mruv.estates.FullEstate.ObjectsEntry) | repeated |  |
+| removed_buildings | [FullEstate.RemovedBuildingsEntry](#mruv.estates.FullEstate.RemovedBuildingsEntry) | repeated |  |
+| entrances | [FullEstate.EntrancesEntry](#mruv.estates.FullEstate.EntrancesEntry) | repeated |  |
+| gates | [FullEstate.GatesEntry](#mruv.estates.FullEstate.GatesEntry) | repeated | TODO: map&lt;uint32, mruv.plots.Plot&gt; rooms = 8; |
+
+
+
+
+
+
+<a name="mruv.estates.FullEstate.EntrancesEntry"></a>
+
+### FullEstate.EntrancesEntry
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [uint32](#uint32) |  |  |
+| value | [mruv.entrances.Entrance](#mruv.entrances.Entrance) |  |  |
+
+
+
+
+
+
+<a name="mruv.estates.FullEstate.GatesEntry"></a>
+
+### FullEstate.GatesEntry
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [uint32](#uint32) |  |  |
+| value | [mruv.gates.Gate](#mruv.gates.Gate) |  |  |
+
+
+
+
+
+
+<a name="mruv.estates.FullEstate.ObjectsEntry"></a>
+
+### FullEstate.ObjectsEntry
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [uint32](#uint32) |  |  |
+| value | [mruv.objects.Object](#mruv.objects.Object) |  |  |
+
+
+
+
+
+
+<a name="mruv.estates.FullEstate.RemovedBuildingsEntry"></a>
+
+### FullEstate.RemovedBuildingsEntry
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [uint32](#uint32) |  |  |
+| value | [mruv.objects.RemovedBuilding](#mruv.objects.RemovedBuilding) |  |  |
 
 
 
@@ -3138,6 +3323,7 @@ The MruV estate service provides procedures for managing buildings and other est
 | AddEntrance | [AddEntranceRequest](#mruv.estates.AddEntranceRequest) | [AddEntranceResponse](#mruv.estates.AddEntranceResponse) | Add an entrance to estate. |
 | RemoveEntrance | [RemoveEntranceRequest](#mruv.estates.RemoveEntranceRequest) | [RemoveEntranceResponse](#mruv.estates.RemoveEntranceResponse) | Remove an entrance from estate. |
 | GetEstateEntrances | [GetEstateEntrancesRequest](#mruv.estates.GetEstateEntrancesRequest) | [GetEstateEntrancesResponse](#mruv.estates.GetEstateEntrancesResponse) | Get all estate entrances. |
+| FetchAll | [FetchAllEstatesRequest](#mruv.estates.FetchAllEstatesRequest) | [FetchAllEstatesResponse](#mruv.estates.FetchAllEstatesResponse) stream | Get full estates data |
 
  
 
@@ -3226,6 +3412,52 @@ Request message for rpc `DeleteGate`.
 
 ### DeleteGateResponse
 Response message for rpc `DeleteGate`.
+
+
+
+
+
+
+<a name="mruv.gates.FetchAllGatesRequest"></a>
+
+### FetchAllGatesRequest
+Request message for rpc `FetchAllGates`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| chunk_size | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.gates.FetchAllGatesResponse"></a>
+
+### FetchAllGatesResponse
+Response message for rpc `FetchAllGates`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| gates | [FetchAllGatesResponse.GatesEntry](#mruv.gates.FetchAllGatesResponse.GatesEntry) | repeated |  |
+
+
+
+
+
+
+<a name="mruv.gates.FetchAllGatesResponse.GatesEntry"></a>
+
+### FetchAllGatesResponse.GatesEntry
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [uint32](#uint32) |  |  |
+| value | [Gate](#mruv.gates.Gate) |  |  |
 
 
 
@@ -3444,6 +3676,7 @@ The MruV gates service provides procedures for managing gates and moving objects
 | Open | [OpenRequest](#mruv.gates.OpenRequest) | [OpenResponse](#mruv.gates.OpenResponse) | Opens a gate. |
 | Close | [CloseRequest](#mruv.gates.CloseRequest) | [CloseResponse](#mruv.gates.CloseResponse) | Close a gate. |
 | FindNearestGate | [FindNearestGateRequest](#mruv.gates.FindNearestGateRequest) | [FindNearestGateResponse](#mruv.gates.FindNearestGateResponse) | Find gate that is closest to a specific position. |
+| FetchAll | [FetchAllGatesRequest](#mruv.gates.FetchAllGatesRequest) | [FetchAllGatesResponse](#mruv.gates.FetchAllGatesResponse) stream |  |
 
  
 
@@ -4863,7 +5096,7 @@ Request message for rpc `DeleteObjectModel`.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| model | [uint32](#uint32) |  |  |
+| model | [int32](#int32) |  |  |
 
 
 
@@ -4880,6 +5113,52 @@ Response message for rpc `DeleteObjectModel`.
 
 
 
+<a name="mruv.objects.FetchAllModelsRequest"></a>
+
+### FetchAllModelsRequest
+Request message for rpc `FetchAll`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| chunk_size | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.objects.FetchAllModelsResponse"></a>
+
+### FetchAllModelsResponse
+Response message for rpc `FetchAll`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| models | [FetchAllModelsResponse.ModelsEntry](#mruv.objects.FetchAllModelsResponse.ModelsEntry) | repeated |  |
+
+
+
+
+
+
+<a name="mruv.objects.FetchAllModelsResponse.ModelsEntry"></a>
+
+### FetchAllModelsResponse.ModelsEntry
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [int32](#int32) |  |  |
+| value | [ObjectModel](#mruv.objects.ObjectModel) |  |  |
+
+
+
+
+
+
 <a name="mruv.objects.GetObjectModelRequest"></a>
 
 ### GetObjectModelRequest
@@ -4888,7 +5167,7 @@ Request message for rpc `GetObjectModel`.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| model | [uint32](#uint32) |  |  |
+| model | [int32](#int32) |  |  |
 
 
 
@@ -4918,7 +5197,7 @@ SA-MP Object type data structure.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| model | [uint32](#uint32) |  |  |
+| model | [int32](#int32) |  |  |
 | model_name | [string](#string) |  |  |
 | name | [string](#string) |  |  |
 | category | [string](#string) |  |  |
@@ -4981,6 +5260,7 @@ The MruV objects service provides procedures for game object models.
 | GetObjectModel | [GetObjectModelRequest](#mruv.objects.GetObjectModelRequest) | [GetObjectModelResponse](#mruv.objects.GetObjectModelResponse) | Get an object model. |
 | UpdateObjectModel | [UpdateObjectModelRequest](#mruv.objects.UpdateObjectModelRequest) | [UpdateObjectModelResponse](#mruv.objects.UpdateObjectModelResponse) | Update an object model. |
 | DeleteObjectModel | [DeleteObjectModelRequest](#mruv.objects.DeleteObjectModelRequest) | [DeleteObjectModelResponse](#mruv.objects.DeleteObjectModelResponse) | Delete an object model. |
+| FetchAll | [FetchAllModelsRequest](#mruv.objects.FetchAllModelsRequest) | [FetchAllModelsResponse](#mruv.objects.FetchAllModelsResponse) stream | Get all models. |
 
  
 
@@ -5043,6 +5323,52 @@ Request message for rpc `DeleteMovableObject`.
 
 ### DeleteMovableObjectResponse
 Response message for rpc `DeleteMovableObject`.
+
+
+
+
+
+
+<a name="mruv.objects.FetchAllMovableObjectsRequest"></a>
+
+### FetchAllMovableObjectsRequest
+Request message for rpc `FetchAllMovableObjects`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| chunk_size | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.objects.FetchAllMovableObjectsResponse"></a>
+
+### FetchAllMovableObjectsResponse
+Response message for rpc `FetchAllMovableObjects`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| movable_objects | [FetchAllMovableObjectsResponse.MovableObjectsEntry](#mruv.objects.FetchAllMovableObjectsResponse.MovableObjectsEntry) | repeated |  |
+
+
+
+
+
+
+<a name="mruv.objects.FetchAllMovableObjectsResponse.MovableObjectsEntry"></a>
+
+### FetchAllMovableObjectsResponse.MovableObjectsEntry
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [uint32](#uint32) |  |  |
+| value | [MovableObject](#mruv.objects.MovableObject) |  |  |
 
 
 
@@ -5254,6 +5580,7 @@ The MruV objects service provides procedures for movable game objects.
 | MoveObject | [MoveObjectRequest](#mruv.objects.MoveObjectRequest) | [MoveObjectResponse](#mruv.objects.MoveObjectResponse) | Move an object to other state. |
 | MoveObjectNext | [MoveObjectNextRequest](#mruv.objects.MoveObjectNextRequest) | [MoveObjectNextResponse](#mruv.objects.MoveObjectNextResponse) | Move an object to next state. |
 | MoveObjectPrevious | [MoveObjectPreviousRequest](#mruv.objects.MoveObjectPreviousRequest) | [MoveObjectPreviousResponse](#mruv.objects.MoveObjectPreviousResponse) | Move an object to previous state. |
+| FetchAll | [FetchAllMovableObjectsRequest](#mruv.objects.FetchAllMovableObjectsRequest) | [FetchAllMovableObjectsResponse](#mruv.objects.FetchAllMovableObjectsResponse) stream |  |
 
  
 
@@ -5482,39 +5809,40 @@ Response message for rpc `DeleteRemoveBuilding`.
 
 
 
-<a name="mruv.objects.FetchAllRequest"></a>
+<a name="mruv.objects.FetchAllObjectsRequest"></a>
 
-### FetchAllRequest
+### FetchAllObjectsRequest
 Request message for rpc `FetchAll`.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | chunk_size | [uint32](#uint32) |  |  |
+| estate_id | [uint32](#uint32) |  | optional filter for estate id |
 
 
 
 
 
 
-<a name="mruv.objects.FetchAllResponse"></a>
+<a name="mruv.objects.FetchAllObjectsResponse"></a>
 
-### FetchAllResponse
+### FetchAllObjectsResponse
 Response message for rpc `FetchAll`.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| objects | [FetchAllResponse.ObjectsEntry](#mruv.objects.FetchAllResponse.ObjectsEntry) | repeated |  |
+| objects | [FetchAllObjectsResponse.ObjectsEntry](#mruv.objects.FetchAllObjectsResponse.ObjectsEntry) | repeated |  |
 
 
 
 
 
 
-<a name="mruv.objects.FetchAllResponse.ObjectsEntry"></a>
+<a name="mruv.objects.FetchAllObjectsResponse.ObjectsEntry"></a>
 
-### FetchAllResponse.ObjectsEntry
+### FetchAllObjectsResponse.ObjectsEntry
 
 
 
@@ -5673,7 +6001,7 @@ Response message for rpc `GetRemovedBuildings`.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| removed_building | [RemovedBuilding](#mruv.objects.RemovedBuilding) | repeated |  |
+| removed_buildings | [RemovedBuilding](#mruv.objects.RemovedBuilding) | repeated |  |
 
 
 
@@ -5728,7 +6056,7 @@ SA-MP Dynamic object data structure.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| model | [uint32](#uint32) |  |  |
+| model | [int32](#int32) |  |  |
 | x | [float](#float) |  |  |
 | y | [float](#float) |  |  |
 | z | [float](#float) |  |  |
@@ -5880,7 +6208,7 @@ The MruV objects service provides procedures for game objects.
 | AddRemoveBuilding | [AddRemoveBuildingRequest](#mruv.objects.AddRemoveBuildingRequest) | [AddRemoveBuildingResponse](#mruv.objects.AddRemoveBuildingResponse) | Removes a object from GTA SA map. |
 | GetRemovedBuildings | [GetRemovedBuildingsRequest](#mruv.objects.GetRemovedBuildingsRequest) | [GetRemovedBuildingsResponse](#mruv.objects.GetRemovedBuildingsResponse) | Get all removed objects. |
 | DeleteRemoveBuilding | [DeleteRemoveBuildingRequest](#mruv.objects.DeleteRemoveBuildingRequest) | [DeleteRemoveBuildingResponse](#mruv.objects.DeleteRemoveBuildingResponse) | Delete removed buildings. |
-| FetchAll | [FetchAllRequest](#mruv.objects.FetchAllRequest) | [FetchAllResponse](#mruv.objects.FetchAllResponse) stream | Fetch all existing objects. |
+| FetchAll | [FetchAllObjectsRequest](#mruv.objects.FetchAllObjectsRequest) | [FetchAllObjectsResponse](#mruv.objects.FetchAllObjectsResponse) stream | Fetch all existing objects. |
 
  
 
@@ -6330,6 +6658,23 @@ Response message for rpc `GetPlot`.
 | description | [string](#string) |  |  |
 | points | [mruv.Position](#mruv.Position) | repeated |  |
 | area | [double](#double) |  |  |
+
+
+
+
+
+
+<a name="mruv.plots.Plot"></a>
+
+### Plot
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| points | [mruv.Position](#mruv.Position) | repeated |  |
 
 
 
@@ -7547,6 +7892,52 @@ Response message for rpc `DeleteSpot`.
 
 
 
+<a name="mruv.spots.FetchAllSpotsRequest"></a>
+
+### FetchAllSpotsRequest
+Request message for rpc `FetchAllSpots`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| chunk_size | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="mruv.spots.FetchAllSpotsResponse"></a>
+
+### FetchAllSpotsResponse
+Response message for rpc `FetchAllSpots`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| spots | [FetchAllSpotsResponse.SpotsEntry](#mruv.spots.FetchAllSpotsResponse.SpotsEntry) | repeated |  |
+
+
+
+
+
+
+<a name="mruv.spots.FetchAllSpotsResponse.SpotsEntry"></a>
+
+### FetchAllSpotsResponse.SpotsEntry
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [uint32](#uint32) |  |  |
+| value | [Spot](#mruv.spots.Spot) |  |  |
+
+
+
+
+
+
 <a name="mruv.spots.GetSpotRequest"></a>
 
 ### GetSpotRequest
@@ -7643,6 +8034,7 @@ The MruV spots service provides procedures for managing spots.
 | GetSpot | [GetSpotRequest](#mruv.spots.GetSpotRequest) | [GetSpotResponse](#mruv.spots.GetSpotResponse) | Get a spot. |
 | UpdateSpot | [UpdateSpotRequest](#mruv.spots.UpdateSpotRequest) | [UpdateSpotResponse](#mruv.spots.UpdateSpotResponse) | Update a spot. |
 | DeleteSpot | [DeleteSpotRequest](#mruv.spots.DeleteSpotRequest) | [DeleteSpotResponse](#mruv.spots.DeleteSpotResponse) | Delete a spot. |
+| FetchAll | [FetchAllSpotsRequest](#mruv.spots.FetchAllSpotsRequest) | [FetchAllSpotsResponse](#mruv.spots.FetchAllSpotsResponse) stream | Fetch all spots. |
 
  
 
