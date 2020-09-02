@@ -5260,7 +5260,7 @@ The MruV objects service provides procedures for game object models.
 | GetObjectModel | [GetObjectModelRequest](#mruv.objects.GetObjectModelRequest) | [GetObjectModelResponse](#mruv.objects.GetObjectModelResponse) | Get an object model. |
 | UpdateObjectModel | [UpdateObjectModelRequest](#mruv.objects.UpdateObjectModelRequest) | [UpdateObjectModelResponse](#mruv.objects.UpdateObjectModelResponse) | Update an object model. |
 | DeleteObjectModel | [DeleteObjectModelRequest](#mruv.objects.DeleteObjectModelRequest) | [DeleteObjectModelResponse](#mruv.objects.DeleteObjectModelResponse) | Delete an object model. |
-| FetchAll | [FetchAllModelsRequest](#mruv.objects.FetchAllModelsRequest) | [FetchAllModelsResponse](#mruv.objects.FetchAllModelsResponse) stream | Get all models. |
+| FetchAllModels | [FetchAllModelsRequest](#mruv.objects.FetchAllModelsRequest) | [FetchAllModelsResponse](#mruv.objects.FetchAllModelsResponse) stream | Get all models. |
 
  
 
@@ -5580,7 +5580,7 @@ The MruV objects service provides procedures for movable game objects.
 | MoveObject | [MoveObjectRequest](#mruv.objects.MoveObjectRequest) | [MoveObjectResponse](#mruv.objects.MoveObjectResponse) | Move an object to other state. |
 | MoveObjectNext | [MoveObjectNextRequest](#mruv.objects.MoveObjectNextRequest) | [MoveObjectNextResponse](#mruv.objects.MoveObjectNextResponse) | Move an object to next state. |
 | MoveObjectPrevious | [MoveObjectPreviousRequest](#mruv.objects.MoveObjectPreviousRequest) | [MoveObjectPreviousResponse](#mruv.objects.MoveObjectPreviousResponse) | Move an object to previous state. |
-| FetchAll | [FetchAllMovableObjectsRequest](#mruv.objects.FetchAllMovableObjectsRequest) | [FetchAllMovableObjectsResponse](#mruv.objects.FetchAllMovableObjectsResponse) stream |  |
+| FetchAllMovableObjects | [FetchAllMovableObjectsRequest](#mruv.objects.FetchAllMovableObjectsRequest) | [FetchAllMovableObjectsResponse](#mruv.objects.FetchAllMovableObjectsResponse) stream |  |
 
  
 
@@ -6208,7 +6208,7 @@ The MruV objects service provides procedures for game objects.
 | AddRemoveBuilding | [AddRemoveBuildingRequest](#mruv.objects.AddRemoveBuildingRequest) | [AddRemoveBuildingResponse](#mruv.objects.AddRemoveBuildingResponse) | Removes a object from GTA SA map. |
 | GetRemovedBuildings | [GetRemovedBuildingsRequest](#mruv.objects.GetRemovedBuildingsRequest) | [GetRemovedBuildingsResponse](#mruv.objects.GetRemovedBuildingsResponse) | Get all removed objects. |
 | DeleteRemoveBuilding | [DeleteRemoveBuildingRequest](#mruv.objects.DeleteRemoveBuildingRequest) | [DeleteRemoveBuildingResponse](#mruv.objects.DeleteRemoveBuildingResponse) | Delete removed buildings. |
-| FetchAll | [FetchAllObjectsRequest](#mruv.objects.FetchAllObjectsRequest) | [FetchAllObjectsResponse](#mruv.objects.FetchAllObjectsResponse) stream | Fetch all existing objects. |
+| FetchAllObjects | [FetchAllObjectsRequest](#mruv.objects.FetchAllObjectsRequest) | [FetchAllObjectsResponse](#mruv.objects.FetchAllObjectsResponse) stream | Fetch all existing objects. |
 
  
 
