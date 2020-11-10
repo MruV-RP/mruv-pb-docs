@@ -15,11 +15,8 @@
     - [RegisterAccountRequest](#mruv.RegisterAccountRequest)
     - [RegisterAccountResponse](#mruv.RegisterAccountResponse)
   
-  
-  
     - [MruVAccountsService](#mruv.MruVAccountsService)
   
-
 - [business/business.proto](#business/business.proto)
     - [AssignEstateRequest](#mruv.business.AssignEstateRequest)
     - [AssignEstateResponse](#mruv.business.AssignEstateResponse)
@@ -45,10 +42,8 @@
   
     - [OwnerType](#mruv.business.OwnerType)
   
-  
     - [MruVBusinessService](#mruv.business.MruVBusinessService)
   
-
 - [characters/characters.proto](#characters/characters.proto)
     - [ChangeClothesRequest](#mruv.ChangeClothesRequest)
     - [ChangeClothesResponse](#mruv.ChangeClothesResponse)
@@ -67,28 +62,18 @@
   
     - [DeathType](#mruv.DeathType)
   
-  
     - [MruVCharactersService](#mruv.MruVCharactersService)
   
-
 - [common/health.proto](#common/health.proto)
     - [ServiceStatusRequest](#mruv.ServiceStatusRequest)
     - [ServiceStatusResponse](#mruv.ServiceStatusResponse)
     - [VersionRequest](#mruv.VersionRequest)
     - [VersionResponse](#mruv.VersionResponse)
   
-  
-  
-  
-
 - [common/spatial.proto](#common/spatial.proto)
     - [Position](#mruv.Position)
     - [Rotation](#mruv.Rotation)
   
-  
-  
-  
-
 - [devtools/devtools.proto](#devtools/devtools.proto)
     - [DeletePositionRequest](#mruv.devtools.DeletePositionRequest)
     - [DeletePositionResponse](#mruv.devtools.DeletePositionResponse)
@@ -110,21 +95,14 @@
     - [SavePositionRequest](#mruv.devtools.SavePositionRequest)
     - [SavePositionResponse](#mruv.devtools.SavePositionResponse)
   
-  
-  
     - [MruVDevToolsService](#mruv.devtools.MruVDevToolsService)
   
-
 - [devtools/devtools_model.proto](#devtools/devtools_model.proto)
     - [Animation](#mruv.devtools.Animation)
     - [Outfit](#mruv.devtools.Outfit)
     - [Player](#mruv.devtools.Player)
     - [Position](#mruv.devtools.Position)
   
-  
-  
-  
-
 - [economy/economy.proto](#economy/economy.proto)
     - [BuyProductRequest](#mruv.economy.BuyProductRequest)
     - [BuyProductResponse](#mruv.economy.BuyProductResponse)
@@ -147,10 +125,8 @@
   
     - [WatchProductResponse.ProductEvent](#mruv.economy.WatchProductResponse.ProductEvent)
   
-  
     - [MruVEconomyService](#mruv.economy.MruVEconomyService)
   
-
 - [elevators/elevators.proto](#elevators/elevators.proto)
     - [CreateElevatorRequest](#mruv.elevators.CreateElevatorRequest)
     - [CreateElevatorResponse](#mruv.elevators.CreateElevatorResponse)
@@ -163,11 +139,8 @@
     - [UpdateElevatorRequest](#mruv.elevators.UpdateElevatorRequest)
     - [UpdateElevatorResponse](#mruv.elevators.UpdateElevatorResponse)
   
-  
-  
     - [MruVElevatorsService](#mruv.elevators.MruVElevatorsService)
   
-
 - [entrances/entrances.proto](#entrances/entrances.proto)
     - [CreateEntranceRequest](#mruv.entrances.CreateEntranceRequest)
     - [CreateEntranceResponse](#mruv.entrances.CreateEntranceResponse)
@@ -192,11 +165,8 @@
     - [UpdateEntranceRequest](#mruv.entrances.UpdateEntranceRequest)
     - [UpdateEntranceResponse](#mruv.entrances.UpdateEntranceResponse)
   
-  
-  
     - [MruVEntrancesService](#mruv.entrances.MruVEntrancesService)
   
-
 - [estates/estates.proto](#estates/estates.proto)
     - [AddEntranceRequest](#mruv.estates.AddEntranceRequest)
     - [AddEntranceResponse](#mruv.estates.AddEntranceResponse)
@@ -228,11 +198,8 @@
     - [UpdateEstateRequest](#mruv.estates.UpdateEstateRequest)
     - [UpdateEstateResponse](#mruv.estates.UpdateEstateResponse)
   
-  
-  
     - [MruVEstateService](#mruv.estates.MruVEstateService)
   
-
 - [gates/gates.proto](#gates/gates.proto)
     - [CloseRequest](#mruv.gates.CloseRequest)
     - [CloseResponse](#mruv.gates.CloseResponse)
@@ -257,11 +224,8 @@
     - [UpdateGateRequest](#mruv.gates.UpdateGateRequest)
     - [UpdateGateResponse](#mruv.gates.UpdateGateResponse)
   
-  
-  
     - [MruVGatesService](#mruv.gates.MruVGatesService)
   
-
 - [groups/groups.proto](#groups/groups.proto)
     - [AddMemberRequest](#mruv.AddMemberRequest)
     - [AddMemberResponse](#mruv.AddMemberResponse)
@@ -303,10 +267,8 @@
     - [MemberType](#mruv.MemberType)
     - [OwnerType](#mruv.OwnerType)
   
-  
     - [MruVGroupsService](#mruv.MruVGroupsService)
   
-
 - [houses/houses.proto](#houses/houses.proto)
     - [CreateHouseRequest](#mruv.houses.CreateHouseRequest)
     - [CreateHouseResponse](#mruv.houses.CreateHouseResponse)
@@ -317,11 +279,8 @@
     - [UpdateHouseRequest](#mruv.houses.UpdateHouseRequest)
     - [UpdateHouseResponse](#mruv.houses.UpdateHouseResponse)
   
-  
-  
     - [MruVHousesService](#mruv.houses.MruVHousesService)
   
-
 - [items/items.proto](#items/items.proto)
     - [GetContainerItemsRequest](#mruv.GetContainerItemsRequest)
     - [GetContainerItemsResponse](#mruv.GetContainerItemsResponse)
@@ -343,11 +302,8 @@
     - [UseItemRequest](#mruv.UseItemRequest)
     - [UseItemResponse](#mruv.UseItemResponse)
   
-  
-  
     - [MruVItemService](#mruv.MruVItemService)
   
-
 - [items/items_model.proto](#items/items_model.proto)
     - [Container](#mruv.Container)
     - [ContainerID](#mruv.ContainerID)
@@ -361,9 +317,6 @@
   
     - [SortingMode](#mruv.SortingMode)
   
-  
-  
-
 - [jobs/jobs.proto](#jobs/jobs.proto)
     - [CreateJobRequest](#mruv.jobs.CreateJobRequest)
     - [CreateJobResponse](#mruv.jobs.CreateJobResponse)
@@ -374,11 +327,8 @@
     - [UpdateJobRequest](#mruv.jobs.UpdateJobRequest)
     - [UpdateJobResponse](#mruv.jobs.UpdateJobResponse)
   
-  
-  
     - [MruVJobsService](#mruv.jobs.MruVJobsService)
   
-
 - [objects/models.proto](#objects/models.proto)
     - [CreateObjectModelRequest](#mruv.objects.CreateObjectModelRequest)
     - [CreateObjectModelResponse](#mruv.objects.CreateObjectModelResponse)
@@ -393,11 +343,8 @@
     - [UpdateObjectModelRequest](#mruv.objects.UpdateObjectModelRequest)
     - [UpdateObjectModelResponse](#mruv.objects.UpdateObjectModelResponse)
   
-  
-  
     - [MruVObjectModelsService](#mruv.objects.MruVObjectModelsService)
   
-
 - [objects/movable.proto](#objects/movable.proto)
     - [CreateMovableObjectRequest](#mruv.objects.CreateMovableObjectRequest)
     - [CreateMovableObjectResponse](#mruv.objects.CreateMovableObjectResponse)
@@ -419,11 +366,8 @@
     - [UpdateMovableObjectRequest](#mruv.objects.UpdateMovableObjectRequest)
     - [UpdateMovableObjectResponse](#mruv.objects.UpdateMovableObjectResponse)
   
-  
-  
     - [MruVMovableObjectsService](#mruv.objects.MruVMovableObjectsService)
   
-
 - [objects/objects.proto](#objects/objects.proto)
     - [AddObjectMaterialRequest](#mruv.objects.AddObjectMaterialRequest)
     - [AddObjectMaterialResponse](#mruv.objects.AddObjectMaterialResponse)
@@ -465,10 +409,8 @@
   
     - [MaterialSize](#mruv.objects.MaterialSize)
   
-  
     - [MruVObjectsService](#mruv.objects.MruVObjectsService)
   
-
 - [offers/offers.proto](#offers/offers.proto)
     - [AcceptOfferRequest](#mruv.offers.AcceptOfferRequest)
     - [AcceptOfferResponse](#mruv.offers.AcceptOfferResponse)
@@ -483,10 +425,8 @@
   
     - [OfferType](#mruv.offers.OfferType)
   
-  
     - [MruVOffersService](#mruv.offers.MruVOffersService)
   
-
 - [organizations/organizations.proto](#organizations/organizations.proto)
     - [AssignLeaderRequest](#mruv.organizations.AssignLeaderRequest)
     - [AssignLeaderResponse](#mruv.organizations.AssignLeaderResponse)
@@ -501,11 +441,8 @@
     - [UpdateOrganizationRequest](#mruv.organizations.UpdateOrganizationRequest)
     - [UpdateOrganizationResponse](#mruv.organizations.UpdateOrganizationResponse)
   
-  
-  
     - [MruVOrganizationsService](#mruv.organizations.MruVOrganizationsService)
   
-
 - [plots/plots.proto](#plots/plots.proto)
     - [CreatePlotRequest](#mruv.plots.CreatePlotRequest)
     - [CreatePlotResponse](#mruv.plots.CreatePlotResponse)
@@ -517,11 +454,8 @@
     - [UpdatePlotRequest](#mruv.plots.UpdatePlotRequest)
     - [UpdatePlotResponse](#mruv.plots.UpdatePlotResponse)
   
-  
-  
     - [MruVPlotsService](#mruv.plots.MruVPlotsService)
   
-
 - [punishments/punishments.proto](#punishments/punishments.proto)
     - [AdminJailMessage](#mruv.punishments.AdminJailMessage)
     - [AdminJailRequest](#mruv.punishments.AdminJailRequest)
@@ -584,10 +518,8 @@
     - [AcquittalsType](#mruv.punishments.AcquittalsType)
     - [PunishmentType](#mruv.punishments.PunishmentType)
   
-  
     - [MruVPunishmentsService](#mruv.punishments.MruVPunishmentsService)
   
-
 - [server/server.proto](#server/server.proto)
     - [GetRegisteredServersRequest](#mruv.server.GetRegisteredServersRequest)
     - [GetRegisteredServersResponse](#mruv.server.GetRegisteredServersResponse)
@@ -598,19 +530,14 @@
   
     - [ServerEvent.ServerEventType](#mruv.server.ServerEvent.ServerEventType)
   
-  
     - [MruVServerService](#mruv.server.MruVServerService)
   
-
 - [server/server_model.proto](#server/server_model.proto)
     - [ServerID](#mruv.server.ServerID)
     - [ServerInfo](#mruv.server.ServerInfo)
   
     - [ServerStatus](#mruv.server.ServerStatus)
   
-  
-  
-
 - [spots/spots.proto](#spots/spots.proto)
     - [CreateSpotRequest](#mruv.spots.CreateSpotRequest)
     - [CreateSpotResponse](#mruv.spots.CreateSpotResponse)
@@ -625,11 +552,8 @@
     - [UpdateSpotRequest](#mruv.spots.UpdateSpotRequest)
     - [UpdateSpotResponse](#mruv.spots.UpdateSpotResponse)
   
-  
-  
     - [MruVSpotsService](#mruv.spots.MruVSpotsService)
   
-
 - [texturestudio/texturestudio_manage.proto](#texturestudio/texturestudio_manage.proto)
     - [CreateServerRequest](#texture_studio.CreateServerRequest)
     - [CreateServerResponse](#texture_studio.CreateServerResponse)
@@ -642,11 +566,8 @@
     - [TransferOwnershipRequest](#texture_studio.TransferOwnershipRequest)
     - [TransferOwnershipResponse](#texture_studio.TransferOwnershipResponse)
   
-  
-  
     - [TextureStudioManagerService](#texture_studio.TextureStudioManagerService)
   
-
 - [texturestudio/texturestudio_server.proto](#texturestudio/texturestudio_server.proto)
     - [GetProjectRequest](#texture_studio.GetProjectRequest)
     - [GetProjectResponse](#texture_studio.GetProjectResponse)
@@ -667,10 +588,8 @@
   
     - [ServerStatus](#texture_studio.ServerStatus)
   
-  
     - [TextureStudioServerService](#texture_studio.TextureStudioServerService)
   
-
 - [vehicles/vehicles.proto](#vehicles/vehicles.proto)
     - [CreateVehicleRequest](#mruv.vehicles.CreateVehicleRequest)
     - [CreateVehicleResponse](#mruv.vehicles.CreateVehicleResponse)
@@ -681,11 +600,8 @@
     - [UpdateVehicleRequest](#mruv.vehicles.UpdateVehicleRequest)
     - [UpdateVehicleResponse](#mruv.vehicles.UpdateVehicleResponse)
   
-  
-  
     - [MruVVehiclesService](#mruv.vehicles.MruVVehiclesService)
   
-
 - [Scalar Value Types](#scalar-value-types)
 
 
@@ -8599,21 +8515,21 @@ The MruV vehicles service provides procedures for managing vehicles.
 
 ## Scalar Value Types
 
-| .proto Type | Notes | C++ Type | Java Type | Python Type |
-| ----------- | ----- | -------- | --------- | ----------- |
-| <a name="double" /> double |  | double | double | float |
-| <a name="float" /> float |  | float | float | float |
-| <a name="int32" /> int32 | Uses variable-length encoding. Inefficient for encoding negative numbers – if your field is likely to have negative values, use sint32 instead. | int32 | int | int |
-| <a name="int64" /> int64 | Uses variable-length encoding. Inefficient for encoding negative numbers – if your field is likely to have negative values, use sint64 instead. | int64 | long | int/long |
-| <a name="uint32" /> uint32 | Uses variable-length encoding. | uint32 | int | int/long |
-| <a name="uint64" /> uint64 | Uses variable-length encoding. | uint64 | long | int/long |
-| <a name="sint32" /> sint32 | Uses variable-length encoding. Signed int value. These more efficiently encode negative numbers than regular int32s. | int32 | int | int |
-| <a name="sint64" /> sint64 | Uses variable-length encoding. Signed int value. These more efficiently encode negative numbers than regular int64s. | int64 | long | int/long |
-| <a name="fixed32" /> fixed32 | Always four bytes. More efficient than uint32 if values are often greater than 2^28. | uint32 | int | int |
-| <a name="fixed64" /> fixed64 | Always eight bytes. More efficient than uint64 if values are often greater than 2^56. | uint64 | long | int/long |
-| <a name="sfixed32" /> sfixed32 | Always four bytes. | int32 | int | int |
-| <a name="sfixed64" /> sfixed64 | Always eight bytes. | int64 | long | int/long |
-| <a name="bool" /> bool |  | bool | boolean | boolean |
-| <a name="string" /> string | A string must always contain UTF-8 encoded or 7-bit ASCII text. | string | String | str/unicode |
-| <a name="bytes" /> bytes | May contain any arbitrary sequence of bytes. | string | ByteString | str |
+| .proto Type | Notes | C++ | Java | Python | Go | C# | PHP | Ruby |
+| ----------- | ----- | --- | ---- | ------ | -- | -- | --- | ---- |
+| <a name="double" /> double |  | double | double | float | float64 | double | float | Float |
+| <a name="float" /> float |  | float | float | float | float32 | float | float | Float |
+| <a name="int32" /> int32 | Uses variable-length encoding. Inefficient for encoding negative numbers – if your field is likely to have negative values, use sint32 instead. | int32 | int | int | int32 | int | integer | Bignum or Fixnum (as required) |
+| <a name="int64" /> int64 | Uses variable-length encoding. Inefficient for encoding negative numbers – if your field is likely to have negative values, use sint64 instead. | int64 | long | int/long | int64 | long | integer/string | Bignum |
+| <a name="uint32" /> uint32 | Uses variable-length encoding. | uint32 | int | int/long | uint32 | uint | integer | Bignum or Fixnum (as required) |
+| <a name="uint64" /> uint64 | Uses variable-length encoding. | uint64 | long | int/long | uint64 | ulong | integer/string | Bignum or Fixnum (as required) |
+| <a name="sint32" /> sint32 | Uses variable-length encoding. Signed int value. These more efficiently encode negative numbers than regular int32s. | int32 | int | int | int32 | int | integer | Bignum or Fixnum (as required) |
+| <a name="sint64" /> sint64 | Uses variable-length encoding. Signed int value. These more efficiently encode negative numbers than regular int64s. | int64 | long | int/long | int64 | long | integer/string | Bignum |
+| <a name="fixed32" /> fixed32 | Always four bytes. More efficient than uint32 if values are often greater than 2^28. | uint32 | int | int | uint32 | uint | integer | Bignum or Fixnum (as required) |
+| <a name="fixed64" /> fixed64 | Always eight bytes. More efficient than uint64 if values are often greater than 2^56. | uint64 | long | int/long | uint64 | ulong | integer/string | Bignum |
+| <a name="sfixed32" /> sfixed32 | Always four bytes. | int32 | int | int | int32 | int | integer | Bignum or Fixnum (as required) |
+| <a name="sfixed64" /> sfixed64 | Always eight bytes. | int64 | long | int/long | int64 | long | integer/string | Bignum |
+| <a name="bool" /> bool |  | bool | boolean | boolean | bool | bool | boolean | TrueClass/FalseClass |
+| <a name="string" /> string | A string must always contain UTF-8 encoded or 7-bit ASCII text. | string | String | str/unicode | string | string | string | String (UTF-8) |
+| <a name="bytes" /> bytes | May contain any arbitrary sequence of bytes. | string | ByteString | str | []byte | ByteString | string | String (ASCII-8BIT) |
 
