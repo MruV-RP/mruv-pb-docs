@@ -4,18 +4,18 @@
 ## Table of Contents
 
 - [accounts/accounts.proto](#accounts/accounts.proto)
-    - [GetAccountCharactersRequest](#mruv.GetAccountCharactersRequest)
-    - [GetAccountCharactersResponse](#mruv.GetAccountCharactersResponse)
-    - [GetAccountRequest](#mruv.GetAccountRequest)
-    - [GetAccountResponse](#mruv.GetAccountResponse)
-    - [IsAccountExistRequest](#mruv.IsAccountExistRequest)
-    - [IsAccountExistResponse](#mruv.IsAccountExistResponse)
-    - [LogInRequest](#mruv.LogInRequest)
-    - [LogInResponse](#mruv.LogInResponse)
-    - [RegisterAccountRequest](#mruv.RegisterAccountRequest)
-    - [RegisterAccountResponse](#mruv.RegisterAccountResponse)
+    - [GetAccountCharactersRequest](#mruv.accounts.GetAccountCharactersRequest)
+    - [GetAccountCharactersResponse](#mruv.accounts.GetAccountCharactersResponse)
+    - [GetAccountRequest](#mruv.accounts.GetAccountRequest)
+    - [GetAccountResponse](#mruv.accounts.GetAccountResponse)
+    - [IsAccountExistRequest](#mruv.accounts.IsAccountExistRequest)
+    - [IsAccountExistResponse](#mruv.accounts.IsAccountExistResponse)
+    - [LogInRequest](#mruv.accounts.LogInRequest)
+    - [LogInResponse](#mruv.accounts.LogInResponse)
+    - [RegisterAccountRequest](#mruv.accounts.RegisterAccountRequest)
+    - [RegisterAccountResponse](#mruv.accounts.RegisterAccountResponse)
   
-    - [MruVAccountsService](#mruv.MruVAccountsService)
+    - [MruVAccountsService](#mruv.accounts.MruVAccountsService)
   
 - [business/business.proto](#business/business.proto)
     - [AssignEstateRequest](#mruv.business.AssignEstateRequest)
@@ -45,34 +45,34 @@
     - [MruVBusinessService](#mruv.business.MruVBusinessService)
   
 - [characters/characters.proto](#characters/characters.proto)
-    - [ChangeClothesRequest](#mruv.ChangeClothesRequest)
-    - [ChangeClothesResponse](#mruv.ChangeClothesResponse)
-    - [Character](#mruv.Character)
-    - [CharacterID](#mruv.CharacterID)
-    - [CreateCharacterRequest](#mruv.CreateCharacterRequest)
-    - [CreateCharacterResponse](#mruv.CreateCharacterResponse)
-    - [DeathStreamRequest](#mruv.DeathStreamRequest)
-    - [DeathStreamResponse](#mruv.DeathStreamResponse)
-    - [DeleteCharacterRequest](#mruv.DeleteCharacterRequest)
-    - [DeleteCharacterResponse](#mruv.DeleteCharacterResponse)
-    - [GetCharacterRequest](#mruv.GetCharacterRequest)
-    - [GetCharacterResponse](#mruv.GetCharacterResponse)
-    - [UpdateCharacterRequest](#mruv.UpdateCharacterRequest)
-    - [UpdateCharacterResponse](#mruv.UpdateCharacterResponse)
+    - [ChangeClothesRequest](#mruv.characters.ChangeClothesRequest)
+    - [ChangeClothesResponse](#mruv.characters.ChangeClothesResponse)
+    - [Character](#mruv.characters.Character)
+    - [CharacterID](#mruv.characters.CharacterID)
+    - [CreateCharacterRequest](#mruv.characters.CreateCharacterRequest)
+    - [CreateCharacterResponse](#mruv.characters.CreateCharacterResponse)
+    - [DeathStreamRequest](#mruv.characters.DeathStreamRequest)
+    - [DeathStreamResponse](#mruv.characters.DeathStreamResponse)
+    - [DeleteCharacterRequest](#mruv.characters.DeleteCharacterRequest)
+    - [DeleteCharacterResponse](#mruv.characters.DeleteCharacterResponse)
+    - [GetCharacterRequest](#mruv.characters.GetCharacterRequest)
+    - [GetCharacterResponse](#mruv.characters.GetCharacterResponse)
+    - [UpdateCharacterRequest](#mruv.characters.UpdateCharacterRequest)
+    - [UpdateCharacterResponse](#mruv.characters.UpdateCharacterResponse)
   
-    - [DeathType](#mruv.DeathType)
+    - [DeathType](#mruv.characters.DeathType)
   
-    - [MruVCharactersService](#mruv.MruVCharactersService)
+    - [MruVCharactersService](#mruv.characters.MruVCharactersService)
   
 - [common/health.proto](#common/health.proto)
-    - [ServiceStatusRequest](#mruv.ServiceStatusRequest)
-    - [ServiceStatusResponse](#mruv.ServiceStatusResponse)
-    - [VersionRequest](#mruv.VersionRequest)
-    - [VersionResponse](#mruv.VersionResponse)
+    - [ServiceStatusRequest](#mruv.common.ServiceStatusRequest)
+    - [ServiceStatusResponse](#mruv.common.ServiceStatusResponse)
+    - [VersionRequest](#mruv.common.VersionRequest)
+    - [VersionResponse](#mruv.common.VersionResponse)
   
 - [common/spatial.proto](#common/spatial.proto)
-    - [Position](#mruv.Position)
-    - [Rotation](#mruv.Rotation)
+    - [Position](#mruv.common.Position)
+    - [Rotation](#mruv.common.Rotation)
   
 - [devtools/devtools.proto](#devtools/devtools.proto)
     - [DeletePositionRequest](#mruv.devtools.DeletePositionRequest)
@@ -227,47 +227,47 @@
     - [MruVGatesService](#mruv.gates.MruVGatesService)
   
 - [groups/groups.proto](#groups/groups.proto)
-    - [AddMemberRequest](#mruv.AddMemberRequest)
-    - [AddMemberResponse](#mruv.AddMemberResponse)
-    - [AddPermissionRequest](#mruv.AddPermissionRequest)
-    - [AddPermissionResponse](#mruv.AddPermissionResponse)
-    - [AddSubgroupRequest](#mruv.AddSubgroupRequest)
-    - [AddSubgroupResponse](#mruv.AddSubgroupResponse)
-    - [AssignOwnerRequest](#mruv.AssignOwnerRequest)
-    - [AssignOwnerResponse](#mruv.AssignOwnerResponse)
-    - [CreateGroupRequest](#mruv.CreateGroupRequest)
-    - [CreateGroupResponse](#mruv.CreateGroupResponse)
-    - [DeleteGroupRequest](#mruv.DeleteGroupRequest)
-    - [DeleteGroupResponse](#mruv.DeleteGroupResponse)
-    - [GetGroupRequest](#mruv.GetGroupRequest)
-    - [GetGroupResponse](#mruv.GetGroupResponse)
-    - [GetGroupsRequest](#mruv.GetGroupsRequest)
-    - [GetGroupsResponse](#mruv.GetGroupsResponse)
-    - [GetGroupsResponse.Group](#mruv.GetGroupsResponse.Group)
-    - [GetMembersRequest](#mruv.GetMembersRequest)
-    - [GetMembersResponse](#mruv.GetMembersResponse)
-    - [GetOwnerRequest](#mruv.GetOwnerRequest)
-    - [GetOwnerResponse](#mruv.GetOwnerResponse)
-    - [GetPermissionsRequest](#mruv.GetPermissionsRequest)
-    - [GetPermissionsResponse](#mruv.GetPermissionsResponse)
-    - [GetPermissionsResponse.Permission](#mruv.GetPermissionsResponse.Permission)
-    - [GetSubgroupsRequest](#mruv.GetSubgroupsRequest)
-    - [GetSubgroupsResponse](#mruv.GetSubgroupsResponse)
-    - [IsPermittedRequest](#mruv.IsPermittedRequest)
-    - [IsPermittedResponse](#mruv.IsPermittedResponse)
-    - [RemoveMemberRequest](#mruv.RemoveMemberRequest)
-    - [RemoveMemberResponse](#mruv.RemoveMemberResponse)
-    - [RemovePermissionRequest](#mruv.RemovePermissionRequest)
-    - [RemovePermissionResponse](#mruv.RemovePermissionResponse)
-    - [RemoveSubgroupRequest](#mruv.RemoveSubgroupRequest)
-    - [RemoveSubgroupResponse](#mruv.RemoveSubgroupResponse)
-    - [UpdateGroupRequest](#mruv.UpdateGroupRequest)
-    - [UpdateGroupResponse](#mruv.UpdateGroupResponse)
+    - [AddMemberRequest](#mruv.groups.AddMemberRequest)
+    - [AddMemberResponse](#mruv.groups.AddMemberResponse)
+    - [AddPermissionRequest](#mruv.groups.AddPermissionRequest)
+    - [AddPermissionResponse](#mruv.groups.AddPermissionResponse)
+    - [AddSubgroupRequest](#mruv.groups.AddSubgroupRequest)
+    - [AddSubgroupResponse](#mruv.groups.AddSubgroupResponse)
+    - [AssignOwnerRequest](#mruv.groups.AssignOwnerRequest)
+    - [AssignOwnerResponse](#mruv.groups.AssignOwnerResponse)
+    - [CreateGroupRequest](#mruv.groups.CreateGroupRequest)
+    - [CreateGroupResponse](#mruv.groups.CreateGroupResponse)
+    - [DeleteGroupRequest](#mruv.groups.DeleteGroupRequest)
+    - [DeleteGroupResponse](#mruv.groups.DeleteGroupResponse)
+    - [GetGroupRequest](#mruv.groups.GetGroupRequest)
+    - [GetGroupResponse](#mruv.groups.GetGroupResponse)
+    - [GetGroupsRequest](#mruv.groups.GetGroupsRequest)
+    - [GetGroupsResponse](#mruv.groups.GetGroupsResponse)
+    - [GetGroupsResponse.Group](#mruv.groups.GetGroupsResponse.Group)
+    - [GetMembersRequest](#mruv.groups.GetMembersRequest)
+    - [GetMembersResponse](#mruv.groups.GetMembersResponse)
+    - [GetOwnerRequest](#mruv.groups.GetOwnerRequest)
+    - [GetOwnerResponse](#mruv.groups.GetOwnerResponse)
+    - [GetPermissionsRequest](#mruv.groups.GetPermissionsRequest)
+    - [GetPermissionsResponse](#mruv.groups.GetPermissionsResponse)
+    - [GetPermissionsResponse.Permission](#mruv.groups.GetPermissionsResponse.Permission)
+    - [GetSubgroupsRequest](#mruv.groups.GetSubgroupsRequest)
+    - [GetSubgroupsResponse](#mruv.groups.GetSubgroupsResponse)
+    - [IsPermittedRequest](#mruv.groups.IsPermittedRequest)
+    - [IsPermittedResponse](#mruv.groups.IsPermittedResponse)
+    - [RemoveMemberRequest](#mruv.groups.RemoveMemberRequest)
+    - [RemoveMemberResponse](#mruv.groups.RemoveMemberResponse)
+    - [RemovePermissionRequest](#mruv.groups.RemovePermissionRequest)
+    - [RemovePermissionResponse](#mruv.groups.RemovePermissionResponse)
+    - [RemoveSubgroupRequest](#mruv.groups.RemoveSubgroupRequest)
+    - [RemoveSubgroupResponse](#mruv.groups.RemoveSubgroupResponse)
+    - [UpdateGroupRequest](#mruv.groups.UpdateGroupRequest)
+    - [UpdateGroupResponse](#mruv.groups.UpdateGroupResponse)
   
-    - [MemberType](#mruv.MemberType)
-    - [OwnerType](#mruv.OwnerType)
+    - [MemberType](#mruv.groups.MemberType)
+    - [OwnerType](#mruv.groups.OwnerType)
   
-    - [MruVGroupsService](#mruv.MruVGroupsService)
+    - [MruVGroupsService](#mruv.groups.MruVGroupsService)
   
 - [houses/houses.proto](#houses/houses.proto)
     - [CreateHouseRequest](#mruv.houses.CreateHouseRequest)
@@ -282,40 +282,40 @@
     - [MruVHousesService](#mruv.houses.MruVHousesService)
   
 - [items/items.proto](#items/items.proto)
-    - [GetContainerItemsRequest](#mruv.GetContainerItemsRequest)
-    - [GetContainerItemsResponse](#mruv.GetContainerItemsResponse)
-    - [GetContainerTypesRequest](#mruv.GetContainerTypesRequest)
-    - [GetContainerTypesResponse](#mruv.GetContainerTypesResponse)
-    - [GetContainersRequest](#mruv.GetContainersRequest)
-    - [GetContainersResponse](#mruv.GetContainersResponse)
-    - [GetItemTypesRequest](#mruv.GetItemTypesRequest)
-    - [GetItemTypesResponse](#mruv.GetItemTypesResponse)
-    - [GetItemsRequest](#mruv.GetItemsRequest)
-    - [GetItemsResponse](#mruv.GetItemsResponse)
-    - [GetNearestItemsRequest](#mruv.GetNearestItemsRequest)
-    - [GetNearestItemsResponse](#mruv.GetNearestItemsResponse)
-    - [PullItemRequest](#mruv.PullItemRequest)
-    - [PutItemRequest](#mruv.PutItemRequest)
-    - [PutItemResponse](#mruv.PutItemResponse)
-    - [SortItemsRequest](#mruv.SortItemsRequest)
-    - [SortItemsResponse](#mruv.SortItemsResponse)
-    - [UseItemRequest](#mruv.UseItemRequest)
-    - [UseItemResponse](#mruv.UseItemResponse)
+    - [GetContainerItemsRequest](#mruv.items.GetContainerItemsRequest)
+    - [GetContainerItemsResponse](#mruv.items.GetContainerItemsResponse)
+    - [GetContainerTypesRequest](#mruv.items.GetContainerTypesRequest)
+    - [GetContainerTypesResponse](#mruv.items.GetContainerTypesResponse)
+    - [GetContainersRequest](#mruv.items.GetContainersRequest)
+    - [GetContainersResponse](#mruv.items.GetContainersResponse)
+    - [GetItemTypesRequest](#mruv.items.GetItemTypesRequest)
+    - [GetItemTypesResponse](#mruv.items.GetItemTypesResponse)
+    - [GetItemsRequest](#mruv.items.GetItemsRequest)
+    - [GetItemsResponse](#mruv.items.GetItemsResponse)
+    - [GetNearestItemsRequest](#mruv.items.GetNearestItemsRequest)
+    - [GetNearestItemsResponse](#mruv.items.GetNearestItemsResponse)
+    - [PullItemRequest](#mruv.items.PullItemRequest)
+    - [PutItemRequest](#mruv.items.PutItemRequest)
+    - [PutItemResponse](#mruv.items.PutItemResponse)
+    - [SortItemsRequest](#mruv.items.SortItemsRequest)
+    - [SortItemsResponse](#mruv.items.SortItemsResponse)
+    - [UseItemRequest](#mruv.items.UseItemRequest)
+    - [UseItemResponse](#mruv.items.UseItemResponse)
   
-    - [MruVItemService](#mruv.MruVItemService)
+    - [MruVItemService](#mruv.items.MruVItemService)
   
 - [items/items_model.proto](#items/items_model.proto)
-    - [Container](#mruv.Container)
-    - [ContainerID](#mruv.ContainerID)
-    - [ContainerType](#mruv.ContainerType)
-    - [ContainerTypeID](#mruv.ContainerTypeID)
-    - [InsideItem](#mruv.InsideItem)
-    - [Item](#mruv.Item)
-    - [ItemID](#mruv.ItemID)
-    - [ItemType](#mruv.ItemType)
-    - [ItemTypeID](#mruv.ItemTypeID)
+    - [Container](#mruv.items.Container)
+    - [ContainerID](#mruv.items.ContainerID)
+    - [ContainerType](#mruv.items.ContainerType)
+    - [ContainerTypeID](#mruv.items.ContainerTypeID)
+    - [InsideItem](#mruv.items.InsideItem)
+    - [Item](#mruv.items.Item)
+    - [ItemID](#mruv.items.ItemID)
+    - [ItemType](#mruv.items.ItemType)
+    - [ItemTypeID](#mruv.items.ItemTypeID)
   
-    - [SortingMode](#mruv.SortingMode)
+    - [SortingMode](#mruv.items.SortingMode)
   
 - [jobs/jobs.proto](#jobs/jobs.proto)
     - [CreateJobRequest](#mruv.jobs.CreateJobRequest)
@@ -613,7 +613,7 @@
 
 
 
-<a name="mruv.GetAccountCharactersRequest"></a>
+<a name="mruv.accounts.GetAccountCharactersRequest"></a>
 
 ### GetAccountCharactersRequest
 Request message for rpc `GetAccountCharacters`.
@@ -628,7 +628,7 @@ Request message for rpc `GetAccountCharacters`.
 
 
 
-<a name="mruv.GetAccountCharactersResponse"></a>
+<a name="mruv.accounts.GetAccountCharactersResponse"></a>
 
 ### GetAccountCharactersResponse
 Response message for rpc `GetAccountCharacters`.
@@ -643,7 +643,7 @@ Response message for rpc `GetAccountCharacters`.
 
 
 
-<a name="mruv.GetAccountRequest"></a>
+<a name="mruv.accounts.GetAccountRequest"></a>
 
 ### GetAccountRequest
 Request message for rpc `GetAccount`.
@@ -658,7 +658,7 @@ Request message for rpc `GetAccount`.
 
 
 
-<a name="mruv.GetAccountResponse"></a>
+<a name="mruv.accounts.GetAccountResponse"></a>
 
 ### GetAccountResponse
 Response message for rpc `GetAccount`.
@@ -674,7 +674,7 @@ Response message for rpc `GetAccount`.
 
 
 
-<a name="mruv.IsAccountExistRequest"></a>
+<a name="mruv.accounts.IsAccountExistRequest"></a>
 
 ### IsAccountExistRequest
 Request message for rpc `IsAccountExist`.
@@ -689,7 +689,7 @@ Request message for rpc `IsAccountExist`.
 
 
 
-<a name="mruv.IsAccountExistResponse"></a>
+<a name="mruv.accounts.IsAccountExistResponse"></a>
 
 ### IsAccountExistResponse
 Response message for rpc `IsAccountExist`.
@@ -705,7 +705,7 @@ Response message for rpc `IsAccountExist`.
 
 
 
-<a name="mruv.LogInRequest"></a>
+<a name="mruv.accounts.LogInRequest"></a>
 
 ### LogInRequest
 Request message for rpc `LogIn`.
@@ -721,7 +721,7 @@ Request message for rpc `LogIn`.
 
 
 
-<a name="mruv.LogInResponse"></a>
+<a name="mruv.accounts.LogInResponse"></a>
 
 ### LogInResponse
 Response message for rpc `LogIn`.
@@ -737,7 +737,7 @@ Response message for rpc `LogIn`.
 
 
 
-<a name="mruv.RegisterAccountRequest"></a>
+<a name="mruv.accounts.RegisterAccountRequest"></a>
 
 ### RegisterAccountRequest
 Request message for rpc `RegisterAccount`.
@@ -754,7 +754,7 @@ Request message for rpc `RegisterAccount`.
 
 
 
-<a name="mruv.RegisterAccountResponse"></a>
+<a name="mruv.accounts.RegisterAccountResponse"></a>
 
 ### RegisterAccountResponse
 Response message for rpc `RegisterAccount`.
@@ -776,7 +776,7 @@ Response message for rpc `RegisterAccount`.
  
 
 
-<a name="mruv.MruVAccountsService"></a>
+<a name="mruv.accounts.MruVAccountsService"></a>
 
 ### MruVAccountsService
 The MruV accounts service provides procedures for managing players accounts.
@@ -784,11 +784,11 @@ This service is an additional/intermediary service between the ORY Kratos &amp; 
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| RegisterAccount | [RegisterAccountRequest](#mruv.RegisterAccountRequest) | [RegisterAccountResponse](#mruv.RegisterAccountResponse) | Register a new account. |
-| LogIn | [LogInRequest](#mruv.LogInRequest) | [LogInResponse](#mruv.LogInResponse) | Sign into an existing account. |
-| IsAccountExist | [IsAccountExistRequest](#mruv.IsAccountExistRequest) | [IsAccountExistResponse](#mruv.IsAccountExistResponse) | Check, is account with specified login exist. If yes, it returns account id. |
-| GetAccount | [GetAccountRequest](#mruv.GetAccountRequest) | [GetAccountResponse](#mruv.GetAccountResponse) | Get an account. |
-| GetAccountCharacters | [GetAccountCharactersRequest](#mruv.GetAccountCharactersRequest) | [GetAccountCharactersResponse](#mruv.GetAccountCharactersResponse) | Get an account characters. |
+| RegisterAccount | [RegisterAccountRequest](#mruv.accounts.RegisterAccountRequest) | [RegisterAccountResponse](#mruv.accounts.RegisterAccountResponse) | Register a new account. |
+| LogIn | [LogInRequest](#mruv.accounts.LogInRequest) | [LogInResponse](#mruv.accounts.LogInResponse) | Sign into an existing account. |
+| IsAccountExist | [IsAccountExistRequest](#mruv.accounts.IsAccountExistRequest) | [IsAccountExistResponse](#mruv.accounts.IsAccountExistResponse) | Check, is account with specified login exist. If yes, it returns account id. |
+| GetAccount | [GetAccountRequest](#mruv.accounts.GetAccountRequest) | [GetAccountResponse](#mruv.accounts.GetAccountResponse) | Get an account. |
+| GetAccountCharacters | [GetAccountCharactersRequest](#mruv.accounts.GetAccountCharactersRequest) | [GetAccountCharactersResponse](#mruv.accounts.GetAccountCharactersResponse) | Get an account characters. |
 
  
 
@@ -1142,7 +1142,7 @@ Every business has its own type and depends on it, business provides different s
 
 
 
-<a name="mruv.ChangeClothesRequest"></a>
+<a name="mruv.characters.ChangeClothesRequest"></a>
 
 ### ChangeClothesRequest
 Request message for rpc `ChangeClothes`.
@@ -1158,7 +1158,7 @@ Request message for rpc `ChangeClothes`.
 
 
 
-<a name="mruv.ChangeClothesResponse"></a>
+<a name="mruv.characters.ChangeClothesResponse"></a>
 
 ### ChangeClothesResponse
 Response message for rpc `ChangeClothes`.
@@ -1168,7 +1168,7 @@ Response message for rpc `ChangeClothes`.
 
 
 
-<a name="mruv.Character"></a>
+<a name="mruv.characters.Character"></a>
 
 ### Character
 
@@ -1192,7 +1192,7 @@ Response message for rpc `ChangeClothes`.
 
 
 
-<a name="mruv.CharacterID"></a>
+<a name="mruv.characters.CharacterID"></a>
 
 ### CharacterID
 
@@ -1207,7 +1207,7 @@ Response message for rpc `ChangeClothes`.
 
 
 
-<a name="mruv.CreateCharacterRequest"></a>
+<a name="mruv.characters.CreateCharacterRequest"></a>
 
 ### CreateCharacterRequest
 Request message for rpc `CreateCharacter`.
@@ -1227,7 +1227,7 @@ Request message for rpc `CreateCharacter`.
 
 
 
-<a name="mruv.CreateCharacterResponse"></a>
+<a name="mruv.characters.CreateCharacterResponse"></a>
 
 ### CreateCharacterResponse
 Response message for rpc `CreateCharacter`.
@@ -1242,7 +1242,7 @@ Response message for rpc `CreateCharacter`.
 
 
 
-<a name="mruv.DeathStreamRequest"></a>
+<a name="mruv.characters.DeathStreamRequest"></a>
 
 ### DeathStreamRequest
 
@@ -1250,14 +1250,14 @@ Response message for rpc `CreateCharacter`.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| death_types | [DeathType](#mruv.DeathType) | repeated |  |
+| death_types | [DeathType](#mruv.characters.DeathType) | repeated |  |
 
 
 
 
 
 
-<a name="mruv.DeathStreamResponse"></a>
+<a name="mruv.characters.DeathStreamResponse"></a>
 
 ### DeathStreamResponse
 
@@ -1265,15 +1265,15 @@ Response message for rpc `CreateCharacter`.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| character | [Character](#mruv.Character) |  |  |
-| death_type | [DeathType](#mruv.DeathType) |  |  |
+| character | [Character](#mruv.characters.Character) |  |  |
+| death_type | [DeathType](#mruv.characters.DeathType) |  |  |
 
 
 
 
 
 
-<a name="mruv.DeleteCharacterRequest"></a>
+<a name="mruv.characters.DeleteCharacterRequest"></a>
 
 ### DeleteCharacterRequest
 Request message for rpc `DeleteCharacter`.
@@ -1288,7 +1288,7 @@ Request message for rpc `DeleteCharacter`.
 
 
 
-<a name="mruv.DeleteCharacterResponse"></a>
+<a name="mruv.characters.DeleteCharacterResponse"></a>
 
 ### DeleteCharacterResponse
 Response message for rpc `DeleteCharacter`.
@@ -1298,7 +1298,7 @@ Response message for rpc `DeleteCharacter`.
 
 
 
-<a name="mruv.GetCharacterRequest"></a>
+<a name="mruv.characters.GetCharacterRequest"></a>
 
 ### GetCharacterRequest
 Request message for rpc `GetCharacter`.
@@ -1313,7 +1313,7 @@ Request message for rpc `GetCharacter`.
 
 
 
-<a name="mruv.GetCharacterResponse"></a>
+<a name="mruv.characters.GetCharacterResponse"></a>
 
 ### GetCharacterResponse
 Response message for rpc `GetCharacter`.
@@ -1337,7 +1337,7 @@ Response message for rpc `GetCharacter`.
 
 
 
-<a name="mruv.UpdateCharacterRequest"></a>
+<a name="mruv.characters.UpdateCharacterRequest"></a>
 
 ### UpdateCharacterRequest
 Request message for rpc `UpdateCharacter`.
@@ -1352,7 +1352,7 @@ Request message for rpc `UpdateCharacter`.
 
 
 
-<a name="mruv.UpdateCharacterResponse"></a>
+<a name="mruv.characters.UpdateCharacterResponse"></a>
 
 ### UpdateCharacterResponse
 Response message for rpc `UpdateCharacter`.
@@ -1364,7 +1364,7 @@ Response message for rpc `UpdateCharacter`.
  
 
 
-<a name="mruv.DeathType"></a>
+<a name="mruv.characters.DeathType"></a>
 
 ### DeathType
 
@@ -1382,22 +1382,22 @@ Response message for rpc `UpdateCharacter`.
  
 
 
-<a name="mruv.MruVCharactersService"></a>
+<a name="mruv.characters.MruVCharactersService"></a>
 
 ### MruVCharactersService
 
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| CreateCharacter | [CreateCharacterRequest](#mruv.CreateCharacterRequest) | [CreateCharacterResponse](#mruv.CreateCharacterResponse) | Create a character. |
-| GetCharacter | [GetCharacterRequest](#mruv.GetCharacterRequest) | [GetCharacterResponse](#mruv.GetCharacterResponse) | Get a character. |
-| UpdateCharacter | [UpdateCharacterRequest](#mruv.UpdateCharacterRequest) | [UpdateCharacterResponse](#mruv.UpdateCharacterResponse) | Update a character. |
-| DeleteCharacter | [DeleteCharacterRequest](#mruv.DeleteCharacterRequest) | [DeleteCharacterResponse](#mruv.DeleteCharacterResponse) | Delete a character. |
-| PermanentCharacterKill | [CharacterID](#mruv.CharacterID) | [CharacterID](#mruv.CharacterID) | Kill a character. A character that is killed cannot be played anymore. |
-| ChangeClothes | [ChangeClothesRequest](#mruv.ChangeClothesRequest) | [ChangeClothesResponse](#mruv.ChangeClothesResponse) | Change player clothes. |
-| DeathsStream | [DeathStreamRequest](#mruv.DeathStreamRequest) | [DeathStreamResponse](#mruv.DeathStreamResponse) stream | Stream of deaths. |
-| GetServiceStatus | [ServiceStatusRequest](#mruv.ServiceStatusRequest) | [ServiceStatusResponse](#mruv.ServiceStatusResponse) | Service status |
-| GetServiceVersion | [VersionRequest](#mruv.VersionRequest) | [VersionResponse](#mruv.VersionResponse) |  |
+| CreateCharacter | [CreateCharacterRequest](#mruv.characters.CreateCharacterRequest) | [CreateCharacterResponse](#mruv.characters.CreateCharacterResponse) | Create a character. |
+| GetCharacter | [GetCharacterRequest](#mruv.characters.GetCharacterRequest) | [GetCharacterResponse](#mruv.characters.GetCharacterResponse) | Get a character. |
+| UpdateCharacter | [UpdateCharacterRequest](#mruv.characters.UpdateCharacterRequest) | [UpdateCharacterResponse](#mruv.characters.UpdateCharacterResponse) | Update a character. |
+| DeleteCharacter | [DeleteCharacterRequest](#mruv.characters.DeleteCharacterRequest) | [DeleteCharacterResponse](#mruv.characters.DeleteCharacterResponse) | Delete a character. |
+| PermanentCharacterKill | [CharacterID](#mruv.characters.CharacterID) | [CharacterID](#mruv.characters.CharacterID) | Kill a character. A character that is killed cannot be played anymore. |
+| ChangeClothes | [ChangeClothesRequest](#mruv.characters.ChangeClothesRequest) | [ChangeClothesResponse](#mruv.characters.ChangeClothesResponse) | Change player clothes. |
+| DeathsStream | [DeathStreamRequest](#mruv.characters.DeathStreamRequest) | [DeathStreamResponse](#mruv.characters.DeathStreamResponse) stream | Stream of deaths. |
+| GetServiceStatus | [.mruv.common.ServiceStatusRequest](#mruv.common.ServiceStatusRequest) | [.mruv.common.ServiceStatusResponse](#mruv.common.ServiceStatusResponse) | Service status |
+| GetServiceVersion | [.mruv.common.VersionRequest](#mruv.common.VersionRequest) | [.mruv.common.VersionResponse](#mruv.common.VersionResponse) |  |
 
  
 
@@ -1410,7 +1410,7 @@ Response message for rpc `UpdateCharacter`.
 
 
 
-<a name="mruv.ServiceStatusRequest"></a>
+<a name="mruv.common.ServiceStatusRequest"></a>
 
 ### ServiceStatusRequest
 
@@ -1420,7 +1420,7 @@ Response message for rpc `UpdateCharacter`.
 
 
 
-<a name="mruv.ServiceStatusResponse"></a>
+<a name="mruv.common.ServiceStatusResponse"></a>
 
 ### ServiceStatusResponse
 
@@ -1435,7 +1435,7 @@ Response message for rpc `UpdateCharacter`.
 
 
 
-<a name="mruv.VersionRequest"></a>
+<a name="mruv.common.VersionRequest"></a>
 
 ### VersionRequest
 
@@ -1445,7 +1445,7 @@ Response message for rpc `UpdateCharacter`.
 
 
 
-<a name="mruv.VersionResponse"></a>
+<a name="mruv.common.VersionResponse"></a>
 
 ### VersionResponse
 
@@ -1479,7 +1479,7 @@ Response message for rpc `UpdateCharacter`.
 
 
 
-<a name="mruv.Position"></a>
+<a name="mruv.common.Position"></a>
 
 ### Position
 
@@ -1496,7 +1496,7 @@ Response message for rpc `UpdateCharacter`.
 
 
 
-<a name="mruv.Rotation"></a>
+<a name="mruv.common.Rotation"></a>
 
 ### Rotation
 
@@ -1846,8 +1846,8 @@ The MruV developer tools service for mruv-devtools package.
 | GetAnimations | [GetAnimationsRequest](#mruv.devtools.GetAnimationsRequest) | [GetAnimationsResponse](#mruv.devtools.GetAnimationsResponse) | Get all saved animations. |
 | GetAnimation | [GetAnimationRequest](#mruv.devtools.GetAnimationRequest) | [GetAnimationResponse](#mruv.devtools.GetAnimationResponse) | Get saved animation by name. |
 | SaveAnimation | [SaveAnimationRequest](#mruv.devtools.SaveAnimationRequest) | [SaveAnimationResponse](#mruv.devtools.SaveAnimationResponse) | Save animation. |
-| GetServiceStatus | [.mruv.ServiceStatusRequest](#mruv.ServiceStatusRequest) | [.mruv.ServiceStatusResponse](#mruv.ServiceStatusResponse) | Get service status. |
-| GetServiceVersion | [.mruv.VersionRequest](#mruv.VersionRequest) | [.mruv.VersionResponse](#mruv.VersionResponse) | Get service version. |
+| GetServiceStatus | [.mruv.common.ServiceStatusRequest](#mruv.common.ServiceStatusRequest) | [.mruv.common.ServiceStatusResponse](#mruv.common.ServiceStatusResponse) | Get service status. |
+| GetServiceVersion | [.mruv.common.VersionRequest](#mruv.common.VersionRequest) | [.mruv.common.VersionResponse](#mruv.common.VersionResponse) | Get service version. |
 
  
 
@@ -3605,7 +3605,7 @@ The MruV gates service provides procedures for managing gates and moving objects
 
 
 
-<a name="mruv.AddMemberRequest"></a>
+<a name="mruv.groups.AddMemberRequest"></a>
 
 ### AddMemberRequest
 Request message for rpc `AddMember`.
@@ -3621,7 +3621,7 @@ Request message for rpc `AddMember`.
 
 
 
-<a name="mruv.AddMemberResponse"></a>
+<a name="mruv.groups.AddMemberResponse"></a>
 
 ### AddMemberResponse
 Response message for rpc `AddMember`.
@@ -3631,7 +3631,7 @@ Response message for rpc `AddMember`.
 
 
 
-<a name="mruv.AddPermissionRequest"></a>
+<a name="mruv.groups.AddPermissionRequest"></a>
 
 ### AddPermissionRequest
 Request message for rpc `AddPermission`.
@@ -3648,7 +3648,7 @@ Request message for rpc `AddPermission`.
 
 
 
-<a name="mruv.AddPermissionResponse"></a>
+<a name="mruv.groups.AddPermissionResponse"></a>
 
 ### AddPermissionResponse
 Response message for rpc `AddPermission`.
@@ -3663,7 +3663,7 @@ Response message for rpc `AddPermission`.
 
 
 
-<a name="mruv.AddSubgroupRequest"></a>
+<a name="mruv.groups.AddSubgroupRequest"></a>
 
 ### AddSubgroupRequest
 Request message for rpc `AddSubgroup`.
@@ -3679,7 +3679,7 @@ Request message for rpc `AddSubgroup`.
 
 
 
-<a name="mruv.AddSubgroupResponse"></a>
+<a name="mruv.groups.AddSubgroupResponse"></a>
 
 ### AddSubgroupResponse
 Response message for rpc `AddSubgroup`.
@@ -3689,7 +3689,7 @@ Response message for rpc `AddSubgroup`.
 
 
 
-<a name="mruv.AssignOwnerRequest"></a>
+<a name="mruv.groups.AssignOwnerRequest"></a>
 
 ### AssignOwnerRequest
 Request message for rpc `AssignOwner`.
@@ -3698,7 +3698,7 @@ Request message for rpc `AssignOwner`.
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | group_id | [uint32](#uint32) |  |  |
-| owner_type | [OwnerType](#mruv.OwnerType) |  |  |
+| owner_type | [OwnerType](#mruv.groups.OwnerType) |  |  |
 | owner_id | [uint32](#uint32) |  |  |
 
 
@@ -3706,7 +3706,7 @@ Request message for rpc `AssignOwner`.
 
 
 
-<a name="mruv.AssignOwnerResponse"></a>
+<a name="mruv.groups.AssignOwnerResponse"></a>
 
 ### AssignOwnerResponse
 Response message for rpc `AssignOwner`.
@@ -3716,7 +3716,7 @@ Response message for rpc `AssignOwner`.
 
 
 
-<a name="mruv.CreateGroupRequest"></a>
+<a name="mruv.groups.CreateGroupRequest"></a>
 
 ### CreateGroupRequest
 Request message for rpc `CreateGroup`.
@@ -3732,7 +3732,7 @@ Request message for rpc `CreateGroup`.
 
 
 
-<a name="mruv.CreateGroupResponse"></a>
+<a name="mruv.groups.CreateGroupResponse"></a>
 
 ### CreateGroupResponse
 Response message for rpc `CreateGroup`.
@@ -3747,7 +3747,7 @@ Response message for rpc `CreateGroup`.
 
 
 
-<a name="mruv.DeleteGroupRequest"></a>
+<a name="mruv.groups.DeleteGroupRequest"></a>
 
 ### DeleteGroupRequest
 Request message for rpc `DeleteGroup`.
@@ -3762,7 +3762,7 @@ Request message for rpc `DeleteGroup`.
 
 
 
-<a name="mruv.DeleteGroupResponse"></a>
+<a name="mruv.groups.DeleteGroupResponse"></a>
 
 ### DeleteGroupResponse
 Response message for rpc `DeleteGroup`.
@@ -3772,7 +3772,7 @@ Response message for rpc `DeleteGroup`.
 
 
 
-<a name="mruv.GetGroupRequest"></a>
+<a name="mruv.groups.GetGroupRequest"></a>
 
 ### GetGroupRequest
 Request message for rpc `GetGroup`.
@@ -3787,7 +3787,7 @@ Request message for rpc `GetGroup`.
 
 
 
-<a name="mruv.GetGroupResponse"></a>
+<a name="mruv.groups.GetGroupResponse"></a>
 
 ### GetGroupResponse
 Response message for rpc `GetGroup`.
@@ -3803,7 +3803,7 @@ Response message for rpc `GetGroup`.
 
 
 
-<a name="mruv.GetGroupsRequest"></a>
+<a name="mruv.groups.GetGroupsRequest"></a>
 
 ### GetGroupsRequest
 Request message for rpc `GetGroups`.
@@ -3819,7 +3819,7 @@ Request message for rpc `GetGroups`.
 
 
 
-<a name="mruv.GetGroupsResponse"></a>
+<a name="mruv.groups.GetGroupsResponse"></a>
 
 ### GetGroupsResponse
 Response message for rpc `GetGroups`.
@@ -3827,14 +3827,14 @@ Response message for rpc `GetGroups`.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| groups | [GetGroupsResponse.Group](#mruv.GetGroupsResponse.Group) | repeated |  |
+| groups | [GetGroupsResponse.Group](#mruv.groups.GetGroupsResponse.Group) | repeated |  |
 
 
 
 
 
 
-<a name="mruv.GetGroupsResponse.Group"></a>
+<a name="mruv.groups.GetGroupsResponse.Group"></a>
 
 ### GetGroupsResponse.Group
 
@@ -3851,7 +3851,7 @@ Response message for rpc `GetGroups`.
 
 
 
-<a name="mruv.GetMembersRequest"></a>
+<a name="mruv.groups.GetMembersRequest"></a>
 
 ### GetMembersRequest
 Request message for rpc `GetMembers`.
@@ -3866,7 +3866,7 @@ Request message for rpc `GetMembers`.
 
 
 
-<a name="mruv.GetMembersResponse"></a>
+<a name="mruv.groups.GetMembersResponse"></a>
 
 ### GetMembersResponse
 Response message for rpc `GetMembers`.
@@ -3874,7 +3874,7 @@ Response message for rpc `GetMembers`.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| member_type | [MemberType](#mruv.MemberType) |  |  |
+| member_type | [MemberType](#mruv.groups.MemberType) |  |  |
 | member_ids | [uint32](#uint32) | repeated |  |
 
 
@@ -3882,7 +3882,7 @@ Response message for rpc `GetMembers`.
 
 
 
-<a name="mruv.GetOwnerRequest"></a>
+<a name="mruv.groups.GetOwnerRequest"></a>
 
 ### GetOwnerRequest
 Request message for rpc `GetOwner`.
@@ -3897,7 +3897,7 @@ Request message for rpc `GetOwner`.
 
 
 
-<a name="mruv.GetOwnerResponse"></a>
+<a name="mruv.groups.GetOwnerResponse"></a>
 
 ### GetOwnerResponse
 Response message for rpc `GetOwner`.
@@ -3906,14 +3906,14 @@ Response message for rpc `GetOwner`.
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | owner_id | [uint32](#uint32) |  |  |
-| owner_type | [OwnerType](#mruv.OwnerType) |  |  |
+| owner_type | [OwnerType](#mruv.groups.OwnerType) |  |  |
 
 
 
 
 
 
-<a name="mruv.GetPermissionsRequest"></a>
+<a name="mruv.groups.GetPermissionsRequest"></a>
 
 ### GetPermissionsRequest
 Request message for rpc `GetPermissions`.
@@ -3928,7 +3928,7 @@ Request message for rpc `GetPermissions`.
 
 
 
-<a name="mruv.GetPermissionsResponse"></a>
+<a name="mruv.groups.GetPermissionsResponse"></a>
 
 ### GetPermissionsResponse
 Response message for rpc `GetPermissions`.
@@ -3936,14 +3936,14 @@ Response message for rpc `GetPermissions`.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| permissions | [GetPermissionsResponse.Permission](#mruv.GetPermissionsResponse.Permission) | repeated |  |
+| permissions | [GetPermissionsResponse.Permission](#mruv.groups.GetPermissionsResponse.Permission) | repeated |  |
 
 
 
 
 
 
-<a name="mruv.GetPermissionsResponse.Permission"></a>
+<a name="mruv.groups.GetPermissionsResponse.Permission"></a>
 
 ### GetPermissionsResponse.Permission
 
@@ -3960,7 +3960,7 @@ Response message for rpc `GetPermissions`.
 
 
 
-<a name="mruv.GetSubgroupsRequest"></a>
+<a name="mruv.groups.GetSubgroupsRequest"></a>
 
 ### GetSubgroupsRequest
 Request message for rpc `GetSubgroups`.
@@ -3975,7 +3975,7 @@ Request message for rpc `GetSubgroups`.
 
 
 
-<a name="mruv.GetSubgroupsResponse"></a>
+<a name="mruv.groups.GetSubgroupsResponse"></a>
 
 ### GetSubgroupsResponse
 Response message for rpc `GetSubgroups`.
@@ -3990,7 +3990,7 @@ Response message for rpc `GetSubgroups`.
 
 
 
-<a name="mruv.IsPermittedRequest"></a>
+<a name="mruv.groups.IsPermittedRequest"></a>
 
 ### IsPermittedRequest
 Request message for rpc `IsPermitted`.
@@ -3999,7 +3999,7 @@ Request message for rpc `IsPermitted`.
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | member_id | [uint32](#uint32) |  |  |
-| member_type | [MemberType](#mruv.MemberType) |  |  |
+| member_type | [MemberType](#mruv.groups.MemberType) |  |  |
 | action | [string](#string) |  |  |
 
 
@@ -4007,7 +4007,7 @@ Request message for rpc `IsPermitted`.
 
 
 
-<a name="mruv.IsPermittedResponse"></a>
+<a name="mruv.groups.IsPermittedResponse"></a>
 
 ### IsPermittedResponse
 Response message for rpc `IsPermitted`.
@@ -4022,7 +4022,7 @@ Response message for rpc `IsPermitted`.
 
 
 
-<a name="mruv.RemoveMemberRequest"></a>
+<a name="mruv.groups.RemoveMemberRequest"></a>
 
 ### RemoveMemberRequest
 Request message for rpc `RemoveMember`.
@@ -4038,7 +4038,7 @@ Request message for rpc `RemoveMember`.
 
 
 
-<a name="mruv.RemoveMemberResponse"></a>
+<a name="mruv.groups.RemoveMemberResponse"></a>
 
 ### RemoveMemberResponse
 Response message for rpc `RemoveMember`.
@@ -4048,7 +4048,7 @@ Response message for rpc `RemoveMember`.
 
 
 
-<a name="mruv.RemovePermissionRequest"></a>
+<a name="mruv.groups.RemovePermissionRequest"></a>
 
 ### RemovePermissionRequest
 Request message for rpc `RemovePermission`.
@@ -4064,7 +4064,7 @@ Request message for rpc `RemovePermission`.
 
 
 
-<a name="mruv.RemovePermissionResponse"></a>
+<a name="mruv.groups.RemovePermissionResponse"></a>
 
 ### RemovePermissionResponse
 Response message for rpc `RemovePermission`.
@@ -4074,7 +4074,7 @@ Response message for rpc `RemovePermission`.
 
 
 
-<a name="mruv.RemoveSubgroupRequest"></a>
+<a name="mruv.groups.RemoveSubgroupRequest"></a>
 
 ### RemoveSubgroupRequest
 Request message for rpc `RemoveSubgroup`.
@@ -4090,7 +4090,7 @@ Request message for rpc `RemoveSubgroup`.
 
 
 
-<a name="mruv.RemoveSubgroupResponse"></a>
+<a name="mruv.groups.RemoveSubgroupResponse"></a>
 
 ### RemoveSubgroupResponse
 Response message for rpc `RemoveSubgroup`.
@@ -4100,7 +4100,7 @@ Response message for rpc `RemoveSubgroup`.
 
 
 
-<a name="mruv.UpdateGroupRequest"></a>
+<a name="mruv.groups.UpdateGroupRequest"></a>
 
 ### UpdateGroupRequest
 Request message for rpc `UpdateGroup`.
@@ -4117,7 +4117,7 @@ Request message for rpc `UpdateGroup`.
 
 
 
-<a name="mruv.UpdateGroupResponse"></a>
+<a name="mruv.groups.UpdateGroupResponse"></a>
 
 ### UpdateGroupResponse
 Response message for rpc `UpdateGroup`.
@@ -4129,7 +4129,7 @@ Response message for rpc `UpdateGroup`.
  
 
 
-<a name="mruv.MemberType"></a>
+<a name="mruv.groups.MemberType"></a>
 
 ### MemberType
 Member type.
@@ -4142,7 +4142,7 @@ Member type.
 
 
 
-<a name="mruv.OwnerType"></a>
+<a name="mruv.groups.OwnerType"></a>
 
 ### OwnerType
 Owner types.
@@ -4160,32 +4160,32 @@ Owner types.
  
 
 
-<a name="mruv.MruVGroupsService"></a>
+<a name="mruv.groups.MruVGroupsService"></a>
 
 ### MruVGroupsService
 The MruV groups service provides procedures for managing groups.
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| CreateGroup | [CreateGroupRequest](#mruv.CreateGroupRequest) | [CreateGroupResponse](#mruv.CreateGroupResponse) | Create a group. |
-| GetGroup | [GetGroupRequest](#mruv.GetGroupRequest) | [GetGroupResponse](#mruv.GetGroupResponse) | Get a group. |
-| UpdateGroup | [UpdateGroupRequest](#mruv.UpdateGroupRequest) | [UpdateGroupResponse](#mruv.UpdateGroupResponse) | Update a group. |
-| DeleteGroup | [DeleteGroupRequest](#mruv.DeleteGroupRequest) | [DeleteGroupResponse](#mruv.DeleteGroupResponse) | Delete a group. |
-| GetGroups | [GetGroupsRequest](#mruv.GetGroupsRequest) | [GetGroupsResponse](#mruv.GetGroupsResponse) | Get all groups. |
-| AssignOwner | [AssignOwnerRequest](#mruv.AssignOwnerRequest) | [AssignOwnerResponse](#mruv.AssignOwnerResponse) | Assign an owner. Group can have only one owner. Owner can be a player, a group or an account. |
-| GetOwner | [GetOwnerRequest](#mruv.GetOwnerRequest) | [GetOwnerResponse](#mruv.GetOwnerResponse) | Get group owner. |
-| AddMember | [AddMemberRequest](#mruv.AddMemberRequest) | [AddMemberResponse](#mruv.AddMemberResponse) | Add a group member. |
-| GetMembers | [GetMembersRequest](#mruv.GetMembersRequest) | [GetMembersResponse](#mruv.GetMembersResponse) | Get a group member. |
-| RemoveMember | [RemoveMemberRequest](#mruv.RemoveMemberRequest) | [RemoveMemberResponse](#mruv.RemoveMemberResponse) | Remove a group member. |
-| AddPermission | [AddPermissionRequest](#mruv.AddPermissionRequest) | [AddPermissionResponse](#mruv.AddPermissionResponse) | Add a permission to a group. |
-| GetPermissions | [GetPermissionsRequest](#mruv.GetPermissionsRequest) | [GetPermissionsResponse](#mruv.GetPermissionsResponse) | Get all group permissions. |
-| RemovePermission | [RemovePermissionRequest](#mruv.RemovePermissionRequest) | [RemovePermissionResponse](#mruv.RemovePermissionResponse) | Remove group permission. |
-| AddSubgroup | [AddSubgroupRequest](#mruv.AddSubgroupRequest) | [AddSubgroupResponse](#mruv.AddSubgroupResponse) | Add a subgroup to a group. |
-| GetSubgroups | [GetSubgroupsRequest](#mruv.GetSubgroupsRequest) | [GetSubgroupsResponse](#mruv.GetSubgroupsResponse) | Get all subgroups. |
-| RemoveSubgroup | [RemoveSubgroupRequest](#mruv.RemoveSubgroupRequest) | [RemoveSubgroupResponse](#mruv.RemoveSubgroupResponse) | Remove a subgroup from group. |
-| IsPermitted | [IsPermittedRequest](#mruv.IsPermittedRequest) | [IsPermittedResponse](#mruv.IsPermittedResponse) | Check is member of a group is permitted to do specific action. |
-| GetServiceStatus | [ServiceStatusRequest](#mruv.ServiceStatusRequest) | [ServiceStatusResponse](#mruv.ServiceStatusResponse) | Service status |
-| GetServiceVersion | [VersionRequest](#mruv.VersionRequest) | [VersionResponse](#mruv.VersionResponse) |  |
+| CreateGroup | [CreateGroupRequest](#mruv.groups.CreateGroupRequest) | [CreateGroupResponse](#mruv.groups.CreateGroupResponse) | Create a group. |
+| GetGroup | [GetGroupRequest](#mruv.groups.GetGroupRequest) | [GetGroupResponse](#mruv.groups.GetGroupResponse) | Get a group. |
+| UpdateGroup | [UpdateGroupRequest](#mruv.groups.UpdateGroupRequest) | [UpdateGroupResponse](#mruv.groups.UpdateGroupResponse) | Update a group. |
+| DeleteGroup | [DeleteGroupRequest](#mruv.groups.DeleteGroupRequest) | [DeleteGroupResponse](#mruv.groups.DeleteGroupResponse) | Delete a group. |
+| GetGroups | [GetGroupsRequest](#mruv.groups.GetGroupsRequest) | [GetGroupsResponse](#mruv.groups.GetGroupsResponse) | Get all groups. |
+| AssignOwner | [AssignOwnerRequest](#mruv.groups.AssignOwnerRequest) | [AssignOwnerResponse](#mruv.groups.AssignOwnerResponse) | Assign an owner. Group can have only one owner. Owner can be a player, a group or an account. |
+| GetOwner | [GetOwnerRequest](#mruv.groups.GetOwnerRequest) | [GetOwnerResponse](#mruv.groups.GetOwnerResponse) | Get group owner. |
+| AddMember | [AddMemberRequest](#mruv.groups.AddMemberRequest) | [AddMemberResponse](#mruv.groups.AddMemberResponse) | Add a group member. |
+| GetMembers | [GetMembersRequest](#mruv.groups.GetMembersRequest) | [GetMembersResponse](#mruv.groups.GetMembersResponse) | Get a group member. |
+| RemoveMember | [RemoveMemberRequest](#mruv.groups.RemoveMemberRequest) | [RemoveMemberResponse](#mruv.groups.RemoveMemberResponse) | Remove a group member. |
+| AddPermission | [AddPermissionRequest](#mruv.groups.AddPermissionRequest) | [AddPermissionResponse](#mruv.groups.AddPermissionResponse) | Add a permission to a group. |
+| GetPermissions | [GetPermissionsRequest](#mruv.groups.GetPermissionsRequest) | [GetPermissionsResponse](#mruv.groups.GetPermissionsResponse) | Get all group permissions. |
+| RemovePermission | [RemovePermissionRequest](#mruv.groups.RemovePermissionRequest) | [RemovePermissionResponse](#mruv.groups.RemovePermissionResponse) | Remove group permission. |
+| AddSubgroup | [AddSubgroupRequest](#mruv.groups.AddSubgroupRequest) | [AddSubgroupResponse](#mruv.groups.AddSubgroupResponse) | Add a subgroup to a group. |
+| GetSubgroups | [GetSubgroupsRequest](#mruv.groups.GetSubgroupsRequest) | [GetSubgroupsResponse](#mruv.groups.GetSubgroupsResponse) | Get all subgroups. |
+| RemoveSubgroup | [RemoveSubgroupRequest](#mruv.groups.RemoveSubgroupRequest) | [RemoveSubgroupResponse](#mruv.groups.RemoveSubgroupResponse) | Remove a subgroup from group. |
+| IsPermitted | [IsPermittedRequest](#mruv.groups.IsPermittedRequest) | [IsPermittedResponse](#mruv.groups.IsPermittedResponse) | Check is member of a group is permitted to do specific action. |
+| GetServiceStatus | [.mruv.common.ServiceStatusRequest](#mruv.common.ServiceStatusRequest) | [.mruv.common.ServiceStatusResponse](#mruv.common.ServiceStatusResponse) | Service status |
+| GetServiceVersion | [.mruv.common.VersionRequest](#mruv.common.VersionRequest) | [.mruv.common.VersionResponse](#mruv.common.VersionResponse) |  |
 
  
 
@@ -4322,7 +4322,7 @@ The MruV houses service provides procedures for managing houses.
 
 
 
-<a name="mruv.GetContainerItemsRequest"></a>
+<a name="mruv.items.GetContainerItemsRequest"></a>
 
 ### GetContainerItemsRequest
 Request message for `MruVItemsService.GetContainerItems`.
@@ -4338,7 +4338,7 @@ Request message for `MruVItemsService.GetContainerItems`.
 
 
 
-<a name="mruv.GetContainerItemsResponse"></a>
+<a name="mruv.items.GetContainerItemsResponse"></a>
 
 ### GetContainerItemsResponse
 Request message for `MruVItemsService.GetContainerItems`.
@@ -4346,14 +4346,14 @@ Request message for `MruVItemsService.GetContainerItems`.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| items | [InsideItem](#mruv.InsideItem) | repeated | List of items inside containers. |
+| items | [InsideItem](#mruv.items.InsideItem) | repeated | List of items inside containers. |
 
 
 
 
 
 
-<a name="mruv.GetContainerTypesRequest"></a>
+<a name="mruv.items.GetContainerTypesRequest"></a>
 
 ### GetContainerTypesRequest
 Request message for `MruVItemsService.GetContainerTypes`.
@@ -4368,7 +4368,7 @@ Request message for `MruVItemsService.GetContainerTypes`.
 
 
 
-<a name="mruv.GetContainerTypesResponse"></a>
+<a name="mruv.items.GetContainerTypesResponse"></a>
 
 ### GetContainerTypesResponse
 Response message for `MruVItemsService.GetContainers`.
@@ -4376,14 +4376,14 @@ Response message for `MruVItemsService.GetContainers`.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| container_types | [ContainerType](#mruv.ContainerType) | repeated | List of container types. |
+| container_types | [ContainerType](#mruv.items.ContainerType) | repeated | List of container types. |
 
 
 
 
 
 
-<a name="mruv.GetContainersRequest"></a>
+<a name="mruv.items.GetContainersRequest"></a>
 
 ### GetContainersRequest
 Request message for `MruVItemsService.GetContainers`.
@@ -4398,7 +4398,7 @@ Request message for `MruVItemsService.GetContainers`.
 
 
 
-<a name="mruv.GetContainersResponse"></a>
+<a name="mruv.items.GetContainersResponse"></a>
 
 ### GetContainersResponse
 Response message for `MruVItemsService.GetContainers`.
@@ -4406,14 +4406,14 @@ Response message for `MruVItemsService.GetContainers`.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| containers | [Container](#mruv.Container) | repeated | List of containers. |
+| containers | [Container](#mruv.items.Container) | repeated | List of containers. |
 
 
 
 
 
 
-<a name="mruv.GetItemTypesRequest"></a>
+<a name="mruv.items.GetItemTypesRequest"></a>
 
 ### GetItemTypesRequest
 Request message for `MruVItemsService.GetItemTypes`.
@@ -4428,7 +4428,7 @@ Request message for `MruVItemsService.GetItemTypes`.
 
 
 
-<a name="mruv.GetItemTypesResponse"></a>
+<a name="mruv.items.GetItemTypesResponse"></a>
 
 ### GetItemTypesResponse
 Response message for `MruVItemsService.GetItemTypes`.
@@ -4436,14 +4436,14 @@ Response message for `MruVItemsService.GetItemTypes`.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| item_types | [ItemType](#mruv.ItemType) | repeated | List of item types. |
+| item_types | [ItemType](#mruv.items.ItemType) | repeated | List of item types. |
 
 
 
 
 
 
-<a name="mruv.GetItemsRequest"></a>
+<a name="mruv.items.GetItemsRequest"></a>
 
 ### GetItemsRequest
 Request message for `MruVItemsService.GetItems`.
@@ -4458,7 +4458,7 @@ Request message for `MruVItemsService.GetItems`.
 
 
 
-<a name="mruv.GetItemsResponse"></a>
+<a name="mruv.items.GetItemsResponse"></a>
 
 ### GetItemsResponse
 Response message for `MruVItemsService.GetItems`.
@@ -4466,14 +4466,14 @@ Response message for `MruVItemsService.GetItems`.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| items | [Item](#mruv.Item) | repeated | List of items. |
+| items | [Item](#mruv.items.Item) | repeated | List of items. |
 
 
 
 
 
 
-<a name="mruv.GetNearestItemsRequest"></a>
+<a name="mruv.items.GetNearestItemsRequest"></a>
 
 ### GetNearestItemsRequest
 Request message for `MruVItemsService.GetNearestItems`.
@@ -4481,7 +4481,7 @@ Request message for `MruVItemsService.GetNearestItems`.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| position | [Position](#mruv.Position) |  | Position from which to calculate the distance |
+| position | [mruv.common.Position](#mruv.common.Position) |  | Position from which to calculate the distance |
 | container_id | [uint32](#uint32) |  | ID of container that contains items. |
 | distance_limit | [double](#double) |  | The distance over which the items are ignored. |
 
@@ -4490,7 +4490,7 @@ Request message for `MruVItemsService.GetNearestItems`.
 
 
 
-<a name="mruv.GetNearestItemsResponse"></a>
+<a name="mruv.items.GetNearestItemsResponse"></a>
 
 ### GetNearestItemsResponse
 Response message for `MruVItemsService.GetNearestItems`.
@@ -4498,14 +4498,14 @@ Response message for `MruVItemsService.GetNearestItems`.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| item | [InsideItem](#mruv.InsideItem) | repeated | List of items sorted from nearest to farthest. |
+| item | [InsideItem](#mruv.items.InsideItem) | repeated | List of items sorted from nearest to farthest. |
 
 
 
 
 
 
-<a name="mruv.PullItemRequest"></a>
+<a name="mruv.items.PullItemRequest"></a>
 
 ### PullItemRequest
 Request message for `MruVItemsService.PullItem`.
@@ -4521,7 +4521,7 @@ Request message for `MruVItemsService.PullItem`.
 
 
 
-<a name="mruv.PutItemRequest"></a>
+<a name="mruv.items.PutItemRequest"></a>
 
 ### PutItemRequest
 Request message for `MruVItemsService.PutItem`.
@@ -4538,7 +4538,7 @@ Request message for `MruVItemsService.PutItem`.
 
 
 
-<a name="mruv.PutItemResponse"></a>
+<a name="mruv.items.PutItemResponse"></a>
 
 ### PutItemResponse
 Response message for `MruVItemsService.PutItem`
@@ -4546,14 +4546,14 @@ Response message for `MruVItemsService.PutItem`
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| inside_item | [InsideItem](#mruv.InsideItem) |  | Container with items inside. |
+| inside_item | [InsideItem](#mruv.items.InsideItem) |  | Container with items inside. |
 
 
 
 
 
 
-<a name="mruv.SortItemsRequest"></a>
+<a name="mruv.items.SortItemsRequest"></a>
 
 ### SortItemsRequest
 Request message for `MruVItemsService.SortItems`.
@@ -4562,14 +4562,14 @@ Request message for `MruVItemsService.SortItems`.
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | container_id | [uint32](#uint32) |  | ID of the container which contain items. |
-| sort_by | [SortingMode](#mruv.SortingMode) |  | Sorting mode. |
+| sort_by | [SortingMode](#mruv.items.SortingMode) |  | Sorting mode. |
 
 
 
 
 
 
-<a name="mruv.SortItemsResponse"></a>
+<a name="mruv.items.SortItemsResponse"></a>
 
 ### SortItemsResponse
 Response message for `MruVItemsService.SortItems`.
@@ -4577,14 +4577,14 @@ Response message for `MruVItemsService.SortItems`.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| container | [Container](#mruv.Container) |  | Container with sorted items inside. |
+| container | [Container](#mruv.items.Container) |  | Container with sorted items inside. |
 
 
 
 
 
 
-<a name="mruv.UseItemRequest"></a>
+<a name="mruv.items.UseItemRequest"></a>
 
 ### UseItemRequest
 Request message for `MruVItemsService.UseItem`.
@@ -4599,7 +4599,7 @@ Request message for `MruVItemsService.UseItem`.
 
 
 
-<a name="mruv.UseItemResponse"></a>
+<a name="mruv.items.UseItemResponse"></a>
 
 ### UseItemResponse
 Response message for `MruVItemsService.UseItem`.
@@ -4620,37 +4620,37 @@ Response message for `MruVItemsService.UseItem`.
  
 
 
-<a name="mruv.MruVItemService"></a>
+<a name="mruv.items.MruVItemService"></a>
 
 ### MruVItemService
 The MruV items service provides procedures for managing items and containers
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| CreateItem | [Item](#mruv.Item) | [ItemID](#mruv.ItemID) | Create new item. |
-| GetItem | [ItemID](#mruv.ItemID) | [Item](#mruv.Item) | Get item by id. |
-| DeleteItem | [ItemID](#mruv.ItemID) | [ItemID](#mruv.ItemID) | Delete item by id. |
-| GetItems | [GetItemsRequest](#mruv.GetItemsRequest) | [GetItemsResponse](#mruv.GetItemsResponse) | Gets all items. |
-| CreateItemType | [ItemType](#mruv.ItemType) | [ItemTypeID](#mruv.ItemTypeID) | Create item type. |
-| GetItemType | [ItemTypeID](#mruv.ItemTypeID) | [ItemType](#mruv.ItemType) | Get item type by id. |
-| DeleteItemType | [ItemTypeID](#mruv.ItemTypeID) | [ItemTypeID](#mruv.ItemTypeID) | Delete item type by id. |
-| GetItemTypes | [GetItemTypesRequest](#mruv.GetItemTypesRequest) | [GetItemTypesResponse](#mruv.GetItemTypesResponse) | Gets all item types. |
-| CreateContainer | [Container](#mruv.Container) | [ContainerID](#mruv.ContainerID) | Create container. |
-| GetContainer | [ContainerID](#mruv.ContainerID) | [Container](#mruv.Container) | Get container by id. |
-| DeleteContainer | [ContainerID](#mruv.ContainerID) | [ContainerID](#mruv.ContainerID) | Delete container by id. |
-| GetContainers | [GetContainersRequest](#mruv.GetContainersRequest) | [GetContainersResponse](#mruv.GetContainersResponse) | Get all containers. |
-| CreateContainerType | [ContainerType](#mruv.ContainerType) | [ContainerTypeID](#mruv.ContainerTypeID) | Create a container type. |
-| GetContainerType | [ContainerTypeID](#mruv.ContainerTypeID) | [ContainerType](#mruv.ContainerType) | Get a container type by id. |
-| DeleteContainerType | [ContainerTypeID](#mruv.ContainerTypeID) | [ContainerTypeID](#mruv.ContainerTypeID) | Delete a container type by id. |
-| GetContainerTypes | [GetContainerTypesRequest](#mruv.GetContainerTypesRequest) | [GetContainerTypesResponse](#mruv.GetContainerTypesResponse) | Get all container types. |
-| GetContainerItems | [GetContainerItemsRequest](#mruv.GetContainerItemsRequest) | [GetContainerItemsResponse](#mruv.GetContainerItemsResponse) | Get items inside a container. |
-| PullItem | [PullItemRequest](#mruv.PullItemRequest) | [Item](#mruv.Item) | Pull an item from container. |
-| PutItem | [PutItemRequest](#mruv.PutItemRequest) | [PutItemResponse](#mruv.PutItemResponse) | Put an item into container. |
-| SortItems | [SortItemsRequest](#mruv.SortItemsRequest) | [SortItemsResponse](#mruv.SortItemsResponse) | Sort items inside container. This procedure change order of items inside container. |
-| GetNearestItems | [GetNearestItemsRequest](#mruv.GetNearestItemsRequest) | [GetNearestItemsResponse](#mruv.GetNearestItemsResponse) | Retrieves from the container the list of items nearest to the given position. |
-| UseItem | [UseItemRequest](#mruv.UseItemRequest) | [UseItemResponse](#mruv.UseItemResponse) | Trigger action associated with the item usage. |
-| GetServiceStatus | [ServiceStatusRequest](#mruv.ServiceStatusRequest) | [ServiceStatusResponse](#mruv.ServiceStatusResponse) | Get service health status. |
-| GetServiceVersion | [VersionRequest](#mruv.VersionRequest) | [VersionResponse](#mruv.VersionResponse) | Get service current version. |
+| CreateItem | [Item](#mruv.items.Item) | [ItemID](#mruv.items.ItemID) | Create new item. |
+| GetItem | [ItemID](#mruv.items.ItemID) | [Item](#mruv.items.Item) | Get item by id. |
+| DeleteItem | [ItemID](#mruv.items.ItemID) | [ItemID](#mruv.items.ItemID) | Delete item by id. |
+| GetItems | [GetItemsRequest](#mruv.items.GetItemsRequest) | [GetItemsResponse](#mruv.items.GetItemsResponse) | Gets all items. |
+| CreateItemType | [ItemType](#mruv.items.ItemType) | [ItemTypeID](#mruv.items.ItemTypeID) | Create item type. |
+| GetItemType | [ItemTypeID](#mruv.items.ItemTypeID) | [ItemType](#mruv.items.ItemType) | Get item type by id. |
+| DeleteItemType | [ItemTypeID](#mruv.items.ItemTypeID) | [ItemTypeID](#mruv.items.ItemTypeID) | Delete item type by id. |
+| GetItemTypes | [GetItemTypesRequest](#mruv.items.GetItemTypesRequest) | [GetItemTypesResponse](#mruv.items.GetItemTypesResponse) | Gets all item types. |
+| CreateContainer | [Container](#mruv.items.Container) | [ContainerID](#mruv.items.ContainerID) | Create container. |
+| GetContainer | [ContainerID](#mruv.items.ContainerID) | [Container](#mruv.items.Container) | Get container by id. |
+| DeleteContainer | [ContainerID](#mruv.items.ContainerID) | [ContainerID](#mruv.items.ContainerID) | Delete container by id. |
+| GetContainers | [GetContainersRequest](#mruv.items.GetContainersRequest) | [GetContainersResponse](#mruv.items.GetContainersResponse) | Get all containers. |
+| CreateContainerType | [ContainerType](#mruv.items.ContainerType) | [ContainerTypeID](#mruv.items.ContainerTypeID) | Create a container type. |
+| GetContainerType | [ContainerTypeID](#mruv.items.ContainerTypeID) | [ContainerType](#mruv.items.ContainerType) | Get a container type by id. |
+| DeleteContainerType | [ContainerTypeID](#mruv.items.ContainerTypeID) | [ContainerTypeID](#mruv.items.ContainerTypeID) | Delete a container type by id. |
+| GetContainerTypes | [GetContainerTypesRequest](#mruv.items.GetContainerTypesRequest) | [GetContainerTypesResponse](#mruv.items.GetContainerTypesResponse) | Get all container types. |
+| GetContainerItems | [GetContainerItemsRequest](#mruv.items.GetContainerItemsRequest) | [GetContainerItemsResponse](#mruv.items.GetContainerItemsResponse) | Get items inside a container. |
+| PullItem | [PullItemRequest](#mruv.items.PullItemRequest) | [Item](#mruv.items.Item) | Pull an item from container. |
+| PutItem | [PutItemRequest](#mruv.items.PutItemRequest) | [PutItemResponse](#mruv.items.PutItemResponse) | Put an item into container. |
+| SortItems | [SortItemsRequest](#mruv.items.SortItemsRequest) | [SortItemsResponse](#mruv.items.SortItemsResponse) | Sort items inside container. This procedure change order of items inside container. |
+| GetNearestItems | [GetNearestItemsRequest](#mruv.items.GetNearestItemsRequest) | [GetNearestItemsResponse](#mruv.items.GetNearestItemsResponse) | Retrieves from the container the list of items nearest to the given position. |
+| UseItem | [UseItemRequest](#mruv.items.UseItemRequest) | [UseItemResponse](#mruv.items.UseItemResponse) | Trigger action associated with the item usage. |
+| GetServiceStatus | [.mruv.common.ServiceStatusRequest](#mruv.common.ServiceStatusRequest) | [.mruv.common.ServiceStatusResponse](#mruv.common.ServiceStatusResponse) | Get service health status. |
+| GetServiceVersion | [.mruv.common.VersionRequest](#mruv.common.VersionRequest) | [.mruv.common.VersionResponse](#mruv.common.VersionResponse) | Get service current version. |
 
  
 
@@ -4663,7 +4663,7 @@ The MruV items service provides procedures for managing items and containers
 
 
 
-<a name="mruv.Container"></a>
+<a name="mruv.items.Container"></a>
 
 ### Container
 Container data structure.
@@ -4675,14 +4675,14 @@ Container data structure.
 | type_id | [uint32](#uint32) |  | ID of an container type. |
 | item_id | [uint32](#uint32) |  | ID of container item representing container. |
 | items_inside | [uint32](#uint32) |  | Number of items inside container. |
-| items | [InsideItem](#mruv.InsideItem) | repeated | List of items inside container. |
+| items | [InsideItem](#mruv.items.InsideItem) | repeated | List of items inside container. |
 
 
 
 
 
 
-<a name="mruv.ContainerID"></a>
+<a name="mruv.items.ContainerID"></a>
 
 ### ContainerID
 Container ID.
@@ -4697,7 +4697,7 @@ Container ID.
 
 
 
-<a name="mruv.ContainerType"></a>
+<a name="mruv.items.ContainerType"></a>
 
 ### ContainerType
 Container type data structure.
@@ -4717,7 +4717,7 @@ Container type data structure.
 
 
 
-<a name="mruv.ContainerTypeID"></a>
+<a name="mruv.items.ContainerTypeID"></a>
 
 ### ContainerTypeID
 Container type ID.
@@ -4732,7 +4732,7 @@ Container type ID.
 
 
 
-<a name="mruv.InsideItem"></a>
+<a name="mruv.items.InsideItem"></a>
 
 ### InsideItem
 Item inside container data structure.
@@ -4742,7 +4742,7 @@ Item inside container data structure.
 | ----- | ---- | ----- | ----------- |
 | container_id | [uint32](#uint32) |  | ID of container containing the item. |
 | item_id | [uint32](#uint32) |  |  |
-| item | [Item](#mruv.Item) |  |  |
+| item | [Item](#mruv.items.Item) |  |  |
 | position | [int32](#int32) |  | Position representing order in container. In ascending manner. |
 
 
@@ -4750,7 +4750,7 @@ Item inside container data structure.
 
 
 
-<a name="mruv.Item"></a>
+<a name="mruv.items.Item"></a>
 
 ### Item
 Item data structure.
@@ -4768,7 +4768,7 @@ Item data structure.
 
 
 
-<a name="mruv.ItemID"></a>
+<a name="mruv.items.ItemID"></a>
 
 ### ItemID
 Item ID.
@@ -4783,7 +4783,7 @@ Item ID.
 
 
 
-<a name="mruv.ItemType"></a>
+<a name="mruv.items.ItemType"></a>
 
 ### ItemType
 Item type data structure
@@ -4804,7 +4804,7 @@ Item type data structure
 
 
 
-<a name="mruv.ItemTypeID"></a>
+<a name="mruv.items.ItemTypeID"></a>
 
 ### ItemTypeID
 Item type ID.
@@ -4821,7 +4821,7 @@ Item type ID.
  
 
 
-<a name="mruv.SortingMode"></a>
+<a name="mruv.items.SortingMode"></a>
 
 ### SortingMode
 Sorting modes for container items.
@@ -6500,7 +6500,7 @@ Request message for rpc `CreatePlot`.
 | ----- | ---- | ----- | ----------- |
 | name | [string](#string) |  |  |
 | description | [string](#string) |  |  |
-| points | [mruv.Position](#mruv.Position) | repeated |  |
+| points | [mruv.common.Position](#mruv.common.Position) | repeated |  |
 
 
 
@@ -6572,7 +6572,7 @@ Response message for rpc `GetPlot`.
 | ----- | ---- | ----- | ----------- |
 | name | [string](#string) |  |  |
 | description | [string](#string) |  |  |
-| points | [mruv.Position](#mruv.Position) | repeated |  |
+| points | [mruv.common.Position](#mruv.common.Position) | repeated |  |
 | area | [double](#double) |  |  |
 
 
@@ -6590,7 +6590,7 @@ Response message for rpc `GetPlot`.
 | ----- | ---- | ----- | ----------- |
 | name | [string](#string) |  |  |
 | description | [string](#string) |  |  |
-| points | [mruv.Position](#mruv.Position) | repeated |  |
+| points | [mruv.common.Position](#mruv.common.Position) | repeated |  |
 
 
 
